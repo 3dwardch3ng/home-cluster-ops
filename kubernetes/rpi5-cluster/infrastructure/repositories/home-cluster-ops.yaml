@@ -1,10 +1,10 @@
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
-  name: home-cluster-ops-repo
+  name: home-cluster-ops
   namespace: flux-system
 spec:
   interval: 60m
   url: https://github.com/3dwardch3ng/home-cluster-ops
   ref:
-    branch: master
+    branch: main
