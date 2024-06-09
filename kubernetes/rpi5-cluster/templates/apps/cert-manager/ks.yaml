@@ -32,4 +32,4 @@ spec:
   postBuild:
     substituteFrom:
       - kind: Secret
-        name: issuer-vars
+        name: cert-manager-secrets
