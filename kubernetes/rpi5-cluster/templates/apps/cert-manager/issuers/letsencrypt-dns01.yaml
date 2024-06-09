@@ -1,5 +1,5 @@
 apiVersion: cert-manager.io/v1
-kind: ClusterIssuer
+kind: Issuer
 metadata:
     name: letsencrypt-dns01
     namespace: cert-manager
@@ -13,5 +13,5 @@ spec:
             - dns01:
                 cloudflare:
                     apiTokenSecretRef:
-                        name: cloudflare-api-token
-                        key: api-token
+                        name: cert-manager-secrets
+                        key: cert-manager-dns01
