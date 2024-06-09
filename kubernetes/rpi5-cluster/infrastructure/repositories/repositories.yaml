@@ -12,6 +12,12 @@ spec:
     name: flux-system
   timeout: 60s
   url: https://github.com/3dwardch3ng/home-cluster-ops.git
+  ignore: |
+    # exclude all
+    /*
+    # include flux directories
+    !/kubernetes/rpi5-cluster/infrastructure
+    !/kubernetes/rpi5-cluster/templates
 ---
 apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
@@ -41,12 +47,6 @@ spec:
     kind: GitRepository
     namespace: flux-system
     name: home-cluster-ops
-ignore: |
-  # exclude all
-  /*
-  # include flux directories
-  !/kubernetes/rpi5-cluster/infrastructure
-  !/kubernetes/rpi5-cluster/templates
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
