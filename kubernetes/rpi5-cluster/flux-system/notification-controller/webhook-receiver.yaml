@@ -9,6 +9,6 @@ spec:
     app: notification-controller
   ports:
     - name: http
-      port: 8888
+      port: 18888
       protocol: TCP
       targetPort: 9292
