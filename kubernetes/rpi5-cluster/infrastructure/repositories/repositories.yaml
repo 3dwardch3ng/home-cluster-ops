@@ -61,7 +61,3 @@ spec:
     kind: GitRepository
     namespace: flux-system
     name: home-cluster-ops-secrets
-  decryption:
-    provider: sops
-    secretRef:
-      name: sops-age
