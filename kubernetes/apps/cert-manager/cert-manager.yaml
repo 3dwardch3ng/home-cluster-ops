@@ -5,16 +5,19 @@ metadata:
   namespace: cert-manager
 spec:
   interval: 1h
-  path: ./kubernetes/apps/cert-manager/app
+  path: ./cert-manager
   prune: true
   sourceRef:
     kind: GitRepository
     namespace: flux-system
-    name: home-cluster-ops
+    name: home-cluster-ops-secret
+  dependsOn:
+    - name: repositories
+      namespace: flux-system
   decryption:
     provider: sops
     secretRef:
-      name: sops-gpg
+      name: sops-age
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -29,7 +32,7 @@ spec:
   sourceRef:
     kind: GitRepository
     namespace: flux-system
-    name: home-cluster-ops
+    name: flux-system
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -44,10 +47,9 @@ spec:
   sourceRef:
     kind: GitRepository
     namespace: flux-system
-    name: home-cluster-ops
+    name: flux-system
   dependsOn:
-    - name: repositories
-      namespace: flux-system
+    - name: cert-manager-secrets
     - name: cert-manager
   postBuild:
     substituteFrom:
