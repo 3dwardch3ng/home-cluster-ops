@@ -14,7 +14,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: sops-pgp
+      name: sops-gpg
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
