@@ -31,8 +31,6 @@ spec:
     - name: ingress-nginx-config
   postBuild:
     substituteFrom:
-      - kind: Secret
-        name: app-vars
       - kind: ConfigMap
         name: ingress-nginx-values
   patches:
