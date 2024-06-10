@@ -20,7 +20,7 @@ metadata:
   name: home-cluster-ops-repo
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 5m
   path: ./kubernetes/rpi5-cluster/infrastructure/repositories
   prune: true
   sourceRef:
