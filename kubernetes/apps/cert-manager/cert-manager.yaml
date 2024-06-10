@@ -46,7 +46,8 @@ spec:
     namespace: flux-system
     name: home-cluster-ops
   dependsOn:
-    - name: cert-manager-secrets
+    - name: repositories
+      namespace: flux-system
     - name: cert-manager
   postBuild:
     substituteFrom:
