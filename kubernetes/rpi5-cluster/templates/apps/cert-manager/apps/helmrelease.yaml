@@ -16,6 +16,7 @@ spec:
         namespace: cert-manager
         name: cert-manager
       interval: 1h
+  installCRDs: true
   install:
     crds: Create
   upgrade:
