@@ -11,7 +11,4 @@ spec:
     kind: GitRepository
     namespace: flux-system
     name: home-cluster-ops
-  dependsOn:
-    - name: repositories
-      namespace: flux-system
 
