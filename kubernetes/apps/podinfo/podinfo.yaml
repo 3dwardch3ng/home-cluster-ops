@@ -4,13 +4,11 @@ metadata:
   name: podinfo
   namespace: podinfo
 spec:
-  interval: 30m0s
-  path: ./kustomize
+  interval: 1h
+  path: ./kubernetes/apps/podinfo
   prune: true
-  retryInterval: 2m0s
   sourceRef:
-    kind: HelmRepository
-    name: podinfo
-  targetNamespace: podinfo
-  timeout: 3m0s
-  wait: true
+    kind: GitRepository
+    namespace: flux-system
+    name: home-cluster-ops
+
