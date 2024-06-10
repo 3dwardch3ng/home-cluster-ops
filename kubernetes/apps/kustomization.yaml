@@ -3,5 +3,4 @@ kind: Kustomization
 resources:
   - ./capacitor/capacitor.yaml
   - ./cert-manager/cert-manager.yaml
-  - ./cilium/cilium.yaml
   - ./podinfo/podinfo.yaml
