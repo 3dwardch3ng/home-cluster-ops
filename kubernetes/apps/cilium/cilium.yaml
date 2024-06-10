@@ -5,7 +5,7 @@ metadata:
   namespace: kube-system
 spec:
   interval: 1h
-  path: ./kubernetes/rpi5-cluster/apps/cilium/networkpolicies
+  path: ./kubernetes/apps/cilium/networkpolicies
   prune: true
   sourceRef:
     kind: GitRepository
