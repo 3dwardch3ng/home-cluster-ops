@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
   - ./repositories/repositories.yaml
   - ./cilium/cilium.yaml
+  - ./ingress-nginx/ingress-nginx.yaml
