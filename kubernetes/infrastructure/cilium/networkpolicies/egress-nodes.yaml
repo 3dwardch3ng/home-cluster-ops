@@ -1,12 +1,13 @@
 apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
-  name: ingress-nodes
+  name: egress-nodes
+  namespace: kube-system
 spec:
   endpointSelector:
     matchLabels:
-      rpi5.cluster.policy/ingress-nodes: "true"
-  ingress:
-    - fromEntities:
+      rpi5.cluster.policy/egress-nodes: "true"
+  egress:
+    - toEntities:
         - host
         - remote-node
