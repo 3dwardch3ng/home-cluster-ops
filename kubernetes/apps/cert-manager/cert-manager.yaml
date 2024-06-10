@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./kubernetes//apps/cert-manager/app
+  path: ./kubernetes/apps/cert-manager/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -24,7 +24,7 @@ metadata:
 spec:
   interval: 1h
   targetNamespace: cert-manager
-  path: ./kubernetes//templates/apps/cert-manager/app
+  path: ./kubernetes/templates/apps/cert-manager/app
   prune: true
   sourceRef:
     kind: GitRepository

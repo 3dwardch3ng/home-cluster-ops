@@ -21,7 +21,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./kubernetes/rpi5-cluster/infrastructure/repositories
+  path: ./kubernetes/infrastructure/repositories
   prune: true
   sourceRef:
     kind: GitRepository
