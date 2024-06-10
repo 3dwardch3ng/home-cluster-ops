@@ -13,3 +13,5 @@ spec:
           - http01:
               ingress:
                 class: nginx
+    dependsOn:
+        - name: letsencrypt-dns01
