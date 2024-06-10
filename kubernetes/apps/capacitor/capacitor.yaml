@@ -16,3 +16,4 @@ spec:
     name: capacitor
   dependsOn:
     - name: repositories
+      namespace: flux-system

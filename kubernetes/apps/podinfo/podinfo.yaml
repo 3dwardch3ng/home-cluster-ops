@@ -13,4 +13,5 @@ spec:
     name: home-cluster-ops
   dependsOn:
     - name: repositories
+      namespace: flux-system
 
