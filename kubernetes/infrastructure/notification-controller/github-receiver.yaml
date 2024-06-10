@@ -13,4 +13,4 @@ spec:
   resources:
     - apiVersion: source.toolkit.fluxcd.io/v1
       kind: GitRepository
-      name: home-cluster-ops-repo
+      name: flux-system
