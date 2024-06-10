@@ -1,5 +1,3 @@
-
----
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/source.toolkit.fluxcd.io/gitrepository_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -8,7 +6,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 5m
-  path: ./kubernetes/infrastructure/repositories
+  path: ./kubernetes/infrastructure/repositories/repos
   prune: true
   sourceRef:
     kind: GitRepository
