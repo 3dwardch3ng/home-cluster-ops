@@ -1,0 +1,43 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: cilium
+  namespace: kube-system
+spec:
+  chart:
+    spec:
+      chart: cilium
+      version: 1.15.5
+      sourceRef:
+        kind: HelmRepository
+        namespace: kube-system
+        name: cilium
+  install:
+    crds: Create
+  upgrade:
+    crds: CreateReplace
+  interval: 1h
+  driftDetection:
+    mode: enabled
+  values:
+    global:
+      encryption:
+        enabled: true
+        nodeEncryption: true
+
+    policyEnforcementMode: default
+
+    operator:
+      replicas: 1
+
+    ipam:
+      mode: cluster-pool
+      operator:
+        clusterPoolIPv4PodCIDRList: [10.42.0.0/16]
+        clusterPoolIPv4MaskSize: 24
+
+    dnsProxy:
+      dnsRejectResponseCode: nameError
+
+    cni:
+      exclusive: false
