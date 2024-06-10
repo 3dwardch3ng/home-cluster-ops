@@ -5,19 +5,13 @@ metadata:
   name: home-cluster-ops
   namespace: flux-system
 spec:
-  interval: 10m0s
+  interval: 5m0s
   ref:
     branch: main
   secretRef:
     name: flux-system
   timeout: 60s
   url: https://github.com/3dwardch3ng/home-cluster-ops.git
-  ignore: |
-    # exclude all
-    /*
-    # include flux directories
-    !/kubernetes/rpi5-cluster/infrastructure
-    !/kubernetes/rpi5-cluster/templates
 ---
 # yaml-language-server: $schema=https://kubernetes-schemas.pages.dev/source.toolkit.fluxcd.io/gitrepository_v1.json
 apiVersion: kustomize.toolkit.fluxcd.io/v1
