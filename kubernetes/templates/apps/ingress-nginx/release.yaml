@@ -81,18 +81,18 @@ spec:
           labels:
             rpi5.cluster.policy/egress-kubeapi: "true"
 
-    defaultBackend:
-      enabled: true
-      image:
-        repository: ghcr.io/tarampampam/error-pages
-        tag: 2.27.0@sha256:40e2631173b1a407c18fe7d1ba8104d995cf9e4780d123eeadfa1d57c68eaf4f
-        pullPolicy: IfNotPresent
-      extraEnvs:
-        - name: TEMPLATE_NAME
-          value: connection
-        - name: SHOW_DETAILS
-          value: "true"
-        - name: READ_BUFFER_SIZE
-          value: "8192"
-      podLabels:
-        rpi5.cluster.policy/ingress-namespace: "true"
+#    defaultBackend:
+#      enabled: true
+#      image:
+#        repository: ghcr.io/tarampampam/error-pages
+#        tag: 2.27.0@sha256:40e2631173b1a407c18fe7d1ba8104d995cf9e4780d123eeadfa1d57c68eaf4f
+#        pullPolicy: IfNotPresent
+#      extraEnvs:
+#        - name: TEMPLATE_NAME
+#          value: connection
+#        - name: SHOW_DETAILS
+#          value: "true"
+#        - name: READ_BUFFER_SIZE
+#          value: "8192"
+#      podLabels:
+#        rpi5.cluster.policy/ingress-namespace: "true"
