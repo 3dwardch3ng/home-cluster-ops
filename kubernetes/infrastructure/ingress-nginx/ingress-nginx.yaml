@@ -18,10 +18,15 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: ingress-nginx-values
-  postRenderers:
-    - kustomze:
-        patches:
-          - target:
+  patches:
+    - target:
+        kind: HelmRelease
+        name: ingress-nginx
+      patch: |
+        - op: add
+          path: /sepc/postRenderers/[0]/kustomize/patches/-
+          value:
+            target:
               kind: Service
               name: ingress-nginx-controller
             patch: |
@@ -33,7 +38,10 @@ spec:
                   port: 9000
                   protocol: TCP
                   targetPort: 9000
-          - target:
+        - op: add
+          path: /sepc/postRenderers/[0]/kustomize/patches/-
+          value:
+            target:
               kind: Deployment
               name: ingress-nginx-controller
             patch: |
