@@ -1,0 +1,6 @@
+- op: add               #action
+  path: "/spec/template/spec/containers/[0]/ports/-" #resouirce we want to change
+  value:                #value we want to use for patching
+    containerPort: 9000
+    name: capacitor
+    protocol: TCP
