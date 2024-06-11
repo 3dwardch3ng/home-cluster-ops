@@ -97,3 +97,7 @@ spec:
           value: "8192"
       podLabels:
         rpi5.cluster.policy/ingress-namespace: "true"
+
+  postRenderers:
+    - kustomze:
+        patches: []
