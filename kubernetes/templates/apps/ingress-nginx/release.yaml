@@ -99,5 +99,5 @@ spec:
         rpi5.cluster.policy/ingress-namespace: "true"
 
   postRenderers:
-    - kustomze:
+    - kustomize:
         patches: []
