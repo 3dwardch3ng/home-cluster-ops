@@ -70,9 +70,9 @@ spec:
 
       metrics:
         enabled: ${metrics_enabled:=false}
-        serviceMonitor:
-          enabled: ${metrics_enabled:=false}
-          scrapeInterval: 1m
+#        serviceMonitor:
+#          enabled: ${metrics_enabled:=false}
+#          scrapeInterval: 1m
 
       admissionWebhooks:
         labels:
