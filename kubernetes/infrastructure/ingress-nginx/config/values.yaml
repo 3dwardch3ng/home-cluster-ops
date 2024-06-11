@@ -6,5 +6,5 @@ metadata:
 data:
   use_geoip2: "false"
   metrics_enabled: "true"
-  disable-ipv6: "true"
-  disable-ipv6-dns: "true"
+  disable_ipv6: "true"
+  disable_ipv6_dns: "true"
