@@ -17,8 +17,8 @@ spec:
         name: ingress-nginx
       interval: 1h
   values:
-    rbac:
-      create: true
+#    rbac:
+#      create: true
 
     controller:
       priorityClassName: system-cluster-critical
@@ -26,42 +26,42 @@ spec:
       extraArgs:
         update-status-on-shutdown: "false"
 
-      podLabels:
-        rpi5.cluster.policy/egress-kubeapi: "true"
-        rpi5.cluster.policy/egress-namespace: "true"
-        rpi5.cluster.policy/egress-world-with-lan: "true"
-        rpi5.cluster.policy/ingress-nodes: "true"
-        rpi5.cluster.policy/ingress-prometheus: "true"
-        rpi5.cluster.policy/ingress-world: "true"
+#      podLabels:
+#        rpi5.cluster.policy/egress-kubeapi: "true"
+#        rpi5.cluster.policy/egress-namespace: "true"
+#        rpi5.cluster.policy/egress-world-with-lan: "true"
+#        rpi5.cluster.policy/ingress-nodes: "true"
+#        rpi5.cluster.policy/ingress-prometheus: "true"
+#        rpi5.cluster.policy/ingress-world: "true"
 
-      allowSnippetAnnotations: true
+#      allowSnippetAnnotations: true
 
-      maxmindLicenseKey: ${geoip_license_key}
+#      maxmindLicenseKey: ${geoip_license_key}
 
-      config:
-        proxy-buffer-size: 16k
-        use-gzip: ${use_gzip:=true}
-        enable-brotli: ${enable_brotli:=true}
-        hsts-max-age: ${hsts_max_age:=31536000}
-        hsts-preload: ${hsts_preload:=true}
-        disable-ipv6: ${disable_ipv6:=true}
-        disable-ipv6-dns: ${disable_ipv6_dns:=true}
-        keep-alive-requests: ${keep_alive_requests:=1000}
-        use-geoip2: ${use_geoip2:=true}
-        custom-http-errors: 401,403,404,500,501,502,503,504
+#      config:
+#        proxy-buffer-size: 16k
+#        use-gzip: ${use_gzip:=true}
+#        enable-brotli: ${enable_brotli:=true}
+#        hsts-max-age: ${hsts_max_age:=31536000}
+#        hsts-preload: ${hsts_preload:=true}
+#        disable-ipv6: ${disable_ipv6:=true}
+#        disable-ipv6-dns: ${disable_ipv6_dns:=true}
+#        keep-alive-requests: ${keep_alive_requests:=1000}
+#        use-geoip2: ${use_geoip2:=true}
+#        custom-http-errors: 401,403,404,500,501,502,503,504
 
       extraEnvs:
         - name: TZ
           value: Australia/Sydney
 
-      addHeaders:
-        Referrer-Policy: same-origin, strict-origin-when-cross-origin
-        X-Content-Type-Options: nosniff
-        X-Frame-Options: SAMEORIGIN
-        X-XSS-Protection: 1; mode=block
+#      addHeaders:
+#        Referrer-Policy: same-origin, strict-origin-when-cross-origin
+#        X-Content-Type-Options: nosniff
+#        X-Frame-Options: SAMEORIGIN
+#        X-XSS-Protection: 1; mode=block
 
-      ingressClassResource:
-        default: true
+#      ingressClassResource:
+#        default: true
 
       service:
         externalTrafficPolicy: Local
