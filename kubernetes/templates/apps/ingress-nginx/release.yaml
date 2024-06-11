@@ -21,10 +21,11 @@ spec:
 #      create: true
 
     controller:
-      priorityClassName: system-cluster-critical
+#      priorityClassName: system-cluster-critical
 
-      extraArgs:
-        update-status-on-shutdown: "false"
+#      extraArgs:
+#        update-status-on-shutdown: "false"
+      # configmaps to put here
 
 #      podLabels:
 #        rpi5.cluster.policy/egress-kubeapi: "true"
@@ -64,9 +65,9 @@ spec:
 #        default: true
 
       service:
-        externalTrafficPolicy: Local
-        loadBalancerIP: ${load_balancer_ip}
-        ipFamilyPolicy: PreferDualStack
+        externalTrafficPolicy: Cluster
+#        loadBalancerIP: ${load_balancer_ip}
+        ipFamilyPolicy: SingleStack
 
       metrics:
         enabled: ${metrics_enabled:=false}
