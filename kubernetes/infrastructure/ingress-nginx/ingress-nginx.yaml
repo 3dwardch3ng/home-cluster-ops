@@ -1,4 +1,4 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: Kustomization
 metadata:
   name: ingress-nginx
@@ -26,8 +26,8 @@ spec:
               name: ingress-nginx-controller
             patch: |
               - op: add
-                path: "/spec/ports/-" #resouirce we want to change
-                value:                #value we want to use for patching
+                path: "/spec/ports/-"
+                value:
                   name: capacitor-tcp-9000
                   nodePort: 31555
                   port: 9000
