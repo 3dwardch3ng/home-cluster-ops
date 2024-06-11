@@ -18,3 +18,12 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: ingress-nginx-values
+  patches:
+    - target:
+        kind: Service
+        name: ingress-nginx-controller
+      path: ./kubernetes/infrastructure/ingress-nginx/config/patches-service-ports.yaml
+    - target:
+        kind: Deployment
+        name: ingress-nginx-controller
+      path: ./kubernetes/infrastructure/ingress-nginx/config/patches-deployment-ports.yaml
