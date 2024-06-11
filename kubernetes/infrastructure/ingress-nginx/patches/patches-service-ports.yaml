@@ -1,8 +1,0 @@
-- op: add               #action
-  path: "/spec/ports/-" #resouirce we want to change
-  value:                #value we want to use for patching
-    name: capacitor-tcp-9000
-    nodePort: 31555
-    port: 9000
-    protocol: TCP
-    targetPort: 9000
