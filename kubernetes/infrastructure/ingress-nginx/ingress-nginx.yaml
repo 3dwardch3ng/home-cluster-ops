@@ -18,26 +18,28 @@ spec:
     substituteFrom:
       - kind: ConfigMap
         name: ingress-nginx-values
-  patches:
-    - target:
-        kind: Service
-        name: ingress-nginx-controller
-      patch: |
-        - op: add
-          path: "/spec/ports/-" #resouirce we want to change
-          value:                #value we want to use for patching
-            name: capacitor-tcp-9000
-            nodePort: 31555
-            port: 9000
-            protocol: TCP
-            targetPort: 9000
-    - target:
-        kind: Deployment
-        name: ingress-nginx-controller
-      patch: |
-        - op: add
-          path: "/spec/template/spec/containers/[0]/ports/-"
-          value:
-            containerPort: 9000
-            name: capacitor
-            protocol: TCP
+  postRenderers:
+    - kustomze:
+        patches:
+          - target:
+              kind: Service
+              name: ingress-nginx-controller
+            patch: |
+              - op: add
+                path: "/spec/ports/-" #resouirce we want to change
+                value:                #value we want to use for patching
+                  name: capacitor-tcp-9000
+                  nodePort: 31555
+                  port: 9000
+                  protocol: TCP
+                  targetPort: 9000
+          - target:
+              kind: Deployment
+              name: ingress-nginx-controller
+            patch: |
+              - op: add
+                path: "/spec/template/spec/containers/[0]/ports/-"
+                value:
+                  containerPort: 9000
+                  name: capacitor
+                  protocol: TCP
