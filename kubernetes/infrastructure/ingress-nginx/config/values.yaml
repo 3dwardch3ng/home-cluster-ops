@@ -4,8 +4,5 @@ metadata:
   name: ingress-nginx-values
   namespace: flux-system
 data:
-  load_balancer_ip: "192.168.0.180"
   use_geoip2: "false"
   metrics_enabled: "true"
-  disable_ipv6: "false"
-  disable_ipv6_dns: "false"

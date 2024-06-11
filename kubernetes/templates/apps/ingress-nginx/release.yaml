@@ -17,56 +17,56 @@ spec:
         name: ingress-nginx
       interval: 1h
   values:
-#    rbac:
-#      create: true
+    rbac:
+      create: true
 
     controller:
-#      priorityClassName: system-cluster-critical
+      priorityClassName: system-cluster-critical
 
-#      extraArgs:
-#        update-status-on-shutdown: "false"
-      # configmaps to put here
+      extraArgs:
+        update-status-on-shutdown: "false"
+        tcp-services-configmap: "ingress-nginx/ingress-nginx-tcp"
+        udp-services-configmap: "ingress-nginx/ingress-nginx-udp"
 
-#      podLabels:
-#        rpi5.cluster.policy/egress-kubeapi: "true"
-#        rpi5.cluster.policy/egress-namespace: "true"
-#        rpi5.cluster.policy/egress-world-with-lan: "true"
-#        rpi5.cluster.policy/ingress-nodes: "true"
-#        rpi5.cluster.policy/ingress-prometheus: "true"
-#        rpi5.cluster.policy/ingress-world: "true"
+      podLabels:
+        rpi5.cluster.policy/egress-kubeapi: "true"
+        rpi5.cluster.policy/egress-namespace: "true"
+        rpi5.cluster.policy/egress-world-with-lan: "true"
+        rpi5.cluster.policy/ingress-nodes: "true"
+        rpi5.cluster.policy/ingress-prometheus: "true"
+        rpi5.cluster.policy/ingress-world: "true"
 
-#      allowSnippetAnnotations: true
+      allowSnippetAnnotations: true
 
 #      maxmindLicenseKey: ${geoip_license_key}
 
-#      config:
-#        proxy-buffer-size: 16k
-#        use-gzip: ${use_gzip:=true}
-#        enable-brotli: ${enable_brotli:=true}
-#        hsts-max-age: ${hsts_max_age:=31536000}
-#        hsts-preload: ${hsts_preload:=true}
-#        disable-ipv6: ${disable_ipv6:=true}
-#        disable-ipv6-dns: ${disable_ipv6_dns:=true}
-#        keep-alive-requests: ${keep_alive_requests:=1000}
-#        use-geoip2: ${use_geoip2:=true}
-#        custom-http-errors: 401,403,404,500,501,502,503,504
+      config:
+        proxy-buffer-size: 16k
+        use-gzip: ${use_gzip:=true}
+        enable-brotli: ${enable_brotli:=true}
+        hsts-max-age: ${hsts_max_age:=31536000}
+        hsts-preload: ${hsts_preload:=true}
+        disable-ipv6: ${disable_ipv6:=false}
+        disable-ipv6-dns: ${disable_ipv6_dns:=false}
+        keep-alive-requests: ${keep_alive_requests:=1000}
+        use-geoip2: ${use_geoip2:=true}
+        custom-http-errors: 401,403,404,500,501,502,503,504
 
       extraEnvs:
         - name: TZ
           value: Australia/Sydney
 
-#      addHeaders:
-#        Referrer-Policy: same-origin, strict-origin-when-cross-origin
-#        X-Content-Type-Options: nosniff
-#        X-Frame-Options: SAMEORIGIN
-#        X-XSS-Protection: 1; mode=block
+      addHeaders:
+        Referrer-Policy: same-origin, strict-origin-when-cross-origin
+        X-Content-Type-Options: nosniff
+        X-Frame-Options: SAMEORIGIN
+        X-XSS-Protection: 1; mode=block
 
-#      ingressClassResource:
-#        default: true
+      ingressClassResource:
+        default: true
 
       service:
         externalTrafficPolicy: Cluster
-#        loadBalancerIP: ${load_balancer_ip}
         ipFamilyPolicy: SingleStack
 
       metrics:
@@ -82,18 +82,18 @@ spec:
           labels:
             rpi5.cluster.policy/egress-kubeapi: "true"
 
-#    defaultBackend:
-#      enabled: true
-#      image:
-#        repository: ghcr.io/tarampampam/error-pages
-#        tag: 2.27.0@sha256:40e2631173b1a407c18fe7d1ba8104d995cf9e4780d123eeadfa1d57c68eaf4f
-#        pullPolicy: IfNotPresent
-#      extraEnvs:
-#        - name: TEMPLATE_NAME
-#          value: connection
-#        - name: SHOW_DETAILS
-#          value: "true"
-#        - name: READ_BUFFER_SIZE
-#          value: "8192"
-#      podLabels:
-#        rpi5.cluster.policy/ingress-namespace: "true"
+    defaultBackend:
+      enabled: true
+      image:
+        repository: ghcr.io/tarampampam/error-pages
+        tag: 2.27.0@sha256:40e2631173b1a407c18fe7d1ba8104d995cf9e4780d123eeadfa1d57c68eaf4f
+        pullPolicy: IfNotPresent
+      extraEnvs:
+        - name: TEMPLATE_NAME
+          value: connection
+        - name: SHOW_DETAILS
+          value: "true"
+        - name: READ_BUFFER_SIZE
+          value: "8192"
+      podLabels:
+        rpi5.cluster.policy/ingress-namespace: "true"
