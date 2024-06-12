@@ -4,6 +4,7 @@ metadata:
   name: cert-manager-secrets
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   path: ./cert-manager
   prune: true
@@ -27,6 +28,7 @@ metadata:
   name: cert-manager
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   targetNamespace: cert-manager
   path: ./kubernetes/templates/apps/cert-manager/app
@@ -46,6 +48,7 @@ metadata:
   name: cert-manager-issuers
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   targetNamespace: cert-manager
   path: ./kubernetes/templates/apps/cert-manager/issuers
