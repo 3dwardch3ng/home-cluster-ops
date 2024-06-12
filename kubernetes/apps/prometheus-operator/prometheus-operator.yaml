@@ -6,7 +6,7 @@ metadata:
 spec:
   suspend: true
   interval: 1h
-  targetNamespace: cert-manager
+  targetNamespace: flux-system
   path: ./kubernetes/apps/prometheus-operator
   prune: true
   sourceRef:

@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  targetNamespace: cert-manager
+  targetNamespace: flux-system
   path: ./kubernetes/templates/apps/cert-manager
   prune: true
   sourceRef:

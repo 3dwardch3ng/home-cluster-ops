@@ -7,7 +7,7 @@ spec:
   suspend: true
   interval: 1h
   targetNamespace: cert-manager
-  path: ./kubernetes/templates/apps/cert-manager/issuers
+  path: ./kubernetes/templates/apps/certissuers
   prune: true
   sourceRef:
     kind: GitRepository
