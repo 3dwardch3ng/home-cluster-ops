@@ -8,7 +8,7 @@ data:
   "853": "adguard-home/adguard-home:853"
   "5443": "adguard-home/adguard-home:5443"
   "6060": "adguard-home/adguard-home:6060"
-  "9000": "flux-system/capacitor:9000"
+  "9099": "flux-system/capacitor:9000"
   "10080": "adguard-home/adguard-home:80"
   "10443": "adguard-home/adguard-home:443"
   "13000": "adguard-home/adguard-home::3000"

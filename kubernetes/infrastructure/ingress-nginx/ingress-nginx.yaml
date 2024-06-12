@@ -20,34 +20,14 @@ spec:
         name: ingress-nginx-values
   patches:
     - target:
-        kind: HelmRelease
-        name: ingress-nginx
+        kind: Service
+        name: ingress-nginx-controller
+        namespace: ingress-nginx
       patch: |
         - op: add
-          path: /spec/postRenderers/0//kustomize/patches/-
+          path: /spec/ports/-
           value:
-            target:
-              kind: Service
-              name: ingress-nginx-controller
-            patch: |
-              - op: add
-                path: "/spec/ports/-"
-                value:
-                  name: capacitor-tcp-9000
-                  nodePort: 31555
-                  port: 9000
-                  protocol: TCP
-                  targetPort: 9000
-        - op: add
-          path: /spec/postRenderers/0/kustomize/patches/-
-          value:
-            target:
-              kind: Deployment
-              name: ingress-nginx-controller
-            patch: |
-              - op: add
-                path: "/spec/template/spec/containers/0/ports/-"
-                value:
-                  containerPort: 9000
-                  name: capacitor
-                  protocol: TCP
+            name: proxied-tcp-9099
+            port: 9099
+            targetPort: 9099
+            protocol: TCP
