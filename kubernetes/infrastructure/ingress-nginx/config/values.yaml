@@ -5,6 +5,5 @@ metadata:
   namespace: flux-system
 data:
   use_geoip2: "false"
-  metrics_enabled: "true"
   disable_ipv6: "true"
   disable_ipv6_dns: "true"
