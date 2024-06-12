@@ -45,15 +45,3 @@ spec:
       ##
       prometheusOperator:
         enabled: true
-
-      ####
-      ##
-      ## Everything down here, explicitly disables everything BUT the operator itself
-      ##
-      ####
-
-
-      ## dont Deploy a Prometheus instance
-      ##
-      prometheus:
-        enabled: true

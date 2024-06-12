@@ -1,0 +1,82 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: clusterissuer
+  namespace: clusterissuer
+spec:
+  releaseName: clusterissuer
+  chart:
+    spec:
+      chart: clusterissuer
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  dependsOn:
+    - name: cert-manager
+      namespace: flux-system
+    - name: repositories
+      namespace: flux-system
+  values:
+    image:
+      repository: hello-world
+      tag: latest@sha256:266b191e926f65542fa8daaec01a192c4d292bff79426f47300a046e1bc576fd
+      pullPolicy: IfNotPresent
+    manifestManager:
+      enabled: true
+    workload:
+      main:
+        enabled: true
+        podSpec:
+          containers:
+            main:
+              enabled: true
+              probes:
+                liveness:
+                  enabled: false
+                readiness:
+                  enabled: false
+                startup:
+                  enabled: false
+    service:
+      main:
+        enabled: true
+        ports:
+          main:
+            enabled: true
+            port: 9999
+    portal:
+      open:
+        enabled: true
+    operator:
+      cert-manager:
+        namespace: cert-manager
+
+    clusterIssuer:
+      ACME:
+      - name: letsencrypt
+        # Used for both logging in to the DNS provider AND ACME registration
+        email: ${email}
+        server: 'https://acme-v02.api.letsencrypt.org/directory'
+        # Used primarily for the SCALE GUI
+        customServer: 'https://acme-v02.api.letsencrypt.org/directory'
+        # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
+        type: "cloudflare"
+        # for cloudflare
+        cfapitoken: ${cloudflare_api_token}
+
+    clusterCertificates:
+      # Namespaces in which the certificates must be available
+      # Accepts comma-separated regex expressions
+      # replicationNamespaces: 'ix-.*'
+      certificates:
+      - name: cluster-certificate
+        enabled: true
+        certificateIssuer: ACME
+        hosts:
+          - ${cluster_cert_domain}
+          - ${cluster_cert_domain_wildcard}
