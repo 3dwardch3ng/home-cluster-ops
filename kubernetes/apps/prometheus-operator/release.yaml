@@ -1,0 +1,59 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: prometheus-operator
+  namespace: prometheus-operator
+spec:
+  releaseName: prometheus-operator
+  chart:
+    spec:
+      chart: prometheus-operator
+      sourceRef:
+        kind: HelmRepository
+        name: truecharts
+        namespace: flux-system
+  interval: 5m
+  install:
+    remediation:
+      retries: 3
+  values:
+    service:
+      main:
+        enabled: true
+        ports:
+          main:
+            enabled: true
+
+    workload:
+      main:
+        enabled: true
+
+    portal:
+      open:
+        enabled: true
+
+    operator:
+      register: true
+
+    kps:
+      ## Install Prometheus Operator CRDs
+      ##
+      crds:
+        enabled: true
+
+      ## Manages Prometheus and Alertmanager components
+      ##
+      prometheusOperator:
+        enabled: true
+
+      ####
+      ##
+      ## Everything down here, explicitly disables everything BUT the operator itself
+      ##
+      ####
+
+
+      ## dont Deploy a Prometheus instance
+      ##
+      prometheus:
+        enabled: true
