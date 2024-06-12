@@ -4,4 +4,5 @@ resources:
   - ./adguard-home/adguard-home.yaml
   - ./capacitor/capacitor.yaml
   - ./cert-manager/cert-manager.yaml
+  - ./clusterissuer/clusterissuer.yaml
   - ./podinfo/podinfo.yaml

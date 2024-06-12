@@ -4,6 +4,7 @@ metadata:
   name: prometheus-operator
   namespace: flux-system
 spec:
+  suspend: true
   interval: 1h
   targetNamespace: cert-manager
   path: ./kubernetes/apps/prometheus-operator
