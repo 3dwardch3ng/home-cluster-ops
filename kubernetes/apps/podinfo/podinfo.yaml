@@ -5,7 +5,7 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  path: ./kubernetes/apps/podinfo
+  path: ./kubernetes/apps/podinfo/app
   prune: true
   sourceRef:
     kind: GitRepository
