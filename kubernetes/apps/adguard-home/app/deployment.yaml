@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adguard-home
+  namespace: adguard-home
+  labels:
+    app.kubernetes.io/name: adguard-home
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: adguard-home
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: adguard-home
+    spec:
+      containers:
+        - name: adguard-home
+          image: adguard/adguardhome:v0.107.51
+          ports:
+            - protocol: TCP
+              containerPort: 53
+              name: c-dns-tcp
+            - protocol: UDP
+              containerPort: 53
+              name: c-dns-udp
+            - protocol: UDP
+              containerPort: 67
+              name: c-dhcp-svr
+            - protocol: UDP
+              containerPort: 68
+              name: con-dhcp-clt
+            - protocol: TCP
+              containerPort: 80
+              name: c-main-tcp
+            - protocol: TCP
+              containerPort: 443
+              name: c-https-tcp
+            - protocol: UDP
+              containerPort: 443
+              name: c-https-udp
+            - protocol: TCP
+              containerPort: 853
+              name: c-dns-tls-tcp
+            - protocol: UDP
+              containerPort: 853
+              name: c-dns-tls-udp
+            - protocol: TCP
+              containerPort: 3000
+              name: c-http-alt-tcp
+            - protocol: UDP
+              containerPort: 3000
+              name: c-httpalt-udp
+            - protocol: TCP
+              containerPort: 5443
+              name: c-dnscrypt-tcp
+            - protocol: UDP
+              containerPort: 5443
+              name: c-dnscrypt-udp
+            - protocol: TCP
+              containerPort: 6060
+              name: c-http-pprof
+          volumeMounts:
+            - name: adguard-home-data
+              mountPath: /opt/adguardhome/work
+            - name: adguard-home-config
+              mountPath: /opt/adguardhome/config
+      volumes:
+        - name: adguard-home-data
+          hostPath:
+            path: /mnt/nfs/AppData/adguardhome/work
+            type: Directory
+        - name: adguard-home-config
+          hostPath:
+            path: /mnt/nfs/AppData/adguardhome/conf
+            type: Directory
