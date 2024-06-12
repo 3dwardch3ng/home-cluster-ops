@@ -29,4 +29,4 @@ spec:
     - name: cilium
       namespace: kube-system
     - name: ingress-nginx
-      namespace: kube-system
+      namespace: flux-system
