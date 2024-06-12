@@ -5,6 +5,8 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
+  timeout: 5m
+  retryInterval: 5m
   path: ./kubernetes/infrastructure/ingress-nginx/config
   prune: true
   sourceRef:
