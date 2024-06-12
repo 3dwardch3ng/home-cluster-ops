@@ -7,7 +7,7 @@ spec:
   suspend: true
   interval: 1h
   targetNamespace: flux-system
-  path: ./kubernetes/apps/prometheus-operator
+  path: ./kubernetes/apps/prometheus-operator/app
   prune: true
   sourceRef:
     kind: GitRepository
