@@ -6,7 +6,7 @@ metadata:
 spec:
   interval: 1h
   targetNamespace: cert-manager
-  path: ./kubernetes/templates/apps/prometheus-operator
+  path: ./kubernetes/apps/prometheus-operator
   prune: true
   sourceRef:
     kind: GitRepository
