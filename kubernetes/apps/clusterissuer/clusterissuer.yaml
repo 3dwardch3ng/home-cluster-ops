@@ -4,7 +4,6 @@ metadata:
   name: clusterissuer-secrets
   namespace: flux-system
 spec:
-  suspend: true
   interval: 1h
   path: ./clusterissuer
   prune: true
