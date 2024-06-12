@@ -4,6 +4,7 @@ metadata:
   name: cilium
   namespace: kube-system
 spec:
+  suspend: true
   interval: 1h
   path: ./kubernetes/infrastructure/cilium/app
   prune: true
@@ -18,6 +19,7 @@ metadata:
   name: cilium-networkpolicies
   namespace: kube-system
 spec:
+  suspend: true
   interval: 1h
   path: ./kubernetes/infrastructure/cilium/networkpolicies
   prune: true
