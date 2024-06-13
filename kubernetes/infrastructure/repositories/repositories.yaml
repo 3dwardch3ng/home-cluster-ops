@@ -5,7 +5,9 @@ metadata:
   name: repositories
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   path: ./kubernetes/infrastructure/repositories/repos
   prune: true
   sourceRef:

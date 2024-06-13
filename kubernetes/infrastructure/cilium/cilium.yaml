@@ -4,7 +4,9 @@ metadata:
   name: cilium
   namespace: kube-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   path: ./kubernetes/infrastructure/cilium/app
   prune: true
   sourceRef:
@@ -18,7 +20,9 @@ metadata:
   name: cilium-networkpolicies
   namespace: kube-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   path: ./kubernetes/infrastructure/cilium/networkpolicies
   prune: true
   sourceRef:
