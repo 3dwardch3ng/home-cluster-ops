@@ -4,20 +4,41 @@ metadata:
   name: cert-manager
   namespace: cert-manager
 spec:
-  releaseName: cert-manager
+  interval: 1h
+  driftDetection:
+    mode: enabled
   chart:
     spec:
       chart: cert-manager
+      version: v1.15.0
       sourceRef:
         kind: HelmRepository
-        name: truecharts
-        namespace: flux-system
-  interval: 5m
+        namespace: cert-manager
+        name: cert-manager
+      interval: 1h
   install:
-    remediation:
-      retries: 3
+    crds: Create
+  upgrade:
+    crds: CreateReplace
   values:
-    certmanager:
-      prometheus:
-        servicemonitor:
-          enabled: false
+    installCRDs: true
+
+    podLabels:
+      rpi5.cluster.policy/egress-kubeapi: "true"
+      rpi5.cluster.policy/egress-namespace: "true"
+      rpi5.cluster.policy/egress-world: "true"
+      rpi5.cluster.policy/ingress-namespace: "true"
+    webhook:
+      podLabels:
+        rpi5.cluster.policy/egress-kubeapi: "true"
+    cainjector:
+      podLabels:
+        rpi5.cluster.policy/egress-kubeapi: "true"
+
+    global:
+      priorityClassName: system-cluster-critical
+
+    podDnsConfig:
+      nameservers:
+        - 1.1.1.1
+        - 1.0.0.1
