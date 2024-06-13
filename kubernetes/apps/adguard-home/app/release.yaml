@@ -35,12 +35,12 @@ spec:
         enabled: true
         hostPath: /mnt/nfs/AppData/adguardhome/conf
         mountPath: /opt/adguardhome/conf
-        type: Directory
+        type: hostPath
       work:
         enabled: true
         hostPath: /mnt/nfs/AppData/adguardhome/work
         mountPath: /opt/adguardhome/work
-        type: Directory
+        type: hostPath
     portal:
       open:
         enabled: true
