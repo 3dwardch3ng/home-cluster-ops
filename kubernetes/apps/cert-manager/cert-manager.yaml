@@ -40,7 +40,6 @@ metadata:
   name: clusterissuer
   namespace: flux-system
 spec:
-  suspend: true
   interval: 1h
   targetNamespace: cert-manager
   path: ./kubernetes/apps/cert-manager/clusterissuer
