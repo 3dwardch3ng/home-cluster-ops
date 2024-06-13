@@ -54,7 +54,7 @@ spec:
         enabled: true
     operator:
       cert-manager:
-        namespace: cert-manager
+        namespace: flux-system
 
     clusterIssuer:
       ACME:
