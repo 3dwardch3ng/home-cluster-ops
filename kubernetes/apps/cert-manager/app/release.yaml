@@ -17,18 +17,6 @@ spec:
     remediation:
       retries: 3
   values:
-    service:
-      main:
-        enabled: true
-        ports:
-          main:
-            enabled: true
-    workload:
-      main:
-        enabled: true
-    portal:
-      open:
-        enabled: true
     certmanager:
       prometheus:
         servicemonitor:
