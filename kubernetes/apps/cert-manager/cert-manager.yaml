@@ -4,7 +4,9 @@ metadata:
   name: cert-manager
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   targetNamespace: cert-manager
   path: ./kubernetes/apps/cert-manager/app
   prune: true
@@ -19,7 +21,9 @@ metadata:
   name: clusterissuer-secrets
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   path: ./clusterissuer
   prune: true
   sourceRef:
@@ -40,7 +44,9 @@ metadata:
   name: clusterissuer
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   targetNamespace: cert-manager
   path: ./kubernetes/apps/cert-manager/clusterissuer
   prune: true
