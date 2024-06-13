@@ -79,4 +79,4 @@ spec:
         certificateIssuer: ACME
         hosts:
           - "${cluster_cert_domain}"
-          - "${cluster_cert_domain_wildcard}"
+          - "*.${cluster_cert_domain}"
