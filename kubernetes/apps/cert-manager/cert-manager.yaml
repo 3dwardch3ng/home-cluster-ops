@@ -5,10 +5,14 @@ metadata:
   namespace: flux-system
 spec:
   interval: 1h
-  targetNamespace: flux-system
-  path: ./kubernetes/apps/cert-manager/app
+  targetNamespace: cert-manager
+  path: ./kubernetes/templates/apps/cert-manager/app
   prune: true
   sourceRef:
     kind: GitRepository
     namespace: flux-system
     name: flux-system
+  postBuild:
+    substituteFrom:
+      - kind: Secret
+        name: cert-manager-secrets
