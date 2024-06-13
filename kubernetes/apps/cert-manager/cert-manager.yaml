@@ -43,7 +43,7 @@ spec:
   suspend: true
   interval: 1h
   targetNamespace: cert-manager
-  path: ./kubernetes/apps/cert-manager/clusterissuers
+  path: ./kubernetes/apps/cert-manager/clusterissuer
   prune: true
   sourceRef:
     kind: GitRepository
