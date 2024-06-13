@@ -60,14 +60,14 @@ spec:
       ACME:
       - name: letsencrypt
         # Used for both logging in to the DNS provider AND ACME registration
-        email: ${email | quote}
+        email: ${email}
         server: 'https://acme-v02.api.letsencrypt.org/directory'
         # Used primarily for the SCALE GUI
         customServer: 'https://acme-v02.api.letsencrypt.org/directory'
         # Options: HTTP01, cloudflare, route53, akamai, digitalocean, rfc2136, acmedns
         type: "cloudflare"
         # for cloudflare
-        cfapitoken: ${cloudflare_api_token | quote}
+        cfapitoken: ${cloudflare_api_token}
 
     clusterCertificates:
       # Namespaces in which the certificates must be available
@@ -78,5 +78,5 @@ spec:
         enabled: true
         certificateIssuer: ACME
         hosts:
-          - ${cluster_cert_domain | quote}
-          - ${cluster_cert_domain_wildcard | quote}
+          - ${cluster_cert_domain}
+          - ${cluster_cert_domain_wildcard}
