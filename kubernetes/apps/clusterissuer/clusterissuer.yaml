@@ -29,7 +29,7 @@ metadata:
 spec:
   suspend: false
   interval: 1h
-  targetNamespace: cert-manager
+  targetNamespace: clusterissuer
   path: ./kubernetes/apps/clusterissuer/app
   prune: true
   sourceRef:
