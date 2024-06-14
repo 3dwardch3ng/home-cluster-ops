@@ -1,7 +1,7 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: cluster-ingress
+  name: adguard-home-ingress
   namespace: flux-system
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
@@ -10,23 +10,23 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "capacitor.edward.sydney"
+    - host: "adguard-home.cluster.local"
       http:
         paths:
-          - pathType: Prefix
+          - pathType: ImplementationSpecific
             path: "/"
             backend:
               service:
-                name: capacitor
+                name: adguard-home
                 port:
-                  number: 9100
-    - host: "capacitor.local"
+                  number: 10080
+    - host: "setup.adguard-home.cluster.local"
       http:
         paths:
-          - pathType: Prefix
+          - pathType: ImplementationSpecific
             path: "/"
             backend:
               service:
-                name: capacitor
+                name: adguard-home
                 port:
-                  number: 9000
+                  number: 13000
