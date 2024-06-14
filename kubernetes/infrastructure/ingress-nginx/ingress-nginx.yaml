@@ -8,7 +8,7 @@ spec:
   timeout: 1m30s
   retryInterval: 30s
   targetNamespace: ingress-nginx
-  path: ./kubernetes/templates/apps/ingress-nginx
+  path: ./kubernetes/infrastructure/ingress-nginx/app
   prune: true
   sourceRef:
     kind: GitRepository
