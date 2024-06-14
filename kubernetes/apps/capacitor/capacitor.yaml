@@ -38,10 +38,11 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - http:
+    - host: "capacitor.edward.sydney"
+      http:
         paths:
-          - path: /
-            pathType: Prefix
+          - pathType: Prefix
+            path: "/"
             backend:
               service:
                 name: capacitor
