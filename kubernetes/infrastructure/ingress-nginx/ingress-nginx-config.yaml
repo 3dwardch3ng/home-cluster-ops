@@ -4,6 +4,7 @@ metadata:
   name: ingress-nginx-config
   namespace: flux-system
 spec:
+  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
