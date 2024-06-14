@@ -5,3 +5,4 @@ resources:
   - ./cilium/cilium.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
   - ./ingress-nginx/ingress-nginx.yaml
+  - ./ingress-nginx/ingress.yaml
