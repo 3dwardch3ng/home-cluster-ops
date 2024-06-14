@@ -11,7 +11,7 @@ spec:
       - dns01:
           cloudflare:
             email: ${email}
-            apiKeySecretRef:
+            privateKeySecretRef:
               name: clusterissuer-secrets
               key: cloudflare_api_token
         selector:
