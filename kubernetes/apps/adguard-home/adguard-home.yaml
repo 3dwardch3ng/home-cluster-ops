@@ -4,7 +4,9 @@ metadata:
   name: adguard-home
   namespace: flux-system
 spec:
-  interval: 1h
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
   targetNamespace: flux-system
   path: ./kubernetes/apps/adguard-home/app
   prune: true
