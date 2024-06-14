@@ -60,6 +60,9 @@ spec:
             - protocol: TCP
               containerPort: 6060
               name: http-pprof
+          env:
+            - name: TZ
+              value: America/New_York
           volumeMounts:
             - name: adguard-home-data
               mountPath: /opt/adguardhome/work
