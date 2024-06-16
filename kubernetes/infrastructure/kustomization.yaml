@@ -1,7 +1,12 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./namespaces/
+  - ./namespaces/adguard-home.yaml
+  - ./namespaces/capacitor.yaml
+  - ./namespaces/cert-manager.yaml
+  - ./namespaces/ingress-nginx.yaml
+  - ./namespaces/podinfo.yaml
+  - ./namespaces/prometheus-operator.yaml
   - ./repositories/repositories.yaml
   - ./cilium/cilium.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
