@@ -13,7 +13,7 @@ spec:
     - host: "capacitor.edward.sydney"
       http:
         paths:
-          - pathType: ImplementationSpecific
+          - pathType: Prefix
             path: "/"
             backend:
               service:
@@ -23,7 +23,7 @@ spec:
     - host: "capacitor.cluster.local"
       http:
         paths:
-          - pathType: ImplementationSpecific
+          - pathType: Prefix
             path: "/"
             backend:
               service:
