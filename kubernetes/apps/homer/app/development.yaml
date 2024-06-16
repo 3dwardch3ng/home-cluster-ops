@@ -21,10 +21,6 @@ spec:
         rpi5.cluster.policy/ingress-nodes: "true"
         rpi5.cluster.policy/ingress-world: "true"
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
-        fsGroup: 1000
       containers:
         - name: homer
           image: b4bz/homer:v24.05.1
@@ -40,3 +36,10 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/homer/www
             type: Directory
+      initContainers:
+        - name: volume-mount-permissions
+          image: b4bz/homer:v24.05.1
+          command: [ "sh", "-c", "chown -R 0:0 /www" ]
+          volumeMounts:
+            - name: www
+              mountPath: /www
