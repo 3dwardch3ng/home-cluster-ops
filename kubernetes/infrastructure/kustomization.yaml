@@ -4,6 +4,7 @@ resources:
   - ./namespaces/adguard-home.yaml
   - ./namespaces/capacitor.yaml
   - ./namespaces/cert-manager.yaml
+  - ./namespaces/homer.yaml
   - ./namespaces/ingress-nginx.yaml
   - ./namespaces/podinfo.yaml
   - ./namespaces/prometheus-operator.yaml

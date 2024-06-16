@@ -1,0 +1,22 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: homer
+  namespace: homer
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  targetNamespace: flux-system
+  path: ./kubernetes/apps/homer/app
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: flux-system
+  dependsOn:
+    - kind: HelmRepository
+      name: djjudas21
+  values:
+    - secretRef:
+        name: homer-vars
