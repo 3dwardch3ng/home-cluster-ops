@@ -24,6 +24,7 @@ spec:
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
+  targetNamespace: cert-manager
   path: ./clusterissuer
   prune: true
   sourceRef:
