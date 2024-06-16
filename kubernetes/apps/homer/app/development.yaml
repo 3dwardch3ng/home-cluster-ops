@@ -41,5 +41,5 @@ spec:
           image: b4bz/homer:v24.05.1
           command: [ "sh", "-c", "chown -R 0:0 /www/assets" ]
           volumeMounts:
-            - name: www
+            - name: assets
               mountPath: /www/assets
