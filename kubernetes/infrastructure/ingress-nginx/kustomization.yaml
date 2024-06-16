@@ -3,4 +3,3 @@ kind: Kustomization
 resources:
   - ingress-nginx.yaml
   - ingress-nginx-config.yaml
-  - ../../apps/adguard-home/app/ingress.yaml
