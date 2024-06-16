@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: cert-manager
-  namespace: flux-system
+  namespace: cert-manager
 spec:
   interval: 10m
   timeout: 1m30s
@@ -19,7 +19,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: clusterissuer-secrets
-  namespace: flux-system
+  namespace: cert-manager
 spec:
   interval: 10m
   timeout: 1m30s
@@ -42,7 +42,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: clusterissuer
-  namespace: flux-system
+  namespace: cert-manager
 spec:
   interval: 10m
   timeout: 1m30s
