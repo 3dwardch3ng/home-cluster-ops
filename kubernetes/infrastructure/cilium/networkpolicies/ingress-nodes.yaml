@@ -2,7 +2,7 @@ apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
   name: ingress-nodes
-  namespace: kube-system
+  namespace: cilium
 spec:
   endpointSelector:
     matchLabels:
