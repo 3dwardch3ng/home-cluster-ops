@@ -36,10 +36,3 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/homer/www/assets
             type: Directory
-      initContainers:
-        - name: volume-mount-permissions
-          image: b4bz/homer:v24.05.1
-          command: [ "sh", "-c", "chown -R 0:0 /www/assets" ]
-          volumeMounts:
-            - name: assets
-              mountPath: /www/assets
