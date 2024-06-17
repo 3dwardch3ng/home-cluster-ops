@@ -82,6 +82,20 @@ spec:
           labels:
             rpi5.cluster.policy/egress-kubeapi: "true"
 
+      spec:
+        template:
+          spec:
+            containers:
+              volumeMounts:
+                - mountPath: /etc/nginx/template
+                  name: nginx-template-volume
+                  readOnly: true
+            volumes:
+              - name: nginx-template-volume
+                hostPath:
+                  path: /mnt/nfs/AppData/ingress-nginx/etc/nginx/template
+                  type: Directory
+
     defaultBackend:
       enabled: true
       image:
