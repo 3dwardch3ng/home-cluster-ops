@@ -10,5 +10,5 @@ resources:
   - ./namespaces/prometheus-operator.yaml
   - ./repositories/repositories.yaml
   - ./cilium/cilium.yaml
-  - ./ingress-nginx/ingress-nginx-config.yaml
-  - ./ingress-nginx/ingress-nginx.yaml
+  # - ./ingress-nginx/ingress-nginx-config.yaml
+  # - ./ingress-nginx/ingress-nginx.yaml
