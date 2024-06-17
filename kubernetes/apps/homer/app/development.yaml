@@ -13,8 +13,8 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: homer
-        rpi5.cluster.policy/egress-nodes: "true"
-        rpi5.cluster.policy/ingress-nodes: "true"
+        rpi5.cluster.policy/egress-ingress: "true"
+        rpi5.cluster.policy/ingress-ingress: "true"
     spec:
       securityContext:
         runAsUser: 1000
