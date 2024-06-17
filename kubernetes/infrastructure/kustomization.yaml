@@ -9,6 +9,6 @@ resources:
   - ./namespaces/podinfo.yaml
   - ./namespaces/prometheus-operator.yaml
   - ./repositories/repositories.yaml
-#  - ./cilium/cilium.yaml
+  - ./cilium/cilium.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
   - ./ingress-nginx/ingress-nginx.yaml
