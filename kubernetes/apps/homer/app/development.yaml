@@ -24,9 +24,16 @@ spec:
       containers:
         - name: homer
           image: b4bz/homer:v24.05.1
+          env:
+            - name: GID
+              value: "0"
+            - name: UID
+              value: "0"
+            - name: PORT
+              value: "8088"
           ports:
             - protocol: TCP
-              containerPort: 8080
+              containerPort: 8088
               name: http
           volumeMounts:
             - name: assets
