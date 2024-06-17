@@ -25,8 +25,8 @@ spec:
 
       extraArgs:
         update-status-on-shutdown: "false"
-        tcp-services-configmap: "ingress-nginx/tcp-services"
-        udp-services-configmap: "ingress-nginx/udp-services"
+#        tcp-services-configmap: "ingress-nginx/tcp-services"
+#        udp-services-configmap: "ingress-nginx/udp-services"
 
       podLabels:
         rpi5.cluster.policy/egress-kubeapi: "true"
