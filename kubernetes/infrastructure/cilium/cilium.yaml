@@ -20,6 +20,7 @@ metadata:
   name: cilium-networkpolicies
   namespace: cilium
 spec:
+  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
