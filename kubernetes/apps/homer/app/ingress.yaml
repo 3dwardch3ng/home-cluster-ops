@@ -19,13 +19,3 @@ spec:
                 name: homer
                 port:
                   number: 8088
-    - host: "home.cluster.local"
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: homer
-                port:
-                  number: 8088
