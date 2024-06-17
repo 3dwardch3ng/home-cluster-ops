@@ -13,13 +13,8 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: homer
-        rpi5.cluster.policy/egress-kubeapi: "true"
-        rpi5.cluster.policy/egress-namespace: "true"
-        rpi5.cluster.policy/egress-world: "true"
-        rpi5.cluster.policy/ingress-namespace: "true"
-        rpi5.cluster.policy/ingress-nginx: "true"
+        rpi5.cluster.policy/egress-nodes: "true"
         rpi5.cluster.policy/ingress-nodes: "true"
-        rpi5.cluster.policy/ingress-world: "true"
     spec:
       securityContext:
         runAsUser: 1000
