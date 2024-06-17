@@ -27,6 +27,8 @@ spec:
           env:
             - name: PORT
               value: "8088"
+            - name: INIT_ASSETS
+              value: "0"
           ports:
             - protocol: TCP
               containerPort: 8088
