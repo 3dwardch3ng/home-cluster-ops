@@ -21,14 +21,15 @@ spec:
         rpi5.cluster.policy/ingress-nodes: "true"
         rpi5.cluster.policy/ingress-world: "true"
     spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
       containers:
         - name: homer
           image: b4bz/homer:v24.05.1
+          securityContext:
+            allowPrivilegeEscalation: false
           env:
-            - name: GID
-              value: "0"
-            - name: UID
-              value: "0"
             - name: PORT
               value: "8088"
           ports:
