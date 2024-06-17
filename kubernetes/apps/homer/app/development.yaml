@@ -32,10 +32,10 @@ spec:
               containerPort: 8088
               name: http
           volumeMounts:
-            - name: www
-              mountPath: /www
+            - name: assets
+              mountPath: /www/assets
       volumes:
-        - name: www
+        - name: assets
           hostPath:
-            path: /mnt/nfs/AppData/homer/www
+            path: /mnt/nfs/AppData/homer/www/assets
             type: Directory
