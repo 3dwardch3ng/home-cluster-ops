@@ -2,7 +2,7 @@ apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
   name: ingress-ingress
-  namespace: cilium
+  namespace: kube-system
 spec:
   endpointSelector:
     matchLabels:
@@ -18,7 +18,7 @@ apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
   name: ingress-nginx
-  namespace: cilium
+  namespace: kube-system
 spec:
   endpointSelector:
     matchLabels:
@@ -36,7 +36,7 @@ apiVersion: cilium.io/v2
 kind: CiliumClusterwideNetworkPolicy
 metadata:
   name: egress-ingress
-  namespace: cilium
+  namespace: kube-system
 spec:
   endpointSelector:
     matchLabels:
@@ -52,7 +52,7 @@ apiVersion: cilium.io/v2
 kind: CiliumNetworkPolicy
 metadata:
   name: egress-nginx
-  namespace: cilium
+  namespace: kube-system
 spec:
   endpointSelector:
     matchLabels:
