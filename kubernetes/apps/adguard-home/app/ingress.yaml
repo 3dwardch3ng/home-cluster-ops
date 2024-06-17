@@ -9,6 +9,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+    - host: "adguard-home.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 10080
     - host: "adguard-home.cluster.local"
       http:
         paths:

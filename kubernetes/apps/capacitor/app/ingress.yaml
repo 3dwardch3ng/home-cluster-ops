@@ -19,13 +19,3 @@ spec:
                 name: capacitor
                 port:
                   number: 9000
-    - host: "capacitor.cluster.local"
-      http:
-        paths:
-          - pathType: Prefix
-            path: "/"
-            backend:
-              service:
-                name: capacitor
-                port:
-                  number: 9000
