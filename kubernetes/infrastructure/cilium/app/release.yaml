@@ -10,7 +10,7 @@ spec:
       version: 1.15.5
       sourceRef:
         kind: HelmRepository
-        namespace: kube-system
+        namespace: cilium
         name: cilium
   install:
     crds: Create
