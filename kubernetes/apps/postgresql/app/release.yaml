@@ -33,7 +33,7 @@ spec:
     spec:
       chart: postgresql
       sourceRef:
-        kind: OCIRepository
+        kind: HelmRepository
         name: postgresql
   interval: 1h
   install:
