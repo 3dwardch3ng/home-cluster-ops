@@ -1,0 +1,99 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: postgresql-secrets
+  namespace: postgresql
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  targetNamespace: postgresql
+  path: ./postgresql
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: home-cluster-ops-secrets
+  dependsOn:
+    - name: repositories
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: postgresql-sops-age
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: postgresql
+  namespace: postgresql
+spec:
+  releaseName: postgresql
+  chart:
+    spec:
+      chart: postgresql
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    postgresql:
+      auth:
+        postgresPassword: ${postgresql_password}
+        username: ${username}
+        password: ${password}
+        database: ${database}
+        replicationPassword: ${replication_password}
+      architecture: "replication"
+      replication:
+        synchronousCommit: "on"
+        numSynchronousReplicas: 1
+        applicationName: "postgresqlReplication"
+      primary:
+        podSecurityContext:
+          fsGroup: 1000
+        containerSecurityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+        podLabels:
+          name: "postgresql-primary"
+        persistence:
+          existingClaim: postgresql-primary-pvc
+          selector:
+            matchLabels:
+              name: postgresql-primary-pvc
+      readReplicas:
+        name: "replica"
+        podSecurityContext:
+          fsGroup: 1000
+        containerSecurityContext:
+          runAsUser: 1000
+          runAsGroup: 1000
+        podLabels:
+          name: "postgresql-replica"
+        persistence:
+          existingClaim: postgresql-replica-pvc
+          selector:
+            matchLabels:
+              name: postgresql-replica-pvc
+
+
+
+
+    controller:
+      spec:
+        template:
+          spec:
+            containers:
+              volumeMounts:
+                - mountPath: /bitnami/postgresql
+                  name: postgresql-volume
+                  readOnly: false
+            volumes:
+              - name: postgresql-volume
+                hostPath:
+                  path: /mnt/nfs/AppData/postgresql
+                  type: Directory
