@@ -8,7 +8,6 @@ resources:
   - ./namespaces/ingress-nginx.yaml
   - ./namespaces/podinfo.yaml
   - ./namespaces/prometheus-operator.yaml
-  - ./namespaces/weave-gitops.yaml
   - ./repositories/repositories.yaml
 #  - ./cilium/cilium.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
