@@ -41,42 +41,42 @@ spec:
     remediation:
       retries: 3
   values:
-    postgresql:
+    global:
       auth:
         postgresPassword: ${postgresql_password}
         username: ${username}
         password: ${password}
         database: ${database}
         replicationPassword: ${replication_password}
-      architecture: "replication"
-      replication:
-        synchronousCommit: "on"
-        numSynchronousReplicas: 1
-        applicationName: "postgresqlReplication"
-      primary:
-        podSecurityContext:
-          fsGroup: 1000
-        containerSecurityContext:
-          runAsUser: 1000
-          runAsGroup: 1000
-        podLabels:
-          name: "postgresql-primary"
-        persistence:
-          existingClaim: postgresql-primary-pvc
-          selector:
-            matchLabels:
-              name: postgresql-primary-pvc
-      readReplicas:
-        name: "replica"
-        podSecurityContext:
-          fsGroup: 1000
-        containerSecurityContext:
-          runAsUser: 1000
-          runAsGroup: 1000
-        podLabels:
-          name: "postgresql-replica"
-        persistence:
-          existingClaim: postgresql-replica-pvc
-          selector:
-            matchLabels:
-              name: postgresql-replica-pvc
+    architecture: "replication"
+    replication:
+      synchronousCommit: "on"
+      numSynchronousReplicas: 1
+      applicationName: "postgresqlReplication"
+    primary:
+      podSecurityContext:
+        fsGroup: 1000
+      containerSecurityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      podLabels:
+        name: "postgresql-primary"
+      persistence:
+        existingClaim: postgresql-primary-pvc
+        selector:
+          matchLabels:
+            name: postgresql-primary-pvc
+    readReplicas:
+      name: "replica"
+      podSecurityContext:
+        fsGroup: 1000
+      containerSecurityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      podLabels:
+        name: "postgresql-replica"
+      persistence:
+        existingClaim: postgresql-replica-pvc
+        selector:
+          matchLabels:
+            name: postgresql-replica-pvc
