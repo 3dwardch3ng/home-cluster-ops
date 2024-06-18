@@ -41,13 +41,12 @@ spec:
     remediation:
       retries: 3
   values:
-    global:
-      auth:
-        postgresPassword: ${postgresql_password}
-        username: ${username}
-        password: ${password}
-        database: ${database}
-        replicationPassword: ${replication_password}
+    auth:
+      postgresPassword: ${postgresql_password}
+      username: ${username}
+      password: ${password}
+      database: ${database}
+      replicationPassword: ${replication_password}
     architecture: "replication"
     replication:
       synchronousCommit: "on"
