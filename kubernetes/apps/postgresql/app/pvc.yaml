@@ -20,6 +20,14 @@ spec:
     kind: PersistentVolumeClaim
     name: postgresql-primary-pvc
     namespace: postgresql
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rpi5-cluster-node-3
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -59,6 +67,14 @@ spec:
     kind: PersistentVolumeClaim
     name: postgresql-replica-pvc
     namespace: postgresql
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rpi5-cluster-node-3
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
