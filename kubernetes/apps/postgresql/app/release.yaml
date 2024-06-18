@@ -33,7 +33,7 @@ spec:
     spec:
       chart: postgresql
       sourceRef:
-        kind: HelmRepository
+        kind: OCIRepository
         name: bitnami
   interval: 1h
   install:
@@ -79,21 +79,3 @@ spec:
           selector:
             matchLabels:
               name: postgresql-replica-pvc
-
-
-
-
-    controller:
-      spec:
-        template:
-          spec:
-            containers:
-              volumeMounts:
-                - mountPath: /bitnami/postgresql
-                  name: postgresql-volume
-                  readOnly: false
-            volumes:
-              - name: postgresql-volume
-                hostPath:
-                  path: /mnt/nfs/AppData/postgresql
-                  type: Directory
