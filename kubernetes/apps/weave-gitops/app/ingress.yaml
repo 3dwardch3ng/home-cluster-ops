@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "weave-gitops.edward.sydney"
+    - host: "weave-gitops.cluster.edward.sydney"
       http:
         paths:
           - pathType: Prefix
