@@ -6,6 +6,7 @@ metadata:
 data:
   "53": "flux-system/adguard-home:53"
   "853": "flux-system/adguard-home:853"
+  "5432": "postgresql/postgresql:5432"
   "5443": "flux-system/adguard-home:5443"
   "6060": "flux-system/adguard-home:6060"
 ---
