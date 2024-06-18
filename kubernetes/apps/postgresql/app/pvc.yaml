@@ -6,14 +6,20 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: local-path
+  volumeMode: Filesystem
   capacity:
     storage: 8Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  hostPath:
+  local:
     path: "/mnt/nfs/AppData/postgresql/primary"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: postgresql-primary-pvc
+    namespace: postgresql
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -23,7 +29,8 @@ metadata:
   labels:
     name: postgresql-primary-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-path
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   resources:
@@ -38,14 +45,20 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: manual
+  storageClassName: local-path
+  volumeMode: Filesystem
   capacity:
     storage: 8Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
-  hostPath:
+  local:
     path: "/mnt/nfs/AppData/postgresql/replica"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: postgresql-replica-pvc
+    namespace: postgresql
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -55,7 +68,8 @@ metadata:
   labels:
     name: postgresql-replica-pvc
 spec:
-  storageClassName: manual
+  storageClassName: local-path
+  volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
   resources:
