@@ -6,3 +6,4 @@ resources:
   - ./cert-manager/cert-manager.yaml
   - ./homer/homer.yaml
   - ./podinfo/podinfo.yaml
+  - ./weave-gitops/weave-gitops.yaml
