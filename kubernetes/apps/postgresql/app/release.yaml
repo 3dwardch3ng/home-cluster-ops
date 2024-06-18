@@ -34,7 +34,7 @@ spec:
       chart: postgresql
       sourceRef:
         kind: OCIRepository
-        name: bitnami
+        name: postgresql
   interval: 1h
   install:
     remediation:
