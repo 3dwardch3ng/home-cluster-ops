@@ -8,5 +8,6 @@ resources:
   - ./homer/homer.yaml
   - ./podinfo/podinfo.yaml
   - ./postgresql/postgresql.yaml
+  - ./snippet-box/snippet-box.yaml
   - ./uptime-kuma/uptime-kuma.yaml
   - ./weave-gitops/weave-gitops.yaml
