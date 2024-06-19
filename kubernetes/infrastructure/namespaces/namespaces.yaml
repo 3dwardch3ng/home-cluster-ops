@@ -8,7 +8,7 @@ spec:
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
-  path: ./kubernetes/infrastructure/namespaces
+  path: ./kubernetes/infrastructure/namespaces/namespaces
   prune: true
   sourceRef:
     kind: GitRepository
