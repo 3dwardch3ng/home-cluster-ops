@@ -10,6 +10,7 @@ resources:
   - ./namespaces/podinfo.yaml
   - ./namespaces/postgresql.yaml
   - ./namespaces/prometheus-operator.yaml
+  - ./namespaces/uptime-kuma.yaml
   - ./repositories/repositories.yaml
 #  - ./cilium/cilium.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml

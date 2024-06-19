@@ -1,0 +1,25 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: uptime-kuma
+  namespace: uptime-kuma
+spec:
+  releaseName: uptime-kuma
+  targetNamespace: uptime-kuma
+  chart:
+    spec:
+      chart: uptime-kuma
+      sourceRef:
+        kind: HelmRepository
+        name: dirsigler
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    volume:
+      enabled: true
+      accessMode: ReadWriteOnce
+      size: 4Gi
+      existingClaim: "uptime-kuma-pvc"
