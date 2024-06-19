@@ -20,7 +20,7 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 5000
-              name: snippet-box-port
+              name: snippet-box
           env:
             - name: TZ
               value: Australia/Sydney
