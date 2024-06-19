@@ -43,8 +43,6 @@ spec:
             accessModes:
               - ReadWriteOnce
             persistentVolumeReclaimPolicy: Retain
-            local:
-              path: "/mnt/nfs/AppData/jellyfin/media/movies"
             nodeAffinity:
               required:
                 nodeSelectorTerms:
@@ -53,6 +51,12 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-movies-pvc
+              namespace: jellyfin
+            hostPath: "/mnt/nfs/AppData/jellyfin/media/movies"
         - name: series
           readOnly: false
           volumeSpec:
@@ -63,8 +67,6 @@ spec:
             accessModes:
               - ReadWriteOnce
             persistentVolumeReclaimPolicy: Retain
-            local:
-              path: "/mnt/nfs/AppData/jellyfin/media/series"
             nodeAffinity:
               required:
                 nodeSelectorTerms:
@@ -73,6 +75,12 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-series-pvc
+              namespace: jellyfin
+            hostPath: "/mnt/nfs/AppData/jellyfin/media/series"
         - name: music
           readOnly: false
           volumeSpec:
@@ -83,8 +91,6 @@ spec:
             accessModes:
               - ReadWriteOnce
             persistentVolumeReclaimPolicy: Retain
-            local:
-              path: "/mnt/nfs/AppData/jellyfin/media/music"
             nodeAffinity:
               required:
                 nodeSelectorTerms:
@@ -93,6 +99,12 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-music-pvc
+              namespace: jellyfin
+            hostPath: "/mnt/nfs/AppData/jellyfin/media/music"
         - name: gv
           readOnly: false
           volumeSpec:
@@ -103,8 +115,6 @@ spec:
             accessModes:
               - ReadWriteOnce
             persistentVolumeReclaimPolicy: Retain
-            local:
-              path: "/mnt/nfs/AppData/jellyfin/media/gv"
             nodeAffinity:
               required:
                 nodeSelectorTerms:
@@ -113,5 +123,11 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-gv-pvc
+              namespace: jellyfin
+            hostPath: "/mnt/nfs/AppData/jellyfin/media/gv"
       persistentTranscodes: true
 
