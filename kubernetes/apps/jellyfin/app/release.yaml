@@ -36,21 +36,6 @@ spec:
         - name: movies
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
-            volumeMode: Filesystem
-            capacity:
-              storage: 8Gi
-            accessModes:
-              - ReadWriteOnce
-            persistentVolumeReclaimPolicy: Retain
-            nodeAffinity:
-              required:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: kubernetes.io/hostname
-                        operator: In
-                        values:
-                          - rpi5-cluster-node-3
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -62,21 +47,6 @@ spec:
         - name: series
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
-            volumeMode: Filesystem
-            capacity:
-              storage: 8Gi
-            accessModes:
-              - ReadWriteOnce
-            persistentVolumeReclaimPolicy: Retain
-            nodeAffinity:
-              required:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: kubernetes.io/hostname
-                        operator: In
-                        values:
-                          - rpi5-cluster-node-3
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -88,21 +58,6 @@ spec:
         - name: music
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
-            volumeMode: Filesystem
-            capacity:
-              storage: 8Gi
-            accessModes:
-              - ReadWriteOnce
-            persistentVolumeReclaimPolicy: Retain
-            nodeAffinity:
-              required:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: kubernetes.io/hostname
-                        operator: In
-                        values:
-                          - rpi5-cluster-node-3
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -114,21 +69,6 @@ spec:
         - name: gv
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
-            volumeMode: Filesystem
-            capacity:
-              storage: 8Gi
-            accessModes:
-              - ReadWriteOnce
-            persistentVolumeReclaimPolicy: Retain
-            nodeAffinity:
-              required:
-                nodeSelectorTerms:
-                  - matchExpressions:
-                      - key: kubernetes.io/hostname
-                        operator: In
-                        values:
-                          - rpi5-cluster-node-3
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
