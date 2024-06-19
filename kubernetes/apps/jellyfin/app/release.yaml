@@ -56,7 +56,9 @@ spec:
               kind: PersistentVolumeClaim
               name: jellyfin-movies-pvc
               namespace: jellyfin
-            hostPath: "/mnt/nfs/AppData/jellyfin/media/movies"
+            hostPath:
+              path: "/mnt/nfs/AppData/jellyfin/media/movies"
+              type: "Directory"
         - name: series
           readOnly: false
           volumeSpec:
@@ -80,7 +82,9 @@ spec:
               kind: PersistentVolumeClaim
               name: jellyfin-series-pvc
               namespace: jellyfin
-            hostPath: "/mnt/nfs/AppData/jellyfin/media/series"
+            hostPath:
+              path: "/mnt/nfs/AppData/jellyfin/media/series"
+              type: "Directory"
         - name: music
           readOnly: false
           volumeSpec:
@@ -104,7 +108,9 @@ spec:
               kind: PersistentVolumeClaim
               name: jellyfin-music-pvc
               namespace: jellyfin
-            hostPath: "/mnt/nfs/AppData/jellyfin/media/music"
+            hostPath:
+              path: "/mnt/nfs/AppData/jellyfin/media/music"
+              type: "Directory"
         - name: gv
           readOnly: false
           volumeSpec:
@@ -128,6 +134,8 @@ spec:
               kind: PersistentVolumeClaim
               name: jellyfin-gv-pvc
               namespace: jellyfin
-            hostPath: "/mnt/nfs/AppData/jellyfin/media/gv"
+            hostPath:
+              path: "/mnt/nfs/AppData/jellyfin/media/gv"
+              type: "Directory"
       persistentTranscodes: true
 
