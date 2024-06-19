@@ -10,6 +10,7 @@ resources:
   - ./namespaces/podinfo.yaml
   - ./namespaces/postgresql.yaml
   - ./namespaces/prometheus-operator.yaml
+  - ./namespaces/snippet-box.yaml
   - ./namespaces/uptime-kuma.yaml
   - ./repositories/repositories.yaml
 #  - ./cilium/cilium.yaml
