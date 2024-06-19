@@ -26,5 +26,6 @@ spec:
       TZ: "Australia/Sydney"
 
     persistence:
-      - enabled: true
+      config:
+        enabled: true
         existingClaim: code-server-pvc
