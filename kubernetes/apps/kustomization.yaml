@@ -6,6 +6,7 @@ resources:
   - ./cert-manager/cert-manager.yaml
   - ./code-server/code-server.yaml
   - ./homer/homer.yaml
+  - ./jellyfin/jellyfin.yaml
   - ./podinfo/podinfo.yaml
   - ./postgresql/postgresql.yaml
   - ./snippet-box/snippet-box.yaml
