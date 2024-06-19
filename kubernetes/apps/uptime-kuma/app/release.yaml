@@ -11,7 +11,7 @@ spec:
       chart: uptime-kuma
       sourceRef:
         kind: HelmRepository
-        name: dirsigler
+        name: uptime-kuma
         namespace: flux-system
   interval: 1h
   install:
