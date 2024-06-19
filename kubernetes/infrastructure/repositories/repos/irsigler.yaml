@@ -1,8 +1,8 @@
 apiVersion: source.toolkit.fluxcd.io/v1beta2
 kind: HelmRepository
 metadata:
-  name: uptime-kuma
+  name: irsigler
   namespace: flux-system
 spec:
   interval: 6h
-  url: https://dirsigler.github.io/uptime-kuma
+  url: https://helm.irsigler.cloud/
