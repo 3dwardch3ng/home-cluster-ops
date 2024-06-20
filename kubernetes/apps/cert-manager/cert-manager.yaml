@@ -64,3 +64,55 @@ spec:
     substituteFrom:
       - kind: Secret
         name: clusterissuer-secrets
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: certificate-secrets
+  namespace: cert-manager
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  targetNamespace: cert-manager
+  path: ./certificates
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: home-cluster-ops-secrets
+  dependsOn:
+    - name: repositories
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: cert-manager-sops-age
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: certificates
+  namespace: cert-manager
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  targetNamespace: cert-manager
+  path: ./kubernetes/apps/cert-manager/certificates
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: flux-system
+  dependsOn:
+    - name: certificate-secrets
+      namespace: cert-manager
+    - name: cert-manager
+      namespace: cert-manager
+    - name: clusterissuer
+      namespace: cert-manager
+  postBuild:
+    substituteFrom:
+      - kind: Secret
+        name: certificate-secrets

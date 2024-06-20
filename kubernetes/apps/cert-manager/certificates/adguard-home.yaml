@@ -17,8 +17,8 @@ spec:
     pkcs12:
       create: true
       passwordSecretRef:
-        name: cert-manager-tls-keystore
-        key: ${cert_manager_tls_keystore_password}
+        name: adguard-home-tls-keystore
+        key: ${adguard_home_certificate_tls_keystore_password}
       profile: Modern2023
 
   duration: 2160h # 90d
@@ -42,12 +42,10 @@ spec:
 
   # At least one of commonName (possibly through literalSubject), dnsNames, uris, emailAddresses, ipAddresses or otherNames is required.
   dnsNames:
-    - "adguard-home.cluster.edward.sydney"
-    - "*.adguard-home.cluster.edward.sydney"
+    - "${adguard_home_certificate_dns_name}"
+    - "*.${adguard_home_certificate_dns_name}"
   emailAddresses:
-    - edward@cheng.sydney
-  ipAddresses:
-    - 192.168.0.180
+    - ${adguard_home_certificate_email}
 
   # Issuer references are always required.
   issuerRef:
