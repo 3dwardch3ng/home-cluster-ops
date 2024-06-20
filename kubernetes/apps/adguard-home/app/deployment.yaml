@@ -69,7 +69,7 @@ spec:
               name: http-pprof
           env:
             - name: TZ
-              value: America/New_York
+              value: Australia/Sydney
           volumeMounts:
             - name: adguard-home-data
               mountPath: /opt/adguardhome/work
