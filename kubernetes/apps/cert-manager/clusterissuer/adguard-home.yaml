@@ -5,7 +5,7 @@ metadata:
   namespace: cert-manager
 spec:
   # Secret names are always required.
-  secretName: adguard-home_cluster_edward_sydney-tls
+  secretName: adguard-home.cluster.edward.sydney-tls
 
   privateKey:
     algorithm: RSA
