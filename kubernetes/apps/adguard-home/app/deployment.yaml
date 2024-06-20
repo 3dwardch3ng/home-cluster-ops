@@ -74,7 +74,7 @@ spec:
             - name: adguard-home-data
               mountPath: /opt/adguardhome/work
             - name: adguard-home-config
-              mountPath: /opt/adguardhome/config
+              mountPath: /opt/adguardhome/conf
       volumes:
         - name: adguard-home-data
           hostPath:
