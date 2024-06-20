@@ -70,4 +70,3 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/kavita/doc
             type: Directory
-      serviceAccountName: kavita
