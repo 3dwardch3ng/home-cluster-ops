@@ -36,9 +36,9 @@ spec:
             - name: kavita-manga
               mountPath: /manga
             - name: kavita-book
-              mountPath: /kavita/book
+              mountPath: /book
             - name: kavita-doc
-              mountPath: /kavita/doc
+              mountPath: /doc
       volumes:
         - name: kavita-config
           hostPath:
