@@ -27,15 +27,6 @@ spec:
             - containerPort: 5000
               name: http
               protocol: TCP
-          readinessProbe:
-            httpGet:
-              path: /
-              port: 5000
-              scheme: HTTP
-          resources:
-            requests:
-              cpu: 200m
-              memory: 200Mi
           env:
             - name: TZ
               value: Australia/Sydney
