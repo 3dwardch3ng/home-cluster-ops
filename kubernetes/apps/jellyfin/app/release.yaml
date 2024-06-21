@@ -77,11 +77,6 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-series-pvc
-              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/series"
               type: "Directory"
@@ -103,11 +98,6 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-music-pvc
-              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/music"
               type: "Directory"
@@ -129,11 +119,6 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-gv-pvc
-              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/gv"
               type: "Directory"
