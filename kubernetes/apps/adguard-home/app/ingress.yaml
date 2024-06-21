@@ -49,3 +49,13 @@ spec:
                 name: adguard-home
                 port:
                   number: 13000
+    - host: "doh.adguard-home.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 443
