@@ -36,6 +36,21 @@ spec:
         - name: movies
           readOnly: false
           volumeSpec:
+            storageClassName: local-path
+            volumeMode: Filesystem
+            capacity:
+              storage: 8Gi
+            accessModes:
+              - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            nodeAffinity:
+              required:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - rpi5-cluster-node-3
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -47,33 +62,63 @@ spec:
         - name: series
           readOnly: false
           volumeSpec:
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-series-pvc
-              namespace: jellyfin
+            storageClassName: local-path
+            volumeMode: Filesystem
+            capacity:
+              storage: 8Gi
+            accessModes:
+              - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            nodeAffinity:
+              required:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - rpi5-cluster-node-3
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/series"
               type: "Directory"
         - name: music
           readOnly: false
           volumeSpec:
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-music-pvc
-              namespace: jellyfin
+            storageClassName: local-path
+            volumeMode: Filesystem
+            capacity:
+              storage: 8Gi
+            accessModes:
+              - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            nodeAffinity:
+              required:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - rpi5-cluster-node-3
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/music"
               type: "Directory"
         - name: gv
           readOnly: false
           volumeSpec:
-            claimRef:
-              apiVersion: v1
-              kind: PersistentVolumeClaim
-              name: jellyfin-gv-pvc
-              namespace: jellyfin
+            storageClassName: local-path
+            volumeMode: Filesystem
+            capacity:
+              storage: 8Gi
+            accessModes:
+              - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            nodeAffinity:
+              required:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - rpi5-cluster-node-3
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/gv"
               type: "Directory"
