@@ -1,0 +1,10 @@
+spec:
+  ports:
+    - name: torrent-tcp
+      port: 8388
+      targetPort: 8388
+      protocol: TCP
+    - name: torrent-udp
+      port: 8388
+      targetPort: 8388
+      protocol: UDP

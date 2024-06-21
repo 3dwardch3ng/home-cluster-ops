@@ -23,11 +23,13 @@ spec:
         port: 8888
       torrent:
         port: 8388
-    volumes:
+    config:
+      persistence:
+        volumeName: "qbittorrent-config"
+    volumeMounts:
       - name: qbittorrent-download
         mountPath: /download
-
-    volumeMounts:
+    volumes:
       - name: qbittorrent-download
         hostPath:
           path: /mnt/nfs/AppData/qbittorrent/download
