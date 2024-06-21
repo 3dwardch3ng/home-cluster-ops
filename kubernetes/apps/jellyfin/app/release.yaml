@@ -24,13 +24,13 @@ spec:
         volumeClaimSpec:
           accessModes:
             - ReadWriteOnce
-          volumeName: jellyfin-config-pv
+          volumeName: jellyfin-config
       data:
         enabled: true
         volumeClaimSpec:
           accessModes:
             - ReadWriteOnce
-          volumeName: jellyfin-data-pv
+          volumeName: jellyfin-data
     jellyfin:
       mediaVolumes:
         - name: movies
