@@ -54,7 +54,7 @@ spec:
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
-              name: jellyfin-movies-pvc
+              name: jellyfin-mediavol-movies
               namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/movies"
@@ -77,6 +77,11 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-mediavol-series
+              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/series"
               type: "Directory"
@@ -98,6 +103,11 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-mediavol-music
+              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/music"
               type: "Directory"
@@ -119,6 +129,11 @@ spec:
                         operator: In
                         values:
                           - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-mediavol-gv
+              namespace: jellyfin
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/gv"
               type: "Directory"
