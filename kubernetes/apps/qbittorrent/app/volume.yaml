@@ -6,6 +6,7 @@ metadata:
   labels:
     type: local
 spec:
+  storageClassName: local-path
   volumeMode: Filesystem
   capacity:
     storage: 250Mi
@@ -14,3 +15,11 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/nfs/AppData/qbittorrent/config"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rpi5-cluster-node-3
