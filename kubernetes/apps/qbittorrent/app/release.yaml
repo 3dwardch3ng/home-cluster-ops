@@ -29,3 +29,12 @@ spec:
     volumeMounts:
       - name: qbittorrent-download
         mountPath: /download
+    volumes:
+      - name: qbittorrent-config
+        hostPath:
+          path: /mnt/nfs/AppData/qbittorrent/config
+          type: Directory
+      - name: qbittorrent-download
+        hostPath:
+          path: /mnt/nfs/AppData/qbittorrent/download
+          type: Directory
