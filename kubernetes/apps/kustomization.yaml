@@ -13,5 +13,6 @@ resources:
   - ./qbittorrent/qbittorrent.yaml
   - ./redis/redis.yaml
   - ./snippet-box/snippet-box.yaml
+  - ./sonarqube/sonarqube.yaml
   - ./uptime-kuma/uptime-kuma.yaml
   - ./weave-gitops/weave-gitops.yaml

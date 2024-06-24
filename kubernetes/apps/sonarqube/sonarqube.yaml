@@ -1,0 +1,46 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: sonarqube-secrets
+  namespace: sonarqube
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  targetNamespace: redis
+  path: ./sonarqube
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: home-cluster-ops-secrets
+  dependsOn:
+    - name: repositories
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sonarqube-sops-age
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: sonarqube
+  namespace: sonarqube
+spec:
+  interval: 10m
+  timeout: 1m30s
+  retryInterval: 30s
+  path: ./kubernetes/apps/sonarqube/app
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    namespace: flux-system
+    name: flux-system
+  dependsOn:
+    - name: sonarqube-secrets
+      namespace: redis
+  postBuild:
+    substituteFrom:
+      - kind: Secret
+        name: sonarqube-secrets
