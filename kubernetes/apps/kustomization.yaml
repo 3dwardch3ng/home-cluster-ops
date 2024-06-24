@@ -5,6 +5,7 @@ resources:
   - ./capacitor/capacitor.yaml
   - ./cert-manager/cert-manager.yaml
   - ./code-server/code-server.yaml
+  - ./gitea/gitea.yaml
   - ./homer/homer.yaml
   - ./jellyfin/jellyfin.yaml
   - ./kavita/kavita.yaml

@@ -1,0 +1,42 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: gitea
+  namespace: gitea
+spec:
+  targetNamespace: gitea
+  chart:
+    spec:
+      chart: gitea
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    adminUsername: bn_user
+    adminPassword: ""
+    adminEmail: user@example.com
+    appName: example
+    containerPorts:
+      http: 3003
+    persistence:
+      existingClaim: ""
+    service:
+      ports:
+        http: 80
+        ssh: 22
+      nodePorts:
+        http: ""
+        ssh: ""
+    postgresql:
+      enabled: false
+    externalDatabase:
+      host: ""
+      port: 5432
+      user: postgres
+      database: gitea
+      password: ""
