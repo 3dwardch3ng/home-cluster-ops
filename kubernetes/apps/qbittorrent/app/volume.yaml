@@ -6,13 +6,6 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
-  volumeMode: Filesystem
-  capacity:
-    storage: 5Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/nfs/AppData/qbittorrent/config"
   claimRef:
@@ -29,21 +22,21 @@ spec:
               values:
                 - rpi5-cluster-node-3
 ---
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: qbittorrent-config-pvc
-  namespace: qbittorrent
-  labels:
-    name: qbittorrent-config-pvc
-spec:
-  storageClassName: local-path
-  volumeMode: Filesystem
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 5Gi
+#apiVersion: v1
+#kind: PersistentVolumeClaim
+#metadata:
+#  name: qbittorrent-config-pvc
+#  namespace: qbittorrent
+#  labels:
+#    name: qbittorrent-config-pvc
+#spec:
+#  storageClassName: local-path
+#  volumeMode: Filesystem
+#  accessModes:
+#    - ReadWriteOnce
+#  resources:
+#    requests:
+#      storage: 5Gi
 ---
 apiVersion: v1
 kind: PersistentVolume
@@ -53,13 +46,6 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
-  volumeMode: Filesystem
-  capacity:
-    storage: 64Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/nfs/AppData/qbittorrent/download"
   claimRef:
