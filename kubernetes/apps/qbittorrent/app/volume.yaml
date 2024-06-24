@@ -23,3 +23,29 @@ spec:
               operator: In
               values:
                 - rpi5-cluster-node-3
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: qbittorrent-download
+  namespace: qbittorrent
+  labels:
+    type: local
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  capacity:
+    storage: 64Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/mnt/nfs/AppData/qbittorrent/download"
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rpi5-cluster-node-3
