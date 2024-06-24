@@ -1,0 +1,37 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: sonarqube
+  namespace: sonarqube
+spec:
+  releaseName: sonarqube
+  chart:
+    spec:
+      chart: sonarqube
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    smtpHost: ${smtp_host}
+    smtpPort: ${smtp_port}
+    smtpUser: ${smtp_user}
+    smtpPassword: ${smtp_password}
+    smtpProtocol: ${smtp_protocol}
+    persistence:
+      enabled: true
+      storageClass: "local-path"
+      size: "32Gi"
+      existingClaim: ""
+    postgresql:
+      enabled: false
+    externalDatabase:
+      host: ${db_host}
+      user: ${db_user}
+      password: ${db_password}
+      database: ${db_name}
+      port: ${db_port}
