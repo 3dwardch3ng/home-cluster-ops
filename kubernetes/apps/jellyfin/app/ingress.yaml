@@ -9,6 +9,16 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
+    - host: "jellyfin.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: jellyfin
+                port:
+                  number: 8096
     - host: "jellyfin.cluster.edward.sydney"
       http:
         paths:
