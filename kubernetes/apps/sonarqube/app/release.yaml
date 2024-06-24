@@ -17,16 +17,26 @@ spec:
     remediation:
       retries: 3
   values:
+    sonarqubeUsername: ${sonarqube_username}
+    sonarqubePassword: ${sonarqube_password}
+    sonarqubeEmail: ${sonarqube_email}
     smtpHost: ${smtp_host}
     smtpPort: ${smtp_port}
     smtpUser: ${smtp_user}
     smtpPassword: ${smtp_password}
     smtpProtocol: ${smtp_protocol}
+    service:
+      ports:
+        http: 8090
+        elastic: 9091
+      nodePorts:
+        http: 30080
+        elastic: 30091
     persistence:
       enabled: true
       storageClass: "local-path"
       size: "32Gi"
-      existingClaim: ""
+      existingClaim: "sonarqube-pvc"
     postgresql:
       enabled: false
     externalDatabase:
