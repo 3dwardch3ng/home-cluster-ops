@@ -17,6 +17,9 @@ spec:
     remediation:
       retries: 3
   values:
+    sonarqubeUsername: ${sonarqube_username}
+    sonarqubePassword: ${sonarqube_password}
+    sonarqubeEmail: ${sonarqube_email}
     smtpHost: ${smtp_host}
     smtpPort: ${smtp_port}
     smtpUser: ${smtp_user}
