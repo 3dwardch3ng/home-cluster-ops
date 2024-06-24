@@ -9,7 +9,7 @@ spec:
   storageClassName: local-path
   volumeMode: Filesystem
   capacity:
-    storage: 250Mi
+    storage: 5Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
