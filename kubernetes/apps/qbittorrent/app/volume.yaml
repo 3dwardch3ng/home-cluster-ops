@@ -41,6 +41,11 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/nfs/AppData/qbittorrent/download"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: qbittorrent-download-pvc
+    namespace: qbittorrent
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -49,3 +54,19 @@ spec:
               operator: In
               values:
                 - rpi5-cluster-node-3
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: qbittorrent-download-pvc
+  namespace: qbittorrent
+  labels:
+    name: qbittorrent-download-pvc
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 64Gi
