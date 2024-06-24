@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: qbittorrent-config-pv
+  name: qbittorrent-config
   namespace: qbittorrent
   labels:
     type: local
@@ -15,6 +15,11 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   local:
     path: "/mnt/nfs/AppData/qbittorrent/config"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: qbittorrent-config-pvc
+    namespace: qbittorrent
   nodeAffinity:
     required:
       nodeSelectorTerms:
