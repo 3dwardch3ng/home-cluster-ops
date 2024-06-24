@@ -18,4 +18,14 @@ spec:
               service:
                 name: sonarqube
                 port:
-                  number: 80
+                  number: 30080
+    - host: "elastic.sonarqube.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: sonarqube
+                port:
+                  number: 30091
