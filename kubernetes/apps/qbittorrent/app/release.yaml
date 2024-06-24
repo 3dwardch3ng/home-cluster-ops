@@ -25,7 +25,7 @@ spec:
         port: 8388
     config:
       persistence:
-        name: "qbittorrent-config-pv"
+        name: "qbittorrent-config-pvc"
         volumeName: "qbittorrent-config-pv"
     volumeMounts:
       - name: qbittorrent-download-pvc
