@@ -17,21 +17,23 @@ spec:
     remediation:
       retries: 3
   values:
+    image:
+      debug: true
     updateStrategy:
       type: Recreate
     livenessProbe:
       enabled: true
       initialDelaySeconds: 600
-      periodSeconds: 30
-      timeoutSeconds: 10
+      periodSeconds: 60
+      timeoutSeconds: 30
       failureThreshold: 5
       successThreshold: 1
     readinessProbe:
       enabled: true
       path: /
-      initialDelaySeconds: 600
-      periodSeconds: 30
-      timeoutSeconds: 10
+      initialDelaySeconds: 30
+      periodSeconds: 60
+      timeoutSeconds: 30
       failureThreshold: 5
       successThreshold: 1
     adminUsername: ${admin_username}
