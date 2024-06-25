@@ -85,7 +85,7 @@ spec:
             hostPath:
               path: "/mnt/nfs/AppData/jellyfin/media/series"
               type: "Directory"
-        - name: music
+        - name: music-videos
           readOnly: false
           volumeSpec:
             storageClassName: local-path
@@ -106,10 +106,36 @@ spec:
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
-              name: jellyfin-mediavol-music
+              name: jellyfin-mediavol-music-videos
               namespace: jellyfin
             hostPath:
-              path: "/mnt/nfs/AppData/jellyfin/media/music"
+              path: "/mnt/nfs/AppData/jellyfin/media/music-videos"
+              type: "Directory"
+        - name: short-video
+          readOnly: false
+          volumeSpec:
+            storageClassName: local-path
+            volumeMode: Filesystem
+            capacity:
+              storage: 8Gi
+            accessModes:
+              - ReadWriteOnce
+            persistentVolumeReclaimPolicy: Retain
+            nodeAffinity:
+              required:
+                nodeSelectorTerms:
+                  - matchExpressions:
+                      - key: kubernetes.io/hostname
+                        operator: In
+                        values:
+                          - rpi5-cluster-node-3
+            claimRef:
+              apiVersion: v1
+              kind: PersistentVolumeClaim
+              name: jellyfin-mediavol-short-video
+              namespace: jellyfin
+            hostPath:
+              path: "/mnt/nfs/AppData/jellyfin/media/short-videos"
               type: "Directory"
         - name: gv
           readOnly: false
