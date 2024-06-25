@@ -22,6 +22,9 @@ spec:
     dokuwikiEmail: ${email}
     dokuwikiFullName: "Edward Cheng"
     dokuwikiWikiName: My Douku Wiki
+    containerPorts:
+      http: 18000
+      https: 18443
     persistence:
       existingClaim: "dokuwiki-pvc"
     service:
