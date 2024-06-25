@@ -17,6 +17,8 @@ spec:
     remediation:
       retries: 3
   values:
+    updateStrategy:
+      type: Recreate
     livenessProbe:
       enabled: true
       initialDelaySeconds: 600
