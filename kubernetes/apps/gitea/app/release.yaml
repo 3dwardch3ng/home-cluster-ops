@@ -17,6 +17,21 @@ spec:
     remediation:
       retries: 3
   values:
+    livenessProbe:
+      enabled: true
+      initialDelaySeconds: 600
+      periodSeconds: 30
+      timeoutSeconds: 10
+      failureThreshold: 5
+      successThreshold: 1
+    readinessProbe:
+      enabled: true
+      path: /
+      initialDelaySeconds: 600
+      periodSeconds: 30
+      timeoutSeconds: 10
+      failureThreshold: 5
+      successThreshold: 1
     adminUsername: ${admin_username}
     adminPassword: ${admin_password}
     adminEmail: ${admin_email}
