@@ -13,6 +13,9 @@ spec:
       labels:
         app: nexus
     spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
       containers:
         - name: nexus
           image: klo2k/nexus3:3.68.1-02
