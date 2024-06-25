@@ -25,5 +25,7 @@ spec:
     persistence:
       existingClaim: "dokuwiki-pvc"
     service:
-      nodePorts:
+      type: ClusterIP
+      ports:
         http: 18000
+        https: 18443
