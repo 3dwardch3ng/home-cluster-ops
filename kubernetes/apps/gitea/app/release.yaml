@@ -17,26 +17,21 @@ spec:
     remediation:
       retries: 3
   values:
-    adminUsername: bn_user
-    adminPassword: ""
-    adminEmail: user@example.com
-    appName: example
-    containerPorts:
-      http: 3003
+    adminUsername: ${admin_username}
+    adminPassword: ${admin_password}
+    adminEmail: ${admin_email}
+    appName: app_name
     persistence:
-      existingClaim: ""
+      existingClaim: gitea-pvc
     service:
-      ports:
-        http: 80
-        ssh: 22
       nodePorts:
-        http: ""
-        ssh: ""
+        http: 30888
+        ssh: 30822
     postgresql:
       enabled: false
     externalDatabase:
-      host: ""
-      port: 5432
-      user: postgres
-      database: gitea
-      password: ""
+      host: ${db_host}
+      port: ${db_port}
+      user: ${db_user}
+      database: ${db_name}
+      password: ${db_password}
