@@ -2,5 +2,39 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "local>3dwardch3ng/renovate-config"
+  ],
+  "kubernetes": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  "helm-values": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  "flux": {
+    "fileMatch": ["\\.yaml$"]
+  },
+  "packageRules": [
+    {
+      "matchDatasources": ["helm"],
+      "commitMessageTopic": "{{depName}} Helm release"
+    },
+    {
+      "matchDatasources": ["github-releases"],
+      "matchPackageNames": ["k3s-io/k3s"],
+      "separateMinorPatch": true
+    },
+    {
+      "matchPackagePrefixes": ["ghcr.io/immich-app/"],
+      "groupName": "Immich"
+    },
+    {
+      "matchDatasources": ["github-tags"],
+      "matchPackageNames": ["bjw-s/helm-charts"],
+      "versioning": "regex:^(?<compatibility>.+)-(?<major>\\d+)\\.(?<minor>\\d+)\\.(?<patch>\\d+)$"
+    },
+    {
+      "matchDatasources": ["docker", "github-tags"],
+      "matchPackageNames": ["ghcr.io/fluxcd/flux-manifests", "fluxcd/flux2"],
+      "groupName": "fluxcd/flux2"
+    }
   ]
 }
