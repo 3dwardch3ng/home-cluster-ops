@@ -18,7 +18,7 @@ spec:
               service:
                 name: gitea
                 port:
-                  number: 5432
+                  number: 10080
     - host: "gitea.cluster.edward.sydney"
       http:
         paths:
@@ -28,4 +28,4 @@ spec:
               service:
                 name: gitea
                 port:
-                  number: 5432
+                  number: 10080

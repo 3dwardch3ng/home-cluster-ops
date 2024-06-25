@@ -24,9 +24,9 @@ spec:
     persistence:
       existingClaim: gitea-pvc
     service:
-      nodePorts:
-        http: 30888
-        ssh: 30822
+      ports:
+        http: 10080
+        ssh: 10022
     postgresql:
       enabled: false
     externalDatabase:
