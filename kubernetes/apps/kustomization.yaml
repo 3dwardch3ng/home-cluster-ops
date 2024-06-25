@@ -9,6 +9,7 @@ resources:
   - ./homer/homer.yaml
   - ./jellyfin/jellyfin.yaml
   - ./kavita/kavita.yaml
+  - ./nexus/nexus.yaml
   - ./podinfo/podinfo.yaml
   - ./postgresql/postgresql.yaml
   - ./qbittorrent/qbittorrent.yaml
