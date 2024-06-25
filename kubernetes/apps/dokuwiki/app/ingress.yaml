@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: dokuwiki-ingress
+  namespace: dokuwiki
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "dokuwiki.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: dokuwiki-dokuwiki
+                port:
+                  number: 18000
+    - host: "dokuwiki.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: dokuwiki-dokuwiki
+                port:
+                  number: 18000
