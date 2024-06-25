@@ -1,0 +1,38 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: minio
+  namespace: minio
+spec:
+  releaseName: minio
+  chart:
+    spec:
+      chart: minio
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    clusterDomain: minio.cluster.edward.sydney
+    auth:
+      rootUser: ${root_user}
+      rootPassword: ${root_password}
+    containerPorts:
+      api: 9000
+      console: 9001
+    nodeSelector:
+      kubernetes.io/hostname: rpi5-cluster-node-3
+    service:
+      type: ClusterIP
+      ports:
+        api: 9000
+        console: 9001
+      nodePorts:
+        api: 19000
+        console: 19001
+    persistence:
+      existingClaim: "minio-pvc"
