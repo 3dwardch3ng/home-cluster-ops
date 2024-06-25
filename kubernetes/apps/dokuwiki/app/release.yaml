@@ -21,7 +21,7 @@ spec:
     dokuwikiPassword: ${password}
     dokuwikiEmail: ${email}
     dokuwikiFullName: "Edward Cheng"
-    dokuwikiWikiName: My Douku Wiki
+    dokuwikiWikiName: My Doku Wiki
     containerPorts:
       http: 18000
       https: 18443
