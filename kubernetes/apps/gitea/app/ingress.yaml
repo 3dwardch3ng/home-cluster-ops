@@ -16,7 +16,7 @@ spec:
             path: "/"
             backend:
               service:
-                name: gitea
+                name: gitea-gitea
                 port:
                   number: 10080
     - host: "gitea.cluster.edward.sydney"
@@ -26,6 +26,6 @@ spec:
             path: "/"
             backend:
               service:
-                name: gitea
+                name: gitea-gitea
                 port:
                   number: 10080
