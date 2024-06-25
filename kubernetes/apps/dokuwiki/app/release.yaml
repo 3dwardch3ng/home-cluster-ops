@@ -1,0 +1,29 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: dokuwiki
+  namespace: dokuwiki
+spec:
+  targetNamespace: dokuwiki
+  chart:
+    spec:
+      chart: dokuwiki
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    dokuwikiUsername: ${username}
+    dokuwikiPassword: ${password}
+    dokuwikiEmail: ${email}
+    dokuwikiFullName: "Edward Cheng"
+    dokuwikiWikiName: My Douku Wiki
+    persistence:
+      existingClaim: "dokuwiki-pvc"
+    service:
+      nodePorts:
+        http: 18000
