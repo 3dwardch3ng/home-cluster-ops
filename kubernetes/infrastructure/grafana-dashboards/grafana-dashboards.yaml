@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: grafana-dashboard-secrets
+  name: grafana-dashboards-secrets
   namespace: flux-system
 spec:
   interval: 10m
@@ -41,7 +41,7 @@ spec:
     - name: namespaces
       namespace: flux-system
     - name: grafana-dashboards-secrets
-      namespace: prometheus
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret
