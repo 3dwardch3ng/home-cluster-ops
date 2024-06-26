@@ -15,6 +15,9 @@ spec:
       labels:
         app: prometheus
     spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
       containers:
         - name: prometheus
           image: prom/prometheus:v2.53.0
