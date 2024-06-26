@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-node-exporter
+  namespace: prometheus
+  labels:
+    app: prometheus-node-exporter
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: prometheus-node-exporter
+  template:
+    metadata:
+      labels:
+        app: prometheus-node-exporter
+    spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: prometheus-node-exporter
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: prometheus-node-exporter
+          image: prom/node-exporter
+          args:
+            - "--net=\"host\""
+            - "--pid=\"host\""
+            - "--path.rootfs=/host"
+            - "--cap-add=SYS_TIME"
+          volumeMounts:
+            - name: node-volume
+              mountPath: /host
+              readOnly: true
+              mountPropagation: HostToContainer
+      volumes:
+        - name: node-volume
+          hostPath:
+            path: /
+            type: Directory
