@@ -1,0 +1,21 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: local-path-provisioner
+  namespace: local-path-storage
+spec:
+  interval: 1h
+  driftDetection:
+    mode: enabled
+  chart:
+    spec:
+      chart: local-path-provisioner
+      version: master-head
+      sourceRef:
+        kind: GitRepository
+        namespace: flux-system
+        name: local-path-provisioner
+      interval: 1d
+  values:
+    storageClass:
+      reclaimPolicy: Retain
