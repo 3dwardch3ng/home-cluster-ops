@@ -40,7 +40,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: code-server-secrets
-      namespace: code-server
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret

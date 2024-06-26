@@ -39,7 +39,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: dokuwiki-secrets
-      namespace: dokuwiki
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret
