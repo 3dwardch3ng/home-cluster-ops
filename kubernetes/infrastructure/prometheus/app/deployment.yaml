@@ -46,8 +46,6 @@ spec:
           ports:
             - containerPort: 3000
           volumeMounts:
-            - name: grafana-config-volume
-              mountPath: /usr/share/grafana
             - name: prometheus-storage-volume
               mountPath: /var/lib/grafana
               subPath: grafana
@@ -59,8 +57,4 @@ spec:
         - name: prometheus-storage-volume
           hostPath:
             path: /mnt/nfs/AppData/prometheus/storage
-            type: Directory
-        - name: grafana-config-volume
-          hostPath:
-            path: /mnt/nfs/AppData/grafana/conf
             type: Directory
