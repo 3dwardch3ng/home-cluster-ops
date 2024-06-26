@@ -48,10 +48,8 @@ spec:
           volumeMounts:
             - name: grafana-config-volume
               mountPath: /usr/share/grafana
-              subPath: grafana
             - name: grafana-storage-volume
               mountPath: /var/lib/grafana
-              subPath: grafana
       volumes:
         - name: prometheus-config-volume
           hostPath:
