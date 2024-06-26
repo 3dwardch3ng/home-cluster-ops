@@ -31,7 +31,7 @@ spec:
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
-  path: ./kubernetes/apps/redis/app
+  path: ./kubernetes/infrastructure/redis/app
   prune: true
   sourceRef:
     kind: GitRepository

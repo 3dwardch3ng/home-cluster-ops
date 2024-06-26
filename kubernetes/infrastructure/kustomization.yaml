@@ -14,4 +14,5 @@ resources:
   - ./prometheus/prometheus.yaml
   - ./prometheus-alertmanager/prometheus-alertmanager.yaml
   - ./prometheus-exporters/prometheus-exporters.yaml
+  - ./redis/redis.yaml
   - ./repositories/repositories.yaml

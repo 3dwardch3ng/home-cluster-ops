@@ -12,7 +12,6 @@ resources:
   - ./nexus/nexus.yaml
   - ./podinfo/podinfo.yaml
   - ./qbittorrent/qbittorrent.yaml
-  - ./redis/redis.yaml
   - ./snippet-box/snippet-box.yaml
   - ./sonarqube/sonarqube.yaml
   - ./uptime-kuma/uptime-kuma.yaml
