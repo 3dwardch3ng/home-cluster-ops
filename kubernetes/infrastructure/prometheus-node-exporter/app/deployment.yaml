@@ -16,6 +16,7 @@ spec:
         app: prometheus-node-exporter
     spec:
       hostNetwork: true
+      hostPID: true
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -30,7 +31,6 @@ spec:
         - name: prometheus-node-exporter
           image: prom/node-exporter
           args:
-            - "--pid=\"host\""
             - "--path.rootfs=/host"
             - "--cap-add=SYS_TIME"
           volumeMounts:
