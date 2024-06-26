@@ -17,15 +17,11 @@ spec:
     remediation:
       retries: 3
   values:
+    mode: distributed
     clusterDomain: minio.cluster.edward.sydney
     auth:
       rootUser: ${root_user}
       rootPassword: ${root_password}
-    containerPorts:
-      api: 9000
-      console: 9001
-    nodeSelector:
-      kubernetes.io/hostname: rpi5-cluster-node-3
     service:
       ports:
         api: 19000
