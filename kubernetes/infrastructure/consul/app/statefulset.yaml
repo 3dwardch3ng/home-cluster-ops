@@ -35,47 +35,12 @@ spec:
           imagePullPolicy: IfNotPresent
       volumes:
         - name: consul-data
-          persistentVolumeClaim:
-            claimName: consul-data-pvc
           hostPath:
             path: /mnt/nfs/AppData/consul/data
             type: Directory
         - name: consul-config
-          persistentVolumeClaim:
-            claimName: consul-config-pvc
           hostPath:
             path: /mnt/nfs/AppData/consul/config
             type: Directory
       restartPolicy: Always
-  volumeClaimTemplates:
-    - kind: PersistentVolumeClaim
-      apiVersion: v1
-      metadata:
-        name: consul-data-pvc
-        namespace: consul
-        labels:
-          name: consul-data-pvc
-      spec:
-        storageClassName: local-path
-        volumeMode: Filesystem
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 10Gi
-    - kind: PersistentVolumeClaim
-      apiVersion: v1
-      metadata:
-        name: consul-config-pvc
-        namespace: consul
-        labels:
-          name: consul-config-pvc
-      spec:
-        storageClassName: local-path
-        volumeMode: Filesystem
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: 10Mi
   serviceName: consul
