@@ -21,17 +21,10 @@ spec:
     auth:
       rootUser: ${root_user}
       rootPassword: ${root_password}
-    containerPorts:
-      api: 9000
-      console: 9001
     nodeSelector:
       kubernetes.io/hostname: rpi5-cluster-node-3
     service:
-      type: LoadBalancer
       ports:
-        api: 9000
-        console: 9001
-      nodePorts:
         api: 19000
         console: 19001
     persistence:
