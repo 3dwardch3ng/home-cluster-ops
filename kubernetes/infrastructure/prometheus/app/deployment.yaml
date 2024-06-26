@@ -38,10 +38,10 @@ spec:
               mountPath: /prometheus/
       volumes:
         - name: prometheus-config-volume
-          configMap:
-            defaultMode: 420
-            name: prometheus-server-conf
+          hostPath:
+            path: /mnt/nfs/AppData/prometheus/conf
+            type: Directory
         - name: prometheus-storage-volume
           hostPath:
-            path: /mnt/nfs/AppData/prometheus
+            path: /mnt/nfs/AppData/prometheus/storage
             type: Directory
