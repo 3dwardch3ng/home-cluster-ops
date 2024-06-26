@@ -50,8 +50,6 @@ spec:
               mountPath: /etc/grafana
             - name: grafana-data-volume
               mountPath: /var/lib/grafana
-            - name: grafana-home-volume
-              mountPath: /usr/share/grafana
             - name: grafana-logs-volume
               mountPath: /var/log/grafana
             - name: grafana-plugins-volume
@@ -74,10 +72,6 @@ spec:
         - name: grafana-data-volume
           hostPath:
             path: /mnt/nfs/AppData/grafana/data
-            type: Directory
-        - name: grafana-home-volume
-          hostPath:
-            path: /mnt/nfs/AppData/grafana/home
             type: Directory
         - name: grafana-logs-volume
           hostPath:
