@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   capacity:
     storage: 32Gi
@@ -37,7 +37,7 @@ metadata:
   labels:
     name: gitea-pvc
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

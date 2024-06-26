@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   capacity:
     storage: 5Gi
@@ -37,7 +37,7 @@ spec:
 #  labels:
 #    name: qbittorrent-config-pvc
 #spec:
-#  storageClassName: local-path
+#  storageClassName: local-mount-nfs
 #  volumeMode: Filesystem
 #  accessModes:
 #    - ReadWriteOnce
@@ -53,7 +53,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   capacity:
     storage: 5Gi
@@ -84,7 +84,7 @@ metadata:
   labels:
     name: qbittorrent-download-pvc
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
