@@ -42,8 +42,6 @@ spec:
       namespace: flux-system
     - name: minio-secrets
       namespace: flux-system
-    - name: kube-system-misc
-      namespace: kube-system
   postBuild:
     substituteFrom:
       - kind: Secret
