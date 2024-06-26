@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: flask-consul
-  namespace: tensuns
+  namespace: consul
   labels:
     app: flask-consul
 spec:
@@ -18,10 +18,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: tensuns
-  namespace: tensuns
+  name: nginx-consul
+  namespace: consul
   labels:
-    app: tensuns
+    app: consul
 spec:
   ports:
     - name: nginx-consul
