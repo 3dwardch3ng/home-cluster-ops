@@ -7,7 +7,7 @@ resources:
   - ./grafana-dashboards/grafana-dashboards.yaml
   - ./ingress-nginx/ingress-nginx.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
-  - ./kube-system/storage-class-local-mount-nfs.yaml
+  - ./kube-system/kube-system-misc.yaml
   - ./minio/minio.yaml
   - ./namespaces/namespaces.yaml
   - ./postgresql/postgresql.yaml
