@@ -19,7 +19,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: prometheus-alertmanager
-          image: prom/prometheus-alertmanager:v0.27.0
+          image: prom/alertmanager:v0.27.0
           args:
             - "--config.file=/etc/prometheus/prometheus-alertmanager.yaml"
           ports:
