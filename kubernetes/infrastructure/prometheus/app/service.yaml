@@ -5,6 +5,7 @@ metadata:
   namespace: prometheus
   annotations:
     prometheus.io/scrape: 'true'
+    prometheus.io/path: '/data/metrics'
     prometheus.io/port:   '9999'
 spec:
   selector:
@@ -12,4 +13,6 @@ spec:
   type: ClusterIP
   ports:
     - port: 9999
-      targetPort: 9999
+      targetPort: 9090
+      protocol: TCP
+      name: http
