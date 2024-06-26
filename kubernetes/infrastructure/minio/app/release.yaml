@@ -32,7 +32,7 @@ spec:
         api: 9000
         console: 9001
       nodePorts:
-        api: 19000
-        console: 19001
+        api: 30900
+        console: 30901
     persistence:
       existingClaim: "minio-pvc"
