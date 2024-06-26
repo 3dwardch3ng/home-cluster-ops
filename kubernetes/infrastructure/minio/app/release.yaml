@@ -27,7 +27,7 @@ spec:
     nodeSelector:
       kubernetes.io/hostname: rpi5-cluster-node-3
     service:
-      type: ClusterIP
+      type: LoadBalancer
       ports:
         api: 9000
         console: 9001
