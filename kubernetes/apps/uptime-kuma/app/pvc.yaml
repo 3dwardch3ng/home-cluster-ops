@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-mount-nfs
+  storageClassName: local-path
   volumeMode: Filesystem
   capacity:
     storage: 4Gi
@@ -37,7 +37,7 @@ metadata:
   labels:
     name: uptime-kuma-pvc
 spec:
-  storageClassName: local-mount-nfs
+  storageClassName: local-path
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
