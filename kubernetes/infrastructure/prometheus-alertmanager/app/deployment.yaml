@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus-alertmanager
+  namespace: prometheus
+  labels:
+    app: prometheus-alertmanager
+spec:
+  selector:
+    matchLabels:
+      app: prometheus-alertmanager
+  template:
+    metadata:
+      labels:
+        app: prometheus-alertmanager
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      containers:
+        - name: prometheus-alertmanager
+          image: prom/prometheus-alertmanager:v0.27.0
+          args:
+            - "--config.file=/etc/prometheus/prometheus-alertmanager.yaml"
+          ports:
+            - containerPort: 9093
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/prometheus/
+      volumes:
+        - name: config-volume
+          hostPath:
+            path: /mnt/nfs/AppData/prometheus/conf
+            type: Directory
