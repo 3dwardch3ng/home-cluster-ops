@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: consul
+  namespace: consul
+  labels:
+    app: consul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: consul
+  template:
+    metadata:
+      labels:
+        app: consul
+    spec:
+      containers:
+        - name: consul
+          image: 'swr.cn-south-1.myhuaweicloud.com/starsl.cn/consul:latest'
+          args:
+            - agent
+          ports:
+            - name: http
+              containerPort: 8500
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Australia/Sydney
+          volumeMounts:
+            - name: consul-data
+              mountPath: /consul/data
+            - name: consul-config
+              mountPath: /consul/config
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      volumes:
+        - name: consul-data
+          persistentVolumeClaim:
+            claimName: consul-data-pvc
+        - name: consul-config
+          persistentVolumeClaim:
+            claimName: consul-config-pvc
+  serviceName: consul
