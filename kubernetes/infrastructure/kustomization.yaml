@@ -8,4 +8,5 @@ resources:
   - ./ingress-nginx/ingress-nginx-config.yaml
   - ./namespaces/namespaces.yaml
   - ./postgresql/postgresql.yaml
+  - ./prometheus/prometheus.yaml
   - ./repositories/repositories.yaml
