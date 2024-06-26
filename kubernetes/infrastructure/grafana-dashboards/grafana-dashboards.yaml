@@ -8,7 +8,7 @@ spec:
   timeout: 1m30s
   retryInterval: 30s
   targetNamespace: prometheus
-  path: ./grafana-dashboard
+  path: ./grafana-dashboards
   prune: true
   sourceRef:
     kind: GitRepository
