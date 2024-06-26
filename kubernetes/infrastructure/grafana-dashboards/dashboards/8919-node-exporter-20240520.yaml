@@ -34,9 +34,9 @@ spec:
               protocol: TCP
           env:
             - name: admin_passwd
-              value: ${8919_admin_passwd}
+              value: ${dashboard_8919_admin_passwd}
             - name: consul_token
-              value: ${8919_consul_token}
+              value: ${dashboard_8919_consul_token}
             - name: consul_url
               value: 'http://consul:8500/v1'
             - name: log_level
