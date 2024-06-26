@@ -22,6 +22,8 @@ spec:
     auth:
       rootUser: ${root_user}
       rootPassword: ${root_password}
+    nodeSelector:
+      kubernetes.io/hostname: rpi5-cluster-node-3
     service:
       ports:
         api: 19000
