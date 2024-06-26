@@ -19,7 +19,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: clusterissuer-secrets
-  namespace: cert-manager
+  namespace: flux-system
 spec:
   interval: 10m
   timeout: 1m30s
@@ -37,7 +37,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: cert-manager-sops-age
+      name: sops-age
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
