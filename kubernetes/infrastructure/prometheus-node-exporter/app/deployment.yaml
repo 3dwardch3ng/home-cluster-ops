@@ -17,6 +17,7 @@ spec:
     spec:
       hostNetwork: true
       hostPID: true
+      hostIPC: true
       topologySpreadConstraints:
         - maxSkew: 1
           topologyKey: kubernetes.io/hostname
@@ -24,9 +25,6 @@ spec:
           labelSelector:
             matchLabels:
               app: prometheus-node-exporter
-      securityContext:
-        runAsUser: 0
-        runAsGroup: 0
       containers:
         - name: prometheus-node-exporter
           image: prom/node-exporter
@@ -37,6 +35,8 @@ spec:
               mountPath: /host
               readOnly: true
               mountPropagation: HostToContainer
+          securityContext:
+            privileged: true
       volumes:
         - name: node-volume
           hostPath:
