@@ -1,7 +1,7 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: grafana-dashboard-secrets
+  name: grafana-dashboards-secrets
   namespace: flux-system
 spec:
   interval: 10m
@@ -40,7 +40,7 @@ spec:
   dependsOn:
     - name: namespaces
       namespace: flux-system
-    - name: grafana-dashboard-secrets
+    - name: grafana-dashboards-secrets
       namespace: flux-system
   postBuild:
     substituteFrom:
