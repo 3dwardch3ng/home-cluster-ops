@@ -2,7 +2,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: postgresql-secrets
-  namespace: postgresql
+  namespace: flux-system
 spec:
   interval: 10m
   timeout: 1m30s
@@ -20,7 +20,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: postgresql-sops-age
+      name: sops-age
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
