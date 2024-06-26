@@ -34,7 +34,7 @@ spec:
         elastic: 30091
     persistence:
       enabled: true
-      storageClass: local-mount-nfs
+      storageClass: local-path
       size: "32Gi"
       existingClaim: "sonarqube-pvc"
     postgresql:
