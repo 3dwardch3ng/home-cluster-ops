@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ./cert-manager/cert-manager.yaml
   #  - ./cilium/cilium.yaml
+  - ./consul/consul.yaml
   - ./minio/minio.yaml
   - ./ingress-nginx/ingress-nginx.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
