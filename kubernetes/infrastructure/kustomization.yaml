@@ -9,4 +9,5 @@ resources:
   - ./namespaces/namespaces.yaml
   - ./postgresql/postgresql.yaml
   - ./prometheus/prometheus.yaml
+  - ./prometheus-alertmanager/prometheus-alertmanager.yaml
   - ./repositories/repositories.yaml
