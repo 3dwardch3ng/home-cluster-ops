@@ -29,3 +29,23 @@ spec:
                 name: prometheus
                 port:
                   number: 9999
+    - host: "grafana.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: prometheus
+                port:
+                  number: 3030
+    - host: "grafana.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: prometheus
+                port:
+                  number: 3030
