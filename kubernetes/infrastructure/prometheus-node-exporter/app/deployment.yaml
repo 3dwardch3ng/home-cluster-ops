@@ -32,7 +32,6 @@ spec:
           image: prom/node-exporter
           args:
             - "--path.rootfs=/host"
-            - "--cap-add=SYS_TIME"
           volumeMounts:
             - name: node-volume
               mountPath: /host
