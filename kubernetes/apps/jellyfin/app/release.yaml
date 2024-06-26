@@ -36,7 +36,7 @@ spec:
         - name: movies
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
+            storageClassName: local-mount-nfs
             volumeMode: Filesystem
             capacity:
               storage: 8Gi
@@ -62,7 +62,7 @@ spec:
         - name: series
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
+            storageClassName: local-mount-nfs
             volumeMode: Filesystem
             capacity:
               storage: 8Gi
@@ -88,7 +88,7 @@ spec:
         - name: music-videos
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
+            storageClassName: local-mount-nfs
             volumeMode: Filesystem
             capacity:
               storage: 8Gi
@@ -114,7 +114,7 @@ spec:
         - name: short-videos
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
+            storageClassName: local-mount-nfs
             volumeMode: Filesystem
             capacity:
               storage: 8Gi
@@ -140,7 +140,7 @@ spec:
         - name: gv
           readOnly: false
           volumeSpec:
-            storageClassName: local-path
+            storageClassName: local-mount-nfs
             volumeMode: Filesystem
             capacity:
               storage: 8Gi

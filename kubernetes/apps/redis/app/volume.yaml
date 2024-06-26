@@ -6,7 +6,7 @@ metadata:
   labels:
     name: redis-master-pvc
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce
@@ -22,7 +22,7 @@ metadata:
   labels:
     name: redis-replica-pvc
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   accessModes:
     - ReadWriteOnce

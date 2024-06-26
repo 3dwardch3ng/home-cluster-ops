@@ -6,7 +6,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   capacity:
     storage: 250Mi
@@ -32,7 +32,7 @@ metadata:
   labels:
     type: local
 spec:
-  storageClassName: local-path
+  storageClassName: local-mount-nfs
   volumeMode: Filesystem
   capacity:
     storage: 2Gi

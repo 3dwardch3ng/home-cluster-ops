@@ -42,6 +42,10 @@ spec:
   dependsOn:
     - name: postgresql-secrets
       namespace: flux-system
+    - name: kube-system-misc
+      namespace: kube-system
+    - name: namespaces
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret
