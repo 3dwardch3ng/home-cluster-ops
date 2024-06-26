@@ -8,12 +8,15 @@ spec:
   timeout: 1m30s
   retryInterval: 30s
   targetNamespace: cert-manager
-  path: ./kubernetes/apps/cert-manager/app
+  path: ./kubernetes/infrastructure/cert-manager/app
   prune: true
   sourceRef:
     kind: GitRepository
     namespace: flux-system
     name: flux-system
+  dependsOn:
+    - name: namespaces
+      namespace: flux-system
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -32,6 +35,8 @@ spec:
     namespace: flux-system
     name: home-cluster-ops-secrets
   dependsOn:
+    - name: namespaces
+      namespace: flux-system
     - name: repositories
       namespace: flux-system
   decryption:
@@ -49,7 +54,7 @@ spec:
   timeout: 1m30s
   retryInterval: 30s
   targetNamespace: cert-manager
-  path: ./kubernetes/apps/cert-manager/clusterissuer
+  path: ./kubernetes/infrastructure/cert-manager/clusterissuer
   prune: true
   sourceRef:
     kind: GitRepository
@@ -82,6 +87,8 @@ spec:
     namespace: flux-system
     name: home-cluster-ops-secrets
   dependsOn:
+    - name: namespaces
+      namespace: flux-system
     - name: repositories
       namespace: flux-system
   decryption:
@@ -99,7 +106,7 @@ spec:
   timeout: 1m30s
   retryInterval: 30s
   targetNamespace: cert-manager
-  path: ./kubernetes/apps/cert-manager/certificates
+  path: ./kubernetes/infrastructure/cert-manager/certificates
   prune: true
   sourceRef:
     kind: GitRepository

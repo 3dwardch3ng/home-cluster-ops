@@ -3,7 +3,6 @@ kind: Kustomization
 resources:
   - ./adguard-home/adguard-home.yaml
   - ./capacitor/capacitor.yaml
-  - ./cert-manager/cert-manager.yaml
   - ./code-server/code-server.yaml
   - ./dokuwiki/dokuwiki.yaml
   - ./gitea/gitea.yaml
@@ -12,7 +11,6 @@ resources:
   - ./kavita/kavita.yaml
   - ./nexus/nexus.yaml
   - ./podinfo/podinfo.yaml
-  - ./postgresql/postgresql.yaml
   - ./qbittorrent/qbittorrent.yaml
   - ./redis/redis.yaml
   - ./snippet-box/snippet-box.yaml
