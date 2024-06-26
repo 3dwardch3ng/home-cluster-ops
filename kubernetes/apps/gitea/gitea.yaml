@@ -39,7 +39,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: gitea-secrets
-      namespace: gitea
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret

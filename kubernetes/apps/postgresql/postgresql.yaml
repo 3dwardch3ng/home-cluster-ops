@@ -39,7 +39,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: postgresql-secrets
-      namespace: postgresql
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret

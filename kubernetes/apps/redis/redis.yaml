@@ -39,7 +39,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: redis-secrets
-      namespace: redis
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret

@@ -39,7 +39,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: sonarqube-secrets
-      namespace: sonarqube
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret

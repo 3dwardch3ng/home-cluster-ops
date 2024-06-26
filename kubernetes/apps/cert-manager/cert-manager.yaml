@@ -57,7 +57,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: clusterissuer-secrets
-      namespace: cert-manager
+      namespace: flux-system
     - name: cert-manager
       namespace: cert-manager
   postBuild:
@@ -69,7 +69,7 @@ apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: certificate-secrets
-  namespace: cert-manager
+  namespace: flux-system
 spec:
   interval: 10m
   timeout: 1m30s
@@ -87,7 +87,7 @@ spec:
   decryption:
     provider: sops
     secretRef:
-      name: cert-manager-sops-age
+      name: sops-age
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -107,7 +107,7 @@ spec:
     name: flux-system
   dependsOn:
     - name: certificate-secrets
-      namespace: cert-manager
+      namespace: flux-system
     - name: cert-manager
       namespace: cert-manager
     - name: clusterissuer
