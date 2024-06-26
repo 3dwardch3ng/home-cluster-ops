@@ -11,5 +11,5 @@ resources:
   - ./postgresql/postgresql.yaml
   - ./prometheus/prometheus.yaml
   - ./prometheus-alertmanager/prometheus-alertmanager.yaml
-  - ./prometheus-node-exporter/prometheus-node-exporter.yaml
+  - ./prometheus-exporters/prometheus-exporters.yaml
   - ./repositories/repositories.yaml
