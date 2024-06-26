@@ -1,0 +1,77 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: flask-consul
+  namespace: consul
+  labels:
+    app: flask-consul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask-consul
+  template:
+    metadata:
+      labels:
+        app: flask-consul
+    spec:
+      initContainers:
+        - name: wait-for-consul
+          image: busybox
+          command:
+            - sh
+            - '-c'
+            - >-
+              for i in \$(seq 1 60); do nc -z -w3 consul 8500 && exit 0 ||
+              sleep 5; done; exit 1
+          imagePullPolicy: IfNotPresent
+      containers:
+        - name: flask-consul
+          image: 'swr.cn-south-1.myhuaweicloud.com/starsl.cn/flask-consul:latest'
+          ports:
+            - name: http-2026
+              containerPort: 2026
+              protocol: TCP
+          env:
+            - name: admin_passwd
+              value: ${16098_admin_passwd}
+            - name: consul_token
+              value: ${16098_consul_token}
+            - name: consul_url
+              value: 'http://consul:8500/v1'
+            - name: log_level
+              value: INFO
+            - name: TZ
+              value: Australia/Sydney
+          imagePullPolicy: Always
+      restartPolicy: Always
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: nginx-consul
+  namespace: consul
+  labels:
+    app: nginx-consul
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-consul
+  template:
+    metadata:
+      labels:
+        app: nginx-consul
+    spec:
+      containers:
+        - name: nginx-consul
+          image: 'swr.cn-south-1.myhuaweicloud.com/starsl.cn/nginx-consul:latest'
+          ports:
+            - name: http-1026
+              containerPort: 1026
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Australia/Sydney
+          imagePullPolicy: Always
+      restartPolicy: Always
