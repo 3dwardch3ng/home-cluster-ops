@@ -40,8 +40,8 @@ spec:
   dependsOn:
     - name: namespaces
       namespace: flux-system
-    - name: grafana-dashboards-secrets
-      namespace: prometheus
+    - name: grafana-dashboard-secrets
+      namespace: flux-system
   postBuild:
     substituteFrom:
       - kind: Secret
