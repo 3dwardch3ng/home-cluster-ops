@@ -15,7 +15,7 @@ spec:
         kind: GitRepository
         namespace: flux-system
         name: local-path-provisioner
-      interval: 1d
+      interval: 24h
   values:
     storageClass:
       reclaimPolicy: Retain
