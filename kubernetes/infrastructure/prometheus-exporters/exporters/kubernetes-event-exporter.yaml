@@ -28,6 +28,12 @@ spec:
               namespace: "{{ .Namespace }}"
               component: "{{ .Source.Component }}"
               host: "{{ .Source.Host }}"
+    containerSecurityContext:
+      enabled: true
+      runAsNonRoot: false
+      privileged: true
+      readOnlyRootFilesystem: false
+      allowPrivilegeEscalation: true
     nodeSelector:
       kubernetes.io/hostname: rpi5-cluster-node-1
     metrics:
