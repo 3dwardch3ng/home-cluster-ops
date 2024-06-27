@@ -28,3 +28,7 @@ spec:
               namespace: "{{ .Namespace }}"
               component: "{{ .Source.Component }}"
               host: "{{ .Source.Host }}"
+    nodeSelector:
+      kubernetes.io/hostname: rpi5-cluster-node-1
+    metrics:
+      enabled: true
