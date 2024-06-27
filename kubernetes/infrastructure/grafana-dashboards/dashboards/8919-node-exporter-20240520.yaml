@@ -27,7 +27,7 @@ spec:
           imagePullPolicy: IfNotPresent
       containers:
         - name: flask-consul
-          image: 'swr.cn-south-1.myhuaweicloud.com/starsl.cn/flask-consul:latest'
+          image: 'edeedeeed/flask_consul:v0.1.0'
           ports:
             - name: http-2026
               containerPort: 2026
