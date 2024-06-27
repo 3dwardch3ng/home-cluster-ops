@@ -24,7 +24,9 @@ spec:
         port: 8388
     config:
       persistence:
-        name: "qbittorrent-config-pvc"
+        name: config
+        storageClass: local-path
+        size: 5Gi
     volumeMounts:
-      - name: qbittorrent-download-pvc
+      - name: download
         mountPath: /download
