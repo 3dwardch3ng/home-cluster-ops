@@ -21,6 +21,7 @@ spec:
       password: ${password}
     master:
       persistence:
+        storageClass: local-path
         existingClaim: redis-master-pvc
         selector:
           matchLabels:
@@ -30,6 +31,7 @@ spec:
     replica:
       replicaCount: 1
       persistence:
+        storageClass: local-path
         existingClaim: redis-replica-pvc
         selector:
           matchLabels:
