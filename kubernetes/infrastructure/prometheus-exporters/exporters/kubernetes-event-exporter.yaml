@@ -38,3 +38,25 @@ spec:
       kubernetes.io/hostname: rpi5-cluster-node-1
     metrics:
       enabled: true
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: kubernetes-event-exporter-ingress
+  namespace: prometheus
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "event-exporter.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: kubernetes-event-exporter-metrics
+                port:
+                  number: 2112
