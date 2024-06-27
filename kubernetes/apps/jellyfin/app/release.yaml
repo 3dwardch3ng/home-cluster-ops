@@ -25,12 +25,14 @@ spec:
           accessModes:
             - ReadWriteOnce
           volumeName: jellyfin-config
+          storageClassName: local-path
       data:
         enabled: true
         volumeClaimSpec:
           accessModes:
             - ReadWriteOnce
           volumeName: jellyfin-data
+          storageClassName: local-path
     jellyfin:
       mediaVolumes:
         - name: movies
