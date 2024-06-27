@@ -9,12 +9,14 @@ metadata:
 spec:
   selector:
     app: prometheus
-  type: ClusterIP
+  type: NodePort
   ports:
     - port: 9999
       targetPort: 9090
+      nodePort: 30999
       protocol: TCP
       name: http
     - name: grafana-port
       port: 3030
+      nodePort: 30303
       targetPort: 3000
