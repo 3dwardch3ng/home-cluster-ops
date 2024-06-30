@@ -1,0 +1,123 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flight-tracker
+  namespace: flight-tracker
+  labels:
+    app.kubernetes.io/name: flight-tracker
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: flight-tracker
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: flight-tracker
+    spec:
+      containers:
+        - name: flight-tracker
+          securityContext:
+            privileged: true
+          image: edeedeeed/flight-tracker:sha-7757871
+          ports:
+            - protocol: TCP
+              containerPort: 80
+              name: 80-tcp
+            - protocol: TCP
+              containerPort: 8504
+              name: 8504-tcp
+            - protocol: TCP
+              containerPort: 8754
+              name: 8754-tcp
+            - protocol: TCP
+              containerPort: 8080
+              name: 8080-tcp
+            - protocol: TCP
+              containerPort: 30001
+              name: 30001-tcp
+            - protocol: TCP
+              containerPort: 30002
+              name: 30002-tcp
+            - protocol: TCP
+              containerPort: 30003
+              name: 30003-tcp
+            - protocol: TCP
+              containerPort: 30004
+              name: 30004-tcp
+            - protocol: TCP
+              containerPort: 30005
+              name: 30005-tcp
+            - protocol: TCP
+              containerPort: 30053
+              name: 30053-tcp
+            - protocol: TCP
+              containerPort: 30054
+              name: 30054-tcp
+            - protocol: TCP
+              containerPort: 30104
+              name: 30104-tcp
+            - protocol: TCP
+              containerPort: 30105
+              name: 30105-tcp
+            - protocol: TCP
+              containerPort: 30106
+              name: 30106-tcp
+            - protocol: TCP
+              containerPort: 30154
+              name: 30154-tcp
+            - protocol: TCP
+              containerPort: 30334
+              name: 30334-tcp
+            - protocol: TCP
+              containerPort: 32004
+              name: 32004-tcp
+            - protocol: TCP
+              containerPort: 32008
+              name: 32008-tcp
+            - protocol: TCP
+              containerPort: 32088
+              name: 32088-tcp
+            - protocol: TCP
+              containerPort: 32457
+              name: 32457-tcp
+            - protocol: TCP
+              containerPort: 32458
+              name: 32458-tcp
+            - protocol: TCP
+              containerPort: 32459
+              name: 32459-tcp
+          env:
+            - name: TZ
+              value: Australia/Sydney
+          volumeMounts:
+            - name: rtl-sdr-dvb
+              mountPath: /dev/dvb
+            - name: rtl-sdr-i2c-13
+              mountPath: /dev/i2c-13
+            - name: rtl-sdr-i2c-14
+              mountPath: /dev/i2c-14
+            - name: rtl-sdr-lirc0
+              mountPath: /dev/lirc0
+            - name: rtl-sdr-media3
+              mountPath: /dev/media3
+            - name: rtl-sdr-swradio0
+              mountPath: /dev/swradio0
+      volumes:
+        - name: rtl-sdr-dvb
+          hostPath:
+            path: /dev/dvb
+        - name: rtl-sdr-i2c-13
+          hostPath:
+            path: /dev/i2c-13
+        - name: rtl-sdr-i2c-14
+          hostPath:
+            path: /dev/i2c-14
+        - name: rtl-sdr-lirc0
+          hostPath:
+            path: /dev/lirc0
+        - name: rtl-sdr-media3
+          hostPath:
+            path: /dev/media3
+        - name: rtl-sdr-swradio0
+          hostPath:
+            path: /dev/swradio0

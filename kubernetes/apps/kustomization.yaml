@@ -5,6 +5,7 @@ resources:
   - ./capacitor/capacitor.yaml
   - ./code-server/code-server.yaml
   - ./dokuwiki/dokuwiki.yaml
+  - ./flight-tracker/flight-tracker.yaml
   - ./gitea/gitea.yaml
   - ./homer/homer.yaml
   - ./jellyfin/jellyfin.yaml
