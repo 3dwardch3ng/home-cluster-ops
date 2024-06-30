@@ -102,6 +102,26 @@ spec:
               mountPath: /dev/media3
             - name: rtl-sdr-swradio0
               mountPath: /dev/swradio0
+            - name: config-adsbexchange
+              mountPath: /etc/default/adsbexchange
+            - name: config-dump1090-fa
+              mountPath: /etc/default/dump1090-fa
+            - name: config-mlat-client
+              mountPath: /etc/default/mlat-client
+            - name: config-adsbx-uuid
+              mountPath: /usr/local/share/adsbexchange/adsbx-uuid
+            - name: config-fr24feed
+              mountPath: /etc/fr24feed.ini
+            - name: config-pfclient-config
+              mountPath: /etc/pfclient-config.json
+            - name: config-mlat-client
+              mountPath: /etc/piaware.conf
+            - name: config-rbfeeder
+              mountPath: /etc/rbfeeder.ini
+            - name: config-planeplotters-feed
+              mountPath: /etc/planeplotters/feedclient
+            - name: config-planeplotters-uuid
+              mountPath: /etc/planeplotters/uuid
       volumes:
         - name: rtl-sdr-dvb
           hostPath:
@@ -121,6 +141,46 @@ spec:
         - name: rtl-sdr-swradio0
           hostPath:
             path: /dev/swradio0
+        - name: config-adsbexchange
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/default/adsbexchange
+            type: File
+        - name: config-dump1090-fa
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/default/dump1090-fa
+            type: File
+        - name: config-mlat-client
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/default/mlat-client
+            type: File
+        - name: config-adsbx-uuid
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/adsbx-uuid
+            type: File
+        - name: config-fr24feed
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/fr24feed.ini
+            type: File
+        - name: config-pfclient-config
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/pfclient-config.json
+            type: File
+        - name: config-piaware
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/piaware.conf
+            type: File
+        - name: config-rbfeeder
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/rb_feeder.ini
+            type: File
+        - name: config-planeplotters-feed
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/planespotters/feedclient
+            type: File
+        - name: config-planespotters-uuid
+          hostPath:
+            path: /mnt/nfs/AppData/flight-tracker/planespotters/uuid
+            type: File
       affinity:
         nodeAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
