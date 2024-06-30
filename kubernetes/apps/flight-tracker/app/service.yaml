@@ -14,66 +14,88 @@ spec:
     - protocol: TCP
       port: 10880
       targetPort: 80
+      name: 10880-tcp
     - protocol: TCP
       port: 8504
       targetPort: 8504
+      name: 8504-tcp
     - protocol: TCP
       port: 8754
       targetPort: 8754
+      name: 8754-tcp
     - protocol: TCP
       port: 18080
       targetPort: 8080
+      name: 18080-tcp
     - protocol: TCP
       port: 30001
       targetPort: 30001
+      name: 30001-tcp
     - protocol: TCP
       port: 30002
       targetPort: 30002
+      name: 30002-tcp
     - protocol: TCP
       port: 30003
       targetPort: 30003
+      name: 30003-tcp
     - protocol: TCP
       port: 30004
       targetPort: 30004
+      name: 30004-tcp
     - protocol: TCP
       port: 30005
       targetPort: 30005
+      name: 30005-tcp
     - protocol: TCP
       port: 30053
       targetPort: 30053
+      name: 30053-tcp
     - protocol: TCP
       port: 30054
       targetPort: 30054
+      name: 30054-tcp
     - protocol: TCP
       port: 30104
       targetPort: 30104
+      name: 30104-tcp
     - protocol: TCP
       port: 30105
       targetPort: 30105
+      name: 30105-tcp
     - protocol: TCP
       port: 30106
       targetPort: 30106
+      name: 30106-tcp
     - protocol: TCP
       port: 30154
       targetPort: 30154
+      name: 30154-tcp
     - protocol: TCP
       port: 30334
       targetPort: 30334
+      name: 30334-tcp
     - protocol: TCP
       port: 32004
       targetPort: 32004
+      name: 32004-tcp
     - protocol: TCP
       port: 32008
       targetPort: 32008
+      name: 32008-tcp
     - protocol: TCP
       port: 32088
       targetPort: 32088
+      name: 32088-tcp
     - protocol: TCP
       port: 32457
       targetPort: 32457
+      name: 32457-tcp
     - protocol: TCP
       port: 32458
       targetPort: 32458
+      name: 32458-tcp
     - protocol: TCP
       port: 32459
       targetPort: 32459
+      name: 32459-tcp
