@@ -118,9 +118,9 @@ spec:
               mountPath: /etc/piaware.conf
             - name: config-rbfeeder
               mountPath: /etc/rbfeeder.ini
-            - name: config-planeplotters-feed
+            - name: config-planesplotters-feed
               mountPath: /etc/planeplotters/feedclient
-            - name: config-planeplotters-uuid
+            - name: config-planesplotters-uuid
               mountPath: /etc/planeplotters/uuid
       volumes:
         - name: rtl-sdr-dvb
@@ -173,11 +173,11 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/flight-tracker/rb_feeder.ini
             type: File
-        - name: config-planeplotters-feed
+        - name: config-planesplotters-feed
           hostPath:
             path: /mnt/nfs/AppData/flight-tracker/planespotters/feedclient
             type: File
-        - name: config-planespotters-uuid
+        - name: config-planesplotters-uuid
           hostPath:
             path: /mnt/nfs/AppData/flight-tracker/planespotters/uuid
             type: File
