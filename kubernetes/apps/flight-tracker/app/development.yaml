@@ -171,7 +171,7 @@ spec:
             type: File
         - name: config-rbfeeder
           hostPath:
-            path: /mnt/nfs/AppData/flight-tracker/rb_feeder.ini
+            path: /mnt/nfs/AppData/flight-tracker/rbfeeder.ini
             type: File
         - name: config-planesplotters-feed
           hostPath:
