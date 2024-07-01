@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: home-assistant
+    name: home-assistant
+    namespace: home-assistant
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: home-assistant
+  template:
+    metadata:
+      labels:
+        app: home-assistant
+    spec:
+      containers:
+        - image: homeassistant/home-assistant:2024.7.0b6
+          name: home-assistant
+          volumeMounts:
+            - mountPath: "/config"
+              name: ha-storage
+      volumes:
+        - name: ha-storage
+          hostPath:
+            path: /mnt/nfs/AppData/home-assistant/home-assistant
+            type: Directory
