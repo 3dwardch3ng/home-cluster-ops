@@ -1,10 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  name: home-assistant
+  namespace: home-assistant
   labels:
-    app: home-assistant
-    name: home-assistant
-    namespace: home-assistant
+    app.kubernetes.io/name: home-assistant
 spec:
   replicas: 1
   selector:
