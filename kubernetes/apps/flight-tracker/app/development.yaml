@@ -18,7 +18,7 @@ spec:
         - name: flight-tracker
           securityContext:
             privileged: true
-          image: edeedeeed/flight-tracker:sha-7757871
+          image: edeedeeed/flight-tracker:sha-9552429
           ports:
             - protocol: TCP
               containerPort: 80
