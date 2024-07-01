@@ -4,7 +4,7 @@ metadata:
   name: node-red
   namespace: home-assistant
   labels:
-    app: node-red
+    app.kubernetes.io/name: node-red
 spec:
   replicas: 1
   selector:
