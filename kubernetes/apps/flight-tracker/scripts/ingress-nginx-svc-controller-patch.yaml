@@ -1,6 +1,0 @@
-spec:
-  ports:
-    - name: 30001-tcp
-      port: 30001
-      targetPort: 30001
-      protocol: TCP
