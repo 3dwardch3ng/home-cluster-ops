@@ -14,20 +14,6 @@ spec:
         namespace: flux-system
   interval: 60m
   values:
-    config:
-      receivers:
-        - name: "dump"
-          file:
-            layout:
-              message: "{{ .Message }}"
-              reason: "{{ .Reason }}"
-              type: "{{ .Type }}"
-              count: "{{ .Count }}"
-              kind: "{{ .InvolvedObject.Kind }}"
-              name: "{{ .InvolvedObject.Name }}"
-              namespace: "{{ .Namespace }}"
-              component: "{{ .Source.Component }}"
-              host: "{{ .Source.Host }}"
     containerSecurityContext:
       enabled: true
       runAsNonRoot: false
