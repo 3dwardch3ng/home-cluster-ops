@@ -4,7 +4,7 @@ spec:
       port: 5432
       targetPort: 5432
       protocol: TCP
-    - name: postgresql-repl--tcp
+    - name: postgresql-repl-tcp
       port: 5433
       targetPort: 5433
       protocol: TCP
