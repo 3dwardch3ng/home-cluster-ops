@@ -29,3 +29,6 @@ spec:
         console: 19001
     persistence:
       existingClaim: "minio-pvc"
+    containerSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
