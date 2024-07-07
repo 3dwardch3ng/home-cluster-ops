@@ -43,7 +43,18 @@ spec:
       autoDiscovery:
         enabled: true
     persistence:
-      existingClaim: "mongodb-pvc"
+      name: "mongodb-pvc"
+      resourcePolicy: "keep"
+      storageClass: "local-path"
+      size: "32Gi"
+      labels:
+        name: mongodb-pvc
+      volumeClaimTemplates:
+        selector:
+          matchLabels:
+            name: mongodb-pv
+    persistentVolumeClaimRetentionPolicy:
+      enabled: true
     backup:
       enabled: true
       cronjob:
@@ -52,7 +63,12 @@ spec:
           runAsUser: 1000
           runAsGroup: 1000
         storage:
-          existingClaim: "mongodb-backup-pvc"
+          resourcePolicy: "keep"
+          storageClass: "local-path"
+          volumeClaimTemplates:
+            selector:
+              matchLabels:
+                name: mongodb-backup-pv
     serviceAccount:
       create: true
       name: mongodb
