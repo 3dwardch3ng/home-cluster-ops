@@ -9,6 +9,7 @@ resources:
   - ./ingress-nginx/ingress-nginx-config.yaml
   - ./local-path-provisioner/local-path-provisioner.yaml
   - ./minio/minio.yaml
+  - ./mongodb/mongodb.yaml
   - ./namespaces/namespaces.yaml
   - ./postgresql/postgresql.yaml
   - ./prometheus/prometheus.yaml
