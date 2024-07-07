@@ -29,6 +29,7 @@ spec:
       databases:
         - edward
         - anysync
+    automountServiceAccountToken: true
     replicaCount: 2
     containerSecurityContext:
       runAsUser: 1000
@@ -55,7 +56,6 @@ spec:
     serviceAccount:
       create: true
       name: mongodb
-      automountServiceAccountToken: true
     rbac:
       create: true
 
