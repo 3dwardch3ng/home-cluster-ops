@@ -19,7 +19,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: mongodb-pvc
-    namespace: postgresql
+    namespace: mongodb
   nodeAffinity:
     required:
       nodeSelectorTerms:
@@ -66,7 +66,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: mongodb-backup-pvc
-    namespace: postgresql
+    namespace: mongodb
   nodeAffinity:
     required:
       nodeSelectorTerms:
