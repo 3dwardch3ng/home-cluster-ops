@@ -43,12 +43,12 @@ spec:
       autoDiscovery:
         enabled: true
     persistence:
-      name: "mongodb-pvc"
+      name: "datadir-mongodb-0"
       resourcePolicy: "keep"
       storageClass: "local-path"
       size: "32Gi"
       labels:
-        name: mongodb-pvc
+        name: datadir-mongodb-0
       volumeClaimTemplates:
         selector:
           matchLabels:
