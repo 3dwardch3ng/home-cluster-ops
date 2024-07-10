@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-pipelines
+  namespace: logstash
+data:
+  pipelines.yaml: |
+    - pipeline.id: omada
+      path.config: "/opt/bitnami/logstash/config/omada.conf"
+    - pipeline.id: misc
+      path.config: "/opt/bitnami/logstash/config/misc.conf"
+  omada.conf: |
+    input {
+      file {
+        path => "/tmp/omada"
+      }
+    }
+    output {
+      stdout { }
+    }
+  misc.conf: |
+    input {
+      file {
+        path => "/tmp/misc"
+      }
+    }
+    output {
+      stdout { }
+    }
