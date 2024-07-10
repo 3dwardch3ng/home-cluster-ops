@@ -1,0 +1,4 @@
+- pipeline.id: omada
+  path.config: "/opt/bitnami/logstash/config/omada.conf"
+- pipeline.id: misc
+  path.config: "/opt/bitnami/logstash/config/misc.conf"
