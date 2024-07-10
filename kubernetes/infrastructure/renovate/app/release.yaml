@@ -1,0 +1,62 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: renovate
+  namespace: renovate
+spec:
+  releaseName: renovate
+  chart:
+    spec:
+      chart: mend-renovate-ce
+      sourceRef:
+        kind: HelmRepository
+        name: mend-renovate-cc-ee
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    renovate:
+      mendRnvAcceptTos: y
+      mendRnvLicenseKey: ${renovate_license_key}
+      mendRnvPlatform: github
+      mendRnvEndpoint: "https://api.github.com/"
+      mendRnvGithubAppId: "938218"
+      mendRnvGithubAppKey: "/usr/src/app/rpi5-cluster-renovate.2024-07-05.private-key.pem"
+      mendRnvAdminApiEnabled: "true"
+      mendRnvServerApiSecret: ${server_api_secret}
+      mendRnvWebhookSecret: ${github_app_webhook_secret}
+      githubComToken: ${github_pat}
+      mendRnvAutoDiscoverFilter: "3dwardch3ng/home-cluster-ops"
+      mendRnvEnqueueJobsOnStartup: "enabled"
+      mendRnvLogHistoryDir: "/logs"
+    postgresql:
+      enabled: true
+      host: ${db_pg_host}
+      port: 5432
+      database: ${db_pg_database}
+      user: ${db_pg_user}
+      password: ${db_pg_password}
+    service:
+      type: ClusterIP
+      port: 8099
+    podSecurityContext:
+      fsGroup: 1000
+    containerSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+    extraVolumes:
+      - name: renovate-logs
+        hostPath:
+          path: /mnt/nfs/AppData/renovate/logs
+          type: Directory
+      - name: renovate-gh-app-pem
+        hostPath:
+          path: /mnt/nfs/AppData/renovate/key/rpi5-cluster-renovate.2024-07-05.private-key.pem
+          type: File
+    extraVolumeMounts:
+      - name: renovate-logs
+        mountPath: /logs
+      - name: renovate-gh-app-pem
+        mountPath: /usr/src/app/rpi5-cluster-renovate.2024-07-05.private-key.pem
