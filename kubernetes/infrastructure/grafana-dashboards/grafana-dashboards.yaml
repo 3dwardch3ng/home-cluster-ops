@@ -4,6 +4,7 @@ metadata:
   name: grafana-dashboards-secrets
   namespace: flux-system
 spec:
+  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
@@ -28,6 +29,7 @@ metadata:
   name: grafana-dashboards
   namespace: prometheus
 spec:
+  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
