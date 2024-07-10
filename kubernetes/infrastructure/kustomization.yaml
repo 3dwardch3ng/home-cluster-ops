@@ -8,6 +8,7 @@ resources:
   - ./ingress-nginx/ingress-nginx.yaml
   - ./ingress-nginx/ingress-nginx-config.yaml
   - ./local-path-provisioner/local-path-provisioner.yaml
+  - ./logstash/logstash.yaml
   - ./minio/minio.yaml
   - ./mongodb/mongodb.yaml
   - ./namespaces/namespaces.yaml
