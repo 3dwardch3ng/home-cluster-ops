@@ -32,3 +32,5 @@ spec:
     containerSecurityContext:
       runAsUser: 1000
       runAsGroup: 1000
+    podSecurityContext:
+      fsGroup: 1000
