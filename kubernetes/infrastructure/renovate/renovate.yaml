@@ -40,6 +40,8 @@ spec:
   dependsOn:
     - name: namespaces
       namespace: flux-system
+    - name: repositories
+      namespace: flux-system
     - name: renovate-secrets
       namespace: flux-system
     - name: local-path-provisioner
