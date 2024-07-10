@@ -27,7 +27,7 @@ spec:
             - name: MEND_RNV_PLATFORM
               value: github
             - name: MEND_RNV_GITHUB_APP_ID
-              value: "${github_app_id}"
+              value: "938218"
             - name: RNV_GITHUB_PEM_FILE_PATH
               value: "/usr/src/app/rpi5-cluster-renovate.2024-07-05.private-key.pem"
             - name: MEND_RNV_WEBHOOK_SECRET
