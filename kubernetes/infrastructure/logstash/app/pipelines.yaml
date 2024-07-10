@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: logstash-pipelines
+  namespace: logstash
+data:
+  pipelines.yaml: |
+    - pipeline.id: omada
+      path.config: "/opt/bitnami/logstash/config/omada.conf"
+    - pipeline.id: misc
+      path.config: "/opt/bitnami/logstash/config/misc.conf"
+  omada.conf: |
+    input {
+      tcp {
+        port => 1514
+        type => syslog
+      }
+      udp {
+        port => 1514
+        type => syslog
+      }
+      http {
+        port => 8008
+      }
+    }
+    output {
+      s3 { 
+        access_key_id => ${omada_s3_access_key_id}
+        bucket => "logstash"
+        canned_acl => "bucket-owner-read"
+        endpoint => "http://minio.minio.svc.cluster.local:19000"
+        prefix => "omada/%{+YYYY}/%{+MM}/%{+dd}"
+        region: "ap-southeast-2"
+        secret_access_key => ${omada_s3_secret_access_key}
+        time_file => 60
+      }
+    }
+  misc.conf: |
+    input {
+      file {
+        path => "/tmp/misc"
+      }
+    }
+    output {
+      stdout { }
+    }

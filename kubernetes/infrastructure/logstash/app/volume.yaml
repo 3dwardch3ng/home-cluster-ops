@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: logstash-pv
+  namespace: logstash
+  labels:
+    type: local
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  capacity:
+    storage: 16Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/mnt/nfs/AppData/logstash/data"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: logstash-pvc
+    namespace: logstash
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - rpi5-cluster-node-1
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: logstash-pvc
+  namespace: logstash
+  labels:
+    name: logstash-pvc
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 16Gi

@@ -1,15 +1,14 @@
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: grafana-dashboards-secrets
+  name: logstash-secrets
   namespace: flux-system
 spec:
-  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
-  targetNamespace: prometheus
-  path: ./grafana-dashboards
+  targetNamespace: logstash
+  path: ./logstash
   prune: true
   sourceRef:
     kind: GitRepository
@@ -26,14 +25,13 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: grafana-dashboards
-  namespace: prometheus
+  name: logstash
+  namespace: logstash
 spec:
-  suspend: true
   interval: 10m
   timeout: 1m30s
   retryInterval: 30s
-  path: ./kubernetes/infrastructure/grafana-dashboards/dashboards
+  path: ./kubernetes/infrastructure/logstash/app
   prune: true
   sourceRef:
     kind: GitRepository
@@ -42,9 +40,11 @@ spec:
   dependsOn:
     - name: namespaces
       namespace: flux-system
-    - name: grafana-dashboards-secrets
+    - name: logstash-secrets
       namespace: flux-system
+    - name: local-path-provisioner
+      namespace: local-path-storage
   postBuild:
     substituteFrom:
       - kind: Secret
-        name: grafana-dashboards-secrets
+        name: logstash-secrets
