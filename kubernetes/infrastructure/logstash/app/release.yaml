@@ -1,0 +1,67 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: logstash
+  namespace: logstash
+spec:
+  releaseName: logstash
+  chart:
+    spec:
+      chart: logstash
+      sourceRef:
+        kind: HelmRepository
+        name: bitnami
+        namespace: flux-system
+  interval: 1h
+  install:
+    remediation:
+      retries: 3
+  values:
+    existingConfiguration: logstash-pipelines
+    serviceAccount:
+      name: logstash
+    containerPorts:
+      - name: omada-http
+        containerPort: 8008
+        protocol: TCP
+      - name: monitoring
+        containerPort: 9600
+        protocol: TCP
+      - name: omada-syslog-udp
+        containerPort: 1514
+        protocol: UDP
+      - name: omada-syslog-tcp
+        containerPort: 1514
+        protocol: TCP
+    podSecurityContext:
+      fsGroup: 1000
+    containerSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+    service:
+      type: LoadBalancer
+      ports:
+        - name: omada-http
+          port: 8080
+          targetPort: http
+          protocol: TCP
+        - name: monitoring
+          port: 9600
+          targetPort: monitoring
+          protocol: TCP
+        - name: omada-syslog-udp
+          port: 1514
+          targetPort: syslog-udp
+          protocol: UDP
+        - name: omada-syslog-tcp
+          port: 1514
+          targetPort: syslog-tcp
+          protocol: TCP
+    persistence:
+      enabled: true
+      existingClaim: logstash-pvc
+      size: 16Gi
+    volumePermissions:
+      enabled: true
+      securityContext:
+        runAsUser: 1000
