@@ -24,7 +24,6 @@ spec:
             runAsUser: 1000
             runAsNonRoot: true
             runAsGroup: 1000
-          restartPolicy: Always
           name: vaultwarden
           image: vaultwarden/server:1.31.0
           env:
