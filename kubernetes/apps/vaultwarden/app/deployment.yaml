@@ -28,7 +28,7 @@ spec:
           image: vaultwarden/server:1.31.0
           env:
             - name: DOMAIN
-              value: vaultwarden.cluster.edward.sydney
+              value: https://vaultwarden.cluster.edward.sydney
             - name: SIGNUPS_ALLOWED
               value: "true"
             - name: DATABASE_URL
