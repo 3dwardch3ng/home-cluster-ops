@@ -1,0 +1,49 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaultwarden
+  namespace: vaultwarden
+  labels:
+    app.kubernetes.io/name: vaultwarden
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: vaultwarden
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: vaultwarden
+        rpi5.cluster.policy/egress-world: "true"
+        rpi5.cluster.policy/ingress-world: "true"
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
+            runAsGroup: 1000
+          restartPolicy: Always
+          name: vaultwarden
+          image: vaultwarden/server:1.31.0
+          env:
+            - name: DOMAIN
+              value: vaultwarden.cluster.edward.sydney
+            - name: SIGNUPS_ALLOWED
+              value: "true"
+            - name: DATABASE_URL
+              value: postgresql://${db_username}:${db_password}@${db_host}:5432/${db_name}
+          ports:
+            - protocol: TCP
+              containerPort: 80
+              name: http
+          volumeMounts:
+            - name: vaultwarden-data
+              mountPath: /data
+      volumes:
+        - name: vaultwarden-data
+          hostPath:
+            path: /mnt/nfs/AppData/vaultwarden/data
+            type: Directory
+
