@@ -7,7 +7,7 @@ metadata:
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
-  ingressClassName: vaultwarden
+  ingressClassName: nginx
   rules:
     - host: "vaultwarden.cluster.edward.sydney"
       http:
