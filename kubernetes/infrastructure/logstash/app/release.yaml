@@ -21,11 +21,11 @@ spec:
     serviceAccount:
       name: logstash
     containerPorts:
-      - name: omada-http
-        containerPort: 8008
-        protocol: TCP
       - name: monitoring
         containerPort: 9600
+        protocol: TCP
+      - name: omada-http
+        containerPort: 8008
         protocol: TCP
       - name: omada-syslog-udp
         containerPort: 1514
@@ -41,21 +41,21 @@ spec:
     service:
       type: LoadBalancer
       ports:
-        - name: omada-http
-          port: 8080
-          targetPort: http
-          protocol: TCP
         - name: monitoring
           port: 9600
           targetPort: monitoring
           protocol: TCP
+        - name: omada-http
+          port: 8008
+          targetPort: omada-http
+          protocol: TCP
         - name: omada-syslog-udp
           port: 1514
-          targetPort: syslog-udp
+          targetPort: omada-syslog-udp
           protocol: UDP
         - name: omada-syslog-tcp
           port: 1514
-          targetPort: syslog-tcp
+          targetPort: omada-syslog-tcp
           protocol: TCP
     persistence:
       enabled: true

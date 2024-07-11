@@ -19,7 +19,7 @@ spec:
                 name: logstash
                 port:
                   number: 8008
-    - host: "monitor.omada.logstash.cluster.edward.sydney"
+    - host: "logstash.cluster.edward.sydney"
       http:
         paths:
           - pathType: Prefix
