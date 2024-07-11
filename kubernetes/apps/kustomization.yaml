@@ -15,4 +15,5 @@ resources:
   - ./snippet-box/snippet-box.yaml
   - ./sonarqube/sonarqube.yaml
   - ./uptime-kuma/uptime-kuma.yaml
+  - ./vaultwarden/vaultwarden.yaml
   - ./weave-gitops/weave-gitops.yaml
