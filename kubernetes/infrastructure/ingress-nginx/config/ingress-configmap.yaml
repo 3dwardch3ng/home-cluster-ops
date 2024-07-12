@@ -6,8 +6,6 @@ metadata:
 data:
   "53": "adguard-home/adguard-home:53"
   "853": "adguard-home/adguard-home:853"
-  "5432": "postgresql/postgresql-primary:5432"
-  "5433": "postgresql/postgresql-replica:5432"
   "5443": "adguard-home/adguard-home:5443"
   "6060": "adguard-home/adguard-home:6060"
   "8388": "qbittorrent/qbittorrent-qbittorrent-torrent:8388"

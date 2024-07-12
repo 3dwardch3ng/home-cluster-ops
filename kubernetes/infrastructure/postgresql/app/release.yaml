@@ -36,6 +36,8 @@ spec:
         runAsGroup: 1000
       podLabels:
         name: "postgresql-primary"
+      service:
+        type: "LoadBalancer"
       persistence:
         existingClaim: postgresql-primary-pvc
         selector:
@@ -50,6 +52,8 @@ spec:
         runAsGroup: 1000
       podLabels:
         name: "postgresql-replica"
+      service:
+        type: "LoadBalancer"
       persistence:
         existingClaim: postgresql-replica-pvc
         selector:
