@@ -54,6 +54,8 @@ spec:
         name: "postgresql-replica"
       service:
         type: "LoadBalancer"
+        ports:
+          postgresql: 5433
       persistence:
         existingClaim: postgresql-replica-pvc
         selector:
