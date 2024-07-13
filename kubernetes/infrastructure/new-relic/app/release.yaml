@@ -36,6 +36,7 @@ spec:
     logging:
       enabled: true
     newrelic-logging:
+      enabled: false
       lowDataMode: true
     fluentBit:
       persistence:
