@@ -7,7 +7,7 @@ spec:
   releaseName: new-relic
   chart:
     spec:
-      chart: new-relic
+      chart: nri-bundle
       sourceRef:
         kind: HelmRepository
         name: new-relic
