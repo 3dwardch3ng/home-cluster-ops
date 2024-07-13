@@ -37,3 +37,10 @@ spec:
       enabled: true
     newrelic-logging:
       lowDataMode: true
+    fluentBit:
+      persistence:
+        mode: hostPath
+        persistentVolume:
+          storageClass: "local-path"
+          existingVolume: "nr-fluentbit-pv"
+          existingVolumeClaim: "nr-fluentbit-pvc"
