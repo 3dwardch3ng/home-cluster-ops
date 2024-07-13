@@ -1,0 +1,39 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: new-relic
+  namespace: new-relic
+spec:
+  releaseName: new-relic
+  chart:
+    spec:
+      chart: new-relic
+      sourceRef:
+        kind: HelmRepository
+        name: new-relic
+        namespace: flux-system
+  interval: 1h
+  values:
+    global:
+      cluster: RPi5 Cluster
+      licenseKey: ${nr_license_key}
+      lowDataMode: true
+    newrelic-infrastructure:
+      privileged: true
+    kube-state-metrics:
+      enabled: true
+      image:
+          tag: v2.10.0
+    kubeEvents:
+      enabled: true
+    newrelic-prometheus-agent:
+      enabled: true
+      lowDataMode: true
+      config:
+        kubernetes:
+          integrations_filter:
+            enabled: false
+    logging:
+      enabled: true
+    newrelic-logging:
+      lowDataMode: true
