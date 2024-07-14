@@ -1,9 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: ingress-nginx-values
-  namespace: ingress-nginx
-data:
-  use_geoip2: "false"
-  disable_ipv6: "true"
-  disable_ipv6_dns: "true"
