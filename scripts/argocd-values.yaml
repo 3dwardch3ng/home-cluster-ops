@@ -1,3 +1,7 @@
+crds:
+  # -- Install and upgrade CRDs
+  install: false
+
 global:
   domain: argocd.cluster.edward.sydney
 
