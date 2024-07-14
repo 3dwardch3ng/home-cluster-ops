@@ -23,7 +23,7 @@ spec:
               repoURL: ""
     - git:
         files:
-          - path: apps/**/k3s-cluster/config_dir.json
+          - path: resources/**/k3s-cluster/config_dir.json
         repoURL: https://github.com/3dwardch3ng/home-cluster-ops.git
         requeueAfterSeconds: 20
         revision: ""
