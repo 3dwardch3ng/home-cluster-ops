@@ -1,0 +1,49 @@
+global:
+  domain: argocd.cluster.edward.sydney
+
+configs:
+  params:
+    server.insecure: true
+
+controller:
+  replicas: 1
+
+redis-ha:
+  enabled: true
+
+server:
+  serviceType: NodePort
+  httpNodePort: 30080
+  httpsNodePort: 30443
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+#  ingress:
+#    enabled: true
+#    annotations:
+#      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+#      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+#      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+#      nginx.ingress.kubernetes.io/use-regex: "true"
+    ingressClassName: nginx
+    hostname: argocd.cluster.edward.sydney
+    extraTls:
+      - hosts:
+          - argocd.cluster.edward.sydney
+        # Based on the ingress controller used secret might be optional
+        secretName: wildcard-tls
+  ingressGrpc:
+    enabled: true
+    ingressClassName: contour-internal
+    extraTls:
+      - hosts:
+          - grpc.argocd.cluster.edward.sydney
+        secretName: wildcard-tls
+
+repoServer:
+  autoscaling:
+    enabled: true
+    minReplicas: 2
+
+applicationSet:
+  replicas: 2
