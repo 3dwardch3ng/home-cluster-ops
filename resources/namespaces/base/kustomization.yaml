@@ -1,0 +1,29 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./adguard-home.yaml
+  - ./cert-manager.yaml
+  - ./code-server.yaml
+  - ./consul.yaml
+  - ./dokuwiki.yaml
+  - ./gitea.yaml
+  - ./homer.yaml
+  - ./ingress-nginx.yaml
+  - ./jellyfin.yaml
+  - ./kavita.yaml
+  - ./local-path-storage.yaml
+  - ./logstash.yaml
+  - ./minio.yaml
+  - ./mongodb.yaml
+  - ./new-relic.yaml
+  - ./nexus.yaml
+  - ./postgresql.yaml
+  - ./prometheus.yaml
+  - ./prometheus-operator.yaml
+  - ./qbittorrent.yaml
+  - ./redis.yaml
+  - ./renovate.yaml
+  - ./snippet-box.yaml
+  - ./sonarqube.yaml
+  - ./uptime-kuma.yaml
+  - ./vaultwarden.yaml
