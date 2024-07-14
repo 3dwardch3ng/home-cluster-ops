@@ -16,9 +16,8 @@ redis-ha:
   enabled: true
 
 server:
-  serviceType: NodePort
-  httpNodePort: 30080
-  httpsNodePort: 30443
+  service:
+    type: NodePort
   autoscaling:
     enabled: true
     minReplicas: 2
