@@ -16,18 +16,26 @@ redis-ha:
   enabled: true
 
 server:
-  service:
-    type: NodePort
   autoscaling:
     enabled: true
     minReplicas: 2
-    #  ingress:
-    #    enabled: true
-    #    annotations:
-    #      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-    #      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-    #      nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    #      nginx.ingress.kubernetes.io/use-regex: "true"
+  # -- Resource limits and requests for the argocd-extensions container
+  resources:
+    limits:
+      cpu: 100m
+      memory: 256Mi
+    requests:
+      cpu: 20m
+      memory: 138Mi
+  service:
+    type: NodePort
+  ingress:
+#    enabled: true
+    annotations:
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+      nginx.ingress.kubernetes.io/use-regex: "true"
     ingressClassName: nginx
     hostname: argocd.cluster.edward.sydney
     extraTls:
@@ -47,6 +55,14 @@ repoServer:
   autoscaling:
     enabled: true
     minReplicas: 2
+  # -- Resource limits and requests for the repo server pods
+  resources:
+    limits:
+      cpu: 100m
+      memory: 258Mi
+    requests:
+      cpu: 20m
+      memory: 128Mi
 
 applicationSet:
   replicas: 2
