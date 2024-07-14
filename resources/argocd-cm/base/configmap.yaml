@@ -12,4 +12,11 @@ data:
   timeout.hard.reconciliation: "0s"
   timeout.reconciliation: "180s"
   url: "https://argocd.cluster.edward.sydney"
-  kustomize.buildOptions: "--enable-helm"
+  configManagementPlugins: |
+    - name: kustomized-helm
+      init:
+        command: ["/bin/sh", "-c"]
+        args: ["helm dependency build"]
+      generate:
+        command: [sh, -c]
+        args: ["helm template --release-name release-name . > all.yaml && kustomize build"]
