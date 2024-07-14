@@ -18,13 +18,13 @@ server:
   autoscaling:
     enabled: true
     minReplicas: 2
-#  ingress:
-#    enabled: true
-#    annotations:
-#      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
-#      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
-#      nginx.ingress.kubernetes.io/ssl-redirect: "false"
-#      nginx.ingress.kubernetes.io/use-regex: "true"
+    #  ingress:
+    #    enabled: true
+    #    annotations:
+    #      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    #      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    #      nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    #      nginx.ingress.kubernetes.io/use-regex: "true"
     ingressClassName: nginx
     hostname: argocd.cluster.edward.sydney
     extraTls:
