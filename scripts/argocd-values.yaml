@@ -63,6 +63,13 @@ repoServer:
     requests:
       cpu: 20m
       memory: 128Mi
+  rbac:
+    - apiGroups:
+        - ""
+      resources:
+        - secrets
+      verbs:
+        - get
 
 applicationSet:
   replicas: 2
