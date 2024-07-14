@@ -1,0 +1,11 @@
+{
+  "appName": "local-path-provisioner",
+  "userGivenName": "local-path-provisioner",
+  "destNamespace": "local-path-provisioner",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "resources/local-path-provisioner/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
