@@ -3,7 +3,7 @@
   "userGivenName": "ingress-nginx-configmap",
   "destNamespace": "ingress-nginx",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "infrastructures/ingress-nginx-configmap/env/k3s-cluster",
+  "srcPath": "resources/ingress-nginx-configmap/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
