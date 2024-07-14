@@ -13,14 +13,14 @@ controller:
 
   config:
     proxy-buffer-size: 16k
-    use-gzip: ${use_gzip:=true}
-    enable-brotli: ${enable_brotli:=true}
-    hsts-max-age: ${hsts_max_age:=31536000}
-    hsts-preload: ${hsts_preload:=true}
-    disable-ipv6: ${disable_ipv6:=false}
-    disable-ipv6-dns: ${disable_ipv6_dns:=false}
-    keep-alive-requests: ${keep_alive_requests:=1000}
-    use-geoip2: ${use_geoip2:=true}
+    use-gzip: true
+    enable-brotli: true
+    hsts-max-age: 31536000
+    hsts-preload: true
+    disable-ipv6: true
+    disable-ipv6-dns: true
+    keep-alive-requests: 1000
+    use-geoip2: false
     custom-http-errors: 401,403,404,500,501,502,503,504
 
   extraEnvs:
