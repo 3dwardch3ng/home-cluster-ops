@@ -32,7 +32,7 @@ spec:
     - git:
         files:
           - path: apps/**/k3s-cluster/config.json
-        repoURL: V
+        repoURL: https://github.com/3dwardch3ng/home-cluster-ops.git
         requeueAfterSeconds: 20
         revision: ""
         template:
