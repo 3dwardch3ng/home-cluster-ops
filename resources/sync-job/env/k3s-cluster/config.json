@@ -1,0 +1,11 @@
+{
+  "appName": "sync-job",
+  "userGivenName": "sync-job",
+  "destNamespace": "argocd",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "resources/sync-job/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
