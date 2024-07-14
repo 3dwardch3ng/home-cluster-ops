@@ -1,0 +1,5 @@
+rbac:
+  create: true
+
+controller:
+  priorityClassName: system-cluster-critical
