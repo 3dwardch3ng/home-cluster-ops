@@ -1,4 +1,10 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ../../base/kustomization.yaml
+  - ../../base/service-account.yaml
+  - ../../base/role.yaml
+  - ../../base/cluster-role.yaml
+  - ../../base/role-binding.yaml
+  - ../../base/cluster-role-binding.yaml
+  - ../../base/deployment.yaml
+  - ../../base/storage-class.yaml
