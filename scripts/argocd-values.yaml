@@ -32,8 +32,6 @@ redis-ha:
   enabled: true
 
 server:
-  config:
-
   env:
     - name: HELM_PLUGINS
       value: /gitops-tools/helm-plugins/
