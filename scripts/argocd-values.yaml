@@ -6,7 +6,7 @@ global:
   domain: argocd.cluster.edward.sydney
 
 configs:
-  cm: >-
+  cm:
     kustomize.buildOptions: "--enable-helm"
     configManagementPlugins: |
         - name: kustomized-helm
@@ -32,6 +32,8 @@ redis-ha:
   enabled: true
 
 server:
+  config:
+
   env:
     - name: HELM_PLUGINS
       value: /gitops-tools/helm-plugins/
