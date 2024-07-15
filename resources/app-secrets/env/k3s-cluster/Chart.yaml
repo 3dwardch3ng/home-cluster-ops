@@ -1,0 +1,9 @@
+apiVersion: v2
+version: "0.0.1"
+appVersion: "0.0.3"
+name: app-secrets
+
+dependencies:
+  - name: empty
+    version: 0.0.3
+    repository: "https://jenkins-x-charts.github.io/v2/"

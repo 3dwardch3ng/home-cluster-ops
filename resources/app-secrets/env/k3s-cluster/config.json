@@ -1,0 +1,12 @@
+{
+  "appName": "app-secrets",
+  "userGivenName": "app-secrets",
+  "namespace": "app-secrets",
+  "destNamespace": "app-secrets",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "resources/app-secrets/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
