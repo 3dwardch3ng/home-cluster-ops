@@ -61,6 +61,9 @@ spec:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
+        helm:
+          valueFiles:
+            - secrets+age-import-kubernetes://argocd/sops-age#age.agekey?{{ srcPath }}/secret.yaml
       syncPolicy:
         automated:
           allowEmpty: true
