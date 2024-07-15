@@ -1,9 +1,9 @@
 {
-  "appName": "app-secrets",
-  "userGivenName": "app-secrets",
+  "appName": "sealed-secrets",
+  "userGivenName": "sealed-secrets",
   "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "secrets/env/k3s-cluster/templates/secrets",
+  "srcPath": "resources/sealed-secrets/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
