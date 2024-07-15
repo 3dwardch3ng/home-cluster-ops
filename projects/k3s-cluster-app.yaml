@@ -61,9 +61,6 @@ spec:
         path: '{{ srcPath }}'
         repoURL: '{{ srcRepoURL }}'
         targetRevision: '{{ srcTargetRevision }}'
-        helm:
-          valueFiles:
-            - secrets://{{ srcPath }}/secret.yaml
       syncPolicy:
         automated:
           allowEmpty: true
