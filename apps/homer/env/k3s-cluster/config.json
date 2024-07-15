@@ -1,6 +1,7 @@
 {
   "appName": "homer",
   "userGivenName": "homer",
+  "namespace": "homer",
   "destNamespace": "homer",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/homer/env/k3s-cluster",
