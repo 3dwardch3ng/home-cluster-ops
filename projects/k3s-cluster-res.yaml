@@ -46,7 +46,7 @@ spec:
         app.kubernetes.io/managed-by: argocd
         app.kubernetes.io/name: '{{ appName }}'
       name: '{{ userGivenName }}'
-      namespace: argocd
+      namespace: '{{ namespace }}'
     spec:
       destination:
         namespace: '{{ destNamespace }}'

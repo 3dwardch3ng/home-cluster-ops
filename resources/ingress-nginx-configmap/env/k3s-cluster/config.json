@@ -1,6 +1,7 @@
 {
   "appName": "ingress-nginx-configmap",
   "userGivenName": "ingress-nginx-configmap",
+  "namespace": "ingress-nginx",
   "destNamespace": "ingress-nginx",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "resources/ingress-nginx-configmap/env/k3s-cluster",

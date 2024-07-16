@@ -2,6 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ./adguard-home.yaml
+  - ./app-secrets.yaml
   - ./cert-manager.yaml
   - ./code-server.yaml
   - ./consul.yaml
