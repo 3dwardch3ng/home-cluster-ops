@@ -12,7 +12,7 @@ resources:
   - ./minio/minio.yaml
   - ./mongodb/mongodb.yaml
   - ./namespaces/namespaces.yaml
-  - ./new-relic/new-relic.yaml
+#  - ./new-relic/new-relic.yaml
   - ./postgresql/postgresql.yaml
   - ./prometheus/prometheus.yaml
   - ./prometheus-alertmanager/prometheus-alertmanager.yaml
