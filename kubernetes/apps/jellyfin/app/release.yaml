@@ -52,7 +52,7 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - rpi5-cluster-node-2
+                          - k3s-cluster-node-2
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -78,7 +78,7 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - rpi5-cluster-node-2
+                          - k3s-cluster-node-2
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -104,7 +104,7 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - rpi5-cluster-node-2
+                          - k3s-cluster-node-2
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -130,7 +130,7 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - rpi5-cluster-node-2
+                          - k3s-cluster-node-2
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim
@@ -156,7 +156,7 @@ spec:
                       - key: kubernetes.io/hostname
                         operator: In
                         values:
-                          - rpi5-cluster-node-2
+                          - k3s-cluster-node-2
             claimRef:
               apiVersion: v1
               kind: PersistentVolumeClaim

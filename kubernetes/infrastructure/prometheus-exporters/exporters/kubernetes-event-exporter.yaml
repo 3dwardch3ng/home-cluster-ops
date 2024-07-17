@@ -21,7 +21,7 @@ spec:
       readOnlyRootFilesystem: false
       allowPrivilegeEscalation: true
     nodeSelector:
-      kubernetes.io/hostname: rpi5-cluster-node-1
+      kubernetes.io/hostname: k3s-cluster-node-1
     metrics:
       enabled: true
 ---
