@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kavita
+  namespace: kavita
+  labels:
+    app.kubernetes.io/name: kavita
+    app.kubernetes.io/instance: kavita
+  annotations:
+    kubectl.kubernetes.io/default-container: kavita
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: kavita
+      app.kubernetes.io/instance: kavita
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: kavita
+        app.kubernetes.io/instance: kavita
+    spec:
+      containers:
+        - image: jvmilazz0/kavita:0.8.1
+          imagePullPolicy: IfNotPresent
+          name: kavita
+          ports:
+            - containerPort: 5000
+              name: http
+              protocol: TCP
+          env:
+            - name: TZ
+              value: Australia/Sydney
+          volumeMounts:
+            - name: kavita-config
+              mountPath: /kavita/config
+            - name: kavita-manga
+              mountPath: /manga
+            - name: kavita-book
+              mountPath: /book
+            - name: kavita-doc
+              mountPath: /doc
+      volumes:
+        - name: kavita-config
+          hostPath:
+            path: /mnt/nfs/AppData/kavita/config
+            type: Directory
+        - name: kavita-manga
+          hostPath:
+            path: /mnt/nfs/AppData/kavita/manga
+            type: Directory
+        - name: kavita-book
+          hostPath:
+            path: /mnt/nfs/AppData/kavita/book
+            type: Directory
+        - name: kavita-doc
+          hostPath:
+            path: /mnt/nfs/AppData/kavita/doc
+            type: Directory
