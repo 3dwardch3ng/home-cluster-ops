@@ -1,0 +1,80 @@
+auth:
+  postgresPassword:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: postgres_password
+  username:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: username
+  password:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: password
+  database:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: database
+  replicationPassword:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: replication_password
+architecture: "replication"
+replication:
+  synchronousCommit: "on"
+  numSynchronousReplicas: 1
+  applicationName: "postgres_repl"
+primary:
+  podSecurityContext:
+    fsGroup: 1000
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+  podLabels:
+    name: "postgresql-primary"
+  service:
+    type: "LoadBalancer"
+  persistence:
+    existingClaim: postgresql-primary-pvc
+    selector:
+      matchLabels:
+        name: postgresql-primary-pvc
+  extraVolumes:
+    - name: "postgresql-secrets"
+      secret:
+        secretName: postgresql-secrets
+  extraVolumeMounts:
+    - name: "postgresql-secrets"
+      mountPath: "/secrets/postgresql"
+      readOnly: true
+readReplicas:
+  name: "replica"
+  podSecurityContext:
+    fsGroup: 1000
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+  podLabels:
+    name: "postgresql-replica"
+  service:
+    type: "LoadBalancer"
+    ports:
+      postgresql: 5433
+  persistence:
+    existingClaim: postgresql-replica-pvc
+    selector:
+      matchLabels:
+        name: postgresql-replica-pvc
+  extraVolumes:
+    - name: "postgresql-secrets"
+      secret:
+        secretName: postgresql-secrets
+  extraVolumeMounts:
+    - name: "postgresql-secrets"
+      mountPath: "/secrets/postgresql"
+      readOnly: true
