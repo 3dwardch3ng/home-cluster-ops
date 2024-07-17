@@ -4,7 +4,7 @@
   "namespace": "postgresql",
   "destNamespace": "postgresql",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "infrastructure/postgresql/env/k3s-cluster",
+  "srcPath": "infrastructures/postgresql/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
