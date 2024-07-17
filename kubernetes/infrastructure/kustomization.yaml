@@ -10,7 +10,7 @@ resources:
   - ./local-path-provisioner/local-path-provisioner.yaml
   - ./logstash/logstash.yaml
   - ./minio/minio.yaml
-#  - ./mongodb/mongodb.yaml
+  - ./mongodb/mongodb.yaml
   - ./namespaces/namespaces.yaml
   - ./new-relic/new-relic.yaml
   - ./postgresql/postgresql.yaml
@@ -18,5 +18,5 @@ resources:
   - ./prometheus-alertmanager/prometheus-alertmanager.yaml
   - ./prometheus-exporters/prometheus-exporters.yaml
   - ./redis/redis.yaml
-#  - ./renovate/renovate.yaml
+  - ./renovate/renovate.yaml
   - ./repositories/repositories.yaml
