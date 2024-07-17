@@ -1,0 +1,12 @@
+{
+  "appName": "kavita",
+  "userGivenName": "kavita",
+  "namespace": "kavita",
+  "destNamespace": "kavita",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/kavita/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
