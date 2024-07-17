@@ -1,9 +1,29 @@
 auth:
-  postgresPassword: ${postgres_password}
-  username: ${username}
-  password: ${password}
-  database: ${database}
-  replicationPassword: ${replication_password}
+  postgresPassword:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: postgres_password
+  username:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: username
+  password:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: password
+  database:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: database
+  replicationPassword:
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-secrets
+        key: replication_password
 architecture: "replication"
 replication:
   synchronousCommit: "on"
