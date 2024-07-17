@@ -28,7 +28,7 @@ spec:
             - name: data
               mountPath: /app/data
       volumes:
-        - name: assets
+        - name: data
           hostPath:
             path: /mnt/nfs/AppData/uptime-kuma
             type: Directory
