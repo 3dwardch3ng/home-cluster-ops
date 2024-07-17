@@ -19,7 +19,7 @@ spec:
         runAsGroup: 1000
       containers:
         - name: uptime-kuma
-          image: louislam/uptime-kuma:1.23.13
+          image: louislam/uptime-kuma:latest
           ports:
             - protocol: TCP
               containerPort: 3001
@@ -30,5 +30,5 @@ spec:
       volumes:
         - name: assets
           hostPath:
-            path: /mnt/nfs/AppData/homer/www/assets
+            path: /mnt/nfs/AppData/uptime-kuma
             type: Directory
