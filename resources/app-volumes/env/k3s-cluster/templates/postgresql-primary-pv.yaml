@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: postgresql-primary-pv
-  namespace: postgresql
+  namespace: argocd
   labels:
     type: local
 spec:
