@@ -1,7 +1,6 @@
 #!/usr/bin/bash
 set -e
 
-secretName=$1
-filePath=$2
+filePath=$1
 
-cat $filePath | kubeseal --format yaml --scope cluster-wide | tee $filePath
+kubeseal --format yaml --scope cluster-wide -f $filePath -w $filePath
