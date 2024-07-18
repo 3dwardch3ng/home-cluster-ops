@@ -26,6 +26,7 @@ extraVolumeMounts:
   - name: minio-data
     mountPath: /bitnami/minio/data
 persistence:
+  enabled: false
   storageClass: "-"
 containerSecurityContext:
   runAsUser: 1000
