@@ -1,0 +1,23 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: minio-secrets
+  namespace: minio
+spec:
+  encryptedData:
+    root_password: AgCrAHC60ikNh6lLAlwGMDDE6mZ4/UbNu1lN4pRULT2vkejzKY1vDy9FjWo1xcn6unFGTEZ6y8oyRM9bLcVY2J2YehGEu/ZZfIw6SMVtA92PfrcYsjbTypMfp3xXX6cPbw3LPe4U3fv1wbVugY3BIuiLTLtsrHtdlKouAe3mfzVHrFtWjnD2Rr7qFyUsK9PHgCgOEk2RoM4x7pVxkLM6jfpWS6h7OOhyBhd3s1Mhrw/JfQTxl39A4LdKBA6LFri3FtUH3840xDyYLqJZnkXzNgDGwuN40HrySh2kSaIHi7J/W/sAo2a/ZzIqErXGUpuWZMp3r1iPAiPJAxqZFvoAFQ1d8HTOw5sh6bTWEvQmPYAkEWWz/Zns6XNdq3fZoCf/mXO7ws55elu8OnUMECkBHT3dSI52gNXqRkbrf1rSPk6cEMRC3/l58rXxEKA/DYawKEPmVa6/CPAtvpPoM2/q1spobYozcqfVMcomyPZvPUSOsNpSNLyEmcYZYwOkTM86FM9qjhwU92hYAgnxCUcEeCZMrODoo6sxszoIupfaTOz2zQFJqT7IzqO4RuK6vBLhqnHVX20QpiVtw6iYzHX0CK/WDa9XVgyoGm6BJCLWBLzS1yPnAoHnCVt4kck1T6HTnjU1eK7pzF5CwZwps2wIVbTkxc7xkx+Dib16ulDZFS+5TUyDueqOGOG/MPpXpvIsTD8feoiTVR0Snq08L9MUUtDa0zyNSQ==
+    root_user: AgCcz8M0jgZbHXlgih8kK/ISB7Ipy1xd9Vzh+MPosiT/l7xx4CdBt8izTajxCvT6VEk6BeeHPNeqR0XGp84pzpY3QPVAiLlx11aiIS9Oj6x+BDEco2htUl4SBnFlYGIzYNE+3ByfHmjDD3InsUbS9S12nTTNr4gnWhucw8ERV/srGwqCKb6NBCNK/JFzJeadSReCIida4yepEFYr5D+7Eg4f2Wa+GQFDaKtCzPwxPusPc9BLEiL42Npo1Kfb5BrP/iJFsJM/+cwA4Z711KXfwjnLbVwntvrhoRSLbxz49GE1AfWZpFBwt7B4O6DYujKy06XeD4McfyPcHBJlN68DEiaK259b11MYZQ4Vkjr08ASiqqfld8Tls73i+S2B2e34gLKaQrzcBx8yMItAofzRecMYx9HJeTX5OIvC+U3Zy997JWgUQVk139/hDNbWpqgago/u7WStw1nlhCqn+BFGoCzSm+n79Zm1APtsozk8oSYcd5EBHkNBs7u7+jiEX0KrGvOyxA+MwtTb0rJZojzgPFLoQfg2Xv7uKvVV25/l4XdvJSiinhcOESbWyPYTXZ5fO53ubTEacpa7w5wpil9fKSw+u5Y1fKDmGYyA2wDWzRAqqRrTMXcgxHbJOoqb0vgHlHNDXzuBanxP+OkalKv/xKY9tH7TKsqq2uRYoZMcQ2mYS1XgY4i1uhzt1aLYWbouANioJsfRgg==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: minio-secrets
+      namespace: minio
+    type: Opaque

@@ -1,0 +1,18 @@
+clusterDomain: minio.cluster.edward.sydney
+auth:
+  existingSecret: "minio-secrets"
+  rootUserSecretKey: "root_user"
+  rootPasswordSecretKey: "root_password"
+nodeSelector:
+  kubernetes.io/hostname: k3s-cluster-node-2
+service:
+  ports:
+    api: 19000
+    console: 19001
+persistence:
+  existingClaim: "minio-pvc"
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+podSecurityContext:
+  fsGroup: 1000
