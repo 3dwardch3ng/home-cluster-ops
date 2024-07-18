@@ -27,4 +27,4 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - rpi5-cluster-node-2
+                - k3s-cluster-node-2
