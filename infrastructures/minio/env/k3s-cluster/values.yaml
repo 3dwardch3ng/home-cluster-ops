@@ -9,8 +9,24 @@ service:
   ports:
     api: 19000
     console: 19001
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  hostname: "minio.cluster.edward.sydney"
+apiIngress:
+  enabled: true
+  ingressClassName: "nginx"
+  hostname: "api.minio.cluster.edward.sydney"
+extraVolumes:
+  - name: minio-data
+    hostPath:
+      path: /mnt/nfs/AppData/minio
+      type: Directory
+extraVolumeMounts:
+  - name: minio-data
+    mountPath: /bitnami/minio/data
 persistence:
-  existingClaim: "minio-pvc"
+  storageClass: "-"
 containerSecurityContext:
   runAsUser: 1000
   runAsGroup: 1000
