@@ -1,0 +1,23 @@
+namespaceOverride: "redis"
+auth:
+  existingSecret: "redis-secrets"
+  existingSecretPasswordKey: "password"
+master:
+  persistence:
+    storageClass: local-path
+    existingClaim: redis-master-pvc
+    selector:
+      matchLabels:
+        name: redis-master-pvc
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
+replica:
+  replicaCount: 1
+  persistence:
+    storageClass: local-path
+    existingClaim: redis-replica-pvc
+    selector:
+      matchLabels:
+        name: redis-replica-pvc
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
