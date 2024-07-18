@@ -26,6 +26,8 @@ primary:
     selector:
       matchLabels:
         name: postgresql-primary-pvc
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
 readReplicas:
   name: "replica"
   podSecurityContext:
@@ -44,3 +46,5 @@ readReplicas:
     selector:
       matchLabels:
         name: postgresql-replica-pvc
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
