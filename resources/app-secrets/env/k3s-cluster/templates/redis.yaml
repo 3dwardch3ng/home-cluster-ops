@@ -1,0 +1,22 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: redis-secrets
+  namespace: redis
+spec:
+  encryptedData:
+    password: AgB78CHiupj4Y9gbhQN47Lewaf8hAJjdj/RQc0joIezyLFa96lnJb4sCETWuyF+rl3gAvw4DuymsGdjmSux019uZ62Y6kw18aDatqH9j4LA1vmtlxH+WOAR/M/10zMtquoVyhV8JXQXKDRUgm5/3WdM67/CuGIURWVu/2uQsFd2WjIW3XcKLq8WjmDshIjtv1dhy2/eohRIu1EH8S87uTPivLeLp97EkB4NiHyGPJNU0vjH5u0Wz+VbS02ZHLecHPMBSAlY+xXeu7ukEz+YhUPEUsTigbp5cfbx+fYjCwpvEVACmxECgqOLKbFkmFjDxeSZLdniHg8j2zq47JdFz2+ruALFnIl4zH2/rEgOpZJAW/lm0t6CdfGBPuuDdonIzpnAVwio6qmgAuGrfsNHYNjyvNL1i8osScTyGJFJMC1vmfRxhztYNMxazUiFMH3TFt3zmcKUdJgiC0Ia4ERj2xTRm33BwgK5LUZfnr3yB6ZStBg8vKhd5fSzdLt9qTPgK6SY+hGEaN1vEAIAqsKRLmUa3eLcxfDVDjhdT1wii22fkyDTZ4giI0i/5xsPrv7RVcjffSqlFzpLrunD+Y40EjYt/XJfVdbxB4bjjBbrwtFoSi0gPt0XsudpuHJSLXqqPshCv+lx/9FhzcI1CWZMnRBrM4UcWIuWZQznGgRKIVZTjRDZpz1jo0qpzY02Xyx+OEjxsAvGH4ufYzpC+efRNTPwbF9gWAw==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: redis-secrets
+      namespace: redis
+    type: Opaque
