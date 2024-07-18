@@ -6,7 +6,7 @@ metadata:
   labels:
     app: prometheus-node-exporter
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: prometheus-node-exporter
