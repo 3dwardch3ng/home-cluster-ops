@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - ./adguard-home.yaml
   - ./app-secrets.yaml
+  - ./app-volumes.yaml
   - ./cert-manager.yaml
   - ./code-server.yaml
   - ./consul.yaml
