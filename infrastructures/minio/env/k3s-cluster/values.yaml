@@ -18,17 +18,8 @@ apiIngress:
   enabled: true
   ingressClassName: "nginx"
   hostname: "api.minio.cluster.edward.sydney"
-extraVolumes:
-  - name: minio-data
-    hostPath:
-      path: /mnt/nfs/AppData/minio
-      type: Directory
-extraVolumeMounts:
-  - name: minio-data
-    mountPath: /bitnami/minio/data
 persistence:
-  enabled: false
-  storageClass: "-"
+  existingClaim: "minio-pvc"
 containerSecurityContext:
   runAsUser: 1000
   runAsGroup: 1000
