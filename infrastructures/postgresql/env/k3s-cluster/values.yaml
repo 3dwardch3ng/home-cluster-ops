@@ -1,29 +1,11 @@
 auth:
-  postgresPassword:
-    valueFrom:
-      secretKeyRef:
-        name: postgresql-secrets
-        key: postgres_password
-  username:
-    valueFrom:
-      secretKeyRef:
-        name: postgresql-secrets
-        key: username
-  password:
-    valueFrom:
-      secretKeyRef:
-        name: postgresql-secrets
-        key: password
-  database:
-    valueFrom:
-      secretKeyRef:
-        name: postgresql-secrets
-        key: database
-  replicationPassword:
-    valueFrom:
-      secretKeyRef:
-        name: postgresql-secrets
-        key: replication_password
+  username: edward
+  database: edwarddb
+  existingSecret: "postgresql-secrets"
+  secretKeys:
+    adminPasswordKey: postgres_password
+    userPasswordKey: password
+    replicationPasswordKey: replication_password
 architecture: "replication"
 replication:
   synchronousCommit: "on"
@@ -44,14 +26,6 @@ primary:
     selector:
       matchLabels:
         name: postgresql-primary-pvc
-  extraVolumes:
-    - name: "postgresql-secrets"
-      secret:
-        secretName: postgresql-secrets
-  extraVolumeMounts:
-    - name: "postgresql-secrets"
-      mountPath: "/secrets/postgresql"
-      readOnly: true
 readReplicas:
   name: "replica"
   podSecurityContext:
@@ -70,11 +44,3 @@ readReplicas:
     selector:
       matchLabels:
         name: postgresql-replica-pvc
-  extraVolumes:
-    - name: "postgresql-secrets"
-      secret:
-        secretName: postgresql-secrets
-  extraVolumeMounts:
-    - name: "postgresql-secrets"
-      mountPath: "/secrets/postgresql"
-      readOnly: true
