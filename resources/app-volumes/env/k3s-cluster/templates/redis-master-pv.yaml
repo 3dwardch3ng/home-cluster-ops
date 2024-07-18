@@ -1,25 +1,25 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: postgresql-replica-pv
-  namespace: argocd
+  name: redis-master-pv
+  namespace: redis
   labels:
     type: local
 spec:
   storageClassName: local-path
   volumeMode: Filesystem
   capacity:
-    storage: 16Gi
+    storage: 8Gi
   accessModes:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: "/mnt/nfs/AppData/postgresql/replica"
+    path: "/mnt/nfs/AppData/redis/master"
   claimRef:
     apiVersion: v1
     kind: PersistentVolumeClaim
-    name: postgresql-replica-pvc
-    namespace: postgresql
+    name: redis-master-pvc
+    namespace: redis
   nodeAffinity:
     required:
       nodeSelectorTerms:
