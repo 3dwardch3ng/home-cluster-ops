@@ -1,0 +1,23 @@
+coder:
+  env:
+    - name: CODER_ACCESS_URL
+      value: "https://coder.cluster.edward.sydney"
+    - name: CODER_PG_CONNECTION_URL
+      valueFrom:
+        secretKeyRef:
+          # You'll need to create a secret called coder-db-url with your
+          # Postgres connection URL like:
+          # postgres://coder:password@postgres:5432/coder?sslmode=disable
+          name: coder-secrets
+          key: db_url
+  volumes:
+    - name: coder-data
+      persistentVolumeClaim:
+        claimName: coder-pvc
+  volumeMounts:
+    - name: coder-data
+      mountPath: /config
+  ingress:
+    enabled: true
+    className: nginx
+    host: coder.cluster.edward.sydney
