@@ -1,0 +1,12 @@
+{
+  "appName": "code-server",
+  "userGivenName": "code-server",
+  "namespace": "code-server",
+  "destNamespace": "code-server",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/code-server/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
