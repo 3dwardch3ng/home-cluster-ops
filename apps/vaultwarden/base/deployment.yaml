@@ -29,28 +29,11 @@ spec:
               value: https://vaultwarden.cluster.edward.sydney
             - name: SIGNUPS_ALLOWED
               value: "true"
-            - name: DB_USERNAME
-              valueFrom:
-                secretKeyRef:
-                  name: vaultwarden-secrets
-                  key: db_username
-            - name: DB_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: vaultwarden-secrets
-                  key: db_password
-            - name: DB_HOST
-              valueFrom:
-                secretKeyRef:
-                  name: vaultwarden-secrets
-                  key: db_host
-            - name: DB_NAME
-              valueFrom:
-                secretKeyRef:
-                  name: vaultwarden-secrets
-                  key: db_name
             - name: DATABASE_URL
-              value: postgresql://$DB_USERNAME:$DB_PASSWORD@$DB_HOST:5432/$DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: db_url
           ports:
             - protocol: TCP
               containerPort: 80
