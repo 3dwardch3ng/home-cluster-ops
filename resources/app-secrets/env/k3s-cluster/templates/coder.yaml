@@ -1,0 +1,22 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: coder-secrets
+  namespace: coder
+spec:
+  encryptedData:
+    db_url: AgDgOZv2DkDfHlL8Vi13ylQ/rrf5MJISbRwHnLV0suuo7DgDoiuaa7UooDgV554gpowAIwp25KmPbeBl9BPba3yXPdbjuxWDDROkX9IhxZvL+5K/hVD7ULNw5gB8/eIdUR+QuhtGG+UWfFEl/Ezdl36/fNUBM22nE7xp2mRF2+PqcEYVwgRihgnyFlndKI7an0Rg9pTQ4TAkDN8tpAHI8b4wc7uD75QTvlthCWTx0783HBSDaJDmzrtoCx/7Mr84VDccl3prM7LJRkNESTQSlJ0992RS9Ush+RFiUVhsbFw3m8fObNK6XOPbsQdaCHlREyAh2QXLxBsMHT322maHCdOwW8gLRUOt2lYVrJS6MgXiwAuYXV0jZbkP1FznWNkkwcquCs4pJ+HwfDRO+PvLdSTQnp3A8taC+9DREgCPby3FOPbM5/kBRbOLZh5SgJGH+N6/vcNkv0ZOtdlIcKUT2dDeYc60Sv1Ph7Aw0TBxqG4B5DMhqULpZOV5SySEg3SeLGNTiM54PsMtzhA9cRWjL7nNjWV+0dScl7kQiFyFeTT9ehCZsJz/t/1Pz76qswdsgCLX6ZEPgcxQRyx11nhi/wblrqBYqF0qxNhaXgbRm4iLzRVshe9QrF6ccfGa93uwNyIkAN5uerfCvc0WAkggYX7fDPAO3GaFQ/onFh4H3Gp2k8jzxTg7ekdDoBzb//UFB0L9o8Hg03zC6tt9FkOE+yPhAgsg5v1E8uc3jCC5ig4awnqkJjk8YGLDKBJYShzywm6jqzjbIHkfa4SNP4j0gE8V3xModRgD1xJlLK9KjotGTXQim8+rYEzgBQK1oYCBIbw=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: coder-secrets
+      namespace: coder
+    type: Opaque

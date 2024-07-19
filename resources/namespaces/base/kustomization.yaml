@@ -6,6 +6,7 @@ resources:
   - ./app-volumes.yaml
   - ./cert-manager.yaml
   - ./code-server.yaml
+  - ./coder.yaml
   - ./consul.yaml
   - ./dokuwiki.yaml
   - ./gitea.yaml
