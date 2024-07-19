@@ -20,7 +20,3 @@ coder:
   service:
     type: NodePort
     httpNodePort: 31180
-  ingress:
-    enabled: true
-    className: nginx
-    host: coder.cluster.edward.sydney
