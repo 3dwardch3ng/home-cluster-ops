@@ -256,7 +256,7 @@ persistence:
   ## Requires persistence.enabled: true
   ## If defined, PVC must be created manually before volume will be bound
   ##
-  existingClaim: ""
+  existingClaim: "gitea-pvc"
   ## @param persistence.hostPath If defined, the gitea-data volume will mount to the specified hostPath.
   ## Requires persistence.enabled: true
   ## Requires persistence.existingClaim: nil|false
