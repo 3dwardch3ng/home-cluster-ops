@@ -1,0 +1,66 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vaultwarden
+  namespace: vaultwarden
+  labels:
+    app.kubernetes.io/name: vaultwarden
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: vaultwarden
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: vaultwarden
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - securityContext:
+            runAsUser: 1000
+            runAsNonRoot: true
+            runAsGroup: 1000
+          name: vaultwarden
+          image: vaultwarden/server:1.31.0
+          env:
+            - name: DOMAIN
+              value: https://vaultwarden.cluster.edward.sydney
+            - name: SIGNUPS_ALLOWED
+              value: "true"
+            - name: DB_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: db_username
+            - name: DB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: db_password
+            - name: DB_HOST
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: db_host
+            - name: DB_NAME
+              valueFrom:
+                secretKeyRef:
+                  name: vaultwarden-secrets
+                  key: db_name
+            - name: DATABASE_URL
+              value: postgresql://$DB_USERNAME:$DB_PASSWORD@$DB_HOST:5432/$DB_NAME
+          ports:
+            - protocol: TCP
+              containerPort: 80
+              name: http
+          volumeMounts:
+            - name: vaultwarden-data
+              mountPath: /data
+      volumes:
+        - name: vaultwarden-data
+          hostPath:
+            path: /mnt/nfs/AppData/vaultwarden/data
+            type: Directory
+
