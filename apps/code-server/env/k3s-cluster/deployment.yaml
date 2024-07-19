@@ -15,16 +15,16 @@ spec:
         app.kubernetes.io/name: code-server
     spec:
       securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
+        runAsUser: 911
+        runAsGroup: 911
       containers:
         - name: code-server
           image: linuxserver/code-server:4.91.1
           env:
             - name: PUID
-              value: "1000"
+              value: "911"
             - name: PGID
-              value: "1000"
+              value: "911"
             - name: TZ
               value: "Australia/Sydney"
             - name: PASSWORD
