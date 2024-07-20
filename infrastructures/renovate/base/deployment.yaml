@@ -130,3 +130,5 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/renovate/key/rpi5-cluster-renovate.2024-07-05.private-key.pem
             type: File
+      nodeSelector:
+        kubernetes.io/arch: amd64
