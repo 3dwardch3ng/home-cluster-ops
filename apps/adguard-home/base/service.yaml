@@ -8,7 +8,7 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: adguard-home
-  type: LoadBalancer
+  type: ClusterIP
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
