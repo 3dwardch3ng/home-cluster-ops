@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-options: Prune=false
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+    sealedsecrets.bitnami.com/managed: "true"
+  creationTimestamp: null
+  name: mongodb-secrets
+  namespace: mongodb
+type: Opaque
+stringData:
+  mongodb-root-password: "ic.e6oeHefy983ZC8YpQDfg8"
+  mongodb-passwords: "VeQ@NGX*W3qrDBQmbVihHTXh,auDJjPpV_y_9-Dt*!dsMovFb"
