@@ -115,7 +115,7 @@ spec:
             - name: renovate-logs
               mountPath: /logs
             - name: renovate-gh-app-pem
-              mountPath: /usr/src/app/rpi5-cluster-renovate.2024-07-05.private-key.pem
+              mountPath: /usr/src/app/renovate.private-key.pem
       volumes:
         - name: renovate-config-js-volume
           configMap:
