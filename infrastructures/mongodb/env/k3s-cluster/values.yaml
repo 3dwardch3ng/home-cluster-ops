@@ -1,0 +1,30 @@
+namespaceOverride: "mongodb"
+auth:
+  usernames:
+    - edward
+    - anysync
+  databases:
+    - edward
+    - anysync
+  existingSecret: "mongodb-secrets"
+automountServiceAccountToken: true
+nodeSelector:
+  kubernetes.io/arch: amd64
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+podSecurityContext:
+  fsGroup: 1000
+startupProbe:
+  enabled: true
+service:
+  type: LoadBalancer
+persistence:
+  existingClaim: "mongodb-pvc"
+persistentVolumeClaimRetentionPolicy:
+  enabled: true
+serviceAccount:
+  create: true
+  name: mongodb
+rbac:
+  create: true
