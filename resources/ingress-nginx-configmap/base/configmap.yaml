@@ -3,11 +3,20 @@ kind: ConfigMap
 metadata:
   name: tcp-services
   namespace: ingress-nginx
-data: {}
+data:
+  "53": "adguard-home/adguard-home:53"
+  "853": "adguard-home/adguard-home:853"
+  "5443": "adguard-home/adguard-home:5443"
+  "6060": "adguard-home/adguard-home:6060"
 ---
 apiVersion: v1
 kind: ConfigMap
 metadata:
   name: udp-services
   namespace: ingress-nginx
-data: {}
+data:
+  "53": "adguard-home/adguard-home:53"
+  "67": "adguard-home/adguard-home:67"
+  "68": "adguard-home/adguard-home:68"
+  "853": "adguard-home/adguard-home:853"
+  "5443": "adguard-home/adguard-home:5443"

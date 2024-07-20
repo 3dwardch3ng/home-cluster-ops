@@ -39,6 +39,18 @@ controller:
   service:
     externalTrafficPolicy: Cluster
     ipFamilyPolicy: SingleStack
+    ports: |-
+      dns-tcp: 53
+      dhcps-udp: 67
+      dns-tls-tcp: 853
+      dnscrypt-tcp: 5443
+      https-pprof: 6060
+    targetPorts: |-
+      dns-tcp: 53
+      dhcps-udp: 67
+      dns-tls-tcp: 853
+      dnscrypt-tcp: 5443
+      https-pprof: 6060
 
   metrics:
     enabled: ${metrics_enabled:=false}
