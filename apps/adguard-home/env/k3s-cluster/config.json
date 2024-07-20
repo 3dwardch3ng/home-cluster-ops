@@ -1,0 +1,12 @@
+{
+  "appName": "adguard-home",
+  "userGivenName": "adguard-home",
+  "namespace": "adguard-home",
+  "destNamespace": "adguard-home",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/adguard-home/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
