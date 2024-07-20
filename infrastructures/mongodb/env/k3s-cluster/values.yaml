@@ -1,4 +1,5 @@
-namespaceOverride: "mongodb"
+global:
+  namespaceOverride: "mongodb"
 auth:
   usernames:
     - edward
