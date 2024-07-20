@@ -17,12 +17,8 @@ podSecurityContext:
   fsGroup: 1000
 startupProbe:
   enabled: true
-externalAccess:
-  enabled: true
-  service:
-    type: LoadBalancer
-  autoDiscovery:
-    enabled: true
+service:
+  type: LoadBalancer
 persistence:
   existingClaim: "mongodb-pvc"
 persistentVolumeClaimRetentionPolicy:
