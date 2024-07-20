@@ -1,0 +1,61 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: adguard-home-ingress
+  namespace: adguard-home
+  annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/use-regex: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: "adguard-home.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 10080
+    - host: "adguard-home.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 10080
+    - host: "setup.adguard-home.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 13000
+    - host: "setup.adguard-home.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 13000
+    - host: "doh.adguard-home.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: adguard-home
+                port:
+                  number: 443
