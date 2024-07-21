@@ -1,0 +1,23 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: couchdb-secrets
+  namespace: couchdb
+spec:
+  encryptedData:
+    password: AgBJ7gxhdpF7pdKjzp/95NYxEqCHGQ/dOiZ2rrjxwXkfm1COqV6D47V8FahZ0g515B3JmQG/fJmylp5bfEN3TcEG5VwMLQPm3p8NvjLWIpDX3W1kf70YxA4Qqr+rlKadHI9wd2pqVOHY5bJDx9ELmSu2k1E9hVxhaEXkwY9BB0GLnYv3jbEbNrC0qq/gPg7QW9gJQd5zRzjo/B3M/ufHjtb/H45zwvMUU4zHx37HTkk5fuu1ucskd39RarDLYm9lWtxM5aEPLR3g/4mCGB+cLmb97lZlFJI4W6utKAq77spDnafyY9se0+ScxIzoS7uDo/+qdEODWrXGrHM10LyaN8AQfoQYlS2IzaJxrWyXtKKsm6LGzU5kUHYpM1qB3KA49HaR1aKLECgYEcgT0fDJhugzYetm6a9o+CW6KoWd7+APQDQJabBO1fmBsCY6xXVXba+Jm+g3Yrz4OLWKmGmC4Sdj33Eb2ZezxuJphqGTKGVcH5bZeDGkE+CErjJYTsh9pERfTG/pOsTkI9e1ao9HeleWgLFhIUdm23+kFuar9PA+R/1sFH1CqINpSb921jaQC7+AnjnRZM5XJ0qEGU0SrEsvBizjlzCPMQmGQGPL5tPu3Bz0aYhiaXM8kDlqwakV9OKggXS3ebwCfc1J1gJmFvk61AS8xArNfTyPK5qXfbG91JJ8QGiMe5cy9HbHg1iqZvWbs6e6qdsHcF966fGo/W6KgJpIz1GH7Jc=
+    secrets: AgA+WJ9+LiXPqT/QlvkVOTNzVXAWOKrpcPS3YGz8eUvox1P1l8yxRw+K2fYD8el5RYK6t191oVMaGBeVq1ort8dvMVkswUwGCu7WwQchW34bIgWjmbEof+9KWXDJhewVlZFOdtWn5BeRlRdCzOmNjEcNmbBTAc1fXkYv9CziW1dWEzkEpuWaVpI9A5okDpk5v8cbbBaNGcLrbuHQPzrI2E3yQUdTo2zdXk/By2ZrfUQh576OTn8GvEiWrZXCSCwplGQW4YYEp+k2yjTs+cSPY8p2MNTcR/csMAuPVs55XpvH9W0CMVsMvE+D24oVd7AczU9E416Ftl1nIGxxoLtvIDOjY54eD4wACWXJZ5K+ok7gAlq4ER7hhTvlJMcCvjN3am5/TZ9tYkcsO6jgkFjTRi3eVDP4pwGwCu1VN327MumjDXwKdupOM1weN8g+QVKsLYcvTQm4DKqweZ5ak/4452rooEzrVH0FNv7x4fjpwHJJpGvYfxo81tuHKOmwU4VjoOEiPck5zByG72oXUr8UHpeYKV911T5H+3vVTPHGoeujZfKCV25j1BXABHAd/6xYMtGPe5owmgwFAN00CeNTfv1AhGPUHQ4H0hSOyYRkBJFWCyMOBJSqGsaQYkfDF0BIUEl0myTPzLy6tEqFrPoc5vCrMkwDejgfmjgnHUNE23CXbIwKQyMW7N8tYNS7qTNWy12foPG/8iXdUaZGxHeL1rEhmCNecL+3qwE=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: couchdb-secrets
+      namespace: couchdb
+    type: Opaque
