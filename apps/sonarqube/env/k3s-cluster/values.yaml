@@ -1,0 +1,38 @@
+clusterDomain: sonarqube.cluster.edward.sydney
+sonarqubeUsername: sonarqube
+existingSecret: "sonarqube-secrets"
+sonarqubeEmail: "me@edward.sydney"
+smtpHost: "smtp.gmail.com"
+smtpPort: "587"
+smtpUser: "me@edward.sydney"
+smtpProtocol: "TLS"
+smtpExistingSecret: "sonarqube-secrets"
+podSecurityContext:
+  fsGroup: 1000
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+service:
+  ports:
+    http: 8090
+    elastic: 9091
+  nodePorts:
+    http: 30080
+    elastic: 30091
+ingress:
+  enabled: true
+  ingressClassName: "nginx"
+  hostname: "sonarqube.cluster.edward.sydney"
+persistence:
+  enabled: true
+  storageClass: local-path
+  size: "32Gi"
+  existingClaim: "sonarqube-pvc"
+serviceAccount:
+  name: "sonarqube"
+postgresql:
+  enabled: false
+externalDatabase:
+  host: "postgresql-primary.argocd.svc.cluster.local"
+  user: "sonarqube_user"
+  existingSecret: "sonarqube-secrets"
