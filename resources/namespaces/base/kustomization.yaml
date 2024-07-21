@@ -8,6 +8,7 @@ resources:
   - ./code-server.yaml
   - ./coder.yaml
   - ./consul.yaml
+  - ./couchdb.yaml
   - ./dokuwiki.yaml
   - ./gitea.yaml
   - ./homer.yaml
