@@ -38,7 +38,7 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 7777
-              name: couchdb_port
+              name: couchdb-port
           volumeMounts:
             - name: couchdb-data
               mountPath: /bitnami/couchdb
