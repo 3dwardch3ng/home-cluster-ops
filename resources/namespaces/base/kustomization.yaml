@@ -20,6 +20,7 @@ resources:
   - ./mongodb.yaml
   - ./new-relic.yaml
   - ./nexus.yaml
+  - ./plex.yaml
   - ./postgresql.yaml
   - ./prometheus.yaml
   - ./prometheus-operator.yaml
