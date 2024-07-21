@@ -16,6 +16,7 @@ spec:
       labels:
         app.kubernetes.io/name: gitea
     spec:
+      priorityClassName: system-cluster-critical
       serviceAccountName: gitea
       securityContext:
         runAsUser: 1000
