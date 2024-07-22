@@ -19,7 +19,7 @@ spec:
         runAsGroup: 1000
       containers:
         - name: rlpa-server
-          image: estkme/rlpa-server:1.0.0
+          image: damonto/estkme-cloud:1.0.11
           securityContext:
             allowPrivilegeEscalation: false
           ports:
