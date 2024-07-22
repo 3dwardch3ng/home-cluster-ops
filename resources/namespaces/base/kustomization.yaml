@@ -28,6 +28,7 @@ resources:
   - ./qbittorrent.yaml
   - ./redis.yaml
   - ./renovate.yaml
+  - ./rlpa.yaml
   - ./snippet-box.yaml
   - ./sonarqube.yaml
   - ./uptime-kuma.yaml
