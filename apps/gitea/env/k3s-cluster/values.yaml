@@ -17,6 +17,8 @@ service:
 ingress:
   enabled: true
   ingressClassName: "nginx"
+serviceAccount:
+  enabled: false
 postgresql:
   enabled: false
 externalDatabase:
