@@ -1,0 +1,12 @@
+{
+  "appName": "gitea",
+  "userGivenName": "gitea",
+  "namespace": "gitea",
+  "destNamespace": "gitea",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/gitea/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

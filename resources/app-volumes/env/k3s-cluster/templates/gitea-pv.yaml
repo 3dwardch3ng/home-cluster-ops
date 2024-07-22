@@ -24,7 +24,7 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: kubernetes.io/hostname
+            - key: kubernetes.io/arch
               operator: In
               values:
-                - rpi5-cluster-node-2
+                - arm64
