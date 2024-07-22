@@ -17,8 +17,6 @@ service:
 ingress:
   enabled: true
   ingressClassName: "nginx"
-serviceAccount:
-  name: gitea
 postgresql:
   enabled: false
 externalDatabase:
