@@ -1,4 +1,6 @@
 #!/bin/bash
 set -e
 
-kubectl patch service ingress-nginx-controller -n argocd --patch-file ports.yaml
+fileName=$1
+
+kubectl patch service ingress-nginx-controller -n argocd --patch-file $fileName.yaml

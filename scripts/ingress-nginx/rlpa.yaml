@@ -1,0 +1,6 @@
+spec:
+  ports:
+    - name: rlpa-tcp
+      port: 1888
+      targetPort: 1888
+      protocol: TCP
