@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: chattts
+  namespace: chattts
+  labels:
+    app.kubernetes.io/name: chattts
+spec:
+  selector:
+    app.kubernetes.io/name: chattts
+  type: ClusterIP
+  internalTrafficPolicy: Cluster
+  ports:
+    - protocol: TCP
+      port: 8888
+      targetPort: 8888
+      name: http

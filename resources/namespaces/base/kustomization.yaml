@@ -5,6 +5,7 @@ resources:
   - ./app-secrets.yaml
   - ./app-volumes.yaml
   - ./cert-manager.yaml
+  - ./chattts.yaml
   - ./code-server.yaml
   - ./coder.yaml
   - ./consul.yaml

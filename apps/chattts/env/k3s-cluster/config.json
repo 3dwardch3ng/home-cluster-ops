@@ -1,0 +1,12 @@
+{
+  "appName": "chattts",
+  "userGivenName": "chattts",
+  "namespace": "chattts",
+  "destNamespace": "chattts",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/chattts/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
