@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chattts
+  namespace: chattts
+  labels:
+    app.kubernetes.io/name: chattts
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: chattts
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: chattts
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - name: chattts
+          image: lcs13324/chattts:v1.0
+          securityContext:
+            allowPrivilegeEscalation: false
+          ports:
+            - protocol: TCP
+              containerPort: 8888
+              name: http
+      nodeSelector:
+        kubernetes.io/arch: amd64
