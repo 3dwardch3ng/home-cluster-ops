@@ -22,3 +22,5 @@ metricsScraper:
   volumes:
     - name: tmp-volume
       path: /mnt/nfs/AppData/kubernetes-dashboard/auth
+kong:
+  enabled: false
