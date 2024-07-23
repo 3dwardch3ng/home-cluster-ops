@@ -1,0 +1,12 @@
+{
+  "appName": "nextcloud",
+  "userGivenName": "nextcloud",
+  "namespace": "nextcloud",
+  "destNamespace": "nextcloud",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/nextcloud/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
