@@ -21,6 +21,7 @@ resources:
   - ./minio.yaml
   - ./mongodb.yaml
   - ./new-relic.yaml
+  - ./nextcloud.yaml
   - ./nexus.yaml
   - ./postgresql.yaml
   - ./prometheus.yaml
