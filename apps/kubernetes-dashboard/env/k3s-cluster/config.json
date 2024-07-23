@@ -1,8 +1,8 @@
 {
   "appName": "kubernetes-dashboard",
   "userGivenName": "kubernetes-dashboard",
-  "namespace": "kubernetes-dashboard",
-  "destNamespace": "kubernetes-dashboard",
+  "namespace": "argocd",
+  "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "apps/kubernetes-dashboard/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
