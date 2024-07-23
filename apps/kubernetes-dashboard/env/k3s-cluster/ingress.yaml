@@ -1,0 +1,29 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/issuer: selfsigned
+    nginx.ingress.kubernetes.io/backend-protocol: HTTPS
+    nginx.ingress.kubernetes.io/ssl-passthrough: 'true'
+    nginx.ingress.kubernetes.io/ssl-redirect: 'true'
+  labels:
+    app.kubernetes.io/instance: kubernetes-dashboard
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/part-of: kubernetes-dashboard
+    argocd.argoproj.io/instance: kubernetes-dashboard
+    helm.sh/chart: kubernetes-dashboard-7.5.0
+  name: kubernetes-dashboard
+  namespace: argocd
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: k3s-dashboard.cluster.edward.sydney
+      http:
+        paths:
+          - backend:
+              service:
+                name: kubernetes-dashboard-kong-proxy
+                port:
+                  number: 443
+            path: /
+            pathType: ImplementationSpecific
