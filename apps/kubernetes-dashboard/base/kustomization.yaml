@@ -5,4 +5,3 @@ helmCharts:
     repo: https://kubernetes.github.io/dashboard/
     version: 7.5.0
     releaseName: kubernetes-dashboard
-    valuesFile: values.yaml
