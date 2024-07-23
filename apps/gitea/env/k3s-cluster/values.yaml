@@ -1,4 +1,5 @@
 namespaceOverride: "gitea"
+podAntiAffinityPreset: ""
 adminUsername: "gitea_admin"
 adminEmail: "edward@cheng.sydney"
 appName: "gitea"
