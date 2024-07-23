@@ -25,6 +25,10 @@ spec:
           env:
             - name: SKIP_DOMAIN_VALIDATION
               value: "true"
+            - name: APACHE_PORT
+              value: "11000"
+            - name: APACHE_IP_BINDING
+              value: "0.0.0.0"
           ports:
             - protocol: TCP
               containerPort: 80
