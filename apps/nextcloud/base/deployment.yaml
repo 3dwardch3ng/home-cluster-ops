@@ -19,9 +19,12 @@ spec:
         runAsGroup: 1000
       containers:
         - name: nextcloud
-          image: nextcloud/all-in-one
+          image: nextcloud/all-in-one:latest
           securityContext:
             allowPrivilegeEscalation: false
+          env:
+            - name: SKIP_DOMAIN_VALIDATION
+              value: "true"
           ports:
             - protocol: TCP
               containerPort: 80
@@ -41,15 +44,29 @@ spec:
           volumeMounts:
             - name: nextcloud_aio_mastercontainer
               mountPath: /mnt/docker-aio-config
+            - name: nextcloud_aio_nextcloud
+              mountPath: /mnt/ncdata
+            - name: nextcloud_storagebox
+              mountPath: /mnt/storagebox
             - name: docker-socket
               mountPath: /var/run/docker.sock
               readOnly: true
       volumes:
         - name: nextcloud_aio_mastercontainer
           hostPath:
-            path: /mnt/nfs/AppData/nextcloud
+            path: /mnt/nfs/AppData/nextcloud/config
+            type: Directory
+        - name: nextcloud_aio_nextcloud
+          hostPath:
+            path: /mnt/nfs/AppData/nextcloud/data
+            type: Directory
+        - name: nextcloud_storagebox
+          hostPath:
+            path: /mnt/nfs/AppData/nextcloud/storagebox
             type: Directory
         - name: docker-socket
           hostPath:
             path: /var/run/docker.sock
             type: Socket
+      nodeSelector:
+        kubernetes.io/arch: amd64
