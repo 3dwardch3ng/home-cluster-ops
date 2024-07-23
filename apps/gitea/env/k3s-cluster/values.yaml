@@ -26,3 +26,10 @@ externalDatabase:
   user: "gitea_user"
   existingSecret: "gitea-secrets"
   existingSecretPasswordKey: "db-password"
+resources:
+  requests:
+    cpu: 50m
+    memory: 128Mi
+  limits:
+    cpu: 100m
+    memory: 256Mi
