@@ -16,7 +16,6 @@ resources:
   - ./ingress-nginx.yaml
   - ./jellyfin.yaml
   - ./kavita.yaml
-  - ./kubernetes-dashboard.yaml
   - ./local-path-storage.yaml
   - ./logstash.yaml
   - ./minio.yaml
