@@ -7,7 +7,7 @@ existingSecretKey: "admin-password"
 smtpHost: "smtp.gmail.com"
 smtpPort: "587"
 smtpUser: "me@edward.sydney"
-smtpExistingSecret: "sonarqube-secrets"
+smtpExistingSecret: "gitea-secrets"
 persistence:
   existingClaim: "gitea-pvc"
 service:
@@ -18,7 +18,7 @@ ingress:
   enabled: true
   ingressClassName: "nginx"
 serviceAccount:
-  enabled: false
+  create: false
 postgresql:
   enabled: false
 externalDatabase:
