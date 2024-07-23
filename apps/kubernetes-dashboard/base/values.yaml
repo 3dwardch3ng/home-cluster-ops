@@ -1,0 +1,24 @@
+app:
+  ingress:
+    enabled: true
+    hosts:
+      - "k3s-dashboard.cluster.edward.sydney"
+    ingressClassName: nginx
+    tls:
+      enabled: false
+auth:
+  volumes:
+    - name: tmp-volume
+      path: /mnt/nfs/AppData/kubernetes-dashboard/auth
+api:
+  volumes:
+    - name: tmp-volume
+      path: /mnt/nfs/AppData/kubernetes-dashboard/auth
+web:
+  volumes:
+    - name: tmp-volume
+      path: /mnt/nfs/AppData/kubernetes-dashboard/auth
+metricsScraper:
+  volumes:
+    - name: tmp-volume
+      path: /mnt/nfs/AppData/kubernetes-dashboard/auth
