@@ -21,7 +21,7 @@ spec:
         - name: obsidian
           image: ghcr.io/sytone/obsidian-remote:0.1.1
           securityContext:
-            allowPrivilegeEscalation: false
+            allowPrivilegeEscalation: true
           ports:
             - protocol: TCP
               containerPort: 8080
