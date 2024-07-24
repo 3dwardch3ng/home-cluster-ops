@@ -15,7 +15,7 @@ spec:
         app.kubernetes.io/name: plex
     spec:
       securityContext:
-        runAsUser: 1000
+        runAsUser: 911
         runAsGroup: 1000
       containers:
         - name: plex
@@ -24,7 +24,7 @@ spec:
             allowPrivilegeEscalation: true
           env:
             - name: PUID
-              value: "1000"
+              value: "911"
             - name: PGID
               value: "1000"
             - name: TZ
