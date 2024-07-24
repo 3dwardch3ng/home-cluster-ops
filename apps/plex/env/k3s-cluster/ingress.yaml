@@ -19,3 +19,13 @@ spec:
                 name: plex
                 port:
                   number: 32400
+    - host: "plex-web.cluster.edward.sydney"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: plex
+                port:
+                  number: 8899
