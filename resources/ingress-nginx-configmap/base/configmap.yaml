@@ -6,6 +6,7 @@ metadata:
 data:
   "53": "adguard-home/adguard-home:53"
   "853": "adguard-home/adguard-home:853"
+  "1888": "rlpa/rlpa-server:1888"
   "5443": "adguard-home/adguard-home:5443"
   "6060": "adguard-home/adguard-home:6060"
 ---

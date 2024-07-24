@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: couchdb
+  namespace: couchdb
+  labels:
+    app.kubernetes.io/name: couchdb
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: couchdb
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: couchdb
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - name: couchdb
+          image: bitnami/couchdb:3.3.3
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: COUCHDB_PORT_NUMBER
+              value: "7777"
+            - name: COUCHDB_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: couchdb-secrets
+                  key: password
+            - name: COUCHDB_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: couchdb-secrets
+                  key: secrets
+          ports:
+            - protocol: TCP
+              containerPort: 7777
+              name: couchdb-port
+          volumeMounts:
+            - name: couchdb-data
+              mountPath: /bitnami/couchdb
+            - name: couchdb-config
+              mountPath: /opt/bitnami/couchdb/etc/
+      volumes:
+        - name: couchdb-data
+          hostPath:
+            path: /mnt/nfs/AppData/couchdb
+            type: Directory
+        - name: couchdb-config
+          hostPath:
+            path: /mnt/nfs/AppData/couchdb/etc
+            type: Directory

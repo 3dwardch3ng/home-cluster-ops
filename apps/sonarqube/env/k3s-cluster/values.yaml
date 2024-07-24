@@ -1,3 +1,5 @@
+priorityClassName: system-cluster-critical
+namespaceOverride: "sonarqube"
 clusterDomain: sonarqube.cluster.edward.sydney
 sonarqubeUsername: sonarqube
 existingSecret: "sonarqube-secrets"

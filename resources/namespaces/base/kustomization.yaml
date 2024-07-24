@@ -5,9 +5,11 @@ resources:
   - ./app-secrets.yaml
   - ./app-volumes.yaml
   - ./cert-manager.yaml
+  - ./chattts.yaml
   - ./code-server.yaml
   - ./coder.yaml
   - ./consul.yaml
+  - ./couchdb.yaml
   - ./dokuwiki.yaml
   - ./gitea.yaml
   - ./homer.yaml
@@ -19,6 +21,7 @@ resources:
   - ./minio.yaml
   - ./mongodb.yaml
   - ./new-relic.yaml
+  - ./nextcloud.yaml
   - ./nexus.yaml
   - ./plex.yaml
   - ./postgresql.yaml
@@ -27,6 +30,7 @@ resources:
   - ./qbittorrent.yaml
   - ./redis.yaml
   - ./renovate.yaml
+  - ./rlpa.yaml
   - ./snippet-box.yaml
   - ./sonarqube.yaml
   - ./uptime-kuma.yaml
