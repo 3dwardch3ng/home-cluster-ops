@@ -19,3 +19,13 @@ spec:
                 name: plex-media-server
                 port:
                   number: 32400
+    - host: "plex.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: plex-media-server
+                port:
+                  number: 32400
