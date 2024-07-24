@@ -23,6 +23,7 @@ resources:
   - ./new-relic.yaml
   - ./nextcloud.yaml
   - ./nexus.yaml
+  - ./plex.yaml
   - ./postgresql.yaml
   - ./prometheus.yaml
   - ./prometheus-operator.yaml
