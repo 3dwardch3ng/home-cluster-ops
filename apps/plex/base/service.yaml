@@ -15,3 +15,7 @@ spec:
       port: 8899
       targetPort: 80
       name: http
+    - protocol: TCP
+      port: 32400
+      targetPort: 32400
+      name: plex
