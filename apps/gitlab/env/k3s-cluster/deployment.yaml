@@ -1,0 +1,60 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gitlab
+  namespace: gitlab
+  labels:
+    app.kubernetes.io/name: gitlab
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: gitlab
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: gitlab
+    spec:
+      containers:
+        - name: gitlab
+          image: gitlab/gitlab-ce:17.2.1-ce.0
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: GITLAB_OMNIBUS_CONFIG
+              value: "external_url 'https://gitlab.cluster.edward.sydney'"
+          ports:
+            - protocol: TCP
+              containerPort: 443
+              name: https
+            - protocol: TCP
+              containerPort: 80
+              name: http
+            - protocol: TCP
+              containerPort: 22
+              name: ssh
+          volumeMounts:
+            - name: dshm
+              mountPath: /dev/shm
+            - name: gitlab-config
+              mountPath: /etc/config
+            - name: gitlab-log
+              mountPath: /var/log/gitlab
+            - name: gitlab-data
+              mountPath: /var/opt/gitlab
+      volumes:
+        - name: dshm
+          emptyDir:
+            medium: Memory
+            sizeLimit: 1Gi
+        - name: gitlab-config
+          hostPath:
+            path: /mnt/nfs/AppData/gitlab/config
+            type: Directory
+        - name: gitlab-log
+          hostPath:
+            path: /mnt/nfs/AppData/gitlab/log
+            type: Directory
+        - name: gitlab-data
+          hostPath:
+            path: /mnt/nfs/AppData/gitlab/data
+            type: Directory
