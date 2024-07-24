@@ -80,7 +80,7 @@ spec:
                   name: renovate-secrets
                   key: github_pat
             - name: MEND_RNV_AUTODISCOVER_FILTER
-              value: "3dwardch3ng/home-cluster-ops"
+              value: "resources/*,infrastructures/*,apps/*"
             - name: MEND_RNV_ENQUEUE_JOBS_ON_STARTUP
               value: "enabled"
             - name: MEND_RNV_LOG_HISTORY_DIR
