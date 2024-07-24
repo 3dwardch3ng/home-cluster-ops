@@ -14,7 +14,6 @@ spec:
       labels:
         app.kubernetes.io/name: plex
     spec:
-      hostNetwork: true
       securityContext:
         runAsUser: 1000
         runAsGroup: 1000
@@ -33,11 +32,38 @@ spec:
             - name: VERSION
               value: docker
             - name: PLEX_CLAIM
-              value: "0"
+              value: "claim-LHi5dG2J4DyqtFbETDpJ"
           ports:
             - protocol: TCP
               containerPort: 80
               name: http
+            - protocol: TCP
+              containerPort: 32400
+              name: plex
+            - protocol: UDP
+              containerPort: 1900
+              name: 1900-udp
+            - protocol: TCP
+              containerPort: 8324
+              name: 8324-tcp
+            - protocol: UDP
+              containerPort: 5353
+              name: 5353-udp
+            - protocol: UDP
+              containerPort: 32410
+              name: 32410-udp
+            - protocol: UDP
+              containerPort: 32412
+              name: 32412-udp
+            - protocol: UDP
+              containerPort: 32413
+              name: 32413-udp
+            - protocol: UDP
+              containerPort: 32414
+              name: 32414-udp
+            - protocol: TCP
+              containerPort: 32469
+              name: 32469-tcp
           volumeMounts:
             - name: plex-config
               mountPath: /config
