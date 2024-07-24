@@ -4,6 +4,8 @@ ingress:
   url: plex.cluster.edward.sydney
 pms:
   configExistingClaim: plex-config-pvc
+nodeSelector:
+  kubernetes.io/arch: amd64
 extraEnv:
   PLEX_CLAIM: "claim-AQz39T-oxkYVjmrCL5ZX"
   TZ: "Australia/Sydney"
