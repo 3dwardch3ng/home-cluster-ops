@@ -20,10 +20,6 @@ spec:
           securityContext:
             allowPrivilegeEscalation: true
           env:
-            - name: PUID
-              value: "1000"
-            - name: PGID
-              value: "1000"
             - name: TZ
               value: "Australia/Sydney"
             - name: DOCKER_MODS
