@@ -3,3 +3,12 @@ kind: Kustomization
 resources:
   - ./deployment.yaml
   - ./service.yaml
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+helmCharts:
+  - name: plex-media-server
+    repo: https://raw.githubusercontent.com/plexinc/pms-docker/gh-pages
+    version: 1.16.0
+    releaseName: plex-media-server
+    valuesFile: values.yaml

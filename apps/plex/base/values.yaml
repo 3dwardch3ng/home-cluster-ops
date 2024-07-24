@@ -1,0 +1,38 @@
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  url: plex.cluster.edward.sydney
+pms:
+  storageClassName: local-path
+  existingClaim: plex-config-pvc
+extraEnv:
+  PLEX_CLAIM: ""
+  TZ: "Australia/Sydney"
+  PLEX_UID: 1000
+  PLEX_GID: 1000
+extraVolumeMounts:
+  - name: plex-tv
+    mountPath: /tv
+  - name: plex-movie
+    mountPath: /movie
+  - name: plex-music
+    mountPath: /music
+  - name: plex-gv
+    mountPath: /gv
+extraVolumes:
+  - name: plex-tv
+    hostPath:
+      path: /mnt/nfs/AppData/plex/tv
+      type: Directory
+  - name: plex-movie
+    hostPath:
+      path: /mnt/nfs/AppData/plex/movie
+      type: Directory
+  - name: plex-music
+    hostPath:
+      path: /mnt/nfs/AppData/plex/music
+      type: Directory
+  - name: plex-gv
+    hostPath:
+      path: /mnt/nfs/AppData/plex/gv
+      type: Directory
