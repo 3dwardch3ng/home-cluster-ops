@@ -14,18 +14,41 @@ spec:
       labels:
         app.kubernetes.io/name: obsidian
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
       containers:
         - name: obsidian
           image: ghcr.io/sytone/obsidian-remote:0.1.1
           securityContext:
             allowPrivilegeEscalation: true
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: "Australia/Sydney"
+            - name: DOCKER_MODS
+              value: "linuxserver/mods:universal-git"
+            - name: CUSTOM_PORT
+              value: "8080"
+            - name: CUSTOM_HTTPS_PORT
+              value: "8443"
+            - name: KEYBOARD
+              value: "en-us-qwerty"
+            - name: TITLE
+              value: "Obsidian"
+            - name: CUSTOM_USER
+              value: ""
+            - name: PASSWORD
+              value: ""
+            - name: SUBFOLDER
+              value: ""
           ports:
             - protocol: TCP
               containerPort: 8080
               name: http
+            - protocol: TCP
+              containerPort: 8443
+              name: https
           volumeMounts:
             - name: obsidian-config
               mountPath: /config
