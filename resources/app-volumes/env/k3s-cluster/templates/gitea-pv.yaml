@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: gitea-pv
+  namespace: gitea
+  labels:
+    type: local
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  capacity:
+    storage: 32Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/mnt/nfs/AppData/gitea"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: gitea-pvc
+    namespace: gitea
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/arch
+              operator: In
+              values:
+                - arm64
