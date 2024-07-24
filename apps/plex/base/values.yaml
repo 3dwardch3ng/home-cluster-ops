@@ -6,7 +6,7 @@ pms:
   storageClassName: local-path
   existingClaim: plex-config-pvc
 extraEnv:
-  PLEX_CLAIM: ""
+  PLEX_CLAIM: "claim-AQz39T-oxkYVjmrCL5ZX"
   TZ: "Australia/Sydney"
   PLEX_UID: 1000
   PLEX_GID: 1000
