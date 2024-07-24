@@ -7,7 +7,7 @@ pms:
 nodeSelector:
   kubernetes.io/arch: amd64
 extraEnv:
-  PLEX_CLAIM: "claim-AQz39T-oxkYVjmrCL5ZX"
+  PLEX_CLAIM: "claim-emBfSjLs-Yd16yeKCfBk"
   TZ: "Australia/Sydney"
   PLEX_UID: 1000
   PLEX_GID: 1000
