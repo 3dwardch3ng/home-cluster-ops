@@ -3,8 +3,7 @@ ingress:
   ingressClassName: nginx
   url: plex.cluster.edward.sydney
 pms:
-  storageClassName: local-path
-  existingClaim: plex-config-pvc
+  configExistingClaim: plex-config-pvc
 extraEnv:
   PLEX_CLAIM: "claim-AQz39T-oxkYVjmrCL5ZX"
   TZ: "Australia/Sydney"
