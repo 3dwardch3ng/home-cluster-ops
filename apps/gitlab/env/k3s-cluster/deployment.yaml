@@ -58,3 +58,5 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/gitlab/data
             type: Directory
+      nodeSelector:
+        kubernetes.io/arch: amd64
