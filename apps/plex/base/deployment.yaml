@@ -21,7 +21,7 @@ spec:
         - name: plex
           image: lscr.io/linuxserver/plex:1.40.4
           securityContext:
-            allowPrivilegeEscalation: false
+            allowPrivilegeEscalation: true
           env:
             - name: PUID
               value: "1000"
