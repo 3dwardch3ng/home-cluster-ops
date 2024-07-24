@@ -1,7 +1,3 @@
-ingress:
-  enabled: true
-  ingressClassName: nginx
-  url: plex.cluster.edward.sydney
 pms:
   configExistingClaim: plex-config-pvc
 nodeSelector:
