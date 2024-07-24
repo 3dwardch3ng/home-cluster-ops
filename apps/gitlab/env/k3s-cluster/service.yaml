@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gitlab
+  namespace: gitlab
+  labels:
+    app.kubernetes.io/name: gitlab
+spec:
+  selector:
+    app.kubernetes.io/name: gitlab
+  type: LoadBalancer
+  internalTrafficPolicy: Cluster
+  ports:
+    - protocol: TCP
+      port: 10080
+      targetPort: 80
+      name: http
+    - protocol: TCP
+      port: 10443
+      targetPort: 443
+      name: https
+    - protocol: TCP
+      port: 10022
+      targetPort: 22
+      name: ssh
