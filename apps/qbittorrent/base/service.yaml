@@ -16,10 +16,10 @@ spec:
       targetPort: 8080
       name: qbittorrent-ui
     - protocol: TCP
-      port: 16881
+      port: 6881
       targetPort: 6881
       name: qbittorrent-torrenting
     - protocol: UDP
-      port: 16881
+      port: 6881
       targetPort: 6881
       name: qbittorrent-torrenting-udp
