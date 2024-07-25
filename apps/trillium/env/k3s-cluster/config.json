@@ -1,0 +1,12 @@
+{
+  "appName": "trillium",
+  "userGivenName": "trillium",
+  "namespace": "trillium",
+  "destNamespace": "trillium",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/trillium/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
