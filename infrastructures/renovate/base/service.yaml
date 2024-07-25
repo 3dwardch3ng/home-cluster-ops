@@ -11,6 +11,6 @@ spec:
     - port: 8899
       targetPort: 8080
       protocol: TCP
-      name: http
+      name: 8899-tcp
   selector:
     app.kubernetes.io/name: renovate
