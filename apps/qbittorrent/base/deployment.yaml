@@ -33,13 +33,13 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 8080
-              name: qbittorrent-ui
+              name: qb-ui
             - protocol: TCP
               containerPort: 6881
-              name: qbittorrent-torrenting
+              name: qb-torrenting
             - protocol: UDP
               containerPort: 6881
-              name: qbittorrent-torrenting-udp
+              name: qb-torrenting-udp
           volumeMounts:
             - name: qbittorrent-config
               mountPath: /config
