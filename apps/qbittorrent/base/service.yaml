@@ -14,12 +14,12 @@ spec:
     - protocol: TCP
       port: 18080
       targetPort: 8080
-      name: qbittorrent-ui
+      name: qb-ui
     - protocol: TCP
       port: 6881
       targetPort: 6881
-      name: qbittorrent-torrenting
+      name: qb-torrenting
     - protocol: UDP
       port: 6881
       targetPort: 6881
-      name: qbittorrent-torrenting-udp
+      name: qb-torrenting-udp
