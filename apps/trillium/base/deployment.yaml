@@ -14,14 +14,9 @@ spec:
       labels:
         app.kubernetes.io/name: trillium
     spec:
-      securityContext:
-        runAsUser: 1000
-        runAsGroup: 1000
       containers:
         - name: trillium
           image: zadam/trilium:0.63.7
-          securityContext:
-            allowPrivilegeEscalation: false
           env:
             - name: TRILIUM_DATA_DIR
               value: "/home/node/trilium-data"
