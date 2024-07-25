@@ -24,7 +24,7 @@ spec:
     required:
       nodeSelectorTerms:
         - matchExpressions:
-            - key: kubernetes.io/arch
+            - key: kubernetes.io/os
               operator: In
               values:
-                - arm64
+                - linux
