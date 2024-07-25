@@ -1,0 +1,6 @@
+spec:
+  ports:
+    - name: http
+      port: 8899
+      targetPort: 8899
+      protocol: TCP
