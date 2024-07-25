@@ -36,10 +36,10 @@ spec:
               name: qb-ui
             - protocol: TCP
               containerPort: 6881
-              name: qb-torrenting
+              name: torrenting
             - protocol: UDP
               containerPort: 6881
-              name: qb-torrenting-udp
+              name: torrenting-udp
           volumeMounts:
             - name: qbittorrent-config
               mountPath: /config
