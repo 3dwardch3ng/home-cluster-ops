@@ -15,8 +15,8 @@ spec:
         app.kubernetes.io/name: qbittorrent
     spec:
       containers:
-        - name: homer
-          image: b4bz/homer:v24.05.1
+        - name: qbittorrent
+          image: lscr.io/linuxserver/qbittorrent:latest
           securityContext:
             allowPrivilegeEscalation: false
           env:
