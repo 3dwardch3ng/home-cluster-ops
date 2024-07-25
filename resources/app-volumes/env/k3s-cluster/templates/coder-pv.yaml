@@ -28,7 +28,6 @@ spec:
               operator: In
               values:
                 - arm64
-        - matchExpressions:
             - key: kubernetes.io/os
               operator: In
               values:
