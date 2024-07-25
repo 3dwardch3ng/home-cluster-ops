@@ -20,7 +20,7 @@ service:
     http: 8090
     elastic: 9091
   nodePorts:
-    http: 30080
+    http: 30089
     elastic: 30091
 ingress:
   enabled: true
