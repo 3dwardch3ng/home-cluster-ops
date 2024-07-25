@@ -9,6 +9,7 @@ data:
   "1888": "rlpa/rlpa-server:1888"
   "5443": "adguard-home/adguard-home:5443"
   "6060": "adguard-home/adguard-home:6060"
+  "8899": "renovate/renovate:8899"
   "32400": "plex/plex-media-server:32400"
 ---
 apiVersion: v1
