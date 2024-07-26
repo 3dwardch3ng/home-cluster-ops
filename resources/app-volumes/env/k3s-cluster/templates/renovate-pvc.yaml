@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: renovate-pvc
-  namespace: renovate
+  namespace: argocd
   labels:
     name: renovate-pvc
 spec:
