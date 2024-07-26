@@ -1,0 +1,22 @@
+spec:
+  ports:
+    - name: dns-udp
+      port: 53
+      targetPort: 53
+      protocol: UDP
+    - name: dhcps-udp
+      port: 67
+      targetPort: 67
+      protocol: UDP
+    - name: dhcpc-udp
+      port: 68
+      targetPort: 68
+      protocol: UDP
+    - name: dns-tls-udp
+      port: 853
+      targetPort: 853
+      protocol: UDP
+    - name: dnscrypt-udp
+      port: 5443
+      targetPort: 5443
+      protocol: UDP
