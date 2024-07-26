@@ -1,0 +1,12 @@
+{
+  "appName": "intel-device-plugin-operator",
+  "userGivenName": "intel-device-plugin-operator",
+  "namespace": "intel-device-plugin-operator",
+  "destNamespace": "intel-device-plugin-operator",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "resources/intel-device-plugin-operator/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
