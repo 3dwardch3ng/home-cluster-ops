@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: renovate-pv
-  namespace: renovate
+  namespace: argocd
   labels:
     type: local
 spec:
