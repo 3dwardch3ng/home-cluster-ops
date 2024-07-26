@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: renovate-pvc
+  namespace: renovate
+  labels:
+    name: renovate-pvc
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
