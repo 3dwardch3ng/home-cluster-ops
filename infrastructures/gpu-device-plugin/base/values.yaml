@@ -1,0 +1,14 @@
+name: gpu-device-plugin
+
+image:
+  hub: intel
+
+sharedDevNum: 1
+logLevel: 2
+resourceManager: true
+enableMonitoring: false
+
+nodeSelector:
+  kubernetes.io/arch: amd64
+
+nodeFeatureRule: true
