@@ -1,0 +1,39 @@
+renovate:
+  mendRnvAcceptTos: "y"
+  mendRnvPlatform: "github"
+  mendRnvEndpoint: "https://api.github.com/"
+  mendRnvAdminApiEnabled: "true"
+  existingSecret: "renovate-secrets"
+  mendRnvAutoDiscoverFilter: ""
+  mendRnvLogHistoryDir: "/logs"
+postgresql:
+  enabled: true
+  host: "postgresql-primary.argocd.svc.cluster.local"
+  port: 5432
+  database: renovate
+  user: renovate_user
+cachePersistence:
+  enabled: true
+  storageClass: "local-path"
+  accessModes:
+    - ReadWriteOnce
+  size: 1Gi
+  existingClaim: "renovate-pvc"
+service:
+  type: ClusterIP
+  port: 80
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hosts:
+    - renovate.cluster.edward.sydney
+nodeSelector:
+  kubernetes.io/arch: amd64
+extraVolumes:
+  - name: logs
+    hostPath:
+      path: /mnt/nfs/AppData/renovate/logs
+      type: Directory
+extraVolumeMounts:
+  - name: logs
+    mountPath: /logs
