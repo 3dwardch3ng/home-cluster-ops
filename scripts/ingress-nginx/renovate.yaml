@@ -1,6 +1,0 @@
-spec:
-  ports:
-    - name: 8899-tcp
-      port: 8899
-      targetPort: 8899
-      protocol: TCP
