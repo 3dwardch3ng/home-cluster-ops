@@ -39,3 +39,5 @@ externalDatabase:
   host: "postgresql-primary.argocd.svc.cluster.local"
   user: "sonarqube_user"
   existingSecret: "sonarqube-secrets"
+nodeSelector:
+  kubernetes.io/hostname: k3s-cluster-node-3
