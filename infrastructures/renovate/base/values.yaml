@@ -20,8 +20,8 @@ cachePersistence:
   size: 1Gi
   existingClaim: "renovate-pvc"
 service:
-  type: LoadBalancer
-  port: 10899
+  type: ClusterIP
+  port: 8899
 ingress:
   enabled: true
   ingressClassName: nginx
