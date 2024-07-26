@@ -32,3 +32,7 @@ spec:
               operator: In
               values:
                 - linux
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - k3s-cluster-node-3
