@@ -21,7 +21,7 @@ cachePersistence:
   existingClaim: "renovate-pvc"
 service:
   type: ClusterIP
-  port: 80
+  port: 8899
 ingress:
   enabled: true
   ingressClassName: nginx
