@@ -19,7 +19,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: renovate-pvc
-    namespace: renovate
+    namespace: argocd
   nodeAffinity:
     required:
       nodeSelectorTerms:
