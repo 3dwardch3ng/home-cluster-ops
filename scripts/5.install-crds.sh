@@ -3,7 +3,7 @@ set -e
 
 # CRDs for the kubernetes-sigs' Application CRD
 echo "Installing CRDs for the kubernetes-sigs' Application CRD..."
-kubectl apply -f https://raw.githubusercontent.com/kubernetes-sigs/application/master/config/crd/kustomization.yaml
+kubectl apply -k https://raw.githubusercontent.com/kubernetes-sigs/application/master/config/crd/kustomization.yaml
 
 # CRDs for the Intel GPU Device Plugin
 echo "Installing CRDs for the Intel GPU Device Plugin..."
