@@ -1,0 +1,4 @@
+global:
+  priorityClassName: system-cluster-critical
+namespace: cert-manager
+installCRDs: true

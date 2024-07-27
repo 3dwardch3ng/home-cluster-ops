@@ -1,0 +1,12 @@
+{
+  "appName": "cert-manager",
+  "userGivenName": "cert-manager",
+  "namespace": "cert-manager",
+  "destNamespace": "cert-manager",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "infrastructures/cert-manager/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
