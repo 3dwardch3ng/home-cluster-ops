@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: clusterissuer-secrets
+  namespace: cert-manager
+type: Opaque
+stringData:
+  email: "edward@cheng.sydney"
+  cloudflare_api_token: "iT6tDsYXip38ms3d1IJZX1ekx9pFL3o4teXJLCrr"
+  cluster_cert_domain: "cluster.edward.sydney"
+  cluster_cert_domain_wildcard: "*.cluster.edward.sydney"
