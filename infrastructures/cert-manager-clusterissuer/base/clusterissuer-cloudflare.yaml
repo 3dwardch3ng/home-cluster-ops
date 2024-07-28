@@ -6,7 +6,7 @@ metadata:
 spec:
   acme:
     email:
-      valueFrom:
+      stringData:
         secretKeyRef:
           name: clusterissuer-secrets
           namespace: cert-manager
@@ -18,7 +18,7 @@ spec:
       - dns01:
           cloudflare:
             email:
-              valueFrom:
+              stringData:
                 secretKeyRef:
                   name: clusterissuer-secrets
                   namespace: cert-manager
@@ -29,12 +29,12 @@ spec:
               key: cloudflare_api_token
         selector:
           dnsNames:
-            - valueFrom:
+            - stringData:
                 secretKeyRef:
                   name: clusterissuer-secrets
                   namespace: cert-manager
                   key: cluster_cert_domain
-            - valueFrom:
+            - stringData:
                 secretKeyRef:
                   name: clusterissuer-secrets
                   namespace: cert-manager
