@@ -5,37 +5,19 @@ metadata:
   namespace: cert-manager
 spec:
   acme:
-    email:
-      stringData:
-        secretKeyRef:
-          name: clusterissuer-secrets
-          namespace: cert-manager
-          key: email
+    email: "edward@cheng.sydney"
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
       name: cluster-issuer-account-key
     solvers:
       - dns01:
           cloudflare:
-            email:
-              stringData:
-                secretKeyRef:
-                  name: clusterissuer-secrets
-                  namespace: cert-manager
-                  key: email
+            email: "edward@cheng.sydney"
             apiTokenSecretRef:
               name: clusterissuer-secrets
               namespace: cert-manager
               key: cloudflare_api_token
         selector:
           dnsNames:
-            - stringData:
-                secretKeyRef:
-                  name: clusterissuer-secrets
-                  namespace: cert-manager
-                  key: cluster_cert_domain
-            - stringData:
-                secretKeyRef:
-                  name: clusterissuer-secrets
-                  namespace: cert-manager
-                  key: cluster_cert_domain_wildcard
+            - "cluster.edward.sydney"
+            - "*.cluster.edward.sydney"
