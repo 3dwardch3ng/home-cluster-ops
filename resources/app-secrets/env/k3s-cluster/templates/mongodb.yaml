@@ -1,14 +1,23 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: mongodb-secrets
   namespace: mongodb
-type: Opaque
-stringData:
-  mongodb-root-password: "ic.e6oeHefy983ZC8YpQDfg8"
-  mongodb-passwords: "VeQ@NGX*W3qrDBQmbVihHTXh,auDJjPpV_y_9-Dt*!dsMovFb"
+spec:
+  encryptedData:
+    mongodb-passwords: AgBxZ1MLyQ5Pj1CT7XBU3jHpo4isuqIgvFs/ixGe++popOJMqRmhHKDHcJrdfPGM07f89BCwUPjDvHksEOo1bxb6pVAwVSd6KZvVk+u3l3M0ypJZ3hULeL65s76PU0WIpRwVBVE5X2kE4kTKG7efy/WhkNSGFdzH/IeYUXm49/O8VI4p/KtJUYGETdDjG5k61cGDFOmNS0LKHgWav3G2t3NYmPQbE2VjC8z1LzfIGEprPUU3gfjpQVv6MXdJEBJ77X8/3A9YTyKr40xQdX1RKG5q1ro/9GMYI8XoSDfpC6OhQC/3S2HR7+yLrWKtKQW+jYRbgdCYokhJ57a2qgZSDXgIHXmLXP2Jz+WMkElrJamz+yGXwW9ikx9L3IuGjaPnk181odjKWONz6B00S9cKk+PCE2E+y0QGklm80JLw4NYhmI8DQ1LWhcY/oKxj+tKsIQ5ltWOh7MgTdmn8HkmiHvCmzXyGGsHOoUt0XdcCWf7JlHdqc9mc7QeW/2xrUvlsO4WkoSKkrWJXRhmVCXMHjzRy6eNFWJqfIxfPSL5FwsvTeq7WykZN5euXAuFJJpxSf8eewTIML04S4als4Awey5WCP+MLZunp9j62lV6r2UJcn3j+o3RRVXevGsWQpVHpyTJrlvZyclQFwIg8r5rVSq2/Lj0eYUCLhf+gIbedVfFqdxJ/HIcsufYjxYlFVt9MHarOXZ+WRvFODBrkxoJh/9RjsljYDVitZ4JqiXj4i7ZtjfCN5dZmfJlnX8LNwe4s/oL3
+    mongodb-root-password: AgApxPqNJ68V04TYPyDBkEaYq1Gg5ECE7z5+tqQjGzpmhfJDWIvgbATJ/ROBF8VMWJB8ijBDgXeI2a5FsS9YbYXghmdNv8tYJVj7gd5vYPZbSK5BprQpxb0npINWr+5x3kObG3rXX1PvpvBmiBiWVz92KSjTuINTECYTQwgoNXmx/iz+KGLgpC2sZ1EAoWZxYejhoJMpVGrdT9srsUORYssReBtOEqgClHk8nWXLG5+xeCfApFwkQenPMD94/zOe5MvUMhAo0Nnvyryp0aXPMv0RPpgh98WJBI+jVKVu0A3O5LPQEFqdnhQIaNAiCcq+Idmoo8jzt2MVzoTnmYil4uX86FlzPLnD14m3RiCD0cHpShA49tbotrfDyo4Od8rhjpxZH5afs3EmgEVEaskhwEMdtevKsLWTV8TfWghgZ6HPCRTZp/mo4bw73e17fgm8dbcxceubdtxveEZKw2hrOpUXXGVr4Ozwh5i+6CXPmdTi98x+7Eh3JTdYJJGg6SfCEwDxByWHIAYNjnRO/pVWfJuTGUxAxuc76AFsOyRrqe+rZs2K5AJ/Igp6xxuzLjtfiQ7KmQzDnsPi6+ozTVZ/NIa0Ear/mlqZOXFAJ15e4zUe+AQ1WWsRP2FW+ftUDswCsBl/0JALaT9hGo6/FLT/5iLR1WIp8pc2pcDMP5HfKk22NtIykOWcq7RJPHmdgRV/UgMcUKJznB79ACaQSDqYP48xXU6DhiJPl+Q=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: mongodb-secrets
+      namespace: mongodb
+    type: Opaque
