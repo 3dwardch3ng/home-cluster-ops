@@ -9,6 +9,7 @@ spec:
       valueFrom:
         secretKeyRef:
           name: clusterissuer-secrets
+          namespace: cert-manager
           key: email
     server: https://acme-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
@@ -19,15 +20,19 @@ spec:
             email:
               secretKeyRef:
                 name: clusterissuer-secrets
+                namespace: cert-manager
                 key: email
             apiTokenSecretRef:
               name: clusterissuer-secrets
+              namespace: cert-manager
               key: cloudflare_api_token
         selector:
           dnsNames:
             - secretKeyRef:
                 name: clusterissuer-secrets
+                namespace: cert-manager
                 key: cluster_cert_domain
             - secretKeyRef:
                 name: clusterissuer-secrets
+                namespace: cert-manager
                 key: cluster_cert_domain_wildcard
