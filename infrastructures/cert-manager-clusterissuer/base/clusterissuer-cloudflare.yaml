@@ -18,21 +18,24 @@ spec:
       - dns01:
           cloudflare:
             email:
-              secretKeyRef:
-                name: clusterissuer-secrets
-                namespace: cert-manager
-                key: email
+              valueFrom:
+                secretKeyRef:
+                  name: clusterissuer-secrets
+                  namespace: cert-manager
+                  key: email
             apiTokenSecretRef:
               name: clusterissuer-secrets
               namespace: cert-manager
               key: cloudflare_api_token
         selector:
           dnsNames:
-            - secretKeyRef:
-                name: clusterissuer-secrets
-                namespace: cert-manager
-                key: cluster_cert_domain
-            - secretKeyRef:
-                name: clusterissuer-secrets
-                namespace: cert-manager
-                key: cluster_cert_domain_wildcard
+            - valueFrom:
+                secretKeyRef:
+                  name: clusterissuer-secrets
+                  namespace: cert-manager
+                  key: cluster_cert_domain
+            - valueFrom:
+                secretKeyRef:
+                  name: clusterissuer-secrets
+                  namespace: cert-manager
+                  key: cluster_cert_domain_wildcard
