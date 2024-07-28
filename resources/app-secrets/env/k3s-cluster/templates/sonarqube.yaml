@@ -1,15 +1,24 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: sonarqube-secrets
   namespace: sonarqube
-type: Opaque
-stringData:
-  sonarqube-password: "UCGhDRhvdmVtFB7DNsG2"
-  smtp-password: "mqy2fmb8adu3nby.PDR"
-  password: "cAdF2VZVguE6bKK3Kmko"
+spec:
+  encryptedData:
+    password: AgCcaCPWG9uMaavrq1qu37M3y5zL0bHbarSWX1sf7uTTYjDVXgYcv6qB+OpMFn6tSGlgiiCvMZs9k/rXxrPSVSWZn3nvACF01s0V45LJu7aH4sgCSXdILN9kYMzoRNRE8BZFcvdELf07UfcIl3w/Lg2zNwkNpJqN0BFmcI+sxm1p7bjNdHuKQSqPgmUy5eJANU5gOVx6cGo3/W12LpVy/HeLbdq/BcYyB9cnJjG4JLwxOLuf1qWLqc336zk1KjuphCdhhnES8jaCpVlMdSHm+FNLuF259DbISP+Q8ReEAjb4Oo02kAldfQXvvSqoHPdFdGttdBn5kVMFEY2YNKkZh0xlMaW3sciZgtmazsMC71xwym4tfzRa2/R14hcLuQA5cs7dm/sXA/g616FPJuWpQvJ9IwSKzAKeZ7j9JTxvo530kz7EMs5HV9ebFNORhcrOOpEciBcpZ+4b+EvOmZ8LWZhetzJsmydssr9brgNJp08dSRuxsLr1jJRUzj0DHlu1vguQJz66S4XrdPgboWPXbCtQTb0Y4nb1EBxNkdLgNireTmpSNS7BXfk0pyW4PiQ++I4VF+26eib8rlIFVCnFCQgRsNAkBcAw8P1pNrj1DNLFkMi+iYiJqWK/PyFfTzQXry1W9yFxpMR8Y6w3xNTIfqWFSqGts5T0ua5JymbETKPpsJFYNmPI14LTAvgGLyxzg8zfZncHjcMCAGD+WRyRkNOpIlsRaw==
+    smtp-password: AgAWupYV/0gwgwnPyUQODkTfnf7nYRP9/GiNLF8ilUeOaHHGZRh7Jw5aZ0Tm93HZ+GKENOZxS+LTpo7ML1hMwia9rzqzgQobmHaPolqLSPa3EcdPaN5jSID7xsAZvylseAWayr6M+M7lOoC+YXqTXxx+i09Xg0OIDwHhzX2TpGPXc+S4CcSEnmQZR5pEhnfETKktRB2WhK2IXg5TyJlCrAUSrOoeAjQ9z1CwiLzwQvsLlIw1MHRk/xRy0pgpDZk0o2iKuWIjxlnPLPWqpia2cMcCfBW4xskONVxpVvIfdQqqpI7/fQ1vNKIQuoc5lSzrS757z+4VHRSYWlS6xlMOkShlEnPlP9b+RU0WioMR/AL8Zldt7tKTrNmZCl0zQSpiIQMFE2aRg1owI89ytoJFv738tVpMzscenI2llLXimiO2UA4kfg+VazFEe/vGFcnBnh1Bmb6sAIUpLvXl+gecqpq7uQqDUC4ZbbykJXUKt3waa+e022Q8qeQ3h/YfLdx4WKePzEBkyZJiu4bOcHLXsz5HWcsEWaJV8LB7z5uztOOmiYvlMisoK8G7HqI8bUTG9M7JL3thDIDkTT+OFwuUuukHIeyKu4wQPjP7/na9Ti/hw46t02C5C5ZqZoErpukMr7vHpF5vKr7ozpLDCMhjGDBlLPjnDWSX00QFsc7ft+AC3+Ap5Njy8kLh1fvodOLz3OlRLtd2955Hie7m/35E0Ru6Pyvb
+    sonarqube-password: AgDNzH+Syw1PBh8wmZtibfuSeCFHsWmNWF0VTHe/zHxUjhqxTxivGahkg9oqUagTBfWdhBPuFVZtbkAXmt4RYu7Qg0EcOeH+UBfurNSNKDKqeJ4nl+Jq6OJS9i1ELAkk0xos9QLxA9ADG/v8p9F9Nsy38z+M8gEi/nTVPqYWTjuuSDqGC09LzSdVo9YVKP1CRCYn4RKOts4q0oN9eQ5WigT8uHUbFOMryAxQY9qQkX8ouHX2VULxiIYALnhMQRMAPolUz52ekTgwQKq+QV/biG5X6ZErEcpLRbsIKT9rCNunKs3JP6VDZfqatKoyUqe6GLHnmZ0RaV8ed6PHMCKd4wSK4TsVVljOraUlIL6FYii/mKnCZsKvR4o8rHkKVmgtJn8lclGCOxxRrw7slZ/tqHnAJt8q9ux19WZAj1VnMKsa76MvasLCMTsMRpLVMbCgtU+NFytl2kTorR8de6iWoM5vc0aOnX3uL66y5K52cMc9aYGmHT1m0wNeWMfKSTYb8I60Bd1LS57GNXJxEuDFDzmkg7OUS6nA81mrZTRZHDXcCihD6BP3w4GhQFk68LW8dyNmhtARQROASx6jnEln2RoI2ob7BtvHW3KqDfemm8YezqZIRf00VyjpbxNIhoiXeTipp8e4Ib/UqWW+6PdTxVTndESBY3NtEE0XRfodrCcnliH85ETRngjBW7xEkFgPep5IXPQhreuKXzJFEDqky5IZ/cil2Q==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: sonarqube-secrets
+      namespace: sonarqube
+    type: Opaque
