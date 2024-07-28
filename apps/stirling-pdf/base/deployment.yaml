@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stirling-pdf
+  namespace: stirling-pdf
+  labels:
+    app.kubernetes.io/name: stirling-pdf
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: stirling-pdf
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: stirling-pdf
+    spec:
+      containers:
+        - name: stirling-pdf
+          image: frooodle/s-pdf:0.26.1
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: DOCKER_ENABLE_SECURITY
+              value: "true"
+          ports:
+            - protocol: TCP
+              containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: s-pdf-tessdata
+              mountPath: /usr/share/tesseract-ocr/5/tessdata
+            - name: s-pdf-configs
+              mountPath: /configs
+            - name: s-pdf-custom-files
+              mountPath: /customFiles
+            - name: s-pdf-logs
+              mountPath: /logs
+      volumes:
+        - name: s-pdf-tessdata
+          hostPath:
+            path: /mnt/nfs/AppData/stirling-pdf/tessdata
+            type: Directory
+        - name: s-pdf-configs
+          hostPath:
+            path: /mnt/nfs/AppData/stirling-pdf/configs
+            type: Directory
+        - name: s-pdf-custom-files
+          hostPath:
+            path: /mnt/nfs/AppData/stirling-pdf/customFiles
+            type: Directory
+        - name: s-pdf-logs
+          hostPath:
+            path: /mnt/nfs/AppData/stirling-pdf/logs
+            type: Directory
+
