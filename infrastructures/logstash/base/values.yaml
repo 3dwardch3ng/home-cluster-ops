@@ -5,13 +5,13 @@ output: ""
 existingConfiguration: "logstash-pipelines"
 enableMultiplePipelines: true
 extraVolumes:
-  - name: logstash-config
+  - name: logstash-config-http
     hostPath:
-      path: /mnt/nfs/AppData/logstash/config
-      type: Directory
+      path: /mnt/nfs/AppData/logstash/config/http.conf
+      type: File
 extraVolumeMounts:
-  - name: logstash-config
-    mountPath: /bitnami/logstash/config
+  - name: logstash-config-http
+    mountPath: /bitnami/logstash/config/http.conf
 containerPorts:
   - name: http
     containerPort: 8080
