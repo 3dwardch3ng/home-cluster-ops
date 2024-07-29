@@ -9,9 +9,15 @@ extraVolumes:
     hostPath:
       path: /mnt/nfs/AppData/logstash/config
       type: Directory
+  - name: pipelines
+    hostPath:
+      path: /mnt/nfs/AppData/logstash/pipeline
+      type: Directory
 extraVolumeMounts:
   - name: configurations
     mountPath: /bitnami/logstash/config
+  - name: pipelines
+    mountPath: /bitnami/logstash/pipeline
 containerPorts:
   - name: http
     containerPort: 8080
