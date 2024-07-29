@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: logstash-data-pvc
-  namespace: logstash
+  namespace: argocd
   labels:
     name: logstash-data-pvc
 spec:
