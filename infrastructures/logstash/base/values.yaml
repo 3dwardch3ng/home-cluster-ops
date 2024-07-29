@@ -25,6 +25,9 @@ containerPorts:
   - name: syslog-tcp
     containerPort: 1514
     protocol: TCP
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
 service:
   type: LoadBalancer
   ports:
