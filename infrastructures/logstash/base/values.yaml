@@ -2,16 +2,16 @@ namespaceOverride: logstash
 clusterDomain: logstash.logstash.svc.cluster.local
 input: ""
 output: ""
-existingConfiguration: "logstash-pipelines"
+existingConfiguration: ""
 enableMultiplePipelines: true
 extraVolumes:
-  - name: logstash-config-http
+  - name: configurations
     hostPath:
-      path: /mnt/nfs/AppData/logstash/config/http.conf
-      type: File
+      path: /mnt/nfs/AppData/logstash/config
+      type: Directory
 extraVolumeMounts:
-  - name: logstash-config-http
-    mountPath: /bitnami/logstash/config/http.conf
+  - name: configurations
+    mountPath: /bitnami/logstash/config
 containerPorts:
   - name: http
     containerPort: 8080
