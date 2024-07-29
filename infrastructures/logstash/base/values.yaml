@@ -8,7 +8,7 @@ extraVolumes:
   - name: logstash-config
     hostPath:
       path: /mnt/nfs/AppData/logstash/config
-      type: logstash-config
+      type: Directory
 extraVolumeMounts:
   - name: logstash-config
     mountPath: /bitnami/logstash/config
