@@ -1,5 +1,4 @@
 clusterDomain: logstash.logstash.svc.cluster.local
-diagnosticMode: true
 input: ""
 output: ""
 existingConfiguration: "logstash-pipelines"
