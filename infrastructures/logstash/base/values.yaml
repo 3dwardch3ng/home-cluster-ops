@@ -9,12 +9,12 @@ extraVolumes:
   - name: logstash-config-http
     hostPath:
       path: /mnt/nfs/AppData/logstash/config/http.conf
-      type: File
+      subPath: http.conf
       readOnly: true
   - name: logstash-config-syslog
     hostPath:
       path: /mnt/nfs/AppData/logstash/config/syslog.conf
-      type: File
+      subPath: syslog.conf
       readOnly: true
 extraVolumeMounts:
   - name: logstash-config-http
