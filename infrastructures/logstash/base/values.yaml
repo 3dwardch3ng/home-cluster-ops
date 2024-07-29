@@ -17,9 +17,11 @@ extraVolumes:
 extraVolumeMounts:
   - name: logstash-config-http
     mountPath: /bitnami/logstash/config/http.conf
+    subPath: http.conf
     readOnly: true
   - name: logstash-config-syslog
     mountPath: /bitnami/logstash/config/syslog.conf
+    subPath: syslog.conf
     readOnly: true
 containerPorts:
   - name: http
