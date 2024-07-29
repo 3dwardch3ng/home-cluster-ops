@@ -1,0 +1,50 @@
+clusterDomain: logstash.logstash.svc.cluster.local
+diagnosticMode: true
+input: ""
+output: ""
+existingConfiguration: "logstash-pipelines"
+enableMultiplePipelines: true
+extraVolumes:
+  - name: logstash-pipeline-configs
+    hostPath:
+      path: /mnt/nfs/AppData/logstash/config
+      type: Directory
+extraVolumeMounts:
+  - name: logstash-pipeline-configs
+    mountPath: /opt/bitnami/logstash/config/
+containerPorts:
+  - name: http
+    containerPort: 8080
+    protocol: TCP
+  - name: monitoring
+    containerPort: 9600
+    protocol: TCP
+  - name: syslog-udp
+    containerPort: 1514
+    protocol: UDP
+  - name: syslog-tcp
+    containerPort: 1514
+    protocol: TCP
+service:
+  type: LoadBalancer
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      protocol: TCP
+    - name: monitoring
+      port: 9600
+      targetPort: monitoring
+      protocol: TCP
+    - name: syslog-udp
+      port: 1514
+      targetPort: syslog-udp
+      protocol: UDP
+    - name: syslog-tcp
+      port: 1514
+      targetPort: syslog-tcp
+      protocol: TCP
+persistence:
+  enabled: true
+  existingClaim: logstash-data-pvc
+  size: 16Gi
