@@ -17,7 +17,7 @@ extraVolumeMounts:
   - name: configurations
     mountPath: /bitnami/logstash/config
   - name: pipelines
-    mountPath: /opt/bitnami/logstash/pipeline
+    mountPath: /bitnami/logstash/pipeline
 containerPorts:
   - name: http
     containerPort: 8080
