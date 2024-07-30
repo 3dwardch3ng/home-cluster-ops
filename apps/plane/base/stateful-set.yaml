@@ -22,23 +22,11 @@ spec:
           tty: true
           volumeMounts:
             - mountPath: /data
-              name: pvc-plane-redis-vol
-              subPath: ''
+              name: plane-redis-data
+      volumes:
+        - name: plane-redis-data
+          persistentVolumeClaim:
+            claimName: plane-redis-pvc
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
-  volumeClaimTemplates:
-    - apiVersion: v1
-      kind: PersistentVolumeClaim
-      metadata:
-        creationTimestamp: null
-        namespace: plane
-        name: pvc-plane-redis-vol
-      spec:
-        accessModes:
-          - ReadWriteOnce
-        resources:
-          requests:
-            storage: "1Gi"
-        storageClassName: longhorn
-        volumeMode: Filesystem
 ---
