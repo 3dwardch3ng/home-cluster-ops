@@ -67,3 +67,19 @@ spec:
   selector:
     app.name: plane-web
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: plane
+  name: plane-redis
+  labels:
+    app.name: plane-redis
+spec:
+  clusterIP: None
+  ports:
+    - name: redis-6379
+      port: 6379
+      protocol: TCP
+      targetPort: 6379
+  selector:
+    app.name: plane-redis
