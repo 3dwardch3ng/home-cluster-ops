@@ -1,15 +1,24 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: plane-doc-store-secrets
   namespace: plane
-type: Opaque
-stringData:
-  MINIO_ROOT_PASSWORD: "XVHXyKiFk997QvhxRkyF"
-  AWS_ACCESS_KEY_ID: "5O8DvpKi6DGf7IjjoD3I"
-  AWS_SECRET_ACCESS_KEY: "f7vptIeYy3EJDUzqOFMmGJ73IsfHcA9MPZs3RELH"
+spec:
+  encryptedData:
+    AWS_ACCESS_KEY_ID: AgBStbhakP/fEmALklALSl+uKJbEPBFvELNDvpEmx91k0OBikgvKRPgwNy5kTYAFFHeUt7U3V6Uo8S8OkTtlxSeBD6DKmtdHJwMU0VGbRnOpK48Ju5GLfIGdpMPhQ9djdA8XY4lezkbpiJBaHwu274vYi4eD1kAl21RS73FfpL52Xu8VCgap5X9VG4E1M5BF4B5/EBTqZaIgSjYwNk1nsCc3Qva39DiLEHluHnHR0ByMohjpHv2hbXYy6x9ECezNL1MUzT77PDEfVQs04o0RNS6pLG9tggl6hzzlvHlDA0MsknkGa1Iboi0RPGjFAk0O9yEhrbzqDSQEVn5KqEuglErduF0SB73I5B9lvRQ4ORWzrPKkDhgAqERo0LJY5FmaIFholiMd6k1EeDgX9l8hYtm0rddMlTb8cxjfivrSYwg99auv1S751Hwa0U9HKE7eb0ZVwGm1kAnA/Y2Ki/JeYLaplExMwyYwlacv5oZx+7wsvEFMCaSDP9O0M/Qu248Pc7rslsCtAA79amIhXoTzIwcrwcFE0KOnYFd0Rx7hNb3NJ3IHVwGIxiYZZgWlvKftDVH8MrZW3/+iWixJpy8dN2agZPp9zLzOSuvKm2c7SAcNtAvcJpIjA0FP1NwolPuwczSux3SRhuXDo/HgiD0h+M5hNlGnKM6b7THq6y1vRh2XUDyOT7Tcj3hCN3b0x9scnUQC8p+z3wHf14HFh7GQdWj2mKkn8g==
+    AWS_SECRET_ACCESS_KEY: AgAsW6ipYue6DmLH4aZsyvoKnD2JdLnsk/vvemycoK8Y1RwVPQLX6vcvG0F020814qingItLqpevzFj5hsd9uRLN0bYAxU1xlVLGV3ySt3lA/88twkBXMFwWi7B+HP9VxHLGD6pe7jlDLdxf9tUIV9pBOLJVr+nfXxzIuWO59rMQBOf6HA9wRtTqeWixdi3gyDUksXx+N7v2OPSuHYQ9gh/SfOyLyI0mavGLWWkzL5VdyUup99clWCCDJaLoFCXuWLj95uh6JGCQBBuyEBnz/y1/7wLPchcJnXsxU6oWFDXW9HwWgtikT94iTDqkvnEthIwlr55xIQbmDk6NaGXgK9taUzuPsx9DzP4AHSyMvlo7uP8Z74XdV0ctfLLZmtG/kUSQLrqEYDAjzUZyZBHMdS+qzp5hwxpIdDLiX54J9KZ7XOEuxvbyUPTMLrUu45VCni+MVPNzWj2bFKLonvFkxjup2cD8zJYyi+kb+6ANvy4umN64zVN6zPoAFvi0HTxq/Oqakkzu3iLlORscIhkFkplRXFWj6QIlKfMcsdxYPyHrCeuhBsPcXKveHkv/aRNDwbJvl4kCRYmqii1Yq6gClGKhbxCmvZQw8XR1LP5nUIBfpWiuaObY3qEW2e5/ac+H0YyUGp7DlGSvx650SNcMYgKLpqSjAlOb+YdUidKythJaEgwURvekU7hFpjhE4bA4X8KfqR1gaBP6wqRjFEMI+picWDvGUlxF/tt+/CEv5Qjol84cDkGqejMW
+    MINIO_ROOT_PASSWORD: AgCGsjeZalomydWLfqfYyrgQpQafjIZYh3TdxITYboyy3T/c6qMFHIo/TDR2ifHJsGYKUrmffoAb8zu/QxvR4lX61M3E3TYxA5Lsd4/y0rJ0ckQjQvBv8bA8hpQ0vtlpkvcH3yrYGfrSOZzrzZV3OlAlqb/wp8T3MX9UCBeiVJZBQQwA3dEG5xWXsGqmm52Ezg2plmzNDyZ9R7c18zGHNzXFaAW58Gbo5RxBSijUoEFs7v5jy8ZD7LiHbGCtSE9Gsmr+yW93LNh+09x+4PpC74qJFNyDQC7lir0MbvdyXZm83wONuWWB/gZmfASqR6VgT7ZATDO/cTgmSBJ3+zoDqu6qo8aOyt/P/7DlKQw6iEy8WKVCXKTzhiydpmC3bZkQSd/fhnL6Fxw9Ei/bZsQ5+2oUbHpPC4arctUszy2/+x3IRZLJrL9MsnFL0bBGRgBUL4AVcGTCTUQCt7ZlPROFVxwvvYtCDJEQzI4akenqES4wxlOYVUGKOKnEoS8UQ4RwnCzlxSh8nlY0srQnazLOGppg2YEHpvjaDOySVpUJ3pxXdy7W9zJYYJPhVDO26IchbgtRSl4/sHbsk+5ZD9aPRXf4DqA9ZB9Bzavr07zQxFSZwZxjG/Fgt4ww+8WS92XzLGf3AYzMROnaYYArjoHNDmd7iPqk0CIz3GXtURYQN2VU6rAW2rcHLOSm3mF2dXQXwsWrrItlGno5ME9jxnKP/nYO+C9KYA==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: plane-doc-store-secrets
+      namespace: plane
+    type: Opaque

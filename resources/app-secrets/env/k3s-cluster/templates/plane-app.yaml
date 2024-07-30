@@ -1,14 +1,23 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: plane-app-secrets
   namespace: plane
-type: Opaque
-stringData:
-  SECRET_KEY: "jvxSWYiseYAAStxb5D5EPTCTuLiPAc7CKRJ2iCVRJxCUrR5AQB"
-  DATABASE_URL: "postgresql://plane:a@ZAfKma&CAfJQjUePXJf8U^@postgresql.argocd.svc.cluster.local/plane"
+spec:
+  encryptedData:
+    DATABASE_URL: AgBtQ5he7Q8FSo+GyEV+KK11PYdICqrRv5lYnOAVMnngr9gBMA92toE6Xhc3LZfMR25ePZfCGx4UY6z03SE3kaxlC/1+OnsEv2J+/SL/aGHlJoSDZgW7iKDRUsLa4oVgN/ufMNPRSUldyNnUpHo1ZPIo9zJKlckXVHjC+hf8g75GlAGYo0wElolhD/06tsd4Bc188ccyVzZlQXMunri/XqXPdrwuzsPkgsWQHtgJL9RLX/Ew/zvuGrjWRoHHzxlXchu2j+jfhU+aR/kyUnxOtjsjorAhz1acivYeZlFEFhQd3wpFCtwHw2JS4SYfmTBr5UrGOoYbjcXkzuHYUq7uFqUbXG7+PgKlE9BvL3mz0h84MK1tCkWTf/OFFd3o3uMwXnBpDAAnvinV6AUBGuF1XAYVykO3iFR1+kU5c641nkFnJ4M8UI3QP6R9iUQpDmNLtUBvQJ2Wtm9k79IAkA+Wvpj1EiFdzZqdpXXjW8nyWix/PMeNqAD7NBgKpKEiQ0DZMtCVPSsQ0ImZZCHN3wYPar05OTj9cVC6RKogtR9FHqlZLikt78JQXcrl5neUCHjQLWNYOXsLQbzLissNJLt5yViF2a/prbR2Jbjg4seYc4qxb3IQDqeH/2lV0VSJZrcbpC3kL3jQdIVe/jhK5UU3m5KH9e4HTWlNS9S7sP/FTP3f6PLwWVEpnyaR8JS1RQIBFQUD6vCQMTVqiYirZ+3LvKBYepRwBGrNF8yhEzC5DpFml/fpHnsSFogNXOGhqZtEUCJFI1xlfAQNsPL7bXr5Pbmio5AFpnqrNL7yD4FfBd4/5KGY/lHi
+    SECRET_KEY: AgBALDiQZIzoLufpAjYDaw2Ki3x4TAep0q0zQmLnhWMpsMerPG6q8f18XWLIYhvQ+oFcsg3RLayornryPIu7+knPmccfXGrJlxipqy2n17nh5k6dXg29LNxjWdS8MhechiN65mI1IqpV2cMTHjOUuv1YsT4x/a66biRXASjj8baDzs9EIeEv/2XfWbYk3xCVsOEdfaBomR5oByY5d9LHABzPllZxWxDvlaSm7+AkJsVaOywZHRp0tQNONGT1NCUMGvd5eFSzY3pmV5Xdv8/UFQaxDhC4ffiLXCtI/5cWctpq1/ez9yDThH0l+7bsimkKax6hpHJIwNPuSjluJ33HfvmeR3+59fjWRyP4l2JjCW+mWJEpjOWaCm0lpJLdXAWPCp+GVH+5D5RbYbYbTsgOssYxFgfPtTu77YSHc3CFv7E5BG/0MCVd2OcmEc8fMYWma38oi6FDToTRcJk07p809DJmLfJAOb9m3haSeWDNS/YpKCfQZtWbHO6oF8RYlkBjVy0YleE+nhJWXkiuKp6rF0TLvvk/Nb9u5O1bfpATaPQfqbsMVTpAVJvM+qZFisuzsK6phcXTezhbwzwmptFGyFyaqEUwYSMKLT0dMGlAU7tImmeCvs2/OJuUjCEVQZirO5HTSQYjUD/1t9FwuRXdfG0hcaQwgYl32Eo5Y28Q+A9ZOpeNbFW5H7/X3Kgre5T18NvYdB3Adm1gRd+Gios4d90XGk8MD0hhSbau93/KCNeBAyXPzuVUTDQ+T7nWQLkX3zhr7Q==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: plane-app-secrets
+      namespace: plane
+    type: Opaque
