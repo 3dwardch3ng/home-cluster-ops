@@ -7,7 +7,6 @@ metadata:
   labels:
     app.name: plane-admin
 spec:
-  clusterIP: None
   ports:
     - name: admin-3000
       port: 3000
@@ -24,7 +23,6 @@ metadata:
   labels:
     app.name: plane-api
 spec:
-  clusterIP: None
   ports:
     - name: api-8000
       port: 8000
@@ -41,7 +39,6 @@ metadata:
   labels:
     app.name: plane-space
 spec:
-  clusterIP: None
   ports:
     - name: space-3000
       port: 3000
@@ -58,7 +55,6 @@ metadata:
   labels:
     app.name: plane-web
 spec:
-  clusterIP: None
   ports:
     - name: web-3000
       port: 3000
@@ -75,7 +71,6 @@ metadata:
   labels:
     app.name: plane-redis
 spec:
-  clusterIP: None
   ports:
     - name: redis-6379
       port: 6379
