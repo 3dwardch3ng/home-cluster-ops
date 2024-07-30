@@ -18,7 +18,7 @@ spec:
       containers:
         - name: plane-admin
           imagePullPolicy: Always
-          image: makeplane/plane-frontend:stable
+          image: makeplane/plane-admin:stable
           stdin: true
           tty: true
           resources:
