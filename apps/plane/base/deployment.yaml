@@ -35,6 +35,8 @@ spec:
             - admin
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -91,6 +93,8 @@ spec:
             timeoutSeconds: 1
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -138,6 +142,8 @@ spec:
                 optional: false
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -175,6 +181,8 @@ spec:
             - space
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -212,6 +220,8 @@ spec:
             - web
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -259,5 +269,6 @@ spec:
                 optional: false
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
-
+      nodeSelector:
+        kubernetes.io/arch: arm64
 ---
