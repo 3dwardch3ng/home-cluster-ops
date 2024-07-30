@@ -3,7 +3,7 @@ apiVersion: batch/v1
 kind: Job
 metadata:
   namespace: plane
-  name: plane-api-migrate-{{ .Release.Revision }}
+  name: plane-api-migrate
 spec:
   backoffLimit: 3
   template:
