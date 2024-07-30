@@ -31,6 +31,8 @@ containerPorts:
   - name: syslog-tcp
     containerPort: 1514
     protocol: TCP
+podSecurityContext:
+  fsGroup: 1000
 containerSecurityContext:
   runAsUser: 1000
   runAsGroup: 1000
