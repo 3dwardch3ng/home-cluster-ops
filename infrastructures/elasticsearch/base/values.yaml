@@ -1,0 +1,55 @@
+namespaceOverride: elasticsearch
+clusterDomain: elasticsearch.cluster.edward.sydney
+clusterName: k3s-cluster
+security:
+  enabled: true
+  existingSecret: elasticsearch-secrets
+service:
+  type: LoadBalancer
+ingress:
+  enabled: true
+  hostname: elasticsearch.cluster.edward.sydney
+  ingressClassName: nginx
+master:
+  podSecurityContext:
+    fsGroup: 1000
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+  persistent:
+    existingClaim: ""
+    existingVolume: ""
+    size: 32Gi
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
+data:
+  podSecurityContext:
+    fsGroup: 1000
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+  persistent:
+    existingClaim: ""
+    existingVolume: ""
+    size: 32Gi
+  persistentVolumeClaimRetentionPolicy:
+    enabled: true
+coordinating:
+  podSecurityContext:
+    fsGroup: 1000
+  containerSecurityContext:
+    runAsUser: 1000
+    runAsGroup: 1000
+injest:
+  podSecurityContext:
+      fsGroup: 1000
+  containerSecurityContext:
+      runAsUser: 1000
+      runAsGroup: 1000
+  service:
+    type: LoadBalancer
+    ports:
+      restAPI: 19200
+      transport: 19300
+    ingress:
+

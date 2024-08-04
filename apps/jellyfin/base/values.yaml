@@ -1,0 +1,148 @@
+persistence:
+  config:
+    enabled: true
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      volumeName: jellyfin-config
+      storageClassName: local-path
+  data:
+    enabled: true
+    volumeClaimSpec:
+      accessModes:
+        - ReadWriteOnce
+      volumeName: jellyfin-data
+      storageClassName: local-path
+jellyfin:
+  mediaVolumes:
+    - name: movies
+      readOnly: false
+      volumeSpec:
+        storageClassName: local-path
+        volumeMode: Filesystem
+        capacity:
+          storage: 256Gi
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+        claimRef:
+          apiVersion: v1
+          kind: PersistentVolumeClaim
+          name: jellyfin-mediavol-movies
+          namespace: jellyfin
+        hostPath:
+          path: "/mnt/nfs/AppData/jellyfin/media/movies"
+          type: "Directory"
+    - name: series
+      readOnly: false
+      volumeSpec:
+        storageClassName: local-path
+        volumeMode: Filesystem
+        capacity:
+          storage: 256Gi
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+        claimRef:
+          apiVersion: v1
+          kind: PersistentVolumeClaim
+          name: jellyfin-mediavol-series
+          namespace: jellyfin
+        hostPath:
+          path: "/mnt/nfs/AppData/jellyfin/media/series"
+          type: "Directory"
+    - name: music-videos
+      readOnly: false
+      volumeSpec:
+        storageClassName: local-path
+        volumeMode: Filesystem
+        capacity:
+          storage: 128Gi
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+        claimRef:
+          apiVersion: v1
+          kind: PersistentVolumeClaim
+          name: jellyfin-mediavol-music-videos
+          namespace: jellyfin
+        hostPath:
+          path: "/mnt/nfs/AppData/jellyfin/media/music-videos"
+          type: "Directory"
+    - name: short-videos
+      readOnly: false
+      volumeSpec:
+        storageClassName: local-path
+        volumeMode: Filesystem
+        capacity:
+          storage: 32Gi
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+        claimRef:
+          apiVersion: v1
+          kind: PersistentVolumeClaim
+          name: jellyfin-mediavol-short-videos
+          namespace: jellyfin
+        hostPath:
+          path: "/mnt/nfs/AppData/jellyfin/media/short-videos"
+          type: "Directory"
+    - name: gv
+      readOnly: false
+      volumeSpec:
+        storageClassName: local-path
+        volumeMode: Filesystem
+        capacity:
+          storage: 64Gi
+        accessModes:
+          - ReadWriteOnce
+        persistentVolumeReclaimPolicy: Retain
+        nodeAffinity:
+          required:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+        claimRef:
+          apiVersion: v1
+          kind: PersistentVolumeClaim
+          name: jellyfin-mediavol-gv
+          namespace: jellyfin
+        hostPath:
+          path: "/mnt/nfs/AppData/jellyfin/media/gv"
+          type: "Directory"
+  persistentTranscodes: true
