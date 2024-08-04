@@ -20,19 +20,6 @@ persistence:
         - ReadWriteOnce
       volumeName: jellyfin-data
       storageClassName: local-path
-ingress:
-  enabled: true
-  ingressClassName: nginx
-  hostname: "jellyfin.cluster.edward.sydney"
-  tls: false
-  extraHosts:
-    - name: "jellyfin.cluster.local"
-  extraPaths:
-    - path: /*
-      pathType: ImplementationSpecific
-      backend:
-        serviceName: jellyfin
-        servicePort: 8096
 jellyfin:
   mediaVolumes:
     - name: movies
