@@ -26,11 +26,13 @@ ingress:
   hostname: "jellyfin.cluster.edward.sydney"
   tls: false
   extraHosts:
-    - jellyfin.cluster.local
+    - name: jellyfin.cluster.local
+      path: "/"
   extraPaths:
-    - "/"
-  extraTls:
-    - false
+    - path: /*
+      backend:
+        serviceName: jellyfin
+        servicePort: 8096
 jellyfin:
   mediaVolumes:
     - name: movies
