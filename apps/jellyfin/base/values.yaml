@@ -26,10 +26,10 @@ ingress:
   hostname: "jellyfin.cluster.edward.sydney"
   tls: false
   extraHosts:
-    - name: jellyfin.cluster.local
-      path: "/"
+    - "jellyfin.cluster.local"
   extraPaths:
     - path: /*
+      pathType: ImplementationSpecific
       backend:
         serviceName: jellyfin
         servicePort: 8096
