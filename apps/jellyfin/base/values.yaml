@@ -1,3 +1,10 @@
+podSecurityContext:
+  runAsGroup: 1000
+  runAsUser: 1000
+  fsGroup: 1000
+containerSecurityContext:
+  runAsGroup: 1000
+  runAsUser: 1000
 persistence:
   config:
     enabled: true
@@ -13,6 +20,17 @@ persistence:
         - ReadWriteOnce
       volumeName: jellyfin-data
       storageClassName: local-path
+ingress:
+  enabled: true
+  ingressClassName: nginx
+  hostname: "jellyfin.cluster.edward.sydney"
+  tls: false
+  extraHosts:
+    - jellyfin.cluster.local
+  extraPaths:
+    - "/"
+  extraTls:
+    - false
 jellyfin:
   mediaVolumes:
     - name: movies
