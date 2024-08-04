@@ -26,7 +26,7 @@ ingress:
   hostname: "jellyfin.cluster.edward.sydney"
   tls: false
   extraHosts:
-    - "jellyfin.cluster.local"
+    - name: "jellyfin.cluster.local"
   extraPaths:
     - path: /*
       pathType: ImplementationSpecific
