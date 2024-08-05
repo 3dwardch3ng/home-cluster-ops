@@ -1,8 +1,8 @@
 {
   "appName": "netdata",
   "userGivenName": "netdata",
-  "namespace": "netdata",
-  "destNamespace": "netdata",
+  "namespace": "argocd",
+  "destNamespace": "argocd",
   "destServer": "https://kubernetes.default.svc",
   "srcPath": "infrastructures/netdata/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
