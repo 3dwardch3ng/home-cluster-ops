@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: netdata-parent-database-pv
+  namespace: argocd
+  labels:
+    type: local
+spec:
+  storageClassName: local-path
+  volumeMode: Filesystem
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  local:
+    path: "/mnt/nfs/AppData/netdata/parent/database"
+  claimRef:
+    apiVersion: v1
+    kind: PersistentVolumeClaim
+    name: netdata-parent-database
+    namespace: argocd
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: kubernetes.io/os
+              operator: In
+              values:
+                - linux
