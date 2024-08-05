@@ -13,24 +13,36 @@ extraVolumeMounts:
     mountPath: /tv
   - name: plex-movie
     mountPath: /movie
+  - name: plex-short-video
+    mountPath: /short-video
   - name: plex-music
     mountPath: /music
+  - name: plex-music-video
+    mountPath: /music-video
   - name: plex-gv
     mountPath: /gv
 extraVolumes:
   - name: plex-tv
     hostPath:
-      path: /mnt/nfs/AppData/plex/tv
+      path: /mnt/nfs/media/tv
       type: Directory
   - name: plex-movie
     hostPath:
-      path: /mnt/nfs/AppData/plex/movie
+      path: /mnt/nfs/media/movie
+      type: Directory
+  - name: plex-short-video
+    hostPath:
+      path: /mnt/nfs/media/short-video
       type: Directory
   - name: plex-music
     hostPath:
-      path: /mnt/nfs/AppData/plex/music
+      path: /mnt/nfs/media/music
+      type: Directory
+  - name: plex-music-video
+    hostPath:
+      path: /mnt/nfs/media/music-video
       type: Directory
   - name: plex-gv
     hostPath:
-      path: /mnt/nfs/AppData/plex/gv
+      path: /mnt/nfs/media/gv
       type: Directory

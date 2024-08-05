@@ -46,7 +46,7 @@ jellyfin:
           name: jellyfin-mediavol-movies
           namespace: jellyfin
         hostPath:
-          path: "/mnt/nfs/AppData/jellyfin/media/movies"
+          path: "/mnt/nfs/media/movie"
           type: "Directory"
     - name: series
       readOnly: false
@@ -72,7 +72,7 @@ jellyfin:
           name: jellyfin-mediavol-series
           namespace: jellyfin
         hostPath:
-          path: "/mnt/nfs/AppData/jellyfin/media/series"
+          path: "/mnt/nfs/media/tv"
           type: "Directory"
     - name: music-videos
       readOnly: false
@@ -98,7 +98,7 @@ jellyfin:
           name: jellyfin-mediavol-music-videos
           namespace: jellyfin
         hostPath:
-          path: "/mnt/nfs/AppData/jellyfin/media/music-videos"
+          path: "/mnt/nfs/media/music-video"
           type: "Directory"
     - name: short-videos
       readOnly: false
@@ -124,7 +124,7 @@ jellyfin:
           name: jellyfin-mediavol-short-videos
           namespace: jellyfin
         hostPath:
-          path: "/mnt/nfs/AppData/jellyfin/media/short-videos"
+          path: "/mnt/nfs/media/short-video"
           type: "Directory"
     - name: gv
       readOnly: false
@@ -150,6 +150,6 @@ jellyfin:
           name: jellyfin-mediavol-gv
           namespace: jellyfin
         hostPath:
-          path: "/mnt/nfs/AppData/jellyfin/media/gv"
+          path: "/mnt/nfs/media/gv"
           type: "Directory"
   persistentTranscodes: true
