@@ -20,8 +20,6 @@ spec:
       containers:
         - name: opensign-server
           image: edeedeeed/opensign-server:sha-d3e6107
-          command:
-            - "/usr/src/app/node_modules/.bin/nodemon server.js"
           env:
             - name: NODE_ENV
               value: development
