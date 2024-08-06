@@ -20,8 +20,6 @@ spec:
       containers:
         - name: opensign-client
           image: edeedeeed/opensign-client:sha-d3e6107
-          command:
-            - "npm start"
           envFrom:
             - configMapRef:
                 name: opensign-env
