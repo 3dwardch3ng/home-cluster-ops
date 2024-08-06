@@ -1,0 +1,12 @@
+{
+  "appName": "opensign",
+  "userGivenName": "opensign",
+  "namespace": "opensign",
+  "destNamespace": "opensign",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/opensign/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

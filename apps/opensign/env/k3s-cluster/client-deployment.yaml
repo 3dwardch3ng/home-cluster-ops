@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: opensign-client
+  namespace: opensign
+  labels:
+    app.kubernetes.io/name: opensign-client
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: opensign-client
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: opensign-client
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - name: opensign-client
+          image: edeedeeed/opensign-client:sha-d3e6107
+          command:
+            - "npm start"
+          envFrom:
+            - configMapRef:
+                name: opensign-env
+                optional: false
+            - secretRef:
+                name: opensign-secrets
+                optional: false
+          ports:
+            - protocol: TCP
+              containerPort: 3000
+              name: web
+          volumeMounts:
+            - name: client-app
+              mountPath: /usr/app
+      volumes:
+        - name: client-app
+          hostPath:
+            path: /mnt/nfs/AppData/opensign/client
+            type: Directory

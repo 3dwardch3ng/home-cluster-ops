@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: opensign-mongo
+  namespace: opensign
+  labels:
+    app.kubernetes.io/name: opensign-mongo
+spec:
+  selector:
+    app.kubernetes.io/name: opensign-mongo
+  type: ClusterIP
+  internalTrafficPolicy: Cluster
+  ports:
+    - protocol: TCP
+      port: 27018
+      targetPort: 27017
+      name: db
