@@ -33,11 +33,3 @@ spec:
             - protocol: TCP
               containerPort: 3000
               name: web
-          volumeMounts:
-            - name: client-app
-              mountPath: /usr/app
-      volumes:
-        - name: client-app
-          hostPath:
-            path: /mnt/nfs/AppData/opensign/client
-            type: Directory
