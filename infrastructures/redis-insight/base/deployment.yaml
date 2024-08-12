@@ -19,7 +19,7 @@ spec:
         runAsGroup: 1000
       containers:
         - name: redis-insight
-          image: redis/redisinsight:2.52
+          image: redis/redisinsight:2.54
           securityContext:
             allowPrivilegeEscalation: false
           ports:
