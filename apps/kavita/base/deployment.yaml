@@ -20,7 +20,7 @@ spec:
         app.kubernetes.io/instance: kavita
     spec:
       containers:
-        - image: jvmilazz0/kavita:0.8.1
+        - image: jvmilazz0/kavita:0.8.2
           imagePullPolicy: IfNotPresent
           name: kavita
           ports:
