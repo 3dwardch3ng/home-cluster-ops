@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: mend-renovate-ce
     repo: https://mend.github.io/renovate-ce-ee
-    version: 7.6.0
+    version: 7.6.4
     releaseName: mend-renovate-ce
     valuesFile: values.yaml
