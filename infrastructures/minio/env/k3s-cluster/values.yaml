@@ -1,5 +1,5 @@
 namespaceOverride: "minio"
-clusterDomain: minio.cluster.edward.sydney
+clusterDomain: cluster.edward.sydney
 auth:
   existingSecret: "minio-secrets"
   rootUserSecretKey: "root_user"

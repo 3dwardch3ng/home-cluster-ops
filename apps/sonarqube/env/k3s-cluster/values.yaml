@@ -1,7 +1,7 @@
 priorityClassName: system-cluster-critical
 podAntiAffinityPreset: ""
 namespaceOverride: "sonarqube"
-clusterDomain: sonarqube.cluster.edward.sydney
+clusterDomain: cluster.edward.sydney
 sonarqubeUsername: sonarqube
 existingSecret: "sonarqube-secrets"
 sonarqubeEmail: "me@edward.sydney"
