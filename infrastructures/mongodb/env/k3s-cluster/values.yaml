@@ -8,6 +8,8 @@ auth:
     - edward
     - anysync
   existingSecret: "mongodb-secrets"
+updateStrategy:
+  type: Recreate
 automountServiceAccountToken: true
 nodeSelector:
   kubernetes.io/arch: amd64

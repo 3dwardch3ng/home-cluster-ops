@@ -1,4 +1,6 @@
 namespaceOverride: "gitea"
+updateStrategy:
+  type: Recreate
 podAntiAffinityPreset: ""
 adminUsername: "gitea_admin"
 adminEmail: "edward@cheng.sydney"
