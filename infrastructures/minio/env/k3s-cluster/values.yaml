@@ -13,15 +13,6 @@ service:
   ports:
     api: 19000
     console: 19001
-ingress:
-  ingressClassName: "nginx"
-  hostname: "minio.cluster.edward.sydney"
-  extraHosts:
-    - name: "minio.cluster.local"
-      path: "/"
-apiIngress:
-  ingressClassName: "nginx"
-  hostname: "api.minio.cluster.edward.sydney"
 persistence:
   existingClaim: "minio-pvc"
 containerSecurityContext:
