@@ -23,13 +23,6 @@ service:
   ports:
     http: 8090
     elastic: 9091
-  nodePorts:
-    http: 30089
-    elastic: 30091
-ingress:
-  enabled: true
-  ingressClassName: "nginx"
-  hostname: "sonarqube.cluster.edward.sydney"
 persistence:
   enabled: true
   storageClass: local-path
