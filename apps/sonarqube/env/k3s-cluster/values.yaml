@@ -1,4 +1,6 @@
 priorityClassName: system-cluster-critical
+image:
+  debug: true
 podAntiAffinityPreset: ""
 namespaceOverride: "sonarqube"
 clusterDomain: cluster.edward.sydney

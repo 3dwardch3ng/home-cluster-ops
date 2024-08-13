@@ -1,4 +1,6 @@
 namespaceOverride: "minio"
+image:
+  debug: true
 clusterDomain: cluster.edward.sydney
 auth:
   existingSecret: "minio-secrets"
