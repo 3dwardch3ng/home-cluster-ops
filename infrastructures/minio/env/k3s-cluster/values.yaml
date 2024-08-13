@@ -9,18 +9,17 @@ auth:
 nodeSelector:
   kubernetes.io/hostname: k3s-cluster-node-2
 service:
+  type: LoadBalancer
   ports:
     api: 19000
     console: 19001
 ingress:
-  enabled: true
   ingressClassName: "nginx"
   hostname: "minio.cluster.edward.sydney"
   extraHosts:
     - name: "minio.cluster.local"
       path: "/"
 apiIngress:
-  enabled: true
   ingressClassName: "nginx"
   hostname: "api.minio.cluster.edward.sydney"
 persistence:
