@@ -3,10 +3,13 @@ kind: Service
 metadata:
   name: redis-insight
   namespace: redis
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
   labels:
     app.kubernetes.io/name: redis-insight
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 5540
       targetPort: 5540
