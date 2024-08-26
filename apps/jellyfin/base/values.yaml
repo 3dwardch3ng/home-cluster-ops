@@ -20,11 +20,6 @@ persistence:
         - ReadWriteOnce
       volumeName: jellyfin-data
       storageClassName: local-path
-service:
-  type: LoadBalancer
-  annotations:
-    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
-    metallb.universe.tf/allow-shared-ip: k3s-cluster
 jellyfin:
   mediaVolumes:
     - name: movies
