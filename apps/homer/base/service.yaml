@@ -3,12 +3,14 @@ kind: Service
 metadata:
   name: homer
   namespace: homer
+  annotations:
+      metallb.universe.tf/address-pool: k3s-cluster-ips
   labels:
     app.kubernetes.io/name: homer
 spec:
   selector:
     app.kubernetes.io/name: homer
-  type: ClusterIP
+  type: LoadBalancer
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
