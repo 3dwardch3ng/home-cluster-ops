@@ -23,6 +23,9 @@ service:
   ports:
     http: 8090
     elastic: 9091
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ips
+    metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
 persistence:
   enabled: true
   storageClass: local-path

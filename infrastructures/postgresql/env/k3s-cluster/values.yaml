@@ -1,16 +1,16 @@
 auth:
   username: edward
   database: edwarddb
-  existingSecret: "postgresql-secrets"
+  existingSecret: postgresql-secrets
   secretKeys:
     adminPasswordKey: postgres_password
     userPasswordKey: password
     replicationPasswordKey: replication_password
-architecture: "replication"
+architecture: replication
 replication:
-  synchronousCommit: "on"
+  synchronousCommit: on
   numSynchronousReplicas: 1
-  applicationName: "postgres_repl"
+  applicationName: postgres_repl
 primary:
   podSecurityContext:
     fsGroup: 1000
@@ -18,9 +18,12 @@ primary:
     runAsUser: 1000
     runAsGroup: 1000
   podLabels:
-    name: "postgresql-primary"
+    name: postgresql-primary
   service:
-    type: "LoadBalancer"
+    type: LoadBalancer
+    annotations:
+      metallb.universe.tf/address-pool: k3s-cluster-ips
+      metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
   persistence:
     existingClaim: postgresql-primary-pvc
     selector:
@@ -29,18 +32,21 @@ primary:
   persistentVolumeClaimRetentionPolicy:
     enabled: true
 readReplicas:
-  name: "replica"
+  name: replica
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
     runAsUser: 1000
     runAsGroup: 1000
   podLabels:
-    name: "postgresql-replica"
+    name: postgresql-replica
   service:
-    type: "LoadBalancer"
+    type: LoadBalancer
     ports:
       postgresql: 5433
+    annotations:
+      metallb.universe.tf/address-pool: k3s-cluster-ips
+      metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
   persistence:
     existingClaim: postgresql-replica-pvc
     selector:
