@@ -1,15 +1,14 @@
 image:
   tag: stable
-
+ingress:
+  enabled: false
 restarter:
   enabled: true
-
 parent:
   claiming:
     enabled: true
     token: HOJS7JMbEzKuDjbkJJv_Qp5369dyBGc0-qQ2DpKfWT22tiNWRZVH63bALjOv6A4bevsAJixzY1rIKO-1RvIr-NKGiYGpgfrMt1I5loXpU4CY7BgJp22jpK72kvRLwdM2rhNLcSQ
     rooms: 20334923-196a-477e-9a12-cfd5d02b24ec
-
 child:
   claiming:
     enabled: true
