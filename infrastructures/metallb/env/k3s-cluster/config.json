@@ -1,0 +1,12 @@
+{
+  "appName": "metallb",
+  "userGivenName": "metallb",
+  "namespace": "metallb",
+  "destNamespace": "metallb",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "infrastructures/metallb/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
