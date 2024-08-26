@@ -22,6 +22,9 @@ startupProbe:
   enabled: true
 service:
   type: LoadBalancer
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ips
+    metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
 persistence:
   existingClaim: "mongodb-pvc"
 persistentVolumeClaimRetentionPolicy:

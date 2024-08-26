@@ -22,6 +22,9 @@ cachePersistence:
 service:
   type: LoadBalancer
   port: 18899
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ips
+    metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
 ingress:
   enabled: true
   ingressClassName: nginx
