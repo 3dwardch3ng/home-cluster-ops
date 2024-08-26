@@ -18,5 +18,5 @@ coder:
     - name: coder-data
       mountPath: /config
   service:
-    type: NodePort
-    httpNodePort: 31180
+    type: LoadBalancer
+    httpNodePort: 8180
