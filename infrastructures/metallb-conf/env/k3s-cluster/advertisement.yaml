@@ -5,4 +5,4 @@ metadata:
   namespace: metallb-system
 spec:
   ipAddressPools:
-    - k3s-cluster-ips
+    - k3s-cluster-ip-pool

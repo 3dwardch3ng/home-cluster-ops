@@ -18,8 +18,8 @@ service:
     http: 10080
     ssh: 10022
   annotations:
-    metallb.universe.tf/address-pool: k3s-cluster-ips
-    metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
 ingress:
   enabled: true
   ingressClassName: "nginx"
