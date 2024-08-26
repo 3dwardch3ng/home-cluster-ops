@@ -3,11 +3,14 @@ kind: Service
 metadata:
   name: kavita
   namespace: kavita
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
   labels:
     app.kubernetes.io/name: kavita
     app.kubernetes.io/instance: kavita
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   ports:
     - port: 5000
       targetPort: 5000

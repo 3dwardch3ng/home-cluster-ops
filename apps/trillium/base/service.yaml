@@ -3,12 +3,15 @@ kind: Service
 metadata:
   name: trillium
   namespace: trillium
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
   labels:
     app.kubernetes.io/name: trillium
 spec:
   selector:
     app.kubernetes.io/name: trillium
-  type: ClusterIP
+  type: LoadBalancer
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
