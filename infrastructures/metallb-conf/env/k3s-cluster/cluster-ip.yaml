@@ -1,7 +1,7 @@
 apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
-  name: k3s-cluster
+  name: k3s-cluster-ips
   namespace: metallb-system
 spec:
   addresses:
