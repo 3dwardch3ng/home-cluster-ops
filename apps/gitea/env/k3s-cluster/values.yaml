@@ -21,7 +21,7 @@ service:
     metallb.universe.tf/address-pool: k3s-cluster-ip-pool
     metallb.universe.tf/allow-shared-ip: k3s-cluster
 ingress:
-  enabled: true
+  enabled: false
   ingressClassName: "nginx"
   hostname: "gitea.cluster.edward.sydney"
 serviceAccount:
