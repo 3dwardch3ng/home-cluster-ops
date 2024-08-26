@@ -14,8 +14,8 @@ service:
     api: 19000
     console: 19001
   annotations:
-    metallb.universe.tf/address-pool: k3s-cluster-ips
-    metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
 persistence:
   existingClaim: "minio-pvc"
 containerSecurityContext:

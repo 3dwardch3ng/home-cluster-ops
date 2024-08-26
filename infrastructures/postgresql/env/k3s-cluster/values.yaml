@@ -22,8 +22,8 @@ primary:
   service:
     type: LoadBalancer
     annotations:
-      metallb.universe.tf/address-pool: k3s-cluster-ips
-      metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
+      metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+      metallb.universe.tf/allow-shared-ip: k3s-cluster
   persistence:
     existingClaim: postgresql-primary-pvc
     selector:
@@ -45,8 +45,8 @@ readReplicas:
     ports:
       postgresql: 5433
     annotations:
-      metallb.universe.tf/address-pool: k3s-cluster-ips
-      metallb.universe.tf/allow-shared-ip: k3s-cluster-ips
+      metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+      metallb.universe.tf/allow-shared-ip: k3s-cluster
   persistence:
     existingClaim: postgresql-replica-pvc
     selector:
