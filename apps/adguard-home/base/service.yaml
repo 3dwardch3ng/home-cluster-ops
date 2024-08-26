@@ -3,12 +3,14 @@ kind: Service
 metadata:
   name: adguard-home
   namespace: adguard-home
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ips
   labels:
     app.kubernetes.io/name: adguard-home
 spec:
   selector:
     app.kubernetes.io/name: adguard-home
-  type: ClusterIP
+  type: LoadBalancer
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
