@@ -7,4 +7,3 @@ resources:
   - ./deployment.yaml
   - ./stateful-set.yaml
   - ./service.yaml
-#  - ./ingress.yaml

@@ -8,6 +8,12 @@ extraEnv:
   PLEX_UID: 1000
   PLEX_GID: 1000
   ALLOWED_NETWORKS: "0.0.0.0/0"
+service:
+  type: LoadBalancer
+  port: 32400
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
 extraVolumeMounts:
   - name: plex-tv
     mountPath: /tv
