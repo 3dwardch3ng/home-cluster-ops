@@ -8,10 +8,10 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: snippet-box
-  type: ClusterIP
+  type: LoadBalancer
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 5000
+      port: 5055
       targetPort: 5000
       name: snippet-box
