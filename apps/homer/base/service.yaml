@@ -4,7 +4,7 @@ metadata:
   name: homer
   namespace: homer
   annotations:
-      metallb.universe.tf/address-pool: k3s-cluster-ips
+    metallb.universe.tf/address-pool: k3s-cluster-ips
   labels:
     app.kubernetes.io/name: homer
 spec:
