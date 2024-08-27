@@ -9,3 +9,4 @@ resources:
   - ./deployment.yaml
   - ./service.yaml
   - ./examples/eventbus.yaml
+  - ./examples/event-source.yaml
