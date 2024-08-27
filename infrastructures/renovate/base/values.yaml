@@ -20,13 +20,10 @@ cachePersistence:
   size: 1Gi
   existingClaim: "renovate-pvc"
 service:
-  type: LoadBalancer
-  port: 18899
-  annotations:
-    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
-    metallb.universe.tf/allow-shared-ip: k3s-cluster
+  type: ClusterIP
+  port: 8899
 ingress:
-  enabled: false
+  enabled: true
   ingressClassName: nginx
   hosts:
     - renovate.cluster.edward.sydney
