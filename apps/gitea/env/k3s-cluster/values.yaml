@@ -13,6 +13,11 @@ smtpUser: "me@edward.sydney"
 smtpExistingSecret: "gitea-secrets"
 persistence:
   existingClaim: "gitea-pvc"
+podSecurityContext:
+  fsGroup: 1000
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
 service:
   ports:
     http: 10080
