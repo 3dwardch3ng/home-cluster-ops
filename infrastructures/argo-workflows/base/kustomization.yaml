@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ./crds.yaml
+  - ./sa.yaml
+  - ./role.yaml
+  - ./cr.yaml
+  - ./rb.yaml
+  - ./crb.yaml
+  - ./cm.yaml
+  - ./secret.yaml
+  - ./svc.yaml
+  - ./pc.yaml
+  - ./deployment.yaml
