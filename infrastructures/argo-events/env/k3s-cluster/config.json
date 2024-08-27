@@ -1,0 +1,14 @@
+{
+  "appName": "argo-events",
+  "userGivenName": "argo-events",
+  "namespace": "argo-events",
+  "destNamespace": "argo-events",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "infrastructures/argo-events/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": {
+    "argo-events.argoproj.io/release-version": "v1.9.2"
+  }
+}
