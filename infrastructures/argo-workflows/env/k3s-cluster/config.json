@@ -4,7 +4,7 @@
   "namespace": "argo",
   "destNamespace": "argo",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "infrastructures/argo-workflow/env/k3s-cluster",
+  "srcPath": "infrastructures/argo-workflows/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
