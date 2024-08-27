@@ -12,4 +12,3 @@ resources:
   - ./svc.yaml
   - ./pc.yaml
   - ./deployment.yaml
-  - ./ingress.yaml
