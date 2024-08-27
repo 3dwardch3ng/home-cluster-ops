@@ -1,0 +1,25 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: argo-workflows-postgres-config
+  namespace: argo
+spec:
+  encryptedData:
+    password: AgAWslpcLe3HwXzKzrtpe1MLrvX2bYaXA76N2UbUmFp6CwDxd3gQPk6QQFNJQ2PZFotlwnk6tOSkBabnVT6k7+70b8gEKjxhA/bdIKkzIiEzUfuxjqI3V2eKd+Kdc+hCjEGS6KP6HcE2XbDDNTJH6qlEtfnUwvAfgzrHc4TtcmJuVRAB5BQKZSVSb8Sxu5nok5c5iXvlxi2vCTRoIv1SndUNGF912whpKAnpWrRDbuseCTdOMILQ+Ce+VWTYN5WXHs4VGq+Ut6r8Mw1hJrhCdc+ZWjuk3mX+b7q6XZeADGR1vN2FMKy6W7o+e2BNshyKG6GKotvrjvatf3NE2c/OoIukam7M0MKeilveiwooqgluSpqVf1ppB0He4s0HaHYFv9/v/ErfQ7KdpTUQsIClB8x28GaJekbqr8myaWcPu+EXYkt8Te8crZ/Us1LzSdRvDRHhvc9s5eClQ8y4VoEAeimfpQ6qRmRUqpN5sRArpZo8Tw8cS3/obKoyruCg5LbluEXKL2PusQoIlYIdpOfHz5XB6YOQXc1UOUGs18y0CfkZM0HfgKh8MyUZwsy62TxrdRNly0IvmSALp2CaAdlkFGwkwyvX6m9A0M3u6hhdO7pNQZg6miL267uPTS6OyTPIuza7LWpn0592pTounLuCbdah/gk/YqaGrvTDqfsqnD9B5fimk3PeDUfCXXiWcV04hBM6hJdqVbm456YiLEoCKhWIbpiodq5SNng=
+    username: AgCpbaJRlkfx0qD2JBNC0tFrbO7ZeacZqnO+Lo0DocTVBfGmoTN0CfiUvMP7tkZk2ISMFuCtBwzZEhFYwG0AO4/Tb5X9T4OQNBeB74TbZvZxEHOzTnlpLorQAi/J/essAkHnE0UmwVhtxDRWUmVAy5tupoK8UHrPLZgPkvjYKOivb2C6FCxSDs6tOmPsM8eK72dJXa0fEGJokzDppQFa2cL6xF50mIYrR2fcqSkvA2+t1IJdnwqjEV1JN5x02jl2nP7JJOlKZsjVt/GlC1Y0FxVk2u5K9q5gLXkjlEL626i9VOQvIay7sqaCybRmWRTKo1m+FCx3eYFPxNapN6rNjYPL+08CTaqvNp/D+WytSRrFiLuLaASGqqlVLx6p2nhvC1zCz5t+yaKTKfEohfuok/PSDjOIIn6f7rmCYHRa8jBv2dfNYYztOLcG9jKRnjl88r0F9P+JSKeMt00/MoP2eySMJ83cdtfx/twze2al28slpaihqCz9lJd0iWxRyAqwt7Wmtpa7sQ08FJkZBtCAZ6b3ljnuYfJAqV9COngzaOqovaLL8f5Ww9uGYVVIHca5bJqYABhEf8LZGDsdkch0VQA1DnTNbKFNoKzUpJ8ecjku4Ddn5ekz4p5MbXuywOcsAMaYbB6iDm/JRbMODWmHmxWkjfUk8h+Dx3EKyHRPH0a5d4Fwt5ubyq1pxR5TsY9djai93XvH/9ZuihV+i/zK1A==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      labels:
+        app: postgres
+      name: argo-workflows-postgres-config
+      namespace: argo
+    type: Opaque

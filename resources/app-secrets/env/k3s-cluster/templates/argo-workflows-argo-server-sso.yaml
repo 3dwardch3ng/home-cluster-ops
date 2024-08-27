@@ -1,0 +1,22 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: argo-workflows-argo-server-sso
+  namespace: argo
+spec:
+  encryptedData:
+    clientID: AgBFa/IfPNeStv6RshIyaMz+CAMlFMwQqH1lv2AXM6vjlAJN4r45DbkCNw0snWiOBesOITjFlafvq16yo5lGIPrqjzfc8EacxwBkngNG0i7K/8Oi3XJDIo3XJ9V8AU6BJvuZOqeF094nnzC+lzhnH5orN5FF3flggL9iY2Z51RVfekNKY32sMeI3dK3qyCoD2/k7ek003sqVH43XWSy62GJNJ2apxisNP9TIPAzHuQ9xq097XZsDyTlrPUSZCI3ZSGyueBA5762x3R9v8GQEgMse+QszcQElzDmyAvuCnMoZehW4JQKB+881BFVX4knp8+w4FjZiF9JUyyZyyW6cNYBYVsiNK8HN0Zf8k690aQUWotE8fKzv9OrNLnGhAcQ62C4ThMuzkOUFwPV61WGpifwJE6Bv31oUyISEztauE9Zqjz6iBGUJ168l8FDJrBZlMolvGiCw5VoJjUkGNsWsCt/S5fbLxHUNvHltm46YcKPf2Dxx9wcABMooY61vYxPorUgHmqjuiipbpGwldTz/DlRd8ldj9ylJX46FYAQv18TEUOq37SZd5xP755BfUpHNA2ueeBytN6INrmVPfraXqGDo78WyHL7xnSIvweKLN2LGmQKJ1AnB535sNe7+nfidxZUK3MKksWCEMFDOKONmi+tGi2i+DIr5/4P9R9cGQ0g+wCiJ+TMF9M+SSYmp04rKtpCQ9tpuwavNOa2NKA==
+    clientSecret: AgCl+iVmVhbBlx5OEw1RDClzaG9WuAZHrTekCUz1lwESc3fvdGAFYwevutyLQ0nnTdE7BnpzAjg+KJgP6v7g7uZXx9AETY9jhXgGdBsW9QnQfUhZVUOmla/iO8kt5W3d4v5jzR583ajYjy6Muhpwk4gG02OSVGIiKzU0aVt9/UW5MnH++INjAdnoHOq3LmgmhhdKvsUJ1/RdftRPXpdcf1VQWmcYDe6PdbX/m6n4KPLTQFwG26Xf5y0/O7ftuKKLw9MBp97TQwL+oozaOuvE/8EFr/skqlGaWhAJTSXyeOqtM07JjSemddvozr3lRmERsCYdPvRkMW9pdgqGd9uXIXRRJwZHC3AFkOZ6lR/pj188YwzkvZnpDpZh9pcIrr+1S2AkVOpkrAqWeuwgyMjuQfJTEc08Ee1Eb/+4Oo84raCOZGbwP8KhlC5+hNyNRIstA1oDu0+pQcR7k1CNExReD8QXoOsuQFlAUx7WVolDaaLNpy1VlfhUkJxXkQDdg7B8Ui53SD9N8ddHOZ2x+A5CpvVBtRvC12LQ7gw/CQxMHIe/D1uIYagTXEIirEQZO506vVA9U4V8uJth61UG09mA17DbSrhjNZmPfiVqqNrQcRjRFTEyNSwLGSR+z4G85y1cwHcyCrJ5qwVvkddBo7/62HYNh4pOqWcX4cvqznjqTpW/SB33hbGAd1ZaO2qBoUxjVFbOeyCREzIZ+kTHBsUTH+4VPWjegAWCS1g=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: argo-workflows-argo-server-sso
+      namespace: argo

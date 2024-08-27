@@ -1,0 +1,25 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: argo-workflows-minio-cred
+  namespace: argo
+spec:
+  encryptedData:
+    accesskey: AgBVvt06kVQ71TiPwcZjJ7ijdOZQ1kmYKAdpq+zjYHcAYcECrVY0mVNM3xZ++oX2v1cGhDBgHUYJhB/FYFzccsAGaqSk6670UFw+aXUg3O3Fg99Vz+MyPItHTwExh2OgJE5prcbLm3mW1EHpp6So89r3DLp6sOzFX+srUGKFLo8liZIq7RcInmcxMgd1eXHPM83eGcMF3noOWyrIuuDIjpN/paTSvf4eW9dpIGgSTLqCdwmys9zFoYw6j3k3jDU7jEoN1JZgJbquPgALa/kF2OnH/lwgGSuuUMCh5SZ4s6pQTvfKLZlm8BNoETBwCFHtahyH9rNFFI0MNOhZYoGtTAXNatfk7Hg4hZTEYLebW7mHLpFlK7A89Y0YgNgBFRNs2tuqII2qP6nUQD97QFpl0dMoDJJ4vcjzgiJQ7OWraaWow7YiYa+uFn4VPnWhDD2qJ2mxc7MKvlmr9Z+rDtVo4yTmPXxIRrajJUjZ5fo+UnlL7uUxWoNHMPzes2RrwyA47GIjVO/1llRdBRxWXOl/Fi1FhQPqWi2l/diMNUlEF8nRXj6rLN2mJ48HM8YiM5BlYJLykjf7mvuwrDWNsbBxzfaX2GhPtE0+oDKCxX5yHigRONJBSlQr8HxS6/N7/ZDHEuzicW8FPfwJWv6SKM6R+dtH1YoYvuVmHBegW7C1qwWNDqm/ZwSNQK4KSfD4fUJ2FDx+2U27fkTV84ppazJXsNIOGiBQLA==
+    secretkey: AgAhlbSWweBKbKo5zc87G+27ogJLuWsh713rv7MnnTfB7NEDsa5ViAW4EyOzFDbXw17By9pPPUN8nEMlwT9+coOW0FjlxapP1LaqzCrE8o/xfbhIwzHLUM3hiJM0DT9NuCaarehB2WFDYvWnUxl8T5uJv/paR+HlegfQlCmhryeMlRzF5zmF5VneNwZsJqpbbYcBUjgHt61QzL5gAEJH8sQPCSC7CQEat52I63Am8Fc1qYiB3PJKFSiN6C8p5T+tCUv5jHw4boiYyzjKlmcM2FlHEs3F/uHa/70XqUu6XC/TUCi+prb0W6Zu2AUAucUXCp/wVNFFhFoJGipBoIIwO09nf+/bjZBu9zjV/ioGppmSQIe/+ueMv+dmH5S9/WykkmE0epkr7LByIq3z5xo7dbQ8W/E20fjLa1mB/cRcaITPpVSXEmewsyXvGzJwsPdAq5UL+Z2gPmuqMNsOH8f8ZfYuZXV33h9h/xi4WjBAWjUkujQayjlIHW7l+9I1mAFGn7ZzJmragev7GKQgx5mLgdn419avhyEB46Pwr0Vdfj13vOQxJoBw2j2qqqNToQRGXChqgNYeYTT2u82XRvYwUuj3Ra1Y7Ozz6MRmFO7XsZ3EfYC+85zN4SfG/AopCVQRwBjaHwKfBlHdhi3EFSAAhcgyQIhKd538sBEQCnX/UoJtEEYApcFnMA5W9JrYG4TuqqfT49/JjKiS37aRm0bUY8KJWtm+xnERtw4pn5sd9sInhx3o1OqGgSt1
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      labels:
+        app: minio
+      name: argo-workflows-minio-cred
+      namespace: argo
+    type: Opaque
