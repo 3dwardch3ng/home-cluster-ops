@@ -1,14 +1,14 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-  - ./crd.yaml
-  - ./sa.yaml
+  - ./custom-resource-definition.yaml
+  - ./service-account.yaml
   - ./role.yaml
-  - ./cr.yaml
-  - ./rb.yaml
-  - ./crb.yaml
-  - ./cm.yaml
+  - ./cluster-role.yaml
+  - ./role-binding.yaml
+  - ./cluster-role-binding.yaml
+  - ./configmap.yaml
   - ./secret.yaml
-  - ./svc.yaml
-  - ./pc.yaml
+  - ./service.yaml
+  - ./priority-class.yaml
   - ./deployment.yaml
