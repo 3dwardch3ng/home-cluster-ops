@@ -37,8 +37,6 @@ spec:
                       image: docker/whalesay:latest
                       command: [cowsay]
                       args: ["{{inputs.parameters.message}}"]
-                    nodeSelector:
-                      kubernetes.io/arch: arm64
           parameters:
             - src:
                 dependencyName: test-dep
