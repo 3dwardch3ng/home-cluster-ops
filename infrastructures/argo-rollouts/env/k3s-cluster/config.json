@@ -1,0 +1,14 @@
+{
+  "appName": "argo-rollouts",
+  "userGivenName": "argo-rollouts",
+  "namespace": "argo-rollouts",
+  "destNamespace": "argo-rollouts",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "infrastructures/argo-rollouts/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": {
+    "argo-rollouts.argoproj.io/release-version": "v1.7.2"
+  }
+}
