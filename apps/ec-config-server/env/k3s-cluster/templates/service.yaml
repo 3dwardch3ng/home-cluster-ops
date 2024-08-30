@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "mr-config-server.fullname" . }}
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+    service.beta.kubernetes.io/aws-load-balancer-type: "elb"
+  labels:
+    {{- include "mr-config-server.labels" . | nindent 4 }}
+    spring-boot: "{{ .Values.labels.springboot }}"
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: {{ .Values.service.targetPort }}
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "mr-config-server.selectorLabels" . | nindent 4 }}
