@@ -12,7 +12,7 @@ affinity:
               - key: app.kubernetes.io/name
                 operator: In
                 values:
-                  - mr-config-servver
+                  - ec-config-server
           topologyKey: kubernetes.io/hostname
 
 autoscaling:

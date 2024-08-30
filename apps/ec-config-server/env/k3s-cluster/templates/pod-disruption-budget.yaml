@@ -3,9 +3,10 @@ apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:
   name: {{ .Chart.Name }}
+  namespace: {{ include "ec-config-server.namespace" . }}
 spec:
   minAvailable: {{ .Values.pdb.minAvailable }}
   selector:
     matchLabels:
-      app.kubernetes.io/name: {{ include "mr-config-server.name" . }}
+      app.kubernetes.io/name: {{ include "ec-config-server.name" . }}
 {{- end }}
