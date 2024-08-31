@@ -1,0 +1,12 @@
+{
+  "appName": "chartmuseum",
+  "userGivenName": "chartmuseum",
+  "namespace": "chartmuseum",
+  "destNamespace": "chartmuseum",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/chartmuseum/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
