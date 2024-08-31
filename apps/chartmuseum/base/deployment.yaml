@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: chartmuseum
+  namespace: chartmuseum
+  labels:
+    app.kubernetes.io/name: chartmuseum
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: chartmuseum
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: chartmuseum
+    spec:
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+      containers:
+        - name: homer
+          image: ghcr.io/helm/chartmuseum:v0.14.0
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: DEBUG
+              value: "1"
+            - name: STORAGE
+              value: "local"
+            - name: STORAGE_LOCAL_ROOTDIR
+              value: "/charts"
+          ports:
+            - protocol: TCP
+              containerPort: 8080
+              name: http
+          volumeMounts:
+            - name: charts
+              mountPath: /charts
+      volumes:
+        - name: charts
+          hostPath:
+            path: /mnt/nfs/AppData/chartmuseum/charts
+            type: Directory
+      nodeSelector:
+        kubernetes.io/os: linux
