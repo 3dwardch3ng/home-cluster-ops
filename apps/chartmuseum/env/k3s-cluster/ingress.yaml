@@ -8,6 +8,10 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - "chartmuseum.cluster.edward.sydney"
+      secretName: ingress-tls-secret
   rules:
     - host: "chartmuseum.cluster.edward.sydney"
       http:
