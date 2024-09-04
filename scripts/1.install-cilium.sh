@@ -9,5 +9,7 @@ helm repo update || echo "Failed to update helm repos" && \
 kubectl create namespace cilium || echo "Namespace cilium already exists" && \
 helm install cilium cilium/cilium --version 1.16.1 \
   --namespace kube-system \
-  --set operator.replicas=1
+  --set operator.replicas=2 \
+  --set prometheus.enabled=true \
+  --set operator.prometheus.enabled=true
 
