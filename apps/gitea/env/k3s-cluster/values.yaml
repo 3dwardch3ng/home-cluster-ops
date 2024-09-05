@@ -21,8 +21,8 @@ containerSecurityContext:
   runAsGroup: 1000
 service:
   ports:
-    http: 10080
-    ssh: 10022
+    http: 10880
+    ssh: 10222
   annotations:
     metallb.universe.tf/address-pool: k3s-cluster-ip-pool
     metallb.universe.tf/allow-shared-ip: k3s-cluster
