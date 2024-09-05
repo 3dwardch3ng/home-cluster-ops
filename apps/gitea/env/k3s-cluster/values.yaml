@@ -13,6 +13,7 @@ smtpUser: "me@edward.sydney"
 smtpExistingSecret: "gitea-secrets"
 persistence:
   existingClaim: "gitea-pvc"
+resourcesPreset: "xlarge"
 podSecurityContext:
   fsGroup: 1000
 containerSecurityContext:
@@ -38,3 +39,6 @@ externalDatabase:
   user: "gitea_user"
   existingSecret: "gitea-secrets"
   existingSecretPasswordKey: "db-password"
+nodeSelector:
+  kubernetes.io/os: linux
+  kubernetes.io/arch: amd64
