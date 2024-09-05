@@ -18,6 +18,11 @@ coder:
     - name: coder-data
       mountPath: /config
   service:
+    type: ClusterIP
     annotations:
       metallb.universe.tf/address-pool: k3s-cluster-ip-pool
       metallb.universe.tf/allow-shared-ip: k3s-cluster
+  ingress:
+    enable: true
+    className: nginx
+    host: "coder.cluster.edward.sydney"

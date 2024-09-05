@@ -35,11 +35,11 @@ spec:
       targetPort: 80
       name: http-tcp
     - protocol: TCP
-      port: 443
+      port: 10443
       targetPort: 443
       name: https-tcp
     - protocol: UDP
-      port: 443
+      port: 10443
       targetPort: 443
       name: https-udp
     - protocol: TCP
