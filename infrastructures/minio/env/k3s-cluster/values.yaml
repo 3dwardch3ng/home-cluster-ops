@@ -7,7 +7,7 @@ auth:
   rootUserSecretKey: "root_user"
   rootPasswordSecretKey: "root_password"
 nodeSelector:
-  kubernetes.io/hostname: k3s-cluster-node-2
+  kubernetes.io/hostname: k3s-cluster-node-y
 service:
   type: LoadBalancer
   ports:
