@@ -61,7 +61,7 @@ spec:
   type: LoadBalancer
   ports:
     - name: web-3000
-      port: 3030
+      port: 3033
       protocol: TCP
       targetPort: 3000
   selector:
