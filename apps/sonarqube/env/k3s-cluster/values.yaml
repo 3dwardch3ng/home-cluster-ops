@@ -12,6 +12,7 @@ smtpPort: "587"
 smtpUser: "me@edward.sydney"
 smtpProtocol: "TLS"
 smtpExistingSecret: "sonarqube-secrets"
+resourcesPreset: "2xlarge"
 podSecurityContext:
   fsGroup: 1000
 containerSecurityContext:
