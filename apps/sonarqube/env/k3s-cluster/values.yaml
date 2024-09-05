@@ -40,4 +40,4 @@ externalDatabase:
   user: "sonarqube_user"
   existingSecret: "sonarqube-secrets"
 nodeSelector:
-  kubernetes.io/hostname: k3s-cluster-node-3
+  kubernetes.io/hostname: k3s-cluster-node-y

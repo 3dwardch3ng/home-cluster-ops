@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
   - ../../base
-  - ./examples/eventbus.yaml
-  - ./examples/event-source.yaml
-  - ./examples/ingress.yaml
-  - ./examples/sensor.yaml
-  - ./examples/workflow.yaml
-  - ./examples/webhook.yaml
+#  - ./examples/eventbus.yaml
+#  - ./examples/event-source.yaml
+#  - ./examples/ingress.yaml
+#  - ./examples/sensor.yaml
+#  - ./examples/workflow.yaml
+#  - ./examples/webhook.yaml
