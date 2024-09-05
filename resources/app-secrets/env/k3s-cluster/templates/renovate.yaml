@@ -6,7 +6,7 @@ metadata:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: renovate-secrets
-  namespace: renovate
+  namespace: argocd
 spec:
   encryptedData:
     githubComToken: AgAWZyGWLvF40g9gE/KjcIc4MGL6fvVubxngAtiq3mW+iGDGRIqxg+NJr/ubh5de5IvZUTgq23FSH+gP3Slc9heOQeM4FuVYW/2ciacD+SH9LW9+CoVSsKbvwBgl7hwT/ovrRu1u2Lu/Vf02rQ5GtWhyeBOQdg8iE0XStKtWeeVfvBRau0Df1+5og7CRf8h5zm3ZgjYKe/67t0/ICW9LGGOcwRQiJAhQFCZzgxbfUELz1dK9BXksSkcET1yxsIi0ns6LL5bynWkGraUPBpKz+FGZCxm7ZpNc7eKj9rTGLAYaQigc1B6wk71eUvUoF8DYaanU+fSWG2JBSmfocRi/nA3smRnzpfOKFGzcu1aGj/stMB4O4hGjL3c+CsR+R4uoCoZqK+aql2Zq8RXQwgaWvSJpfPIhPcsZ0gUmuXXbEkqsEnc0unntKwCr/rPEjxXTezVSluKWh4X9oGsCmYJRZPjoYwVi+/SYEGT/0UG013MXyr6olUWeKUX9R+4/fuBNueOomJXsTa5v0FqOWLHYFGPiNZDalVThv2EMHtti+HsfPh4lCQTpqx/GMtzuQp7X0QJcaAhLHDzNTHtCyxGVKlfCqdOyTFWI+nFg1GlGOp1TkuuK2REYwQnAyZHCGz7y7UN8S/KxXR6uBwJgNJc3vvatAUWXKYST3JP1XIPdV0xA9p2OtI3iwA4WEjbaEvYx14EiqG/YtiKXESgWMeg6RbypQp8Pf6DeDLrP9q/V6NGsd6zZvVv+gIFz
