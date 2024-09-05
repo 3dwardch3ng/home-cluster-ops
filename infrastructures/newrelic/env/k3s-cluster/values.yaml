@@ -1,0 +1,25 @@
+global:
+  licenseKey: 087dbc7fb1d60dde03aa2fe75b9df857FFFFNRAL
+  cluster: Home Lab K3S Cluster
+  lowDataMode: true
+newrelic-infrastructure:
+  privileged: true
+kube-state-metrics:
+  image:
+    tag: v2.10.0
+  enabled: true
+kubeEvents:
+  enabled: true
+newrelic-prometheus-agent:
+  enabled: true
+  lowDataMode: true
+  config:
+    kubernetes:
+      integrations_filter:
+        enabled: false
+logging:
+  enabled: false
+newrelic-logging:
+  enabled: true
+
+
