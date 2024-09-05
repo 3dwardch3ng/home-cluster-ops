@@ -6,7 +6,7 @@ metadata:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: vaultwarden-secrets
-  namespace: argocd
+  namespace: vaultwarden
 spec:
   encryptedData:
     db_host: AgAIWQTkztKUYtGtETy9ZRfg/WZum2aD+2scmEBQstg6wocpSP7Aje2tNDTgiKCJh3jwuHvPo7k590EAjVO9XYmfRFAZp03XFRi5eLq6Eatoai8p2YE31pj07aMNrObJ1t0pf3wu/dDzMBVWUcjHL0dpBu1oP6cKfsHyWTNkzcWMBqJMUIJd9dCtFLyXBCSjZKO+oApy8bm/psS1/Z7xnVEuAJhAkGqtKQAh5e8lOpIiJIVQeXv4RLtzOUn+/iaO+gTxSqaXUKgM1GkYdCxMJHKe+KyBWucLdcKXdvHQG3aPonz7WkcSVUK4NUjG+mix9J38SAF6NC/zEahdaVFyHTs0xGk3mMm0oT0sFMiiGIGu6kxnA2aYitFMBvJKYlZ82BjtI7C5XEv5lk5xose17nmZC0GPMJd6n280TWFeOZinJt5Q0F9dlIc9QwPmcOrCwAaPTrpXxW0f4LVTIHqN28GV9UtE8/rUZ0ws9d/a9UjFrO8nh4U7aUdwX56yQBPemM9/9s0qP+Pkdptm+1BQ8FnFDl71opmRzQFeFSBSnxE/RTZQGNcnVUiKdeOrHRv9QmxZAoOXs5N/mUJPG4HgrpLdkKTfB7U255GokMTm9qyXHQYy5G4e29yU3Lb4cmSxjopawL+RpH5lWoijSyQ27PE/OlTMN5bRm3r+ClIk67U4i/t/eSfC87DW8GbANJxCkIX86R/H/iwo91hiU8T+uu/Y9zX0CbksDHgFr2eaRKdmRW5Ruq7yq6olHILuqdBPsQ==
@@ -19,5 +19,5 @@ spec:
         sealedsecrets.bitnami.com/cluster-wide: "true"
       creationTimestamp: null
       name: vaultwarden-secrets
-      namespace: argocd
+      namespace: vaultwarden
     type: Opaque
