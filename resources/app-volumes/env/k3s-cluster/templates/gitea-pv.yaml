@@ -27,8 +27,12 @@ spec:
             - key: kubernetes.io/arch
               operator: In
               values:
-                - arm64
+                - amd64
             - key: kubernetes.io/os
               operator: In
               values:
                 - linux
+            - key: kubernetes.io/hostname
+              operator: In
+              values:
+                - k3s-cluster-node-y
