@@ -1,0 +1,22 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: newrelic-secrets
+  namespace: newrelic
+spec:
+  encryptedData:
+    licence-key: AgB2hvbKzsKIQ/otShH7QGpoL6NcaUBPP2rSbz1aXaJP5zD8mxtMy6X9qy69e1PvCOxh8e2WT7qMJb0oipuM6Awe9IUrW3AjSv9+9F8DtpGNoyNkzUt/lSAiMAIOZnosEiZN6eIcl0SxwCOsUJx2WQ44xhUF1VSYX2wC6VZ0VO57BUilLQYCY5c8kOBUirWIEKvXOp9QdXftCSA6j/xIKuqvKcn2R+Z6Ik4dKz3oRxSnTOyqsMoJIg6DSp8sBC9E/NX0EBoB6iwPpUhkwrI0bklcteh52BKEZq5GeQ0VnfygUGRBTl3b1J6Yggd7oPqc+uFIRHqIxwiihqVfqhProe6q2V+8NLPd8TexLQO1y0W6aFz/nbqpb8M57xcIe+Ou+gbDqzMrqyNct9lF+JdHnBOP66fnbN+SG9aF+81K0fu8NLNmjp+HnUGzvVnPzUVwCz3XWbRyOJeWIxgMkgkV7HNn6hS18fNatEtuvC0jkz5CxFopRWybiz5Q5DLCxDTIdJN+fQJqcoXOtX/mbXdsFc0/RfOaZ50ME58e3xZSVYJvIIfilbk5Rqg2e5xSMNcL0yvYpYQhbSAJ0xyC5TQ4AirpkXXq6PLxchSox84Mu9rGJSCwQnsO2dY0Sj+TQsLS3t0PKQr75lgTj5xYTcFpi9Pc2+dWjHTiXseFCW+YlomX5oknD3rkWfj06nWTeXlg3GIA7ZvQFU8j68in7dUbEKFw42c6SKmJsE5HpOjVUPoymUHCCPayXzq7
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: newrelic-secrets
+      namespace: newrelic
+    type: Opaque

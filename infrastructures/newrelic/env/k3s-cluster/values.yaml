@@ -1,5 +1,6 @@
 global:
-  licenseKey: 087dbc7fb1d60dde03aa2fe75b9df857FFFFNRAL
+  customSecretName: newrelic-secrets
+  customSecretLicenseKey: licence-key
   cluster: Home Lab K3S Cluster
   lowDataMode: true
 newrelic-infrastructure:
