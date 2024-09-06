@@ -11,7 +11,7 @@ spec:
   tls:
     - hosts:
         - "chartmuseum.cluster.edward.sydney"
-      secretName: "tls-secrets"
+      secretName: "chartmuseum-tls"
   rules:
     - host: "chartmuseum.cluster.edward.sydney"
       http:
