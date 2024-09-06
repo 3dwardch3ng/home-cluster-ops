@@ -1,6 +1,7 @@
 env:
   open:
     AUTH_ANONYMOUS_GET: true
+    DISABLE_API: false
     CACHE: redis
     CACHE_REDIS_ADDR: redis-master.redis.svc.cluster.local:6379
     CACHE_REDIS_DB: chartmuseum
@@ -12,7 +13,7 @@ env:
 service:
   type: LoadBalancer
   externalPort: 8899
-persistent:
+persistence:
   enabled: true
   existingClaim: chartmuseum-pvc
 ingress:
