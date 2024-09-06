@@ -2,10 +2,13 @@ env:
   open:
     AUTH_ANONYMOUS_GET: true
     DISABLE_API: false
+    CACHE: redis
+    CACHE_REDIS_ADDR: redis-master.redis.svc.cluster.local:6379
   existingSecret: chartmuseum-secrets
   existingSecretMappings:
     BASIC_AUTH_USER: auth-user
     BASIC_AUTH_PASS: auth-password
+    CACHE_REDIS_PASSWORD: redis-password
 service:
   type: LoadBalancer
   externalPort: 8899
