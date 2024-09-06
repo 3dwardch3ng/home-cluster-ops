@@ -23,3 +23,13 @@ spec:
                 name: chartmuseum
                 port:
                   number: 8899
+    - host: "chartmuseum.cluster.local"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: chartmuseum
+                port:
+                  number: 8899
