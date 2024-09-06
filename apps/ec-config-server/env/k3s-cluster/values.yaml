@@ -1,0 +1,4 @@
+spring:
+  activeprofile: native,k3s
+persistence:
+  hostPath: /mnt/nfs/AppData/ec-config-server/config
