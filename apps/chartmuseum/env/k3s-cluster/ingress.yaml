@@ -2,17 +2,16 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: chartmuseum-ingress
-  namespace: argocd
+  namespace: chartmuseum
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
     nginx.ingress.kubernetes.io/use-regex: "true"
 spec:
   ingressClassName: nginx
   tls:
     - hosts:
         - "chartmuseum.cluster.edward.sydney"
-        - "chartmuseum.cluster.local"
-      secretName: "ingress-tls"
+      secretName: "chartmuseum-tls"
   rules:
     - host: "chartmuseum.cluster.edward.sydney"
       http:
