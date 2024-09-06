@@ -9,7 +9,6 @@ env:
     BASIC_AUTH_USER: auth-user
     BASIC_AUTH_PASS: auth-password
     CACHE_REDIS_PASSWORD: redis-password
-deployment:
 service:
   type: LoadBalancer
   externalPort: 8899
