@@ -57,7 +57,7 @@ newrelic-infra-operator:
 
 newrelic-prometheus-agent:
   # newrelic-prometheus-agent.enabled -- Install the [`newrelic-prometheus-agent` chart](https://github.com/newrelic/newrelic-prometheus-configurator/tree/main/charts/newrelic-prometheus-agent)
-  enabled: true
+  enabled: false
   lowDataMode: true
   config:
     kubernetes:
