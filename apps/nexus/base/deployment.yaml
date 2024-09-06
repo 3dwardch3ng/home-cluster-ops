@@ -36,3 +36,6 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/nexus
             type: Directory
+      nodeSelector:
+        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
