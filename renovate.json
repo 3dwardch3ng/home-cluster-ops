@@ -11,5 +11,14 @@
   },
   "ignorePaths": [
     "projects/"
+  ],
+  "packageRules": [
+    {
+      "matchDatasources": ["docker"],
+      "matchPackageNames": ["edeedeeed/ec-config-server"],
+      "registryUrls": [
+        "https://chartmuseum.cluster.edward.sydney:8899"
+      ]
+    }
   ]
 }
