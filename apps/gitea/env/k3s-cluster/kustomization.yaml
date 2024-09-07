@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: gitea
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 2.3.18
+    version: 2.3.19
     releaseName: gitea
     valuesFile: values.yaml
