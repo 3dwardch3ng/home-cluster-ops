@@ -1,4 +1,5 @@
 namespaceOverride: "gitea"
+rootURL: "https://gitea.cluster.edward.sydney"
 updateStrategy:
   type: Recreate
 podAntiAffinityPreset: ""
