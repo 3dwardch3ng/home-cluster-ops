@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: ec-config-server
     repo: https://chartmuseum.cluster.edward.sydney:8899/
-    version: 1.0.10
+    version: 1.0.11
     releaseName: ec-config-server
     valuesFile: values.yaml
