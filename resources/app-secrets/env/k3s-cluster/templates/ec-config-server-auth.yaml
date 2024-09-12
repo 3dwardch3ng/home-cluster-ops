@@ -1,14 +1,23 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: ec-config-server-auth-secrets
   namespace: ecproj
-type: Opaque
-stringData:
-  CONFIG_SERVER_USERNAME: "ec-config"
-  CONFIG_SERVER_PASSWORD: "d9Ur8@Zf2^l4Gb^@E^"
+spec:
+  encryptedData:
+    CONFIG_SERVER_PASSWORD: AgB1u8eC5+Nvzs4rSEWLZgnPQqvdT0pSvsC6maiwUMhqbYwG5MZVTdjxG6NqCQ42kRdHOpXB68BNClF6mxCevz4xBvIjyIVNdAdxSGpTVtRjqT9oxCdmSXvfWwPDOBQEdq71hpqj1gN+FahwrQ2tRzeRzOca7r+XzU0HR5JC0IJlE5f1BE9S8v+ONI+6VKL7hXGgLqR9S4Cx4TajdmcSuzwkgiLXao8qHjkZpC7Uw9m659AL+iC7FDj2cJuD9CWHzz3Knvx0HmyTLGz1V2GKtQ7lSzdVFsaik0WjT3N8z0pBnIvSpLgR+VPdGXcOXGvP3JzCH7a1MfMRCHVtu+GRDbultKUxc351zZf7/c0SsRoZ/T0PZURIMQA0QUe8BxOg4X9APJWNSBD+kMSvuizsOnIV/T1AIVOtdRc6BidrrgB2UM5/dQ75K1cNHyM5tAQYT3ELCZ7HLTY+F65szVCQJHOycLwGqPOA2funqVh+KLDYURugbZcHTP6xoBpjSpWcIZg8NvweZG1ptF3q8effZJA6hF7MUizAnv3CZq+GttPJEsMjukkCxQ5tIpo6FU4hsf19Su5UQnyXghN+bYHvM/QQ3+2bF79THVuMTG6jgoOUI3V+UH6ZRkFjdXV6EgrBF6vBmtLbMG+gWkBC2x6uwKZWky0msbB2gzX/LVr8DHXxK3BJaHeflSf/3c4SDE9Kaz5e+yLk/GG3/Is5D9xvaDI5NSI=
+    CONFIG_SERVER_USERNAME: AgBti2F6j4qYE3WbK+GSfFtrwXHB2BIJRwFh4apXRGjdkGtmM/jsEJqFk1ptzOnJTVFYQ3FYZX6n3wpzEAkwQfnH/quzbIAY5CjwWPps1KiuMMe7uf1HqgrdCggCsuOxnrzdLF1gS6kzoERGyRsNLGA5rrTAxeNU7Hcunwh5VAdadAbyjk11UJWU64osOWNE3Dw2pv01YwdCNi0cILlsLSVyfgUE3+YK0ntRoiaZkb0dF3E8jl6OkwDAAdMTKfyjKblMaD6+v3dAlZSpdeKoWjX87XGX1BpCqqAk+JbqPOhZX0YKJjuGLIpnaSceRQyr33vW9babumXNMiy5quUGE4aVb4MWTAJVihnHnDPzAMRC/SqoCnGzVEO/ckg52UNttklbSS5dT0yApIrvCrRrrVe5U2PAPrp0tGrtjPZIfT5Y1CvnEcNtoU+sE6haeDNuI4JArEtcZCHGfWesg/73Sh4BpJ/dgNYtxwkEDGlzdSn6FiWbae1VBkH6R0/NvMp6K7hZyYlpR1c8IKVag/huOEKFqRtaG3q5cHShstRfwoYnK69ixAEKchpmq3SDy+gH8TRkbs9+fU6KEueGOvBVx1pplUJPNptSiRIgfrGSeMRLPV5qK7e3LlOFMNQBke+2a3MmVfMdfrOTviXmUnHlIAjuXpBDne74jI2qOtRVwHEqsW/Fz68CyvRTvR/GjY8gO0+OrqAdJzRac5I=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: ec-config-server-auth-secrets
+      namespace: ecproj
+    type: Opaque
