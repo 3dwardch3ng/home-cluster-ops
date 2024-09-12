@@ -1,3 +1,6 @@
+environment:
+  configServerAuth:
+    existingSecret: ec-config-server-auth-secrets
 service:
   type: LoadBalancer
 spring:
