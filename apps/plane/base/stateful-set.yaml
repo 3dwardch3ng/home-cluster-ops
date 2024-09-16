@@ -15,7 +15,7 @@ spec:
         app.name: plane-redis
     spec:
       containers:
-        - image: valkey/valkey:7.2.6-alpine
+        - image: valkey/valkey:8.0.0-alpine
           imagePullPolicy: Always
           name: plane-redis
           stdin: true
