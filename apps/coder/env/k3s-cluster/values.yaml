@@ -23,6 +23,6 @@ coder:
       metallb.universe.tf/address-pool: k3s-cluster-ip-pool
       metallb.universe.tf/allow-shared-ip: k3s-cluster
   ingress:
-    enable: false
+    enable: true
     className: nginx
     host: "coder.cluster.edward.sydney"
