@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: mongodb
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 15.6.24
+    version: 15.6.26
     releaseName: mongodb
     valuesFile: values.yaml
