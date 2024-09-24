@@ -36,7 +36,7 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -94,7 +94,7 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -143,7 +143,7 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -182,7 +182,7 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -221,7 +221,7 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -270,5 +270,5 @@ spec:
       serviceAccount: plane-srv-account
       serviceAccountName: plane-srv-account
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
 ---

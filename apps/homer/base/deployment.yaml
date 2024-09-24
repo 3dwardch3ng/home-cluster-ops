@@ -40,5 +40,4 @@ spec:
             path: /mnt/nfs/AppData/homer/www
             type: Directory
       nodeSelector:
-        kubernetes.io/arch: arm64
         kubernetes.io/os: linux
