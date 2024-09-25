@@ -4,7 +4,7 @@ controller:
   nodeSelector:
     kubernetes.io/os: linux
     kubernetes.io/arch: amd64
-    kubernetes.io/host: k3s-cluster-node-y
+    kubernetes.io/hostname: k3s-cluster-node-y
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
