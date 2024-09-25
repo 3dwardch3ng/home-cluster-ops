@@ -38,3 +38,4 @@ spec:
             type: Directory
       nodeSelector:
         kubernetes.io/os: linux
+        kubernetes.io/arch: arm64
