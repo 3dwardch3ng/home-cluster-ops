@@ -21,7 +21,7 @@ spec:
             - --auth-mode
             - client
           env: []
-          image: quay.io/argoproj/argocli:v3.5.10
+          image: quay.io/argoproj/argocli:v3.5.11
           name: argo-server
           ports:
             - containerPort: 2746
@@ -77,7 +77,7 @@ spec:
                 fieldRef:
                   apiVersion: v1
                   fieldPath: metadata.name
-          image: quay.io/argoproj/workflow-controller:v3.5.10
+          image: quay.io/argoproj/workflow-controller:v3.5.11
           livenessProbe:
             failureThreshold: 3
             httpGet:
