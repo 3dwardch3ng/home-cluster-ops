@@ -33,4 +33,4 @@ spec:
             path: /mnt/nfs/AppData/snippet-box
             type: Directory
       nodeSelector:
-        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux
