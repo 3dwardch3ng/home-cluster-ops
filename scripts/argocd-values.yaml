@@ -25,16 +25,11 @@ configs:
   params:
     server.insecure: true
 
-controller:
-  replicas: 1
-
-redis-ha:
-  enabled: true
-
 server:
   autoscaling:
     enabled: true
-    minReplicas: 2
+    minReplicas: 1
+    maxReplicas: 2
   # -- Resource limits and requests for the argocd-extensions container
   resources:
     limits:
@@ -70,7 +65,8 @@ server:
 repoServer:
   autoscaling:
     enabled: true
-    minReplicas: 2
+    minReplicas: 1
+    maxReplicas: 2
   # -- Resource limits and requests for the repo server pods
   resources:
     limits:
