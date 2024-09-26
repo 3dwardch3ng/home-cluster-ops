@@ -22,7 +22,7 @@ data:
           maxMsgs: 50000
           maxAge: 168h
           maxBytes: -1
-          replicas: 2
+          replicas: 3
           duplicates: 300s
         versions:
           - version: latest
