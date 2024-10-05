@@ -1,12 +1,20 @@
-apiVersion: v1
-kind: Secret
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
 metadata:
   annotations:
-    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
-    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: clusterissuer-secrets
-type: Opaque
-stringData:
-  cloudflare_api_token: "iT6tDsYXip38ms3d1IJZX1ekx9pFL3o4teXJLCrr"
+spec:
+  encryptedData:
+    cloudflare_api_token: AgCYaEQwxW55aZc50u6KeFRMaLyw1bzKYkw1BjgXwHJAncfNTbwAs6v710FW0uZMJtAvw0pEtcbB8b3FYbQuLRLC9Obf/n5Uwd1dxkvLRdnUqMuUgOy3Ut7jnzayWg/4UAyn0VHTCmhNUQ5hZPIbyypzH6hL2AlA/mk2Kf3Q6RRv1HmDPF3xPPQFXyvvRsZv4R8Cp+sDNyTCu/uEANxdPnxnK+/H3oC6eMKO43EaiwejBaMkyzMfiEMupJuq7swxXKMnxvDpx9gwJ1nV4fXxo+75wHLbNfspoEndFqAWT5v0RO3t2jPA+NEEqPaBm8cTkL7rWWX1IqMa6f4pdSZCWi9VobKHK7QCknge48chwmU4/RCtc1BOlVl6nDgrIBRnRXJxLA7oC6IpiPYZxSH3j7r980/2f2/ICXUiWLGzjW3vTv98gwfR6Kftg+zjRuF85l9gkMLPvhUorNovS3A8lRVF2+iiwmRc6c0eoZg8v5vNXTbwDX0thk9wJINqbEkmgXC2ohUHj4HgUMb08SP6LbA6f7vP1sEbNXonAukfCo8Xr1ltZgK4HD8lIEUUtzcePDF3YPS53L6AnZFjHRUeEElMzS7PRRQ8Ht7CybYjhjABCD5yJCG0mPBl1DDzg8UmGeYzvTWvEMPiy0VoSEJbAA+yNmwVH1m+3/YtiA/V+IS+E/8paH5ouUZLAN0bXSB5y+J9u7pUKpLf2T2Kf0bXu95Qcqp3Oq190K2MHpis/kyewfzGi3B8SlI+
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: clusterissuer-secrets
+    type: Opaque
