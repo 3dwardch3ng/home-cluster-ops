@@ -12,6 +12,20 @@ replication:
   numSynchronousReplicas: 1
   applicationName: "postgres_repl"
 primary:
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 18
+    successThreshold: 1
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 5
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 18
+    successThreshold: 1
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
@@ -33,6 +47,20 @@ primary:
     enabled: true
 readReplicas:
   name: "replica"
+  livenessProbe:
+    enabled: true
+    initialDelaySeconds: 30
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 18
+    successThreshold: 1
+  readinessProbe:
+    enabled: true
+    initialDelaySeconds: 5
+    periodSeconds: 30
+    timeoutSeconds: 5
+    failureThreshold: 18
+    successThreshold: 1
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
