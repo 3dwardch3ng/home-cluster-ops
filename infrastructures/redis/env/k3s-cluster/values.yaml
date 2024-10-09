@@ -11,6 +11,8 @@ master:
         name: redis-master-pvc
   persistentVolumeClaimRetentionPolicy:
     enabled: true
+  service:
+    type: LoadBalancer
 replica:
   replicaCount: 1
   persistence:
@@ -21,3 +23,5 @@ replica:
         name: redis-replica-pvc
   persistentVolumeClaimRetentionPolicy:
     enabled: true
+  service:
+    type: LoadBalancer
