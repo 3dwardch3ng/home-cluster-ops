@@ -26,6 +26,13 @@ primary:
     timeoutSeconds: 5
     failureThreshold: 18
     successThreshold: 1
+  resources:
+    requests:
+      cpu: 2
+      memory: 1Gi
+    limits:
+      cpu: 4
+      memory: 2Gi
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
@@ -61,6 +68,13 @@ readReplicas:
     timeoutSeconds: 5
     failureThreshold: 18
     successThreshold: 1
+  resources:
+    requests:
+      cpu: 2
+      memory: 1Gi
+    limits:
+      cpu: 4
+      memory: 2Gi
   podSecurityContext:
     fsGroup: 1000
   containerSecurityContext:
