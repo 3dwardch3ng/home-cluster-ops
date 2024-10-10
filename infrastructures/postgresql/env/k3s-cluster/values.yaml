@@ -12,6 +12,9 @@ replication:
   numSynchronousReplicas: 1
   applicationName: "postgres_repl"
 primary:
+  extraEnvVars:
+    - name: POSTGRESQL_MAX_CONNECTIONS
+      value: "400"
   livenessProbe:
     enabled: true
     initialDelaySeconds: 30
@@ -54,6 +57,9 @@ primary:
     enabled: true
 readReplicas:
   name: "replica"
+  extraEnvVars:
+    - name: POSTGRESQL_MAX_CONNECTIONS
+      value: "400"
   livenessProbe:
     enabled: true
     initialDelaySeconds: 30
