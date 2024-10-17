@@ -19,7 +19,7 @@ spec:
         runAsGroup: 1000
       containers:
         - name: homer
-          image: b4bz/homer:v24.05.1
+          image: b4bz/homer:v24.10.1
           securityContext:
             allowPrivilegeEscalation: false
           env:
