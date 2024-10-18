@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: intel-device-plugins-gpu
     repo: https://intel.github.io/helm-charts/
-    version: 0.31.0
+    version: 0.31.1
     releaseName: intel-device-plugins-gpu
     valuesFile: values.yaml
