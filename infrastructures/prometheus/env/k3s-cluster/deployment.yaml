@@ -22,7 +22,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: prometheus
-          image: prom/prometheus:v2.54.1
+          image: prom/prometheus:v2.55.0
           args:
             - "--storage.tsdb.retention.time=14d"
             - "--config.file=/etc/prometheus/prometheus.yaml"
