@@ -9,9 +9,6 @@ env:
     BASIC_AUTH_USER: auth-user
     BASIC_AUTH_PASS: auth-password
     CACHE_REDIS_PASSWORD: redis-password
-service:
-  type: LoadBalancer
-  externalPort: 8899
 persistence:
   enabled: true
   existingClaim: chartmuseum-pvc
@@ -19,6 +16,5 @@ ingress:
   enabled: true
   hosts:
     - name: chartmuseum.cluster.edward.sydney
-      tls: true
-      tlsSecret: chartmuseum-tls
+      tls: false
   ingressClassName: nginx
