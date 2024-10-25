@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: netdata
     repo: https://netdata.github.io/helmchart/
-    version: 3.7.109
+    version: 3.7.110
     releaseName: netdata
     valuesFile: values.yaml
