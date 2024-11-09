@@ -1,0 +1,12 @@
+{
+  "appName": "gitlab",
+  "userGivenName": "gitlab",
+  "namespace": "gitlab",
+  "destNamespace": "gitlab",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/gitlab/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
