@@ -4,8 +4,8 @@ image:
 podAntiAffinityPreset: ""
 namespaceOverride: "sonarqube"
 clusterDomain: cluster.edward.sydney
-sonarqubeUsername: sonarqube
-existingSecret: "sonarqube-secrets"
+sonarqubeUsername: "admin"
+sonarqubePassword: "UCGhDRhvdmVtFB7DNsG2"
 sonarqubeEmail: "me@edward.sydney"
 smtpHost: "smtp.gmail.com"
 smtpPort: "587"
