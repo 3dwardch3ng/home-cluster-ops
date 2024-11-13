@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: gitlab
     repo: https://charts.gitlab.io
-    version: 8.5.1
+    version: 8.5.2
     releaseName: gitlab
     valuesFile: values.yaml
