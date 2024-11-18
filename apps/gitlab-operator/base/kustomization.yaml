@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: gitlab-operator
     repo: https://charts.gitlab.io
-    version: 1.6.0
+    version: 1.6.1
     releaseName: gitlab-operator
     valuesFile: values.yaml
