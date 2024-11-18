@@ -1,0 +1,27 @@
+deployment:
+  existingSecret: false
+  podAnnotations: {}
+  podSecurityContext: {}
+  containerSecurityContext: {}
+  nodeSelector: {}
+  affinity: {}
+  tolerations: []
+persistence:
+  pihole:
+    hostPath: /mnt/nfs/AppData/pi-hole/etc/pi-hole
+  dnsmasqd:
+    hostPath: /mnt/nfs/AppData/pi-hole/etc/dnsmasq.d
+service:
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
+  type: LoadBalancer
+  loadBalancerIP: 192.168.10.200
+  ports:
+    http: 8888
+    dnsTCP: 53
+    dnsUDP: 53
+environment:
+  TZ: Australia/Sydney
+  PIHOLE_DNS_: 8.8.8.8;8.8.4.4
+  DNSSEC: true
