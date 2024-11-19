@@ -1,11 +1,5 @@
 deployment:
-  existingSecret: false
-  podAnnotations: {}
-  podSecurityContext: {}
-  containerSecurityContext: {}
-  nodeSelector: {}
-  affinity: {}
-  tolerations: []
+  existingSecret: true
 persistence:
   pihole:
     hostPath: /mnt/nfs/AppData/pi-hole/etc/pi-hole
