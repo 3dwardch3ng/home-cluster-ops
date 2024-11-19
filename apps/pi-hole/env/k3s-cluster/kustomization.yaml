@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: pi-hole
     repo: https://chartmuseum.cluster.edward.sydney:8899/
-    version: 1.0.6
+    version: 1.0.7
     releaseName: pi-hole
     valuesFile: values.yaml
