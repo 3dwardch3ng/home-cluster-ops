@@ -1,0 +1,22 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: pi-hole
+  namespace: pi-hole
+spec:
+  encryptedData:
+    WEBPASSWORD: AgCP6NzvDgNVxRdt7bCXrVhDmSw8YmocDBo+b+LJqvUJNnCbtwftdJXKK63M1y5QrfW0To8NqjIbw0T7zqSb2cjV3NTWSKUxrBIeUZaZUseokQokMKzytF4sJ+2JVuMw1f/Dw8qBnBr1mHEICaPRkYw1vVQLZF2lnvNf/9yvr5jHtGLSi3Pya3Fcgb9JYQJRunEDl9WcUxVx+4hrXamj0IA4Bhnl1krNHKWbSYwwxgKV0CCG51rtY1hchajvfyTDH+n9JSqwT8bsAcSPpWTyEK62S91Ct0lmsDCZ2hvcyJ3rSGVNutvh5vQZjXh9QbumYRpmrbeIZj2WUbSH6KPjNKnyXm8/pHSySHmK1Oj8qKOQ7POVPA4wmcCxDL5sW1EhxXuggdYFsmoZWEuBP25oj1D/H62Fw+/0DiCmNka7Ii97g7Ny80gUjD4qh0Vs3nczI4hoxy29IyFrkrfdvxWylwwoNT5k5mE7wXzH6R66ytN6F6Mkwbn7w0+gbYH4PYBfPzZQbVgdaBXfPh8g61Ot4+FqbzXlQc5YHhPDhKM38duVzAp0eLGbmIyrGZ9uAnOaUNoPvpZqvfsEn9cbfsxDnmJRVfTwN66HjcupTYhTr9qskOtUvpVDDbfsb1UARhhVrM9zdUmPeHxRjzUnRoc8flu8MzJ+k42XRP+6KcapTUay3oj8Ipr4xvI01QgVO65Dq5oewlZ7dwvTfFeI3ceeH6Ipn7o52e3TaCc=
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: pi-hole
+      namespace: pi-hole
+    type: Opaque
