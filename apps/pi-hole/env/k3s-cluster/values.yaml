@@ -20,7 +20,7 @@ environment:
   FTLCONF_LOCAL_IPV4: 192.168.10.201
   PIHOLE_DNS_: 8.8.8.8;8.8.4.4
   DNSSEC: true
-  VIRTUAL_HOST: pi-hole.cluster.edward.sydney
+  CORS_HOSTS: pi-hole.cluster.edward.sydney
   DNSMASQ_USER: root
   PIHOLE_GID: 0
   PIHOLE_UID: 0
