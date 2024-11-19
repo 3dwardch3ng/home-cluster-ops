@@ -21,3 +21,5 @@ environment:
   PIHOLE_DNS_: 8.8.8.8;8.8.4.4
   DNSSEC: true
   DNSMASQ_USER: root
+  PIHOLE_GID: 0
+  PIHOLE_UID: 0
