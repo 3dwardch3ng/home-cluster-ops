@@ -20,3 +20,4 @@ environment:
   FTLCONF_LOCAL_IPV4: 192.168.10.201
   PIHOLE_DNS_: 8.8.8.8;8.8.4.4
   DNSSEC: true
+  DNSMASQ_USER: root
