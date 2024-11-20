@@ -1,24 +1,17 @@
----
-apiVersion: bitnami.com/v1alpha1
-kind: SealedSecret
+apiVersion: v1
+kind: Secret
 metadata:
   annotations:
+    argocd.argoproj.io/sync-options: Prune=false
     sealedsecrets.bitnami.com/cluster-wide: "true"
+    sealedsecrets.bitnami.com/managed: "true"
   creationTimestamp: null
   name: wordpress
   namespace: argocd
-spec:
-  encryptedData:
-    mariadb-password: AgCRMBxuCeooLpHS9BYhFcMCFd+5GOeboEGMuBe1Cw2PbAyBL02iBrUOCsx0WW6GY+pxGtmPczyayqLlii283SgsLzOrt1SqLrx+uPCEOKr2gsH7QibGcjPaqyn+ZbjCJUra/mi/+zhfhPs0ODe36GD4rL+f5+lXIr4uae74tbPCqxukVsAqKxX2dhU+aX7Djv5WezJbDvUYLsEt5L5l+r8QY9XYI80f1Miay1IU4w9igoF44Acry1k4yaQJv7cGHE4OiiM10/dMSchoRlmgqXvJnOPRAeS5lOOal0gZ4W9cq1iNbzrqmNmhmHkUlsWzFhDNI2lnTIw23WN/XqB1vdRamDC7SeyYKO3XRn+FTBjEgmUOb7US8nCgZWrhLhANrOMVsVru444S5HhOTdobmyP0Y9PJ+Ch/YUjVHvxx983ve5X4uhSo09NohEffBs72092xOrXiVgAjgNyyqI8t3gyOa1DMLZBb1YcgUOTP0w/j35Bx6KmB/LtfWw0A3EEtLVn5KYTi1pi6TdR2xEUPJA68y3tyAphkMvEZKsFFTL4T8CO71sTNfeEU3NVpgcG/Fqv/kPhABeZvyOj3bBaZocsQ7l+dIs3EO3C66VK4LYmn1nu6hn0fOQ/pK91oi0FczV8NldnJllYGxH8bYGLuGSQJOAKyzIrRJqzNNuV3T5syBHmqYke02YI6k4BvKFGXW8qAuvGWjDIMUrrMAeKQvtioz80=
-    smtp-password: AgC/4fCmNblREwXboBkTE7RJTLoLafOh8yt60/4hMqLtVhatBIsBtpASw3x537nAO3jqiQQK62asgIk5n97uRVaVXP0d8TrdlrhzIRha6YKPn9TmXOg28xqpJlTbstkFzVfX7IIhOMBlO41MhX1u4AMBEFC379haLRNqefNpNgHEVau1mARJYdOqPM0DPDM0ti/cfFNain5tMBA1aO/BIMDXEgWucdxqv5bYSonUCXtX99yRqI9uOZG7KN07eElxZBs88n1Rk+N80TQ0Oek8r4ulXm6OjviRJ733ybz/czrWwM4FyHWzFbRjFrQPFxe5KPVBaax1DcaHeogOn97wSsH94K1KnuOvQQFugwy8Q733aRb8k2bBBWaUVtV5ojXsf3T/WvAreFpTI6AAhbiKdZPhILy+iaj5WFSxi1bOU2u350Ca5TGshZfQ84uGXyeT/f0K+m/P2hcrxcmGgs88AuMZxbNbZCjZLfzuQQA+TPueRFi2UnBLikdBKpD40Gd/CMLb8k9LAhqPzDtXjGfY5KDwpz5qJigOWO+PtTK5Ty3ogW5NHOgfGND6KGzi43b4AzBMy+N5Jg+P2SroMl/QvEEifgXTnjJvx2s9uBF/zKI4GomDCKZHeROlxMB7ybu+J16JBGY+zbAFz4tUONsT06h2jXfnwOZDRC7tNtE/t5mrFdLGQfOh3FimefXlnj5DZujVeS+raMLnTQtfgo6Bw4IGAfYv
-    wordpress-password: AgAwvmlKA4vB3e4bz2hhuS0fXj5oFRVlQ/27mQAtczU/dEhkxsSy/vgGzoThmt/F4szCTOILlzRgd7qBXj5AlFik+kbgCAtQpCQfKy5wn6krQ6yAaxJjkgH6LfIqjYQGB1EySNQqg8GObXnVxM4OWdv9FrgpeAm+PSUVWfljVvtRBFcQJ+XyERLkpAPHgzSzFu7j+Ma+IJ+X5c02p7+Cbg8/lv5Ctw4dIaFL0bcZNoK51S2VdU8WwSVmfx1opZNKSXBAqf28q5T9C5aV757s3R7vGrpUVJQHXTMZpinp+RqreILuK+YwxlGpnqVbdPo0CfLRqszOwA+03afz7695d1alHCcsV5tpPlu5wAJDEK6+XeExBkomEy9Dmx0m6VsqjYi+cLGLI9WVqK04zHp9j3vXD99rtjfeUMWAv/sySJ3ai3lhe4RngBuCnnN6hh2yGcbfrOOxjOJ1wC9Gtt1swwow2vbZLiFqIO+AAqZevjuD8p+MgrNh7raDD8vAadL/RE5oww1sZFdaHu2JbLnMAN+cwP0r2ltWuMLGx/68b4ZZqwA6evB6VUfYOdEcLsaVsHZHmKuw+0nO9JH698Ll3JchM0Xo0LzaIWspDDFtxaE4X9NL6mdCa91JYQwxfERvId0umaeBM5zDLOSegIgJhvzFN/BwDaQ/p+uU3FNyTpoI83wUFlLvUWBanHQwV+Avu7KL7aSNsfo1uljMLxJott3o9rw=
-  template:
-    metadata:
-      annotations:
-        argocd.argoproj.io/sync-options: Prune=false
-        sealedsecrets.bitnami.com/cluster-wide: "true"
-        sealedsecrets.bitnami.com/managed: "true"
-      creationTimestamp: null
-      name: wordpress
-      namespace: argocd
-    type: Opaque
+type: Opaque
+stringData:
+  wordpress-password: "oWkju8T^7AAMRxWxGP"
+  smtp-password: "pqvp-abkk-pzur-zjsg"
+  mariadb-password: "qwA!U6qUw7ShKH782s"
+  mariadb-root-password: "QJ9ME3fY8djBY!bg3v"
+  mariadb-replication-password: "GBnn#tnz5zxRK0AJmK"
