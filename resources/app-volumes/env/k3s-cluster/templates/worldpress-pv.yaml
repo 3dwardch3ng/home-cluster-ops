@@ -1,8 +1,8 @@
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: worldpress-pv
-  namespace: worldpress
+  name: wordpress-pv
+  namespace: wordpress
   labels:
     type: local
 spec:
@@ -14,12 +14,12 @@ spec:
     - ReadWriteOnce
   persistentVolumeReclaimPolicy: Retain
   local:
-    path: "/mnt/nfs/AppData/worldpress"
+    path: "/mnt/nfs/AppData/wordpress"
   claimRef:
     apiVersion: v1
     kind: PersistentVolumeClaim
-    name: worldpress-pvc
-    namespace: worldpress
+    name: wordpress-pvc
+    namespace: wordpress
   nodeAffinity:
     required:
       nodeSelectorTerms:

@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: worldpress-pvc
-  namespace: worldpress
+  name: wordpress-pvc
+  namespace: wordpress
   labels:
-    name: worldpress-pvc
+    name: wordpress-pvc
 spec:
   storageClassName: local-path
   volumeMode: Filesystem
