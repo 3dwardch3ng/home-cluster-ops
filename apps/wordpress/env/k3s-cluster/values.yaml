@@ -30,7 +30,7 @@ persistence:
 mariadb:
   enabled: false
 externalDatabase:
-  host: 192.168.10.213
+  host: mariadb.mariadb.svc.cluster.local
   port: 3306
   user: bn_wordpress
   existingSecret: wordpress
