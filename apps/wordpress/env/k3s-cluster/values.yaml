@@ -1,6 +1,6 @@
 clusterDomain: cluster.edward.sydney
 wordpressUsername: edward
-existingSecret: worldpress
+existingSecret: wordpress
 wordpressEmail: edward@cheng.sydney
 wordpressFirstName: Edward
 wordpressLastName: Cheng
@@ -11,7 +11,7 @@ smtpUser: edward.cheng.au@icloud.com
 smtpProtocol: SSL
 smtpFromEmail: edward@cheng.sydney
 smtpFromName: Edward Cheng
-smtpExistingSecret: worldpress
+smtpExistingSecret: wordpress
 nodeSelector:
   kubernetes.io/arch: amd64
   kubernetes.io/hostname: k3s-cluster-node-y
@@ -33,6 +33,6 @@ externalDatabase:
   host: mariadb.mariadb.svc.cluster.local
   port: 3306
   user: bn_wordpress
-  existingSecret: worldpress
+  existingSecret: wordpress
 externalCache:
   host: memcached.argocd.svc.cluster.local
