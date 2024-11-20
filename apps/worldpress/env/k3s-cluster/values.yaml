@@ -1,0 +1,38 @@
+clusterDomain: cluster.edward.sydney
+wordpressUsername: edward
+existingSecret: worldpress
+wordpressEmail: edward@cheng.sydney
+wordpressFirstName: Edward
+wordpressLastName: Cheng
+wordpressBlogName: Edward's Blog!
+smtpHost: smtp.mail.me.com
+smtpPort: 587
+smtpUser: edward.cheng.au@icloud.com
+smtpProtocol: SSL
+smtpFromEmail: edward@cheng.sydney
+smtpFromName: Edward Cheng
+smtpExistingSecret: worldpress
+nodeSelector:
+  kubernetes.io/arch: amd64
+  kubernetes.io/hostname: k3s-cluster-node-y
+resourcesPreset: medium
+containerSecurityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+service:
+  loadBalancerIP: 192.168.10.215
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
+persistence:
+  storageClass: local-path
+  existingClaim: ""
+mariadb:
+  enabled: false
+externalDatabase:
+  host: mariadb.mariadb.svc.cluster.local
+  port: 3306
+  user: bn_wordpress
+  existingSecret: worldpress
+externalCache:
+  host: memcached.argocd.svc.cluster.local
