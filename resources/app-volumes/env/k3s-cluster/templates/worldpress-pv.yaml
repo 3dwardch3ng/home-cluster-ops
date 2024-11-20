@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolume
 metadata:
   name: wordpress-pv
-  namespace: wordpress
+  namespace: argocd
   labels:
     type: local
 spec:
@@ -19,7 +19,7 @@ spec:
     apiVersion: v1
     kind: PersistentVolumeClaim
     name: wordpress-pvc
-    namespace: wordpress
+    namespace: argocd
   nodeAffinity:
     required:
       nodeSelectorTerms:
