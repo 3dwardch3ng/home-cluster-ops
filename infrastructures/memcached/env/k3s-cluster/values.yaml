@@ -1,3 +1,2 @@
-namespaceOverride: "memcached"
 emptyDir:
   medium: "Memory"
