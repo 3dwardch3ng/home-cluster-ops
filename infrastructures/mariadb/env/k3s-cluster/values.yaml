@@ -14,6 +14,7 @@ primary:
     existingClaim: mariadb-pvc
   service:
     type: LoadBalancer
+    loadBalancerIP: 192.168.10.213
 secondary:
   nodeSelector:
     kubernetes.io/arch: amd64
