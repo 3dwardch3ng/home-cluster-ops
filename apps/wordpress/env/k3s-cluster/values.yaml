@@ -1,4 +1,6 @@
 clusterDomain: cluster.edward.sydney
+image:
+  debug: true
 wordpressUsername: edward
 existingSecret: wordpress
 wordpressEmail: edward@cheng.sydney
@@ -17,9 +19,6 @@ nodeSelector:
   kubernetes.io/arch: amd64
   kubernetes.io/hostname: k3s-cluster-node-y
 resourcesPreset: medium
-containerSecurityContext:
-  runAsUser: 1000
-  runAsGroup: 1000
 service:
   loadBalancerIP: 192.168.10.215
   annotations:
