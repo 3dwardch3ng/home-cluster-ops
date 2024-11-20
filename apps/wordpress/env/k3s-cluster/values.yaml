@@ -15,6 +15,7 @@ smtpFromEmail: edward@cheng.sydney
 smtpFromName: Edward Cheng
 smtpExistingSecret: wordpress
 allowEmptyPassword: false
+overrideDatabaseSettings: true
 nodeSelector:
   kubernetes.io/arch: amd64
   kubernetes.io/hostname: k3s-cluster-node-y
@@ -26,7 +27,7 @@ service:
     metallb.universe.tf/allow-shared-ip: k3s-cluster
 persistence:
   storageClass: local-path
-  existingClaim: ""
+  existingClaim: wordpress-pvc
 mariadb:
   enabled: false
 externalDatabase:
