@@ -1,4 +1,6 @@
 clusterDomain: cluster.edward.sydney
+image:
+  debug: true
 wordpressUsername: edward
 existingSecret: wordpress
 wordpressEmail: edward@cheng.sydney
