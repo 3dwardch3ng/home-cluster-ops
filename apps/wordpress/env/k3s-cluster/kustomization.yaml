@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: wordpress
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 24.0.6
+    version: 24.0.7
     releaseName: wordpress
     valuesFile: values.yaml
