@@ -1,8 +1,0 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
-kind: Kustomization
-helmCharts:
-  - name: gitlab-operator
-    repo: https://charts.gitlab.io
-    version: 1.6.1
-    releaseName: gitlab-operator
-    valuesFile: values.yaml
