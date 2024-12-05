@@ -12,6 +12,7 @@ spec:
   selector:
     app.kubernetes.io/name: trillium
   type: LoadBalancer
+  loadBalancerIP: "192.168.10.202"
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
