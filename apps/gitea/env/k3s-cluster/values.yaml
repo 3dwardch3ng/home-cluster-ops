@@ -21,6 +21,7 @@ containerSecurityContext:
   runAsUser: 1000
   runAsGroup: 1000
 service:
+  loadBalancerIP: "192.168.10.202"
   ports:
     http: 10880
     ssh: 10222

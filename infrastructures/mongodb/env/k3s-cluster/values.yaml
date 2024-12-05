@@ -22,6 +22,7 @@ startupProbe:
   enabled: true
 service:
   type: LoadBalancer
+  loadBalancerIP: "192.168.10.206"
   annotations:
     metallb.universe.tf/address-pool: k3s-cluster-ip-pool
     metallb.universe.tf/allow-shared-ip: k3s-cluster

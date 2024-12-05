@@ -17,3 +17,4 @@ spec:
       name: http
   selector:
     app.kubernetes.io/name: redis-insight
+  loadBalancerIP: "192.168.10.202"
