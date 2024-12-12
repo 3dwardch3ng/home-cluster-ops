@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: mariadb
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 20.1.1
+    version: 20.2.0
     releaseName: mariadb
     valuesFile: values.yaml
