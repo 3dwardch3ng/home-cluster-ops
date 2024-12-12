@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: adguard-home
-          image: adguard/adguardhome:v0.107.54
+          image: adguard/adguardhome:v0.107.55
           ports:
             - protocol: TCP
               containerPort: 53
