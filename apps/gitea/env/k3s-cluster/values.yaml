@@ -6,12 +6,12 @@ podAntiAffinityPreset: ""
 adminUsername: "gitea_admin"
 adminEmail: "edward@cheng.sydney"
 appName: "gitea"
-existingSecret: "gitea-secrets"
+existingSecret: "gitea"
 existingSecretKey: "admin-password"
 smtpHost: "smtp.gmail.com"
 smtpPort: "587"
 smtpUser: "me@edward.sydney"
-smtpExistingSecret: "gitea-secrets"
+smtpExistingSecret: "gitea"
 persistence:
   existingClaim: "gitea-pvc"
 resourcesPreset: "xlarge"
@@ -39,7 +39,7 @@ postgresql:
 externalDatabase:
   host: "postgresql-primary.argocd.svc.cluster.local"
   user: "gitea_user"
-  existingSecret: "gitea-secrets"
+  existingSecret: "gitea"
   existingSecretPasswordKey: "db-password"
 nodeSelector:
   kubernetes.io/os: linux

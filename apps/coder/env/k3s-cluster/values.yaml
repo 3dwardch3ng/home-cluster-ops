@@ -8,7 +8,7 @@ coder:
           # You'll need to create a secret called coder-db-url with your
           # Postgres connection URL like:
           # postgres://coder:password@postgres:5432/coder?sslmode=disable
-          name: coder-secrets
+          name: coder
           key: db_url
   volumes:
     - name: coder-data

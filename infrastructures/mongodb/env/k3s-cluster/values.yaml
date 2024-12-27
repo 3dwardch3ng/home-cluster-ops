@@ -7,7 +7,7 @@ auth:
   databases:
     - edward
     - anysync
-  existingSecret: "mongodb-secrets"
+  existingSecret: "mongodb"
 updateStrategy:
   type: Recreate
 automountServiceAccountToken: true

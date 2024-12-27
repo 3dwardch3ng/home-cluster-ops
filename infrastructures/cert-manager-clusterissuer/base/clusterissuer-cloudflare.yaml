@@ -14,7 +14,7 @@ spec:
           cloudflare:
             email: "edward@cheng.sydney"
             apiTokenSecretRef:
-              name: clusterissuer-secrets
+              name: clusterissuer
               namespace: cert-manager
               key: cloudflare_api_token
         selector:

@@ -4,7 +4,7 @@ env:
     DISABLE_API: false
     CACHE: redis
     CACHE_REDIS_ADDR: redis-master.redis.svc.cluster.local:6379
-  existingSecret: chartmuseum-secrets
+  existingSecret: chartmuseum
   existingSecretMappings:
     BASIC_AUTH_USER: auth-user
     BASIC_AUTH_PASS: auth-password

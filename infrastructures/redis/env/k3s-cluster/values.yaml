@@ -1,6 +1,6 @@
 namespaceOverride: "redis"
 auth:
-  existingSecret: "redis-secrets"
+  existingSecret: "redis"
   existingSecretPasswordKey: "password"
 master:
   persistence:
