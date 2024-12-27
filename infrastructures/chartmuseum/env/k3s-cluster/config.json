@@ -4,7 +4,7 @@
   "namespace": "chartmuseum",
   "destNamespace": "chartmuseum",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/chartmuseum/env/k3s-cluster",
+  "srcPath": "infrastructures/chartmuseum/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
