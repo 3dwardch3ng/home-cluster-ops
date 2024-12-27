@@ -2,15 +2,15 @@
 #kind: ApplicationSet
 #metadata:
 #  annotations:
-#    argocd.argoproj.io/sync-wave: "3"
+#    argocd.argoproj.io/sync-wave: "4"
 #  creationTimestamp: null
-#  name: infrastructures
+#  name: applications
 #  namespace: argocd
 #spec:
 #  generators:
 #    - git:
 #        files:
-#          - path: infrastructures/**/k3s-cluster/config.json
+#          - path: apps/**/k3s-cluster/config.json
 #        repoURL: https://github.com/3dwardch3ng/home-cluster-ops.git
 #        requeueAfterSeconds: 20
 #        revision: ""
@@ -23,7 +23,7 @@
 #              repoURL: ""
 #    - git:
 #        files:
-#          - path: infrastructures/**/k3s-cluster/config_dir.json
+#          - path: apps/**/k3s-cluster/config_dir.json
 #        repoURL: https://github.com/3dwardch3ng/home-cluster-ops.git
 #        requeueAfterSeconds: 20
 #        revision: ""
