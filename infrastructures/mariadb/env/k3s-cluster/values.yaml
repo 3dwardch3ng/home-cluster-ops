@@ -6,7 +6,7 @@ auth:
 primary:
   nodeSelector:
     kubernetes.io/arch: amd64
-    kubernetes.io/hostname: k3s-cluster-node-y
+    kubernetes.io/hostname: k3s-cluster-node-x
   containerSecurityContext:
     runAsUser: 1000
     runAsGroup: 1000
