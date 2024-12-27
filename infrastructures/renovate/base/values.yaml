@@ -3,7 +3,7 @@ renovate:
   mendRnvPlatform: "github"
   mendRnvEndpoint: "https://api.github.com/"
   mendRnvAdminApiEnabled: "true"
-  existingSecret: "renovate-secrets"
+  existingSecret: "renovate"
   mendRnvAutoDiscoverFilter: ""
   mendRnvLogHistoryDir: "/logs"
 postgresql:

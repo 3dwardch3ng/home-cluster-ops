@@ -5,11 +5,11 @@ metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
-  name: coder-secrets
+  name: coder
   namespace: coder
 spec:
   encryptedData:
-    db_url: AgCdoT6aI1vcINzeDKufk8i2+ye2uSNDsAsqkUw06A+m2zJKCs5yCSHOEZ8m/tApFU99BmqZHkb3LW7R9mCW6RMX2AIcD2OzEHCyUm1frtCjwQErlPRycBbkCGoTuxYfKNePihs7vhH2O7QvTDFei3ZPe/TnFioMb+d83CrYL0KcdiYhdh2waLteHwkQatj9P4pg3h//dl9BYzmffXBgzN7IrKYKDWGO4a50Z+J77ZIqHVguXfgxrLAgYY3nkhYGSEgXJJAfc9Cm1Na6NA9OesE58M3URItixCMnFSAD/gXDgolGWt7Q1o1DxKnmBnL9UYdTKRQ8NwS/p3+z7cn5oTuhg3M+AUUVS4I/A61VxC98ZoY/a8l43IICGmbQZrO2sOVdU8nuAsP1qkt+vEhlq873eaCju1T/qkcXk2Ybvo4wa9g8bWmdmRZ63q+7gZp4ethkTFN5JzoB+tRCbmuqwksCWhscjMDCurlrOxN5LRv8VUYvfe26AHNNfRkqJvobNQiDKmjXbWC8l8Bw1IUD+3f2JVWY1HyBa0zNjgV1TJT6bW4fYsdzf6nwiOK6VrcV47aFf8GehIXJv/+GOuCUVX5RgN38IMIE3MOhBHpMHGlsh7mM+jmqAO7+rgWFApZc8VlzN3USQRUjZ3tSGR5hdfFgYjiy4UJ3qbqGlWvR3bshfc9BlHaGUcL3k/dXbWbL7TEk3z295ldKjJqdLBwWN0uyvOLjY68BPg7sF6WwoaxwbhptSd4UVRuC8W9wbInPqgADgDAEOKsE4JwJPPbg/7t20FATxHepmQ3dNFD3AjfHXilqo/KCdrsJbT2aSyPbmcG4mV0BTyFUe9BZ9CcFt+6QRs/FnKM=
+    db_url: AgAFQGUd8Fs3Q0NaL0VGWF0hFSHA9NeNdkqC4Sv8Rbnh6LZjL5xQ3NtrKGZTX1NQ1c/cMpVoKejsDTxjrYtx9Fys7BiYZc0SpReOjVOtFcUaXXI/0A3OdoUyjx8SdJu/0ZsatqKiPrioc76rMlxdvH3agIlStqWNWbE0dsPTO+/HU8G/W/Rx3z8rHVPXtBK0DDmvFU/tRe6PwcLfGh3+ZX6O5LwQcQFAIbNvx0HSF7B6enideRNrt8VA0v1AW0NfQ3FXNowk6qCcIsO9FIrXTTxoLvKBFqDZPjUn8RV/EWVurZPpsyyPxnDnllWnGFnakNr9amv+F5VpJpkA9jjwaVwyePcKsG3Vrn8SoHqakKtKus9TcGg0a0X6otXgPkiNjtqut4K/qT9EOb6pD56+7y3eLvon/AeFDIvx2rk01uwmqJ0CRSSTTYmSwZfJSHg41CPJsT7O2x/GvePcOo4QnzF6sYDDe4G+CkzhN+p/SGTHmNoSu135WdKPs7YN9uqUe+2h8jJeQwm+lPOUZZ/VJUjDyinqN4UrjRWABGZL8yNkxnSQ3/+adurGZpckYTZY8lfsa2t0x9+pqL0Ma1KObx5b4qzOKhWlRhBXrdHkNu6mA2fLWzqFB736JttnXR+nP39v/HAKIkqN7lE7PbGbB1p2leZ/rGlIgQiZcU5izLfvOxOkMR4hIEYzWc3++bomH8j7hYaLM2FlfAaBz8A6cjTiz7KPlA3nXKtCmLKujpNRzY6cZtTS5PHuzP+XMmKsgz31se2g5vQ8i7lHd8QFn+dn9ksaHInu8wfO6WtHwiFPggJwupdKTOyQStVvNm6wgYXVr3cTQBMyp4+ZO/KKN9VCMwR+h5A=
   template:
     metadata:
       annotations:
@@ -17,6 +17,6 @@ spec:
         sealedsecrets.bitnami.com/cluster-wide: "true"
         sealedsecrets.bitnami.com/managed: "true"
       creationTimestamp: null
-      name: coder-secrets
+      name: coder
       namespace: coder
     type: Opaque

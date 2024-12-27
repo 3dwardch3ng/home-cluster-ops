@@ -11,7 +11,7 @@ smtpHost: "smtp.gmail.com"
 smtpPort: "587"
 smtpUser: "me@edward.sydney"
 smtpProtocol: "TLS"
-smtpExistingSecret: "sonarqube-secrets"
+smtpExistingSecret: "sonarqube"
 resourcesPreset: "2xlarge"
 podSecurityContext:
   fsGroup: 1000
@@ -39,6 +39,6 @@ postgresql:
 externalDatabase:
   host: "postgresql-primary.argocd.svc.cluster.local"
   user: "sonarqube_user"
-  existingSecret: "sonarqube-secrets"
+  existingSecret: "sonarqube"
 nodeSelector:
   kubernetes.io/hostname: k3s-cluster-node-x

@@ -5,11 +5,11 @@ metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
-  name: redis-secrets
+  name: redis
   namespace: redis
 spec:
   encryptedData:
-    password: AgCf9i+iScTH+SFN/lIrjrZorqydKq2cf6a7HC7gDL5yt1+n6UyBWn9qR1j3XlvJXcUm0UizGRZdLa/LoZ4br/rsH6dVx/MPNpcxMdDai2figwIHzky5g1GcCNDbKJpSf1/uoCSkGo6/f9KrybTgah0AqKyrTCaVXb3xOhRiVsCqpXagnI0ccCgmEIfu+4oH+YnjzKn+WgHinQ8BDAhQgkaTn7CxdUScrANLZraDvJZJd/QPXbI4pUCJ8mt8JhdTNgWSXwKAWLEb8Zk83jxKcoywMK6y+rtdPUZkJuV1Hg5eR6WCdvpLRkEZ6QW36tUdNPlV0Uk2srGQaQzANAS8crznaSLgiFxiqt3XmtDRfr4P/6Gc3DsoC36oBFPgi5uOELrEMruf82qgog7LPNWyra2pFkRlHkosNGwhfmN2+T/oQNdobHJVVnseyWu9tgGPZtGol1+h5YifcHO/jex1vPBVb4KhCG+k9iWLALX09UOOR+7PqCl43lkfxueLGM4tcZuJqYf/YAMH/fG1STsQyS/XoFzIn3KfXuOZsVxaYZOvKggSR+m5knWaoFPRp0Mdb9dJw+3eAcLWC2FQ4teVqFDu2eQRDnCCndIhYg7W7GBn8IB8KdWEfgg2JdF3LiLVibeAvwKA+2xLbNGKIIrZzapVymDu/fveOAAXpYVAos0Nqj9p01jDuR0uBYKtv7SmRpAH7eIxyn5xLh/uyIbKrAa22+/nKA==
+    password: AgAvd8OmmAFg401R4UVKGMF+X3iPmrwYZBTQyJmuHhUWZtVnaKkxOkU/ES73AYl7opUSbVk3rgMkKoZuae9OuB2HN06ScJWyhE0yNCfR/d/Amvp0+71uYzDYWXTSdfGLkL12BT4Wtye531Jce+OEFuLTKj89+FBqDD954VOZHleaVnBV8ig7OLsyX2zsyFpw433XNut+fEOjnbfYhDeGQQKkjA3nSXBaQnpdj2CK/QFolUUSPmjARNfSSGtMe4CNF7/9JXkYLMdFlxbkRfKT+e5GtHVEQM+61YSSauOaYWZ5ZaGgAtql/nxf78AVxLO+Gvnd9TeWh/jrdu8LrOcXrLaA5Csz5fFWZdv0bHxpuwTIal6yEuHnGzbSRyGlVEgVDgK+fjhifSz1G84M1SkOVwKng+Jo2Vcf5XngVyNgaIcz/zk6WhHtTgfFjhJB7mxJsB1T2HdiI5rZmoLehJ/2LwwISHqGtmfqfr7L9XXGWmFuvxnHFsQpTq6IDZPXqhNsBo0gTKNTIKX/zG5RDsWTLjug3YJpRdyF4cOujiMmS9hSj6b0EF08WkX6GNiOFwEVSWWBhyZwxI0dfRBWqOFNm1g/29jlb2G6ahfsKhp1PzVAKLRnBIgoj5YTL5gOZcnEZnyeRI4yRu9n5R8b2n5s+1PWYPvDej6Oy1gAw0g2AhD6Nji4KNQ+/e0PuE/nCAkfRT+99tRG06XpG9UdRH5BxTMeBVxHnQ==
   template:
     metadata:
       annotations:
@@ -17,6 +17,6 @@ spec:
         sealedsecrets.bitnami.com/cluster-wide: "true"
         sealedsecrets.bitnami.com/managed: "true"
       creationTimestamp: null
-      name: redis-secrets
+      name: redis
       namespace: redis
     type: Opaque

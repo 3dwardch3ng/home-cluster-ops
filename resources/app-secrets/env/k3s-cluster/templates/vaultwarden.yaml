@@ -5,11 +5,11 @@ metadata:
   annotations:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
-  name: vaultwarden-secrets
+  name: vaultwarden
   namespace: vaultwarden
 spec:
   encryptedData:
-    db_url: AgC4fBPSO2WYnxcZkFfiWFog5cgqp7p/0jaG4l57X+bAvxUM86I7fqN5DKi4s9obI5wgKF85cbRkoWjrSqGgKl6vTqI4Q1+atNQUTg6C5brZHm4q5JZ2yMRj+2GD4Bv4w/nsXsGQBhcRVDjtSXKZajDp+c94Dxw4h0FyUAF6teGloy81sbt24KcrsBfty2OCelIX6YNE2o5Y2UHGuDAIDUxouymrTBWVL2UorHK3pWUMxQ7+xpCsVlltQQRScn1d2Ql2Kt1zUwDuVfdbxZbeoRqPTnlO5vchkwBnU/7RZPT6Hy2aSJt4coXwPcq/XjA2gx4yAysRviFxlJr1uxPo1R2HVvuOxmvWpEy9KFGxiGKV1lz5pjshZQemRZpbZH5oUCMkG3o7AzbWDfSyaHo2r9oMjr+7+vlkKhcn+i7DgYvc+PAKIAX048niKq5mHQLjPOkopHNBPXa8iwVl0ERBDXMke4OlrIjf12Imka0OhTdBpgg5+ptoiXfj9xh7KdcOxH2pWD0Bl3tOMgQ2BWPB5moJ5S4s+6bTq15hr37nxIabqjIQFw/GvFnVelxByUBcZ+w/7d6hz4yXab+kOmm01qIMws898G4c/3cMDpfVTyOsLLMxE0evkk2cFOJvumgNAGqoG0dSPrgHkID1tQgfV6QMkQqdKlagwAyDgafTM0gxrGHBCVTVul50hShG5b53taKbnumiteJStTgSZkDZHk6v4HvrXXzfiXwSN8YbSQFQhVxXQ1tFofCdcvp5KLsoiiDUtUV0HMIcA8MDi0Z3/yJFFuoKSRYk/dFYPItew231ArVNEIfzQvK8hFy1twN/dTpc/GFeOskE5GJnwvH00tAhLybB
+    db_url: AgDDJolixF+3w5bSFMNdqwX+lx2igaH1XL1G1NhMg+hvlqGFbyxfhlHoWiQz4Tm9lLA/JQTsAiHZHzWPMydfkhOae5XNiREdVAG9J7bIT1d//LAkX9HgxakTKLp8KoAzhxOiAUaXYwqPcX0DeZuF2+2VFvBWnomUO39ZOThFetMifLKQpanlVbgqbQ7+A0RobySy/5+czFXYBT1MbIGRH684l/0EXpg2MS68zrtIpjtlB43tgze7/FIryurXLZdyykBtncgqhbPyeDMPQk9oKRxZfSYVEBwBqub16oiv6fWpqV0rmjNt005KOB3IvFpWEi07GQJ7dknnAZ1p+qnYQFhZXmjbv6JF/ZdpdtaAO+DAtV89S8RL6eoGkivZX9cSzrd8o0aa1EedzAnykgEXELLXJwXaF+Wb64X25kvM5W/a1T9VbcMscL9aSh2xJWPksA+3g1Z1xJfg2Kq9npagw25HnHZSJomU9HeXXFLi2wLsh5+pcSYS0GKGBzK9PbX1G61buD4my5h011z4dQJOUWzj6fudphv7kze6mxTtPPz8uzZjF1lmzQXIT+f6NG+nDvrzz1M500h90uWpdpam6v86KNhldh+cQx1LuOrudgwrvH8XfwSXkTCbMTebbvWHd0RnjapwAM08MzjiRIMKJWrl2W74e3vvinzc6K42mg2JWxQCLkV2IHvtWn/ygUxGdFK+zq5+sbKuFqkl/RGaWXEgKBBlkvrEtKHDBgDqTQ5ZeynW3SC/jvgKgv0jW3dXTMvquLeWUBTPGtxyQYeiJ2aksF25jANkfnanxLBJQ3Y90gnkxyfHtaieyn0R/Bu4d1vPA55GzrlwqvS3hFj/mNWfp1ah
   template:
     metadata:
       annotations:
@@ -17,6 +17,6 @@ spec:
         sealedsecrets.bitnami.com/cluster-wide: "true"
         sealedsecrets.bitnami.com/managed: "true"
       creationTimestamp: null
-      name: vaultwarden-secrets
+      name: vaultwarden
       namespace: vaultwarden
     type: Opaque

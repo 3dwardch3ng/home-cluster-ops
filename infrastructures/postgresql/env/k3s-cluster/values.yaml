@@ -1,7 +1,7 @@
 auth:
   username: edward
   database: edwarddb
-  existingSecret: "postgresql-secrets"
+  existingSecret: "postgresql"
   secretKeys:
     adminPasswordKey: postgres_password
     userPasswordKey: password

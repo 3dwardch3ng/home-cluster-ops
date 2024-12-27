@@ -3,7 +3,7 @@ image:
   debug: true
 clusterDomain: cluster.edward.sydney
 auth:
-  existingSecret: "minio-secrets"
+  existingSecret: "minio"
   rootUserSecretKey: "root_user"
   rootPasswordSecretKey: "root_password"
 nodeSelector:

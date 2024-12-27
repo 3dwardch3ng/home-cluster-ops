@@ -1,0 +1,24 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  annotations:
+    sealedsecrets.bitnami.com/cluster-wide: "true"
+  creationTimestamp: null
+  name: chartmuseum
+  namespace: chartmuseum
+spec:
+  encryptedData:
+    auth-password: AgCaye0YHq3osutiO64edeu8t4sFlhx15Pny9lz1TZp/JThlmlNb0KbG9JF+Zo040gsn5UYUyR2YOtd4apPATTt3XdsK+AkPjrcpeme80uD8C0y7nXFtUvBz5aG2MMoaa06RECJUCBF4gunS1r5OmSlF41ecflJjIYjhXiMtmB5aeeeh5wQHbx9B4Ir+aZBhNzwLrT+H/m7CK//bkCtjiFstr0bAWLSVyB7qy0TONaTgmVp4UDQlVDHW3VPGIFBf9AOoLV3dCrvLAh/13vP8k0WzYvpFHoVRmzuldyFlB/3XcP3vuEeD1WmSi0rqW2Af3CB7o0wcSbymAidEVBdZpYKqspeUWTO3ZuWokdWkOgOKA5gtL1mzGbg/IEs/wE/+ncMzVjVdotg8KylA2T010bluGkK1W7/C/X18n+v4QDpNM9YmwFjZkIHSobD360wUv5d1HROAT3yXbdgyovOwDBHgZxAmDn7fH47gdFVrvLZeaFXZeJ1OaiXNrT/MCnHCZEkcj0I8AiSu3TUqL3uQhkjqZ/06jjZOQbWiI198eFsuoq8c3XKrKI/ktFpCBcuejRNfT9woiFH5rPj8FY8l756YU/D84X+3r0QWabdX9NtEDFBfbBidI1Q+ayATbAf0agz5qh56uwpvFBxkF9I4K9XsW3aYg5tZ4Zqp4v8MoodXLIQFIM8+AuDKvt6R/xtHxfD1tHO5DyuVtP/lBe9v1hjwyTiMFPtcZs0=
+    auth-user: AgCJ91VOrGeO1UIEhyijJSckFjIZvLaOmpyHI6qLpGdT+awvajtfQbPtzAMmoSB5WPVpeROSNh0C9hVV1TI8CPHZT2K/4xq6OjsIQ1n7M+WDfdPm57nrLCHB6pyPnfLak4VrBskSO7wDzn3FIIs7D0r4GL+GqbVVmjJzkLGBlUuTG2rkzr75hzrFqSYAPQwRrjGSQx71H7n2CBfWYVj3C7DPqVJ76S1tJcJRWWhe0GnMFjshWO/psgsnbEvNRalrBEOTTEb02ESdJsShYVWo/y1fDzp2EuRQuhU+HyZHql8WXGbL2hwD2bmSTc6REhgsO2xphz5FidL2x4ERS4iqPyAjLBK8SOmStdi4kb7f/P9uHbq/A97zguIl5OpW/AXVTnVMEccgUtFqcVO2WabulwQTvX0By6u1aQYlpa9drbdskOpszqqBBCf0hVnVYZ5Imp88UlzqBktCVtpwyFWOb1vfeDxkN5UHTJCEEpknx3Cmfq5X+sdZZVCAxxboKWAio1ZshdDkl7C0kiL1hNx0oxj+HB5LHCzlHCUqWPE/nr7N6y9NHc4MKTzitwFoAKRSkb+hYHwMbilHXOZ5VPwB71Je3lEe80tHqFXLZBLd0grtYu0j5H4gjcuBpP1b2U3v3athHlW5Q3XIrgGDojchhQPuWAgSpJ3gsFxangrBkux0kklXar1zU4GmLD0THIR906inQRbV/S25PlptvQ==
+    redis-password: AgApZ6q3NusfbGpqxxCUFkhKB6DvE3afLu3MywdrwWKdYkBDKzAiH/PfDhmzhNgI7lFERQGb0D8e5G+hcuCJUOX3k4Qdyk75WKx/EyoCjwdElf29QMQuDWQwODPB3TPU7+I5o9pKYvrinJJkK5ezFNRlUpSoz9e0ENdKiSTaC10Ubq2iC+BQ1WDtMS5oilvUcfYxXw1P3ZEZsHG/Y+03Y9lh/PlY1KFZMBs5mjtK7reK9tMLFTmRP0+gHT633Pw6oXgrtucTGntKqqNBEvn4BsJ5z+Q2jl44MZax0YkKuIl7WEjtA8bo0jq9nM8XzM0yPEc8pnDZcaepcj/dydIR2qPMihUjYN4i0gN41pazvUwc/d83+bCyHTti4iFtdeEcPZMyM0z5/j6YU0T/7KTrac80/FjcgFFuM9k929LtS684c+JF3vMvtLbHNjah69gn+t4f5e1XxjyNbl9BSpQEF0RuPWXUlN6R6s07Ql+AkDuyQjxIZOVw1BYOIhPHpvRT/iGoK8zciqyl7k2kBr/dhghdzMj0mDt4EFUIXQ/xM5gSaSz8h9ScMPcSHasolQ5ONPneKLkbyUqSZQQrwSCwb+38/P1aQByiveVKdOqIU5RDVX3ngdhGDcflqtkIUUxXc2ndwsbYLJTCHItMchG1d9VvCdZ63h5qkSTETFamJ9vaP5DL0wPLvwNtSPPglwL4S+m6/BWnvXIPVIC0Fa6ija9AS3KzjQ==
+  template:
+    metadata:
+      annotations:
+        argocd.argoproj.io/sync-options: Prune=false
+        sealedsecrets.bitnami.com/cluster-wide: "true"
+        sealedsecrets.bitnami.com/managed: "true"
+      creationTimestamp: null
+      name: chartmuseum
+      namespace: chartmuseum
+    type: Opaque
