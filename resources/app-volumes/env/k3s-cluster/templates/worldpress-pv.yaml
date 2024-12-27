@@ -35,4 +35,4 @@ spec:
             - key: kubernetes.io/hostname
               operator: In
               values:
-                - k3s-cluster-node-y
+                - k3s-cluster-node-x

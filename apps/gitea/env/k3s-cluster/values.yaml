@@ -44,4 +44,4 @@ externalDatabase:
 nodeSelector:
   kubernetes.io/os: linux
   kubernetes.io/arch: amd64
-  kubernetes.io/hostname: k3s-cluster-node-y
+  kubernetes.io/hostname: k3s-cluster-node-x
