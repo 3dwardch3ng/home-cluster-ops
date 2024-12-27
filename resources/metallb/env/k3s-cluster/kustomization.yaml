@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: metallb
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 6.4.1
+    version: 6.4.2
     releaseName: metallb
     valuesFile: values.yaml
