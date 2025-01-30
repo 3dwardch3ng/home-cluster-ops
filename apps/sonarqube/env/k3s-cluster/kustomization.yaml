@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: sonarqube
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 8.0.1
+    version: 8.0.2
     releaseName: sonarqube
     valuesFile: values.yaml
