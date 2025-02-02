@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: open-webui
+  namespace: open-webui
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
+  labels:
+    app.kubernetes.io/name: open-webui
+spec:
+  selector:
+    app.kubernetes.io/name: open-webui
+  type: LoadBalancer
+  internalTrafficPolicy: Cluster
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 3000
+      name: web

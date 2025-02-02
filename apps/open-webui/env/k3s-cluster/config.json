@@ -1,0 +1,12 @@
+{
+  "appName": "open-webui",
+  "userGivenName": "open-webui",
+  "namespace": "open-webui",
+  "destNamespace": "open-webui",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/open-webui/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
