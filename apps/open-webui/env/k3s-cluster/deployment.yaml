@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: open-webui
+  namespace: open-webui
+  labels:
+    app.kubernetes.io/name: open-webui
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: open-webui
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: open-webui
+    spec:
+      containers:
+        - name: open-webui
+          image: ghcr.io/open-webui/open-webui:main
+          ports:
+            - protocol: TCP
+              containerPort: 3000
+              name: web
+          env:
+            - name: OLLAMA_BASE_URL
+              value: http://192.168.10.120
+          volumeMounts:
+            - name: open-webui
+              mountPath: /app/backend/data
+      volumes:
+        - name: open-webui
+          hostPath:
+            path: /mnt/nfs/AppData/open-webui
+            type: Directory
