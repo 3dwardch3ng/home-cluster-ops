@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: minio
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 15.0.2
+    version: 15.0.3
     releaseName: minio
     valuesFile: values.yaml
