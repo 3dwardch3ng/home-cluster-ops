@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: kubernetes-dashboard
     repo: https://kubernetes.github.io/dashboard/
-    version: 7.10.5
+    version: 7.11.1
     releaseName: kubernetes-dashboard
     valuesFile: values.yaml
