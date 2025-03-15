@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: coder
     repo: https://helm.coder.com/v2
-    version: 2.20.0
+    version: 2.20.1
     releaseName: coder
     valuesFile: values.yaml
