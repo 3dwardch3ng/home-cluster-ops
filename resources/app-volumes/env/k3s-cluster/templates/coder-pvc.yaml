@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: coder-pvc
-  namespace: coder
+  namespace: argocd
   labels:
     name: coder-pvc
 spec:
