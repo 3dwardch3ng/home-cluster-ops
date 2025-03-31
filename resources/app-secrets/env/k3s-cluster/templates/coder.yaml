@@ -6,7 +6,7 @@ metadata:
     sealedsecrets.bitnami.com/cluster-wide: "true"
   creationTimestamp: null
   name: coder
-  namespace: coder
+  namespace: argocd
 spec:
   encryptedData:
     db_url: AgBu8wifJcJPTFMqgSQ/+fpOUH86+wsj+RdmIfr0TVE0PjYRkXhc1BEKqzPI0tyJpYQJI1lLOYrKSMeiX8+NMz8XjrZ3Q+pCPKgttIc66uRDZl5TXbw2bQrkUIdXOFcLnuZCmg24LwpIgcmZ69uc7LAwiU0c5dOD9iXIEm/icEeLLgU/q5omxDKVQscabmR/0ux0iEnUNOOye/OaYmv/36b7kPyVdFolZ3D+Dsf7CbS9RAoWFlcUXiyMV5sYgeu3Lrzz65lKKpJDTXo+b/xlqocd/8P92m90RkY/thTJaUVEOHrS3f6PAFMeo2LrROvT6mXhPhtLoYVajAvYiWPxWL8m06FSfDh4FeAxjFJ2ecelLw++E7a3gq3uLqTX4Bk22KGMtbcTWI3MyaBvRUeMK3l+2n/QEIEGTuwCYbTsUMJOKrLkncRHW4hWqsygrE2fvlc/6JkzDiwg0kDikpokXs9PAcYpfHRA9okgDPaDUssLMXZzXXH6J1Mp9ywPmaFshB76dWJ/8RxWvA5880iPAkdR03ZfIOuE2UrtZqJLESth32BaW0CiVSjbD2QRhO00hkqqFFC3Oy1/tS10Dk560Es9C3U2TaRrGkYizWOUftBR7PI6r6eMclBh2/jJIF4o2+CICQ4pLIC4dkSM9O2QLw05tn2AVcKyDGXbfsSQBHon2RGfzb1Gz6lp6xm+qEpBqNTiSOoUVzgnabEEYRZvDNuIaGHguKZ0It3Jb5g6evRB1ZePjf8vCIIDew6wNTDZS15sAYt+H53wfB8YvtMrInVXy4O4WtW1XY0rysXMUIYeAS1KI8uZcBWP3fRgxqpoqSEF4I4SXVar6xGaziq+0iEYV6ruuW0=
@@ -18,5 +18,5 @@ spec:
         sealedsecrets.bitnami.com/managed: "true"
       creationTimestamp: null
       name: coder
-      namespace: coder
+      namespace: argocd
     type: Opaque
