@@ -5,7 +5,7 @@ metadata:
   namespace: uptime-kuma
   annotations:
     metallb.universe.tf/allow-shared-ip: k3s-cluster
-    metallb.universe.tf/loadBalancerIPs: 192.168.10.210
+    metallb.universe.tf/loadBalancerIPs: 192.168.10.220
   labels:
     app.kubernetes.io/name: uptime-kuma
 spec:
