@@ -3,12 +3,16 @@ kind: Service
 metadata:
   name: uptime-kuma
   namespace: uptime-kuma
+  annotations:
+    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+    metallb.universe.tf/allow-shared-ip: k3s-cluster
   labels:
     app.kubernetes.io/name: uptime-kuma
 spec:
   selector:
     app.kubernetes.io/name: uptime-kuma
-  type: ClusterIP
+  type: LoadBalancer
+  loadBalancerIP: "192.168.10.210"
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
