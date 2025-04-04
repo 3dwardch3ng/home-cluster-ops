@@ -19,7 +19,6 @@ coder:
       mountPath: /config
   service:
     type: LoadBalancer
-    loadBalancerIP: "192.168.10.211"
     annotations:
-      metallb.universe.tf/address-pool: k3s-cluster-ip-pool
+      metallb.universe.tf/loadBalancerIPs: 192.168.10.211
       metallb.universe.tf/allow-shared-ip: k3s-cluster
