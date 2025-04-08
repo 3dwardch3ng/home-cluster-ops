@@ -1,0 +1,11 @@
+{
+  "appName": "system-upgrade-controller",
+  "userGivenName": "system-upgrade-controller",
+  "namespace": "system-upgrade",
+  "destNamespace": "system-upgrade",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "infrastructures/system-upgrade-controller/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null
+}
