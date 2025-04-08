@@ -21,13 +21,11 @@ containerSecurityContext:
   runAsUser: 1000
   runAsGroup: 1000
 service:
-  loadBalancerIP: "192.168.10.202"
   ports:
     http: 10880
     ssh: 10222
   annotations:
-    metallb.universe.tf/address-pool: k3s-cluster-ip-pool
-    metallb.universe.tf/allow-shared-ip: k3s-cluster
+    metallb.universe.tf/loadBalancerIPs: 192.168.10.202
 ingress:
   enabled: false
   ingressClassName: "nginx"
