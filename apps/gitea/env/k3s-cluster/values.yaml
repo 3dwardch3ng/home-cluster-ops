@@ -14,7 +14,7 @@ smtpUser: "me@edward.sydney"
 smtpExistingSecret: "gitea"
 persistence:
   existingClaim: "gitea-pvc"
-resourcesPreset: "xlarge"
+resourcesPreset: "2xlarge"
 podSecurityContext:
   fsGroup: 1000
 containerSecurityContext:
