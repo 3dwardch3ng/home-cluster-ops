@@ -25,7 +25,7 @@ service:
     http: 10880
     ssh: 10222
   annotations:
-    metallb.universe.tf/loadBalancerIPs: 192.168.10.202
+    metallb.universe.tf/loadBalancerIPs: 192.168.10.222
 ingress:
   enabled: false
   ingressClassName: "nginx"
