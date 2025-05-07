@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: chartmuseum
     repo: https://chartmuseum.github.io/charts
-    version: 3.10.3
+    version: 3.10.4
     releaseName: chartmuseum
     valuesFile: values.yaml
