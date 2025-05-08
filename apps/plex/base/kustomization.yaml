@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: plex-media-server
     repo: https://raw.githubusercontent.com/plexinc/pms-docker/gh-pages
-    version: 0.11.0
+    version: 1.0.0
     releaseName: plex-media-server
     valuesFile: values.yaml
