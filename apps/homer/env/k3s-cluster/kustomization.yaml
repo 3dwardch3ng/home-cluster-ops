@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: homer
     repo: https://chartmuseum.cluster.edward.sydney/
-    version: 1.0.5
+    version: 1.0.7
     releaseName: homer
     valuesFile: values.yaml
