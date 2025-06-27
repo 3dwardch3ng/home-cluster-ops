@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: logstash
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 7.0.3
+    version: 7.0.5
     releaseName: logstash
     valuesFile: values.yaml
