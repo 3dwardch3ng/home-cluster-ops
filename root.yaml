@@ -18,7 +18,7 @@ spec:
       jsonPointers:
         - /status
       kind: Application
-  project: default
+  project: home-lab
   source:
     path: projects
     repoURL: https://github.com/3dwardch3ng/home-cluster-ops.git
