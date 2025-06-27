@@ -23,7 +23,7 @@ spec:
             runAsNonRoot: true
             runAsGroup: 1000
           name: vaultwarden
-          image: vaultwarden/server:1.33.2
+          image: vaultwarden/server:1.34.1
           env:
             - name: DOMAIN
               value: https://vaultwarden.cluster.edward.sydney
