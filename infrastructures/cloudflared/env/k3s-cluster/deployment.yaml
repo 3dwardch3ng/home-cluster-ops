@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: cloudflared
+  name: cloudflared
+  namespace: cloudflared
+spec:
+  selector:
+    matchLabels:
+      app: cloudflared
+  template:
+    metadata:
+      labels:
+        app: cloudflared
+    spec:
+      containers:
+        - name: cloudflared
+          image: cloudflare/cloudflared:2025.6.1
+          imagePullPolicy: Always
+          args: [
+            "tunnel",
+            "--no-autoupdate",
+            "run",
+            "--token=eyJhIjoiNDNmN2QzYzMyYTNlMjUxMjFhMTllNGM4Yzk3NGVlODEiLCJ0IjoiZDRhYjdjZDktODYxMC00NTU2LTlhZTAtZDI5ZjZhNzQyNzgzIiwicyI6Ill6QmhOVGhtWWpndE9EQTRPUzAwWXpnMExUbGtZbVl0T0RRMU0yVTFPR1JoTW1RdyJ9"
+          ]
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 60
