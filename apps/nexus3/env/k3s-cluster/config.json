@@ -3,7 +3,7 @@
   "userGivenName": "nexus3",
   "destNamespace": "nexus",
   "destServer": "https://kubernetes.default.svc",
-  "srcPath": "apps/nexus/env/k3s-cluster",
+  "srcPath": "apps/nexus3/env/k3s-cluster",
   "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
   "srcTargetRevision": "",
   "labels": null,
