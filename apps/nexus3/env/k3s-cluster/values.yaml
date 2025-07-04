@@ -306,7 +306,7 @@ rootPassword:
 
 config:
   # -- If `true` & `rootPassword.secret` is set, enable the configuration Job.
-  enabled: true
+  enabled: false
   job:
     image:
       # -- Image repository for the config container.
