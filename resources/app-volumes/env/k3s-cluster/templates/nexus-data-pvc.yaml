@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: nexus3-pvc
+  name: nexus-data-pvc
   namespace: nexus
   labels:
-    name: nexus3-pvc
+    name: nexus-data-pvc
 spec:
   storageClassName: local-path
   volumeMode: Filesystem
