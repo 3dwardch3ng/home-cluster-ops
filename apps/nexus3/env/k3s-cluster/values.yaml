@@ -212,7 +212,7 @@ persistence:
   retainDeleted: true
   # -- If `true`, keep `PersistentVolumeClaim` when the `StatefulSet` is scaled down.
   retainScaled: true
-  existingClaim: nexus3-pvc
+  existingClaim: nexus-data-pvc
 
 # -- Extra volumes for the pod.
 extraVolumes: []
