@@ -18,14 +18,14 @@ spec:
         runAsGroup: 0
       containers:
         - name: nexus
-          image: klo2k/nexus3:3.68.1-02
+          image: docker.io/sonatype/nexus3:3.81.1
           resources:
             limits:
-              memory: "3Gi"
-              cpu: "2"
+              memory: "16Gi"
+              cpu: "8"
             requests:
-              memory: "2Gi"
-              cpu: "2"
+              memory: "16Gi"
+              cpu: "8"
           ports:
             - containerPort: 8081
           volumeMounts:
