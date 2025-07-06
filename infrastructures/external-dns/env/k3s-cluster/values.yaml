@@ -1,0 +1,7 @@
+namespaceOverride: kube-system
+clusterDomain: cluster.edward.sydney
+provider: nginx
+cloudflare:
+  secretName: cloudflare-api-key
+  email: 'edward@cheng.sydney'
+  dnsRecordsPerPage: 500
