@@ -9,7 +9,7 @@ spec:
   selector:
     app.kubernetes.io/name: vaultwarden
   type: LoadBalancer
-  loadBalancerIP: 192.168.10.211
+  loadBalancerIP: 192.168.10.219
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
