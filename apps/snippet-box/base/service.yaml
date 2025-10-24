@@ -9,7 +9,7 @@ spec:
   selector:
     app.kubernetes.io/name: snippet-box
   type: LoadBalancer
-  loadBalancerIP: "192.168.10.209"
+  loadBalancerIP: 192.168.10.209
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
