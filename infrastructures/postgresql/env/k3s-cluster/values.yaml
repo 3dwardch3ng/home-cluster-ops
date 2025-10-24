@@ -89,7 +89,7 @@ readReplicas:
   service:
     type: "LoadBalancer"
     ports:
-      postgresql: 5432
+      postgresql: 5433
     loadBalancerIP: 192.168.10.208
   persistence:
     existingClaim: postgresql-replica-pvc
