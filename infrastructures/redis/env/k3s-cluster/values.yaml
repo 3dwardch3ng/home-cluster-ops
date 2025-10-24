@@ -27,3 +27,5 @@ replica:
   service:
     type: LoadBalancer
     loadBalancerIP: 192.168.10.205
+    ports:
+      redis: 6380
