@@ -18,5 +18,8 @@ coder:
     - name: coder-data
       mountPath: /config
   service:
-    type: LoadBalancer
-    loadBalancerIP: 192.168.10.211
+    type: ClusterIP
+  ingress:
+    enable: true
+    className: nginx
+    host: "coder.cluster.edward.sydney"
