@@ -43,7 +43,7 @@ spec:
               valueFrom:
                 secretKeyRef:
                   name: mathesar
-                  key: POSTGRES_PASSWORD
+                  key: SECRET_KEY
           ports:
             - protocol: TCP
               containerPort: 8000
