@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mathesar
-          image: mathesar/mathesar:latest
+          image: mathesar/mathesar:0.7.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
@@ -38,8 +38,6 @@ spec:
               mountPath: /code/static
             - name: media
               mountPath: /code/media
-            - name: secrets
-              mountPath: /code
       volumes:
         - name: static
           hostPath:
@@ -49,9 +47,3 @@ spec:
           hostPath:
             path: /mnt/nfs/AppData/mathesar/media
             type: Directory
-        - name: secrets
-          secret:
-            secretName: mathesar
-            items:
-              - key: .secrets
-                path: .secrets
