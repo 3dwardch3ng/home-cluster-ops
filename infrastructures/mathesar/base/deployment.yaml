@@ -20,8 +20,6 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           env:
-            - name: DOMAIN_NAME
-              value: 127.0.0.1
             - name: POSTGRES_DB
               value: mathesar
             - name: POSTGRES_USER
