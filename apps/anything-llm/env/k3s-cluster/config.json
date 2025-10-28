@@ -1,0 +1,12 @@
+{
+  "appName": "anything-llm",
+  "userGivenName": "anything-llm",
+  "namespace": "anything-llm",
+  "destNamespace": "anything-llm",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/anything-llm/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}

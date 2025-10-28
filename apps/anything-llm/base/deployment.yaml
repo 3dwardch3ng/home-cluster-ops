@@ -1,0 +1,83 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anything-llm
+  namespace: anything-llm
+  labels:
+    app.kubernetes.io/name: anything-llm
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: anything-llm
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: anything-llm
+    spec:
+      containers:
+        - name: anything-llm
+          image: mintplexlabs/anythingllm:1.9.0
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: STORAGE_DIR
+              value: /app/server/storage
+            - name: SIG_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: SIG_KEY
+            - name: SIG_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: SIG_SALT
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: JWT_SECRET
+            - name: JWT_EXPIRY
+              value: "30d"
+            - name: LLM_PROVIDER
+              value: "gemini"
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: GEMINI_API_KEY
+            - name: GEMINI_LLM_MODEL_PREF
+              value: "gemini-2.5-flash"
+            - name: EMBEDDING_ENGINE
+              value: "gemini"
+            - name: GEMINI_EMBEDDING_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: GEMINI_EMBEDDING_API_KEY
+            - name: EMBEDDING_MODEL_PREF
+              value: "text-embedding-004"
+            - name: VECTOR_DB
+              value: "lancedb"
+            - name: AGENT_GSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: AGENT_GSE_KEY
+            - name: AGENT_GSE_CTX
+              valueFrom:
+                secretKeyRef:
+                  name: anything-llm
+                  key: AGENT_GSE_CTX
+          ports:
+            - protocol: TCP
+              containerPort: 3001
+              name: http
+          volumeMounts:
+            - name: storage
+              mountPath: /app/server/storage
+      volumes:
+        - name: storage
+          hostPath:
+            path: /mnt/nfs/AppData/anything-llm/storage
+            type: Directory
