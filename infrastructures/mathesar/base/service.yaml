@@ -13,6 +13,6 @@ spec:
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 8000
+      port: 18000
       targetPort: 8000
       name: http
