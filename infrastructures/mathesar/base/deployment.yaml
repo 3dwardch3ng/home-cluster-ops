@@ -24,6 +24,8 @@ spec:
               value: mathesar.cluster.edward.sydney
             - name: POSTGRES_DB
               value: mathesar
+            - name: POSTGRES_USER
+              value: mathesar
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -31,6 +33,17 @@ spec:
                   key: POSTGRES_PASSWORD
             - name: POSTGRES_HOST
               value: 192.168.10.210
+            - name: POSTGRES_PORT
+              value: 5432
+            - name: FILE_STORAGE_DICT
+              value: "{}"
+            - name: OIDC_CONFIG_DICT
+              value: "{}"
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mathesar
+                  key: POSTGRES_PASSWORD
           ports:
             - protocol: TCP
               containerPort: 8000
