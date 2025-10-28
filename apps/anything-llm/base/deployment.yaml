@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anything-llm
+  namespace: anything-llm
+  labels:
+    app.kubernetes.io/name: anything-llm
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: anything-llm
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: anything-llm
+    spec:
+      containers:
+        - name: anything-llm
+          image: lscr.io/linuxserver/qbittorrent:latest
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: PUID
+              value: "1000"
+          ports:
+            - protocol: TCP
+              containerPort: 8080
+              name: qb-ui
+      volumes:
+        - name: qbittorrent-config
+          hostPath:
+            path: /mnt/nfs/AppData/qbittorrent/config
+            type: Directory
+        - name: qbittorrent-downloads
+          hostPath:
+            path: /mnt/nfs/AppData/qbittorrent/downloads
+            type: Directory
