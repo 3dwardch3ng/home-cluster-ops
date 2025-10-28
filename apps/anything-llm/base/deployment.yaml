@@ -16,22 +16,21 @@ spec:
     spec:
       containers:
         - name: anything-llm
-          image: lscr.io/linuxserver/qbittorrent:latest
+          image: mintplexlabs/anythingllm:1.9.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
-            - name: PUID
-              value: "1000"
+            - name: STORAGE_DIR
+              value: /app/server/storage
           ports:
             - protocol: TCP
-              containerPort: 8080
-              name: qb-ui
+              containerPort: 3001
+              name: http
+          volumeMounts:
+            - name: data
+              mountPath: /app/server
       volumes:
-        - name: qbittorrent-config
+        - name: data
           hostPath:
-            path: /mnt/nfs/AppData/qbittorrent/config
-            type: Directory
-        - name: qbittorrent-downloads
-          hostPath:
-            path: /mnt/nfs/AppData/qbittorrent/downloads
+            path: /mnt/nfs/AppData/anything-llm
             type: Directory
