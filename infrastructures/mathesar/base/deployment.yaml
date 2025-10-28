@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mathesar
+  namespace: mathesar
+  labels:
+    app.kubernetes.io/name: mathesar
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: mathesar
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: mathesar
+    spec:
+      containers:
+        - name: mathesar
+          image: mathesar/mathesar:latest
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: PUID
+              value: "1000"
+            - name: PGID
+              value: "1000"
+            - name: TZ
+              value: Australia/Sydney
+            - name: WEBUI_PORT
+              value: "8080"
+            - name: TORRENTING_PORT
+              value: "6881"
+          ports:
+            - protocol: TCP
+              containerPort: 8000
+              name: http
+          volumeMounts:
+            - name: static
+              mountPath: /code/static
+            - name: media
+              mountPath: /code/media
+            - name: secrets
+              mountPath: /code
+      volumes:
+        - name: static
+          hostPath:
+            path: /mnt/nfs/AppData/mathesar/static
+            type: Directory
+        - name: media
+          hostPath:
+            path: /mnt/nfs/AppData/mathesar/media
+            type: Directory
+        - name: secrets
+          secret:
+            secretName: mathesar-secrets
+            items:
+              - key: .secrets
+                path: .secrets
