@@ -22,15 +22,62 @@ spec:
           env:
             - name: STORAGE_DIR
               value: /app/server/storage
+            - name: SIG_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: SIG_KEY
+            - name: SIG_SALT
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: SIG_SALT
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: JWT_SECRET
+            - name: JWT_EXPIRY
+              value: "30d"
+            - name: LLM_PROVIDER
+              value: "gemini"
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: GEMINI_API_KEY
+            - name: GEMINI_LLM_MODEL_PREF
+              value: "gemini-2.5-flash"
+            - name: EMBEDDING_ENGINE
+              value: "gemini"
+            - name: GEMINI_EMBEDDING_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: GEMINI_EMBEDDING_API_KEY
+            - name: EMBEDDING_MODEL_PREF
+              value: "text-embedding-004"
+            - name: VECTOR_DB
+              value: "lancedb"
+            - name: AGENT_GSE_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: AGENT_GSE_KEY
+            - name: AGENT_GSE_CTX
+              valueFrom:
+                secretKeyRef:
+                  name: aything_llm
+                  key: AGENT_GSE_CTX
           ports:
             - protocol: TCP
               containerPort: 3001
               name: http
           volumeMounts:
-            - name: data
-              mountPath: /app/server
+            - name: storage
+              mountPath: /app/server/storage
       volumes:
-        - name: data
+        - name: storage
           hostPath:
-            path: /mnt/nfs/AppData/anything-llm
+            path: /mnt/nfs/AppData/anything-llm/storage
             type: Directory
