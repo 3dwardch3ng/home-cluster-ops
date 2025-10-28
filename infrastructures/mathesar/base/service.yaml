@@ -8,11 +8,10 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: mathesar
-  type: LoadBalancer
-  loadBalancerIP: 192.168.10.224
+  type: ClusterIP
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 18000
+      port: 8000
       targetPort: 8000
       name: http
