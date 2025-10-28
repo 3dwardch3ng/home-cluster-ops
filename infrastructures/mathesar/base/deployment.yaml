@@ -22,8 +22,6 @@ spec:
           env:
             - name: POSTGRES_DB
               value: mathesar
-            - name: POSTGRES_USER
-              value: mathesar
             - name: POSTGRES_PASSWORD
               valueFrom:
                 secretKeyRef:
