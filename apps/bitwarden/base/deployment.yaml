@@ -49,7 +49,7 @@ spec:
                   name: bitwarden
                   key: BW_INSTALLATION_KEY
             - name: BW_ENABLE_SSL
-              value: false
+              value: "false"
             - name: globalSettings__mail__replyToEmail
               valueFrom:
                 secretKeyRef:
