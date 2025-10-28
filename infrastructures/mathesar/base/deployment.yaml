@@ -20,16 +20,15 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           env:
-            - name: PUID
-              value: "1000"
-            - name: PGID
-              value: "1000"
-            - name: TZ
-              value: Australia/Sydney
-            - name: WEBUI_PORT
-              value: "8080"
-            - name: TORRENTING_PORT
-              value: "6881"
+            - name: POSTGRES_DB
+              value: mathesar
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mathesar
+                  key: POSTGRES_PASSWORD
+            - name: POSTGRES_HOST
+              value: 192.168.10.210
           ports:
             - protocol: TCP
               containerPort: 8000
@@ -52,7 +51,7 @@ spec:
             type: Directory
         - name: secrets
           secret:
-            secretName: mathesar-secrets
+            secretName: mathesar
             items:
               - key: .secrets
                 path: .secrets
