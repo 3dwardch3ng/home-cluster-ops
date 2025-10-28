@@ -25,17 +25,17 @@ spec:
             - name: SIG_KEY
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: SIG_KEY
             - name: SIG_SALT
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: SIG_SALT
             - name: JWT_SECRET
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: JWT_SECRET
             - name: JWT_EXPIRY
               value: "30d"
@@ -44,7 +44,7 @@ spec:
             - name: GEMINI_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: GEMINI_API_KEY
             - name: GEMINI_LLM_MODEL_PREF
               value: "gemini-2.5-flash"
@@ -53,7 +53,7 @@ spec:
             - name: GEMINI_EMBEDDING_API_KEY
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: GEMINI_EMBEDDING_API_KEY
             - name: EMBEDDING_MODEL_PREF
               value: "text-embedding-004"
@@ -62,12 +62,12 @@ spec:
             - name: AGENT_GSE_KEY
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: AGENT_GSE_KEY
             - name: AGENT_GSE_CTX
               valueFrom:
                 secretKeyRef:
-                  name: aything_llm
+                  name: anything-llm
                   key: AGENT_GSE_CTX
           ports:
             - protocol: TCP
