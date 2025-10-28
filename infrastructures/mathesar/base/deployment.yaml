@@ -20,7 +20,11 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           env:
+            - name: DOMAIN_NAME
+              value: 127.0.0.1
             - name: POSTGRES_DB
+              value: mathesar
+            - name: POSTGRES_USER
               value: mathesar
             - name: POSTGRES_PASSWORD
               valueFrom:
@@ -31,6 +35,11 @@ spec:
               value: 192.168.10.210
             - name: POSTGRES_PORT
               value: 5432
+            - name: SECRET_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: mathesar
+                  key: SECRET_KEY
           ports:
             - protocol: TCP
               containerPort: 8000
