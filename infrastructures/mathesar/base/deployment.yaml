@@ -20,6 +20,8 @@ spec:
           securityContext:
             allowPrivilegeEscalation: false
           env:
+            - name: DOMAIN_NAME
+              value: mathesar.cluster.edward.sydney
             - name: POSTGRES_DB
               value: mathesar
             - name: POSTGRES_PASSWORD
