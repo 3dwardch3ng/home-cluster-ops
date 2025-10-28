@@ -35,10 +35,6 @@ spec:
               value: 192.168.10.210
             - name: POSTGRES_PORT
               value: 5432
-            - name: FILE_STORAGE_DICT
-              value: "{}"
-            - name: OIDC_CONFIG_DICT
-              value: "{}"
             - name: SECRET_KEY
               valueFrom:
                 secretKeyRef:
