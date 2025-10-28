@@ -9,7 +9,7 @@ spec:
   selector:
     app.kubernetes.io/name: mathesar
   type: LoadBalancer
-  loadBalancerIP: 192.168.10.217
+  loadBalancerIP: 192.168.10.224
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
