@@ -13,6 +13,6 @@ spec:
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 18880
-      targetPort: 8080
+      port: 3001
+      targetPort: 3001
       name: qb-ui
