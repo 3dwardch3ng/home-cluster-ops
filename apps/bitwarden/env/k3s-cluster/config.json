@@ -1,0 +1,12 @@
+{
+  "appName": "bitwarden",
+  "userGivenName": "bitwarden",
+  "namespace": "bitwarden",
+  "destNamespace": "bitwarden",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "apps/bitwarden/env/k3s-cluster",
+  "srcRepoURL": "https://github.com/3dwardch3ng/home-cluster-ops.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null
+}
