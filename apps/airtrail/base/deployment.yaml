@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: airtrail
+  namespace: airtrail
+  labels:
+    app.kubernetes.io/name: airtrail
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: airtrail
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: airtrail
+    spec:
+      containers:
+        - name: airtrail
+          image: johly/airtrail:v3.2.0
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: ORIGINS
+              value: http://localhost:3000,http://airtrail.cluster.edward.sydney
+            - name: DB_URL
+              valueFrom:
+                secretKeyRef:
+                  name: airtrail
+                  key: DB_URL
+          ports:
+            - protocol: TCP
+              containerPort: 3000
+              name: http
