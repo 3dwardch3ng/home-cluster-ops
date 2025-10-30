@@ -8,11 +8,10 @@ metadata:
 spec:
   selector:
     app.kubernetes.io/name: airtrail
-  type: LoadBalancer
-  loadBalancerIP: 192.168.10.224
+  type: ClusterIP
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 13000
+      port: 3000
       targetPort: 3000
       name: http
