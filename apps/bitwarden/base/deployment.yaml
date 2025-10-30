@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: bitwarden
-          image: ghcr.io/bitwarden/self-host:2025.10.0-beta
+          image: ghcr.io/bitwarden/self-host:2025.10.1-beta
           securityContext:
             allowPrivilegeEscalation: false
           env:
