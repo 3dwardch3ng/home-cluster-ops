@@ -21,7 +21,7 @@ spec:
             allowPrivilegeEscalation: false
           env:
             - name: DOMAIN_NAME
-              value: mathesar.cluster.edward.sydney
+              value: http://localhost
             - name: POSTGRES_DB
               value: mathesar
             - name: POSTGRES_USER
