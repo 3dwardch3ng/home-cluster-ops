@@ -43,7 +43,7 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 8000
-              name: http
+              name: web
           volumeMounts:
             - name: static
               mountPath: /code/static
