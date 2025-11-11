@@ -21,7 +21,7 @@ spec:
             allowPrivilegeEscalation: false
           env:
             - name: DOMAIN_NAME
-              value: http://localhost
+              value: :8000
             - name: POSTGRES_DB
               value: mathesar
             - name: POSTGRES_USER
