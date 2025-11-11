@@ -21,7 +21,7 @@ spec:
             allowPrivilegeEscalation: false
           env:
             - name: ORIGINS
-              value: http://127.0.0.1:3000,http://::1:3000,http://airtrail.cluster.edward.sydney
+              value: http://0.0.0.0:3000,http://:::3000,http://airtrail.cluster.edward.sydney
             - name: DB_URL
               valueFrom:
                 secretKeyRef:
