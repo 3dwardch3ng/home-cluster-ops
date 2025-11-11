@@ -30,4 +30,4 @@ spec:
           ports:
             - protocol: TCP
               containerPort: 3000
-              name: http
+              name: web
