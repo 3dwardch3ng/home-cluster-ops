@@ -6,3 +6,7 @@ app:
     ingressClassName: nginx
     tls:
       enabled: false
+kong:
+  proxy:
+    http:
+      enabled: true
