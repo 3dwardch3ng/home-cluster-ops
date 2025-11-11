@@ -13,6 +13,6 @@ spec:
   internalTrafficPolicy: Cluster
   ports:
     - protocol: TCP
-      port: 3000
+      port: 13000
       targetPort: 3000
       name: web
