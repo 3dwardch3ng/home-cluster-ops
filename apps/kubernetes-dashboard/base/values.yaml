@@ -4,9 +4,14 @@ app:
     hosts:
       - k3s-dashboard.cluster.edward.sydney
     ingressClassName: nginx
+    useDefaultAnnotations: false
+    annotations:
+      nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
     tls:
       enabled: false
 kong:
   proxy:
     http:
       enabled: true
+    tls:
+      enabled: false
