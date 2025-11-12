@@ -12,7 +12,6 @@ service:
   type: LoadBalancer
   ports:
     api: 19000
-    console: 19001
   loadBalancerIP: 192.168.10.217
 persistence:
   existingClaim: "minio-pvc"
@@ -21,3 +20,9 @@ containerSecurityContext:
   runAsGroup: 1000
 podSecurityContext:
   fsGroup: 1000
+console:
+  service:
+    type: LoadBalancer
+    ports:
+      http: 19001
+    loadBalancerIP: 192.168.10.226
