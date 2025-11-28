@@ -29,6 +29,10 @@ spec:
                     operator: In
                     values:
                       - k3s-cluster-node-x
+      tolerations:
+        - key: node-role.kubernetes.io/control-plane
+          operator: Exists
+          effect: NoSchedule
       containers:
         - name: pgvector
           image: pgvector/pgvector:0.8.1-pg18-bookworm
