@@ -1,0 +1,104 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: affine
+  namespace: affine
+  labels:
+    app.kubernetes.io/name: affine
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: affine
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: affine
+    spec:
+      securityContext:
+        runAsUser: 0
+        runAsGroup: 0
+      initContainers:
+        - name: affine_migration_job
+          image: ghcr.io/toeverything/affine:0.25.5
+          command:
+            - sh
+            - -c
+            - |
+              node ./scripts/self-host-predeploy.js
+          env:
+            - name: REDIS_SERVER_HOST
+              value: 192.168.10.207
+            - name: REDIS_SERVER_PORT
+              value: 6379
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: DATABASE_URL
+            - name: AFFINE_INDEXER_ENABLED
+              value: false
+            - name: AFFINE_SERVER_HOST
+              value: affine.edward.sydney
+            - name: AFFINE_SERVER_EXTERNAL_URL
+              value: https://affine.edward.sydney
+            - name: MAILER_HOST
+              value: smtp.mail.me.com
+            - name: MAILER_PORT
+              value: 587
+            - name: MAILER_USER
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_USER
+            - name: MAILER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_PASSWORD
+            - name: MAILER_SENDER
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_SENDER
+          volumeMounts:
+            - name: affine-storage
+              mountPath: /root/.affine/storage
+            - name: affine-config
+              mountPath: /root/.affine/config
+      containers:
+        - securityContext:
+            runAsUser: 0
+            runAsGroup: 0
+          name: affine_server
+          image: ghcr.io/toeverything/affine:0.25.5
+          env:
+            - name: REDIS_SERVER_HOST
+              value: "192.168.10.207"
+            - name: REDIS_SERVER_PORT
+              value: "6379"
+            - name: DATABASE_URL
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: DATABASE_URL
+            - name: AFFINE_INDEXER_ENABLED
+              value: "false"
+          ports:
+            - protocol: TCP
+              containerPort: 3010
+              name: http
+          volumeMounts:
+            - name: affine-storage
+              mountPath: /root/.affine/storage
+            - name: affine-config
+              mountPath: /root/.affine/config
+      volumes:
+        - name: affine-storage
+          hostPath:
+            path: /mnt/nfs/AppData/affine-cluster/storage
+            type: Directory
+        - name: affine-config
+          hostPath:
+            path: /mnt/nfs/AppData/affine-cluster/config
+            type: Directory
+
