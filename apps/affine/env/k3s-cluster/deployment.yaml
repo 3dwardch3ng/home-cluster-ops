@@ -29,14 +29,14 @@ spec:
             - name: REDIS_SERVER_HOST
               value: 192.168.10.207
             - name: REDIS_SERVER_PORT
-              value: 6379
+              value: "6379"
             - name: DATABASE_URL
               valueFrom:
                 secretKeyRef:
                   name: affine
                   key: DATABASE_URL
             - name: AFFINE_INDEXER_ENABLED
-              value: false
+              value: "false"
             - name: AFFINE_SERVER_HOST
               value: affine.edward.sydney
             - name: AFFINE_SERVER_EXTERNAL_URL
@@ -44,7 +44,7 @@ spec:
             - name: MAILER_HOST
               value: smtp.mail.me.com
             - name: MAILER_PORT
-              value: 587
+              value: "587"
             - name: MAILER_USER
               valueFrom:
                 secretKeyRef:
@@ -83,6 +83,29 @@ spec:
                   key: DATABASE_URL
             - name: AFFINE_INDEXER_ENABLED
               value: "false"
+            - name: AFFINE_SERVER_HOST
+              value: affine.edward.sydney
+            - name: AFFINE_SERVER_EXTERNAL_URL
+              value: https://affine.edward.sydney
+            - name: MAILER_HOST
+              value: smtp.mail.me.com
+            - name: MAILER_PORT
+              value: "587"
+            - name: MAILER_USER
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_USER
+            - name: MAILER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_PASSWORD
+            - name: MAILER_SENDER
+              valueFrom:
+                secretKeyRef:
+                  name: affine
+                  key: MAILER_SENDER
           ports:
             - protocol: TCP
               containerPort: 3010
