@@ -55,8 +55,6 @@ spec:
               value: postgres
             - name: POSTGRES_INITDB_ARGS
               value: '--data-checksums'
-            - name: POSTGRES_HOST_AUTH_METHOD
-              value: trust
           ports:
             - protocol: TCP
               containerPort: 5432
