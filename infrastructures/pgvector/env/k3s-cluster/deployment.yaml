@@ -14,6 +14,21 @@ spec:
       labels:
         app.kubernetes.io/name: pgvector
     spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/control-plane
+                    operator: Exists
+                  - key: kubernetes.io/os
+                    operator: In
+                    values:
+                      - linux
+                  - key: kubernetes.io/hostname
+                    operator: In
+                    values:
+                      - k3s-cluster-node-x
       containers:
         - name: pgvector
           image: pgvector/pgvector:0.8.1-pg18-bookworm
