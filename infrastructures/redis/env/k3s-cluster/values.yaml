@@ -1,7 +1,6 @@
 namespaceOverride: "redis"
 auth:
-  existingSecret: "redis"
-  existingSecretPasswordKey: "password"
+  enabled: false
 master:
   persistence:
     storageClass: local-path
