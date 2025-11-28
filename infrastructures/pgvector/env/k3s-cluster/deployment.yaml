@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgvector
+  namespace: pgvector
+  labels:
+    app.kubernetes.io/name: pgvector
+spec:
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: pgvector
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: pgvector
+    spec:
+      containers:
+        - name: pgvector
+          image: pgvector/pgvector:0.8.1-pg18-bookworm
+          livenessProbe:
+            failureThreshold: 5
+            exec:
+              command:
+                - pg_isready
+                - -U
+                - postgres
+                - -d
+                - postgres
+            initialDelaySeconds: 90
+            periodSeconds: 10
+            timeoutSeconds: 5
+          securityContext:
+            allowPrivilegeEscalation: false
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+            - name: POSTGRES_DB
+              value: postgres
+            - name: POSTGRES_INITDB_ARGS
+              value: '--data-checksums'
+            - name: POSTGRES_HOST_AUTH_METHOD
+              value: trust
+          ports:
+            - protocol: TCP
+              containerPort: 5432
+              name: db
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: pgvector-volume
+      volumes:
+        - name: pgvector-volume
+          hostPath:
+            path: /mnt/nfs/AppData/pgvector
+            type: Directory
