@@ -18,7 +18,7 @@ spec:
         runAsUser: 0
         runAsGroup: 0
       initContainers:
-        - name: affine_migration_job
+        - name: affine-migration-job
           image: ghcr.io/toeverything/affine:0.25.5
           command:
             - sh
@@ -69,7 +69,7 @@ spec:
         - securityContext:
             runAsUser: 0
             runAsGroup: 0
-          name: affine_server
+          name: affine-server
           image: ghcr.io/toeverything/affine:0.25.5
           env:
             - name: REDIS_SERVER_HOST
