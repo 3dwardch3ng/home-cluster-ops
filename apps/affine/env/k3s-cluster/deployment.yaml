@@ -118,10 +118,10 @@ spec:
       volumes:
         - name: affine-storage
           hostPath:
-            path: /mnt/nfs/AppData/affine-cluster/storage
+            path: /mnt/nfs/AppData/affine/storage
             type: Directory
         - name: affine-config
           hostPath:
-            path: /mnt/nfs/AppData/affine-cluster/config
+            path: /mnt/nfs/AppData/affine/config
             type: Directory
 
