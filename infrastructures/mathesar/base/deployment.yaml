@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mathesar
-          image: mathesar/mathesar:0.7.1
+          image: mathesar/mathesar:0.8.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
