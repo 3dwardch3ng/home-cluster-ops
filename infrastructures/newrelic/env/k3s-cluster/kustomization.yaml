@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: nri-bundle
     repo: https://helm-charts.newrelic.com
-    version: 6.0.26
+    version: 6.0.31
     releaseName: nri-bundle
     valuesFile: values.yaml
