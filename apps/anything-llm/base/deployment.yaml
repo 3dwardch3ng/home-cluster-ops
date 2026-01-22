@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: anything-llm
-          image: mintplexlabs/anythingllm:1.9.1
+          image: mintplexlabs/anythingllm:1.10.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
