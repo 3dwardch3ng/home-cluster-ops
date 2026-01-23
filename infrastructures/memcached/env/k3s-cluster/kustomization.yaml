@@ -3,6 +3,6 @@ kind: Kustomization
 helmCharts:
   - name: memcached
     repo: oci://registry-1.docker.io/bitnamicharts
-    version: 8.2.0
+    version: 8.2.2
     releaseName: memcached
     valuesFile: values.yaml
