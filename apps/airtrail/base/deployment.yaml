@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: airtrail
-          image: johly/airtrail:v3.4.3
+          image: johly/airtrail:v3.5.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
