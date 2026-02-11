@@ -18,7 +18,7 @@ spec:
         runAsGroup: 0
       containers:
         - name: nexus
-          image: docker.io/sonatype/nexus3:3.88.0
+          image: docker.io/sonatype/nexus3:3.89.1
           resources:
             limits:
               memory: "16Gi"
