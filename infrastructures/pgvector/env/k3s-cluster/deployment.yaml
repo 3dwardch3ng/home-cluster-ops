@@ -35,7 +35,7 @@ spec:
           effect: NoSchedule
       containers:
         - name: pgvector
-          image: pgvector/pgvector:0.8.1-pg16-bookworm
+          image: pgvector/pgvector:0.8.2-pg16-bookworm
           livenessProbe:
             failureThreshold: 5
             exec:
