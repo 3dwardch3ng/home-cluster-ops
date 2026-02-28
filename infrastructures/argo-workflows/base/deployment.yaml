@@ -21,7 +21,7 @@ spec:
             - --auth-mode
             - client
           env: []
-          image: quay.io/argoproj/argocli:v3.7.8
+          image: quay.io/argoproj/argocli:v3.7.10
           name: argo-server
           ports:
             - containerPort: 2746
