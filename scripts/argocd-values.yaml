@@ -3,7 +3,7 @@ crds:
   install: false
 
 global:
-  domain: argocd.cluster.edward.sydney
+  domain: argocd.edward.sydney
 
 configs:
   cm:
@@ -48,10 +48,10 @@ server:
       nginx.ingress.kubernetes.io/ssl-redirect: "false"
       nginx.ingress.kubernetes.io/use-regex: "true"
     ingressClassName: nginx
-    hostname: argocd.cluster.edward.sydney
+    hostname: argocd.edward.sydney
     extraTls:
       - hosts:
-          - argocd.cluster.edward.sydney
+          - argocd.edward.sydney
         # Based on the ingress controller used secret might be optional
         secretName: wildcard-tls
   ingressGrpc:
@@ -59,7 +59,7 @@ server:
     ingressClassName: contour-internal
     extraTls:
       - hosts:
-          - grpc.argocd.cluster.edward.sydney
+          - grpc.argocd.edward.sydney
         secretName: wildcard-tls
 
 repoServer:

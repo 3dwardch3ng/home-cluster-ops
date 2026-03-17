@@ -2,7 +2,7 @@ image:
   tag: stable
 ingress:
   hosts:
-    - netdata.cluster.edward.sydney
+    - netdata.edward.sydney
 restarter:
   enabled: true
 parent:

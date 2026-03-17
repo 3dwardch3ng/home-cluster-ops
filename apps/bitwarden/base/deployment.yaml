@@ -21,7 +21,7 @@ spec:
             allowPrivilegeEscalation: false
           env:
             - name: BW_DOMAIN
-              value: bitwarden.cluster.edward.sydney
+              value: bitwarden.edward.sydney
             - name: BW_DB_PROVIDER
               value: postgresql
             - name: BW_DB_SERVER

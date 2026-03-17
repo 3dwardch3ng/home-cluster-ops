@@ -17,7 +17,7 @@
       "matchDatasources": ["docker"],
       "matchPackageNames": ["edeedeeed/ec-config-server"],
       "registryUrls": [
-        "https://chartmuseum.cluster.edward.sydney:8899"
+        "https://chartmuseum.edward.sydney:8899"
       ]
     }
   ]

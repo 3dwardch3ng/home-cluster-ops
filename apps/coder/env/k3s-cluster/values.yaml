@@ -1,7 +1,7 @@
 coder:
   env:
     - name: CODER_ACCESS_URL
-      value: "https://coder.cluster.edward.sydney"
+      value: "https://coder.edward.sydney"
     - name: CODER_PG_CONNECTION_URL
       valueFrom:
         secretKeyRef:
@@ -22,4 +22,4 @@ coder:
   ingress:
     enable: true
     className: nginx
-    host: "coder.cluster.edward.sydney"
+    host: "coder.edward.sydney"

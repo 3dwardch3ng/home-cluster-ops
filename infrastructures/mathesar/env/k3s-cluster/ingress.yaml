@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "mathesar.cluster.edward.sydney"
+    - host: "mathesar.edward.sydney"
       http:
         paths:
           - pathType: Prefix

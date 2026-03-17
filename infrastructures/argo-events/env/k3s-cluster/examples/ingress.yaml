@@ -9,7 +9,7 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-    - host: "event-example.cluster.edward.sydney"
+    - host: "event-example.edward.sydney"
       http:
         paths:
           - pathType: Prefix

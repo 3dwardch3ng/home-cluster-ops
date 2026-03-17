@@ -1,7 +1,7 @@
 namespaceOverride: "minio"
 image:
   debug: true
-clusterDomain: cluster.edward.sydney
+clusterDomain: edward.sydney
 auth:
   existingSecret: "minio"
   rootUserSecretKey: "root_user"

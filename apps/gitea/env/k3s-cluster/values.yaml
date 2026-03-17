@@ -1,5 +1,5 @@
 namespaceOverride: "gitea"
-rootURL: "https://gitea.cluster.edward.sydney"
+rootURL: "https://gitea.edward.sydney"
 updateStrategy:
   type: Recreate
 podAntiAffinityPreset: ""
@@ -28,7 +28,7 @@ service:
 ingress:
   enabled: false
   ingressClassName: "nginx"
-  hostname: "gitea.cluster.edward.sydney"
+  hostname: "gitea.edward.sydney"
 serviceAccount:
   create: false
 postgresql:
