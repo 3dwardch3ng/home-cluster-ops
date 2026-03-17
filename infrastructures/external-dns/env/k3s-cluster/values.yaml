@@ -1,5 +1,5 @@
 namespaceOverride: kube-system
-clusterDomain: cluster.edward.sydney
+clusterDomain: edward.sydney
 provider: cloudflare
 cloudflare:
   secretName: cloudflare-api-key

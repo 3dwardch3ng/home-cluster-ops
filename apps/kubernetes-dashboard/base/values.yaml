@@ -2,7 +2,7 @@ app:
   ingress:
     enabled: true
     hosts:
-      - k3s-dashboard.cluster.edward.sydney
+      - k3s-dashboard.edward.sydney
     ingressClassName: nginx
     useDefaultAnnotations: false
     annotations:

@@ -19,5 +19,4 @@ spec:
               key: cloudflare_api_token
         selector:
           dnsNames:
-            - "cluster.edward.sydney"
-            - "*.cluster.edward.sydney"
+            - "*.edward.sydney"
