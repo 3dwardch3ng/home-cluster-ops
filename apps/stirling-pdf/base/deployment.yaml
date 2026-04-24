@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: stirling-pdf
-          image: frooodle/s-pdf:2.9.2
+          image: frooodle/s-pdf:2.10.0
           securityContext:
             allowPrivilegeEscalation: false
           env:
