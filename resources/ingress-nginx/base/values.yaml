@@ -63,7 +63,7 @@ defaultBackend:
   enabled: true
   image:
     repository: ghcr.io/tarampampam/error-pages
-    tag: 3.8.1@sha256:b8ded6f847df91075429cf79cb9491bfd7d96de69936555498a2ff0614e003e4
+    tag: 4.2.7@sha256:f59453fef7ca963c2239cbb021896c71e6f375d85e5ef3f9c6495c1367a7de4e
     pullPolicy: IfNotPresent
   extraEnvs:
     - name: TEMPLATE_NAME
